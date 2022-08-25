@@ -1,3 +1,5 @@
+
+
 <h1 align="left">LOCADORA DE BICICLETAS E PATINS ELETRICOS - SIG BIKE</h1>
 
 <p align="center">
@@ -7,7 +9,7 @@
 <h1 align="left">LIGUAGUEM UTILIZADA</h1>
 
 <p align="center">
-<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/c.png" width=200/>
+<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/c.png" width=150/>
 </p>
 
 <h1 align="left">DESCRIÇÃO DO PROJETO</h1>
@@ -19,4 +21,8 @@
 <h1 align="left">INTEGRANTES</h1>
 
 
-[<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/87135960.jpg" width=115><br><sub>Gabriel Lima</sub>](https://github.com/Lima404) [<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/102674727.jpg" width=115><br><sub>Erick Bezerra</sub>](https://github.com/ErickBezerrar)
+<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/87135960.jpg" width=115 class="foto"><br><sub>Gabriel Lima</sub>](https://github.com/Lima404) 
+
+<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/102674727.jpg" width=115 alingh-itens= center ><br><sub>Erick Bezerra</sub>](https://github.com/ErickBezerrar)
+
+
