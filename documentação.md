@@ -4,5 +4,5 @@
 
 Na documentação o objetivo dela e obter conhecimento sobre os desafios, objetivos e metas do projeto, nessa area vamos desenvolver uma organização para otimizar melhor cada serviço a ser desenvolvido, vamos quebrar problemas em micro-problemas para ser mais facil a correção deles.
 
-https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/imagem.png
+<image src= "https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/imagem.png"/>
 
