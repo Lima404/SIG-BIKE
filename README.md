@@ -18,11 +18,11 @@
 
 • O sistema permitirá o monitoramento diário das bicicletas e dos patins elétricos
 
-<h1 align-items="center">INTEGRANTES</h1>
+<h1 align="center">INTEGRANTES</h1>
 
 
 <img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/87135960.jpg" width=115 class="foto"><br><sub>Gabriel Lima</sub>](https://github.com/Lima404) 
 
-<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/102674727.jpg" width=115 alingn-items= center ><br><sub>Erick Bezerra</sub>](https://github.com/ErickBezerrar)
+<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/102674727.jpg" width=115 align = center ><br><sub>Erick Bezerra</sub>](https://github.com/ErickBezerrar)
 
 
