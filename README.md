@@ -1,5 +1,3 @@
-
-
 <h1 align="left">LOCADORA DE BICICLETAS E PATINS ELETRICOS - SIG BIKE</h1>
 
 <p align="center">
