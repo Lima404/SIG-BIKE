@@ -13,5 +13,6 @@
 <h1 align="left">INTEGRANTES</h1>
 
 
-[<img src="https://avatars.githubusercontent.com/u/37356058?v=4" width=115><br><sub>Gabriel Lima</sub>](https://github.com/Lima404) | 
-[<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/102674727.jpg" width=115><br><sub>Erick Bezerra</sub>](https://github.com/ErickBezerrar) |
+[<img src="[https://avatars.githubusercontent.com/u/37356058?v=4](https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/87135960.jpg)" width=115><br><sub>Gabriel Lima</sub>](https://github.com/Lima404)
+
+[<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/102674727.jpg" width=115><br><sub>Erick Bezerra</sub>](https://github.com/ErickBezerrar)
