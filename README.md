@@ -4,6 +4,12 @@
 <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 </p>
 
+<h1 align="left">LIGUAGUENS USADAS</h1>
+
+<p align="center">
+<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/cpplogo-460x460.png"/>
+</p>
+
 <h1 align="left">DESCRIÇÃO DO PROJETO</h1>
 
 • O projeto em desenvolvimento para a disciplina de Programação do curso Sistemas de Informação. O SIG BIKE é um sistema de gerenciamento de bicicletas e patins elétricos que serve para atenção especializada da empresa afim de gerir seus gastos e também ter controle sobre os veículos da sua empresa.
