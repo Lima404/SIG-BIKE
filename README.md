@@ -8,7 +8,7 @@
 
 <p align="center">
 <<<<<<< Updated upstream
-<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/cpplogo-460x460.png"/>
+<img src="[https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/cpplogo-460x460.png](https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/c.png)"/>
 =======
 <img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/cpplogo-260x200.png"/>
 >>>>>>> Stashed changes
