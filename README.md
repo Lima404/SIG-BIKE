@@ -1,13 +1,13 @@
 <h1 align="left">LOCADORA DE BICICLETAS E PATINS ELETRICOS - SIG BIKE</h1>
 
 <p align="center">
-<img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge" width=100/>
+<img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge" width=200/>
 </p>
 
 <h1 align="left">LIGUAGUEM UTILIZADA</h1>
 
 <p align="center">
-<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/c.png"/>
+<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/c.png" width=200/>
 </p>
 
 <h1 align="left">DESCRIÇÃO DO PROJETO</h1>
