@@ -5,10 +5,10 @@
 </p>
 
 <h1 align="left">LIGUAGUENS USADAS</h1>
+
 <p align="center">
 <img src=""/>
 </p>
-
 
 <h1 align="left">DESCRIÇÃO DO PROJETO</h1>
 
