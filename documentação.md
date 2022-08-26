@@ -26,4 +26,4 @@
 - RF009: Estabelecer manutenções mensais para os item, com visão de sempre estarem em condições adequadas;
 - RF0010: Estabelecer multa para os usuários que atrazaram na devolução do item alugado;
 - RF0011: Criar um estoque com movimentação de produtos para venda, como peças de bicicleta (marcha, pneu, gidon, quadro), esclarecer no estoque marca, preço, código para cadastro, quantidade.
-- RF0012: Caso algum iten especifico cadastrados no sistema já estejam alugados, e não possua outro disponivel para o aluguel o sistema deve retornar uma mensagem avisando ao atendente que aquele item não esta disponivel para aluguel por um determinado preço.
+- RF0012: Caso algum item especifico cadastrados no sistema já estejam alugados, e não possua outro disponivel para o aluguel o sistema deve retornar uma mensagem avisando ao atendente que aquele item não esta disponivel para aluguel por um determinado preço.
