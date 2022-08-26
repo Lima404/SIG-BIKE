@@ -1,3 +1,8 @@
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 <h1 align="left">LOCADORA DE BICICLETAS E PATINS ELETRICOS - SIG BIKE</h1>
 
 <p align="center">
@@ -24,3 +29,7 @@
 <img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/102674727.jpg" width=115 align = center ><br><sub>Erick Bezerra </sub>(https://github.com/ErickBezerrar)
 
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> 82e1d6d6b5ee2519831785859691d75e252e0c89
+>>>>>>> Stashed changes
