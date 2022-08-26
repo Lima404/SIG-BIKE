@@ -21,7 +21,7 @@
 - RF004: Defenir quais os serviços/produtos que poderam ser utilizados dentro desse sistema;
 - RF005: Estabelecer valores que vão ser cobrados para cada serviço/produto que existem no sistema;
 - RF006: Na parte principal do sistema (Aluguel de bicicletas e Patinetes Elétricos), Determinar marcas, componentes, tempo de uso, ano de fabricação, manutenção, valor unitário para cada item, quantidade de cada item disponivel para aluguel;
-- RF007: Gerar uma chave correspondete para cada item tanto do estoque para vendam como tambem para cada item disponivel para aluguel;
+- RF007: Gerar uma chave correspondete para cada item tanto do estoque para venda como tambem para cada item disponivel para aluguel;
 - RF008: Para cada aluguel, deve-se cadastrar um usúario e linkar uma chave correspondete a este item alugado, com data de aluguel, modelo que o usuario alugou, quanto tempo o usuário pretende ficar com o item alugado, valor do aluguel / mês;
 - RF009: Estabelecer manutenções mensais para os item, com visão de sempre estarem em condições adequadas;
 - RF0010: Estabelecer multa para os usuários que atrazaram na devolução do item alugado;
