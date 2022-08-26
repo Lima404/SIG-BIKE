@@ -3,8 +3,8 @@
 ///                 Centro de Ensino Superior do Seridó                     ///
 ///               Departamento de Computação e Tecnologia                   ///
 ///                  Disciplina DCT1106 -- Programação                      ///
-///                  Projeto Sistema de Gestão Escolar                      ///
-///             Developed by @lima_g23 / @erick_bzrs -- since Mar, 2022     ///
+///     Projeto Sistema de de aluguel de patins elétricos e bicicletas      ///
+///         Developed by @lima_g23 / @erick_bzrs -- since Mar, 2022         ///
 ///////////////////////////////////////////////////////////////////////////////
 ///                                Semana 1                                 ///
 ///////////////////////////////////////////////////////////////////////////////
@@ -64,7 +64,6 @@ char tela_inicial(void){
     printf("///                                                                         ///\n");
     printf("///             Universidade Federal do Rio Grande do Norte                 ///\n");
     printf("///                 Centro de Ensino Superior do Seridó                     ///\n");
-    printf("///               Departamento de Computação e Tecnologia                   ///\n");
     printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
     printf("///            Projeto Locadora de bicicletas e patins elétricos            ///\n");
     printf("///              Developed by @lima_g99 @erick_bzrs - 2022.2                ///\n");
@@ -81,7 +80,7 @@ char tela_inicial(void){
     printf("///            6. Menu Sobre:                                               ///\n");
     printf("///            0. Sair                                                      ///\n");
     printf("///                                                                         ///\n");
-    printf("///            Escolha a opção desejada: ");
+    printf("///            Escolha por onde você quer navegar:                          ///\n");
     scanf("%c", &op);
     getchar();
     printf("///                                                                         ///\n");
