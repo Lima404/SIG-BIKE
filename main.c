@@ -20,6 +20,7 @@ void menu_estoque (void);
 void menu_aluguel (void);
 void menu_vendas (void);
 void menu_sobre (void);
+void menu_adm (void);
 
 
 /// Navegação principal
@@ -46,11 +47,14 @@ int main(void){
 
         case '6': menu_sobre();
             break;
+
+        case '7': menu_adm();
+            break;
         }
     }   while (opcao != "0");
-
         return 0
 }
+
 
 
 /// crud tela inicial
@@ -78,6 +82,7 @@ char tela_inicial(void){
     printf("///            4. Menu Aluguel:                                             ///\n");
     printf("///            5. Menu Vendas:                                              ///\n");
     printf("///            6. Menu Sobre:                                               ///\n");
+    printf("///            7. Menu Administração:                                       ///\n");
     printf("///            0. Sair                                                      ///\n");
     printf("///                                                                         ///\n");
     printf("///            Escolha por onde você quer navegar:                          ///\n");
