@@ -1,5 +1,4 @@
-<<<<<<< Updated upstream
-=======
+
 ///////////////////////////////////////////////////////////////////////////////
 ///             Universidade Federal do Rio Grande do Norte                 ///
 ///                 Centro de Ensino Superior do Seridó                     ///
@@ -12,7 +11,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 
->>>>>>> Stashed changes
+
 #include <stdio.h>
 
 /// Funções
@@ -23,10 +22,8 @@ void menu_estoque (void);
 void menu_aluguel (void);
 void menu_vendas (void);
 void menu_sobre (void);
-<<<<<<< Updated upstream
-=======
 void menu_adm (void);
->>>>>>> Stashed changes
+void menu_adm (void);
 
 
 /// Navegação principal
@@ -53,13 +50,15 @@ int main(void){
 
         case '6': menu_sobre();
             break;
-<<<<<<< Updated upstream
+
+
+        case '7': menu_adm();
+            break;
+
         }
     }   while (opcao != "0");
-
         return 0
 }
-=======
 
         case '7': menu_adm();
             break;
@@ -109,4 +108,4 @@ char tela_inicial(void){
     sleep(1);
     return op;
 }
->>>>>>> Stashed changes
+
