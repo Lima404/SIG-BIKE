@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-#include<stdio.h>
-    
-=======
 #include <stdio.h>
 ///////////////////////////////////////////////////////////////////////////////
 ///             Universidade Federal do Rio Grande do Norte                 ///
@@ -103,4 +99,3 @@ char tela_inicial(void){
     sleep(1);
     return op;
 }
->>>>>>> Stashed changes
