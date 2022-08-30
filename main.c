@@ -1,3 +1,5 @@
+#include<stdio.h>
+
 ///////////////////////////////////////////////////////////////////////////////
 ///             Universidade Federal do Rio Grande do Norte                 ///
 ///                 Centro de Ensino Superior do Seridó                     ///
@@ -9,8 +11,7 @@
 ///                                Semana 1                                 ///
 ///////////////////////////////////////////////////////////////////////////////
 
-
-#include <stdio.h>
+int main(){
 
 /// Funções
 char tela_inicial (void);
