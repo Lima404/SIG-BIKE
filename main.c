@@ -53,7 +53,7 @@ int main(void){
         }
     }   while (opcao != "0");
         return 0
-}
+;}
 
 
 
