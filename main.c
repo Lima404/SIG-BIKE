@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 #include<stdio.h>
-=======
 
 ///////////////////////////////////////////////////////////////////////////////
 ///             Universidade Federal do Rio Grande do Norte                 ///
@@ -12,18 +10,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 ///                                Semana 1                                 ///
 ///////////////////////////////////////////////////////////////////////////////
->>>>>>> 5274e01d70ac33cc79a9b4c31b46ad829e3c2be0
 
 int main(){
-
-<<<<<<< HEAD
-    printf("Ola mundo.");
-
-    return 0;
-}
-=======
-
-#include <stdio.h>
 
 /// Funções
 char tela_inicial (void);
@@ -33,7 +21,6 @@ void menu_estoque (void);
 void menu_aluguel (void);
 void menu_vendas (void);
 void menu_sobre (void);
-void menu_adm (void);
 void menu_adm (void);
 
 
@@ -61,15 +48,6 @@ int main(void){
 
         case '6': menu_sobre();
             break;
-
-
-        case '7': menu_adm();
-            break;
-
-        }
-    }   while (opcao != "0");
-        return 0
-}
 
         case '7': menu_adm();
             break;
@@ -119,5 +97,3 @@ char tela_inicial(void){
     sleep(1);
     return op;
 }
-
->>>>>>> 5274e01d70ac33cc79a9b4c31b46ad829e3c2be0
