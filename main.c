@@ -81,8 +81,8 @@ char tela_inicial(void){
     printf("///            3. Menu Estoque:                                             ///\n");
     printf("///            4. Menu Aluguel:                                             ///\n");
     printf("///            5. Menu Vendas:                                              ///\n");
-    printf("///            6. Menu Sobre:                                               ///\n");
-    printf("///            7. Menu Administração:                                       ///\n");
+    printf("///            6. Menu Administração:                                       ///\n");
+    printf("///            7. Menu Sobre:                                               ///\n");
     printf("///            0. Sair                                                      ///\n");
     printf("///                                                                         ///\n");
     printf("///            Escolha por onde você quer navegar:                          ///\n");
