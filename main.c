@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h> 
+
 ///////////////////////////////////////////////////////////////////////////////
 ///             Universidade Federal do Rio Grande do Norte                 ///
 ///                 Centro de Ensino Superior do Seridó                     ///
@@ -12,23 +14,51 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 
-//////
-////// funções
-//////
+
+////// funções:
 
 char tela_inicial (void);
-void menu_usuario(void);
-void menu_veiculos (void);
-void menu_estoque (void);
-void menu_aluguel (void);
-void menu_vendas (void);
-void menu_sobre (void);
-void menu_adm (void);
+char menu_usuario(void);
+char menu_veiculos (void);
+char menu_estoque (void);
+char menu_aluguel (void);
+//char menu_vendas (void);
+//char menu_sobre (void);
+//char menu_adm (void);
+
+/////////////////////////////////////////////////////////////////////////////
+
+/// funções para menu usuario:
 
 
+//char cadastro_usuario(void);
+//char lista_usuario(void);
+//char apagar_usuario(void);
+//char editar_usuario(void);
+
+////////////////////////////////////////////////////////////////////////////
+
+/// Funções para menu Veiculos:
+
+//char cadastro_veiculo(void);
+//char lista_veiculo(void);
+//char apagar_veiculo(void);
+//char editar_veiculo(void);
+//char manutencao(void);
+//char lista_manutencao(void);
+
+///////////////////////////////////////////////////////////////////////////
+
+/// Funções para menu estoque:
+
+//char cadastro_produto(void);
+//char lista_produto(void);
+//char editar_produto(void);
+//char apagar_produto(void);
+//char lista_falta(void);
 
 //////
-////// Programa principal
+////// Navegação principal:
 //////
 
 int main(void){
@@ -49,21 +79,21 @@ int main(void){
         case '4': menu_aluguel();
             break;
 
-        case '5': menu_vendas();
+        case '5': //menu_vendas();
             break;
 
-        case '6': menu_sobre();
+        case '6': //menu_sobre();
             break;
 
-        case '7': menu_adm();
+        case '7': //menu_adm();
             break;
         }
-    }   while (opcao != "0");
-        return 0
-;}
+    }   while (opcao != '0');
+    return 0;
+}
 
 
-/// crud tela inicial
+/// crud tela inicial:
 
 char tela_inicial(void){
     char op;
@@ -103,10 +133,33 @@ char tela_inicial(void){
     return op;
 }
 
+/// Navegação Módulo usuário:
 
-/// CRUD MENU USUÁRIO
+int main(void){
+    char opcao;
 
-void menu_usuario(void){
+    do {
+        opcao = menu_usuario();
+        switch (opcao){
+        case '1': //cadastro_usuario();
+            break;
+        
+        case '2': //lista_usuario();
+            break;
+        
+        case '3': //apagar_usuario();
+            break;
+
+        case '4': //editar_usuario();
+            break;
+        }
+    }   while (opcao != '0');
+    return 0;
+}
+
+/// CRUD MENU USUÁRIO:
+
+char menu_usuario(void){
     char op;
 
     system("clear||cls");
@@ -140,3 +193,172 @@ void menu_usuario(void){
     return op;
 }
 
+
+/// Navegação Módulo Veiculos
+
+int main(void){
+    char opcao;
+
+    do {
+        opcao = menu_veiculos();
+        switch (opcao){
+        case '1': //cadastro_veiculo();
+            break;
+        
+        case '2': //lista_veiculo();
+            break;
+        
+        case '3': //apagar_veiculo();
+            break;
+
+        case '4': //editar_veiculo();
+            break;
+
+        case '5': //manutencao();
+            break;
+
+        case '6': //lista_manutencao();
+            break;
+        }
+    }   while (opcao != '0');
+    return 0;
+}
+
+
+/// crud menu veiculos:
+
+char menu_veiculos(void){
+    char op;
+
+    system("clear||cls");
+    printf("\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///             Universidade Federal do Rio Grande do Norte                 ///\n");
+    printf("///                 Centro de Ensino Superior do Seridó                     ///\n");
+    printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
+    printf("///            Projeto Locadora de bicicletas e patins elétricos            ///\n");
+    printf("///              Developed by @lima_g99 @erick_bzrs - 2022.2                ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("/// = = = = = = = = = = = = = = Menu de Veiculo = = = = = = = = = = = = = = ///\n");
+    printf("///                                                                         ///\n");
+    printf("///            1. Cadastro de Veiculos:                                     ///\n");
+    printf("///            2. Lista de Veiculos:                                        ///\n");
+    printf("///            3. Apagar veiculo:                                           ///\n");
+    printf("///            4. Editar lista de Veiculo:                                  ///\n");
+    printf("///            5. Agendar Manutenção de Veiculo:                            ///\n");
+    printf("///            6. Lista de manutenção:                                      ///\n");
+    printf("///                                                                         ///\n");
+    printf("///            Escolha por onde você quer navegar:                          ///\n");
+    scanf("%c", &op);
+    getchar();
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("\n");
+    printf("\t\t\t<<< ... Aguarde ... >>>\n");
+    sleep(1);
+    return op;
+}
+
+/// Navegação Módulo Estoque:
+
+int main(void){
+    char opcao;
+
+    do {
+        opcao = menu_estoque();
+        switch (opcao){
+        case '1': //cadastro_produto();
+            break;
+        
+        case '2': //lista_produto();
+            break;
+        
+        case '3': //editar_produto();
+            break;
+
+        case '4': //apagar_produto();
+            break;
+
+        case '5': //lista_falta();
+            break;
+        }
+    }   while (opcao != '0');
+    return 0;
+}
+
+/// Crud menu estoque:
+
+char menu_estoque(void){
+    char op;
+
+    system("clear||cls");
+    printf("\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///             Universidade Federal do Rio Grande do Norte                 ///\n");
+    printf("///                 Centro de Ensino Superior do Seridó                     ///\n");
+    printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
+    printf("///            Projeto Locadora de bicicletas e patins elétricos            ///\n");
+    printf("///              Developed by @lima_g99 @erick_bzrs - 2022.2                ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("/// = = = = = = = = = = = = = = Menu de Estoque = = = = = = = = = = = = = = ///\n");
+    printf("///                                                                         ///\n");
+    printf("///            1. Cadastro de Produto:                                      ///\n");
+    printf("///            2. Lista de Produto:                                         ///\n");
+    printf("///            3. Editar Produto:                                           ///\n");
+    printf("///            4. Apagar Produto:                                           ///\n");
+    printf("///            5. Lista de Produtos em falta:                               ///\n");
+    printf("///                                                                         ///\n");
+    printf("///            Escolha por onde você quer navegar:                          ///\n");
+    scanf("%c", &op);
+    getchar();
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("\n");
+    printf("\t\t\t<<< ... Aguarde ... >>>\n");
+    sleep(1);
+    return op;
+}
+
+// Crud menu Aluguel:
+
+char menu_aluguel(void){
+    char op;
+
+    system("clear||cls");
+    printf("\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///             Universidade Federal do Rio Grande do Norte                 ///\n");
+    printf("///                 Centro de Ensino Superior do Seridó                     ///\n");
+    printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
+    printf("///            Projeto Locadora de bicicletas e patins elétricos            ///\n");
+    printf("///              Developed by @lima_g99 @erick_bzrs - 2022.2                ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("/// = = = = = = = = = = = = = = Menu de Estoque = = = = = = = = = = = = = = ///\n");
+    printf("///                                                                         ///\n");
+    printf("///            1. Cadastro novo Aluguel:                                    ///\n");
+    printf("///            2. Lista de Veiculos Disponiveis:                            ///\n");
+    printf("///            3. Lista de veiculos alugados:                               ///\n");
+    printf("///            4. Lista de alugueis atrazados:                              ///\n");
+    printf("///                                                                         ///\n");
+    printf("///            Escolha por onde você quer navegar:                          ///\n");
+    scanf("%c", &op);
+    getchar();
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("\n");
+    printf("\t\t\t<<< ... Aguarde ... >>>\n");
+    sleep(1);
+    return op;
+}
