@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 ///////////////////////////////////////////////////////////////////////////////
 ///             Universidade Federal do Rio Grande do Norte                 ///
 ///                 Centro de Ensino Superior do Seridó                     ///
@@ -36,7 +37,7 @@ int main(void){
     do {
         opcao = tela_inicial();
         switch (opcao){
-        case '1': menu_aluguel();
+        case '1': menu_usuario();
             break;
         
         case '2': menu_veiculos();
@@ -101,3 +102,41 @@ char tela_inicial(void){
     sleep(1);
     return op;
 }
+
+
+/// CRUD MENU USUÁRIO
+
+void menu_usuario(void){
+    char op;
+
+    system("clear||cls");
+    printf("\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///             Universidade Federal do Rio Grande do Norte                 ///\n");
+    printf("///                 Centro de Ensino Superior do Seridó                     ///\n");
+    printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
+    printf("///            Projeto Locadora de bicicletas e patins elétricos            ///\n");
+    printf("///              Developed by @lima_g99 @erick_bzrs - 2022.2                ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("/// = = = = = = = = = = = = = = Menu de Usuário = = = = = = = = = = = = = = ///\n");
+    printf("///                                                                         ///\n");
+    printf("///            1. Cadastro de Usuário:                                      ///\n");
+    printf("///            2. Lista de Usuários:                                        ///\n");
+    printf("///            3. Apagar Usuários:                                          ///\n");
+    printf("///            4. Editar Usuários:                                          ///\n");
+    printf("///                                                                         ///\n");
+    printf("///            Escolha por onde você quer navegar:                          ///\n");
+    scanf("%c", &op);
+    getchar();
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("\n");
+    printf("\t\t\t<<< ... Aguarde ... >>>\n");
+    sleep(1);
+    return op;
+}
+
