@@ -1,5 +1,4 @@
-#include<stdio.h>
-
+#include <stdio.h>
 ///////////////////////////////////////////////////////////////////////////////
 ///             Universidade Federal do Rio Grande do Norte                 ///
 ///                 Centro de Ensino Superior do Seridó                     ///
@@ -8,12 +7,14 @@
 ///     Projeto Sistema de de aluguel de patins elétricos e bicicletas      ///
 ///         Developed by @lima_g23 / @erick_bzrs -- since Mar, 2022         ///
 ///////////////////////////////////////////////////////////////////////////////
-///                                Semana 1                                 ///
+///                                 SEMANA 1                                ///
 ///////////////////////////////////////////////////////////////////////////////
 
-int main(){
 
-/// Funções
+//////
+////// funções
+//////
+
 char tela_inicial (void);
 void menu_usuario(void);
 void menu_veiculos (void);
@@ -24,7 +25,11 @@ void menu_sobre (void);
 void menu_adm (void);
 
 
-/// Navegação principal
+
+//////
+////// Programa principal
+//////
+
 int main(void){
     char opcao;
 
@@ -55,7 +60,6 @@ int main(void){
     }   while (opcao != "0");
         return 0
 ;}
-
 
 
 /// crud tela inicial
