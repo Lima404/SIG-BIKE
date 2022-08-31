@@ -109,11 +109,11 @@ int main(void){
             break;
 
         case '0':
-            printf('fim do programa\n');
+            //printf('fim do programa');
             break;
 
         default:
-            printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
+            //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
             break;
     }
     
@@ -136,7 +136,7 @@ int main(void){
             break;
             
         default:
-            printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
+            //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
             break;
     }
 
@@ -165,7 +165,7 @@ int main(void){
             break;
             
         default:
-            printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
+            //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
             break;
     }
 
@@ -191,7 +191,7 @@ int main(void){
             break;
             
         default:
-            printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
+            //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
             break;
     }
 
@@ -215,7 +215,7 @@ int main(void){
             break;
             
         default:
-            printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
+            //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
             break;
     }
 
@@ -238,7 +238,7 @@ int main(void){
             break;
             
         default:
-            printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
+            //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
             break;
     }
     
@@ -248,17 +248,14 @@ int main(void){
         case '1': //fluxo_de_caixa();
             break;
         
-        case '2': //manutencao();
-            break;
-        
-        case '3': //gastos_da_empresa();
+        case '2': //gastos_da_empresa();
             break;
     
         case '0': tela_inicial();
             break;
             
         default:
-            printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
+            //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
             break;
     }
     
@@ -266,14 +263,14 @@ int main(void){
     switch (sobre)
     {   
         case '1':
-            printf('vai dar certo!');
+            //printf('vai dar certo!');
         
     
         case '0': tela_inicial();
             break;
             
         default:
-            printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
+            //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
             break;
     }
       
@@ -345,8 +342,8 @@ char menu_usuario(void){
     printf("///            2. Lista de Usuários:                                        ///\n");
     printf("///            3. Apagar Usuários:                                          ///\n");
     printf("///            4. Editar Usuários:                                          ///\n");
+    printf("///            0. Voltar:                                                   ///\n");
     printf("///                                                                         ///\n");
-    printf("///            Escolha por onde você quer navegar:                          ///\n");
     scanf("%c", &op);
     getchar();
     printf("///                                                                         ///\n");
@@ -384,6 +381,7 @@ char menu_veiculos(void){
     printf("///            4. Editar lista de Veiculo:                                  ///\n");
     printf("///            5. Agendar Manutenção de Veiculo:                            ///\n");
     printf("///            6. Lista de manutenção:                                      ///\n");
+    printf("///            0. Voltar:                                                   ///\n");
     printf("///                                                                         ///\n");
     printf("///            Escolha por onde você quer navegar:                          ///\n");
     scanf("%c", &op);
@@ -423,6 +421,7 @@ char menu_estoque(void){
     printf("///            3. Editar Produto:                                           ///\n");
     printf("///            4. Apagar Produto:                                           ///\n");
     printf("///            5. Lista de Produtos em falta:                               ///\n");
+    printf("///            0. Voltar:                                                   ///\n");
     printf("///                                                                         ///\n");
     printf("///            Escolha por onde você quer navegar:                          ///\n");
     scanf("%c", &op);
@@ -454,12 +453,13 @@ char menu_aluguel(void){
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
-    printf("/// = = = = = = = = = = = = = = Menu de Estoque = = = = = = = = = = = = = = ///\n");
+    printf("/// = = = = = = = = = = = = = = Menu de Aluguel = = = = = = = = = = = = = = ///\n");
     printf("///                                                                         ///\n");
     printf("///            1. Cadastro novo Aluguel:                                    ///\n");
     printf("///            2. Lista de Veiculos Disponiveis:                            ///\n");
     printf("///            3. Lista de veiculos alugados:                               ///\n");
     printf("///            4. Lista de alugueis atrazados:                              ///\n");
+    printf("///            0. Voltar:                                                   ///\n");
     printf("///                                                                         ///\n");
     printf("///            Escolha por onde você quer navegar:                          ///\n");
     scanf("%c", &op);
@@ -489,14 +489,15 @@ char menu_vendas(void){
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
-    printf("/// = = = = = = = = = = = = = = Menu de Usuário = = = = = = = = = = = = = = ///\n");
+    printf("/// = = = = = = = = = = = = = = Menu de Vendas = = = = = = = = = = = = = = =///\n");
     printf("///                                                                         ///\n");
     printf("///            1. Cadastro de Vendas:                                       ///\n");
     printf("///            2. Lista de Vendas:                                          ///\n");
-    printf("///            3. Apagar Vendas:                                            ///\n");
+    printf("///            3. Deletar Vendas:                                           ///\n");
     printf("///            4. Editar Vendas:                                            ///\n");
+    printf("///            0. Voltar:                                                   ///\n");
     printf("///                                                                         ///\n");
-    printf("///            Escolha por onde você quer navegar:                                                         ///\n");
+    printf("///            Escolha por onde você quer navegar:                          ///\n");
     scanf("%c", &op);
     getchar();
     printf("///                                                                         ///\n");
@@ -524,17 +525,44 @@ char menu_adm(void){
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
-    printf("/// = = = = = = = = = = = = = = Menu de Usuário = = = = = = = = = = = = = = ///\n");
+    printf("/// = = = = = = = = = = = = = Menu  Administrativo = = = = = = = = = = = =  ///\n");
     printf("///                                                                         ///\n");
-    printf("///            1. Cadastro de Vendas:                                       ///\n");
-    printf("///            2. Lista de Vendas:                                          ///\n");
-    printf("///            3. Apagar Vendas:                                            ///\n");
-    printf("///            4. Editar Vendas:                                            ///\n");
+    printf("///            1. Gastos da Empresa:                                        ///\n");
+    printf("///            2. Fluxo de Caixa:                                           ///\n");
+    printf("///            0. Voltar:                                                   ///\n");
     printf("///                                                                         ///\n");
-    printf("///            Escolha por onde você quer navegar:                                                         ///\n");
+    printf("///            Escolha por onde você quer navegar:                          ///\n");
     scanf("%c", &op);
     getchar();
     printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("\n");
+    printf("\t\t\t<<< ... Aguarde ... >>>\n");
+    sleep(1);
+    return op;
+}
+
+char menu_sobre(void){
+    char op;
+
+    system("clear||cls");
+    setlocale(LC_ALL,"");
+    printf("\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///             Universidade Federal do Rio Grande do Norte                 ///\n");
+    printf("///                 Centro de Ensino Superior do Seridó                     ///\n");
+    printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
+    printf("///            Projeto Locadora de bicicletas e patins elétricos            ///\n");
+    printf("///                              SIG - BIKE                                 ///\n");
+    printf("///              Developed by @lima_g99 @erick_bzrs - 2022.2                ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("/// = = = = = = = = = = = = =  Menu Sobre Projeto  = = = = = = = = = = = = =///\n");
+    printf("///                                                                         ///\n");
+    printf("///            0. Voltar:                                                   ///\n");
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
