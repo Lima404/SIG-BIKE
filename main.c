@@ -121,7 +121,7 @@ char tela_inicial(void){
     printf("///            7. Menu Sobre:                                               ///\n");
     printf("///            0. Sair                                                      ///\n");
     printf("///                                                                         ///\n");
-    printf("///            Escolha por onde você quer navegar:                          ///\n");
+    printf("///                                                                         ///\n");
     scanf("%c", &op);
     getchar();
     printf("///                                                                         ///\n");
@@ -181,7 +181,7 @@ char menu_usuario(void){
     printf("///            3. Apagar Usuários:                                          ///\n");
     printf("///            4. Editar Usuários:                                          ///\n");
     printf("///                                                                         ///\n");
-    printf("///            Escolha por onde você quer navegar:                          ///\n");
+    printf("///                                                                         ///\n");
     scanf("%c", &op);
     getchar();
     printf("///                                                                         ///\n");
@@ -251,7 +251,7 @@ char menu_veiculos(void){
     printf("///            5. Agendar Manutenção de Veiculo:                            ///\n");
     printf("///            6. Lista de manutenção:                                      ///\n");
     printf("///                                                                         ///\n");
-    printf("///            Escolha por onde você quer navegar:                          ///\n");
+    printf("///                                                                         ///\n");
     scanf("%c", &op);
     getchar();
     printf("///                                                                         ///\n");
@@ -315,7 +315,7 @@ char menu_estoque(void){
     printf("///            4. Apagar Produto:                                           ///\n");
     printf("///            5. Lista de Produtos em falta:                               ///\n");
     printf("///                                                                         ///\n");
-    printf("///            Escolha por onde você quer navegar:                          ///\n");
+    printf("///                                                                         ///\n");
     scanf("%c", &op);
     getchar();
     printf("///                                                                         ///\n");
@@ -351,7 +351,7 @@ char menu_aluguel(void){
     printf("///            3. Lista de veiculos alugados:                               ///\n");
     printf("///            4. Lista de alugueis atrazados:                              ///\n");
     printf("///                                                                         ///\n");
-    printf("///            Escolha por onde você quer navegar:                          ///\n");
+    printf("///                                                                         ///\n");
     scanf("%c", &op);
     getchar();
     printf("///                                                                         ///\n");
