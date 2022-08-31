@@ -87,9 +87,16 @@ int main(void){
 
         case '7': //menu_adm();
             break;
+
+        case "0":
+            printf("fim do programa");
+            break;
+
+        default:
+            printf("Opção invalida, Por favor, insira uma opção válida.");
         }
-    }   while (opcao != '0');
-    return 0;
+    }   
+    
 }
 
 
@@ -152,9 +159,13 @@ int main(void){
 
         case '4': //editar_usuario();
             break;
+
+        case "0":
+            tela_inicial()
+            break;
         }
-    }   while (opcao != '0');
-    return 0;
+    }   
+    
 }
 
 /// CRUD MENU USUÁRIO:
@@ -219,9 +230,12 @@ int main(void){
 
         case '6': //lista_manutencao();
             break;
+
+        case "0":
+            tela_inicial()
+            break;
         }
-    }   while (opcao != '0');
-    return 0;
+    }   
 }
 
 
@@ -285,9 +299,12 @@ int main(void){
 
         case '5': //lista_falta();
             break;
+
+        case "0":
+            tela_inicial()
+            break;
         }
-    }   while (opcao != '0');
-    return 0;
+    }   
 }
 
 /// Crud menu estoque:
