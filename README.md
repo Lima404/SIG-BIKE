@@ -20,9 +20,13 @@
 <h1 align="left">INTEGRANTES</h1>
 
 
-<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/87135960.jpg" width=115 class="foto"><br><sub>Gabriel Lima</sub>(https://github.com/Lima404) 
+<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/87135960.jpg" width=115/>
 
-<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/102674727.jpg" width=115 align = center ><br><sub>Erick Bezerra </sub>(https://github.com/ErickBezerrar)
+[Lima404](https://github.com/Lima404)
+
+<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/102674727.jpg" width=115/>
+
+[ErickBezerrar](https://github.com/ErickBezerrar)
 
 <h1 align="left">APRESENTAÇÃO DO PROJETO -SIG BIKE</h1>
 
