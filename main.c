@@ -1,4 +1,7 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <locale.h>
 
 ///////////////////////////////////////////////////////////////////////////////
 ///             Universidade Federal do Rio Grande do Norte                 ///
@@ -8,30 +11,83 @@
 ///     Projeto Sistema de de aluguel de patins elétricos e bicicletas      ///
 ///         Developed by @lima_g23 / @erick_bzrs -- since Mar, 2022         ///
 ///////////////////////////////////////////////////////////////////////////////
-///                                Semana 1                                 ///
+///                                 SEMANA 1                                ///
 ///////////////////////////////////////////////////////////////////////////////
 
-int main(){
 
-/// Funções
+
+////// funções:
+
 char tela_inicial (void);
-void menu_usuario(void);
-void menu_veiculos (void);
-void menu_estoque (void);
-void menu_aluguel (void);
-void menu_vendas (void);
-void menu_sobre (void);
-void menu_adm (void);
+char menu_usuario(void);
+char menu_veiculos (void);
+char menu_estoque (void);
+char menu_aluguel (void);
+char menu_vendas (void);
+char menu_adm (void);
+char menu_sobre (void);
 
 
-/// Navegação principal
+
+/////////////////////////////////////////////////////////////////////////////
+
+/// funções para menu usuario:
+
+
+//char cadastro_usuario(void);
+//char lista_usuario(void);
+//char apagar_usuario(void);
+//char editar_usuario(void);
+
+////////////////////////////////////////////////////////////////////////////
+
+/// Funções para menu Veiculos:
+
+//char cadastro_veiculo(void);
+//char lista_veiculo(void);
+//char apagar_veiculo(void);
+//char editar_veiculo(void);
+//char manutencao(void);
+//char lista_manutencao(void);
+
+///////////////////////////////////////////////////////////////////////////
+
+/// Funções para menu estoque:
+
+//char cadastro_produto(void);
+//char lista_produto(void);
+//char editar_produto(void);
+//char apagar_produto(void);
+//char lista_falta(void);
+
+///////////////////////////////////////////////////////////////////////////
+
+// Funções para menu aluguel:
+
+//char cadastro_aluguel(void);
+//char lista_aluguel(void);
+//char lista_alugados(void);
+//char lista_atrazados(void);
+
+//////
+////// Navegação principal:
+//////
+
 int main(void){
-    char opcao;
+    setlocale(LC_ALL,"");
+    char inicio;
+    char usuario;
+    char veiculos;
+    char estoque;
+    char aluguel;
+    char vendas;
+    char adm;
+    char sobre;
 
-    do {
-        opcao = tela_inicial();
-        switch (opcao){
-        case '1': menu_aluguel();
+    inicio = tela_inicial();
+    switch (inicio)
+    {
+        case '1': menu_usuario();
             break;
         
         case '2': menu_veiculos();
@@ -39,43 +95,207 @@ int main(void){
         
         case '3': menu_estoque();
             break;
-
+        
         case '4': menu_aluguel();
             break;
 
         case '5': menu_vendas();
             break;
-
-        case '6': menu_sobre();
+        
+        case '6': menu_adm();
+            break;
+        
+        case '7': menu_sobre();
             break;
 
-        case '7': menu_adm();
+        case '0':
+            //printf('fim do programa');
             break;
-        }
-    }   while (opcao != "0");
-        return 0
-;}
+
+        default:
+            //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
+            break;
+    }
+    
+    usuario = menu_usuario();
+    switch (usuario)
+    {
+        case '1': //cadastro_usuario();
+            break;
+        
+        case '2': //lista_usuario();
+            break;
+        
+        case '3': //apagar_usuario();
+            break;
+
+        case '4': //editar_usuario();
+            break;
+    
+        case '0': tela_inicial();
+            break;
+            
+        default:
+            //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
+            break;
+    }
+
+    veiculos = menu_veiculos();
+    switch (veiculos)
+    {
+        case '1': //cadastro_veiculo();
+            break;
+        
+        case '2': //lista_veiculo();
+            break;
+        
+        case '3': //apagar_veiculo();
+            break;
+
+        case '4': //editar_veiculo();
+            break;
+
+        case '5': //manutencao();
+            break;
+
+        case '6': //lista_manutencao();
+            break;
+    
+        case '0': tela_inicial();
+            break;
+            
+        default:
+            //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
+            break;
+    }
+
+    estoque = menu_estoque();
+    switch (estoque)
+    {
+        case '1': //cadastro_produto();
+            break;
+        
+        case '2': //lista_produto();
+            break;
+        
+        case '3': //editar_produto();
+            break;
+
+        case '4': //apagar_produto();
+            break;
+
+        case '5': //lista_falta();
+            break;
+
+        case '0': tela_inicial();
+            break;
+            
+        default:
+            //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
+            break;
+    }
+
+    aluguel = menu_aluguel();
+    switch (aluguel)
+    {
+        case '1': //cadastro_aluguel();
+            break;
+        
+        case '2': //lista_aluguel();
+            break;
+
+        case '3': //lista_alugados();
+            break;
+
+        case '4': //lista_atrazados():
+            break;
 
 
+        case '0': tela_inicial();
+            break;
+            
+        default:
+            //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
+            break;
+    }
 
-/// crud tela inicial
+    vendas = menu_vendas();
+    switch (vendas)
+    {
+        case '1': //cadastro_vendas();
+            break;
+        
+        case '2': //listar_vendas();
+            break;
+        
+        case '3': //apagar_vendas();
+            break;
+
+        case '4': //editar_vendas();
+            break;
+    
+        case '0': tela_inicial();
+            break;
+            
+        default:
+            //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
+            break;
+    }
+    
+    adm = menu_adm();
+    switch (adm)
+    {
+        case '1': //fluxo_de_caixa();
+            break;
+        
+        case '2': //gastos_da_empresa();
+            break;
+    
+        case '0': tela_inicial();
+            break;
+            
+        default:
+            //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
+            break;
+    }
+    
+    sobre = menu_sobre();
+    switch (sobre)
+    {   
+        case '1':
+            //printf('vai dar certo!');
+        
+    
+        case '0': tela_inicial();
+            break;
+            
+        default:
+            //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
+            break;
+    }
+      
+}
+
+/// menu tela inicial:
 
 char tela_inicial(void){
     char op;
 
     system("clear||cls");
+    setlocale(LC_ALL,"");
     printf("\n");
-    printf("===============================================================================\n");
-    printf("===============================================================================\n");
-    printf("=============    Universidade Federal do Rio Grande do Norte    ===============\n");
-    printf("=============       Centro de Ensino Superior do Seridó         ===============\n");
-    printf("=============        Disciplina DCT1106 -- Programação          ===============\n");
-    printf("=============  Projeto Locadora de bicicletas e patins elétricos===============\n");
-    printf("=============    Developed by @lima_g99 @erick_bzrs - 2022.2    ===============\n");
-    printf("~~~                                                                         ~~~\n");
-    printf("===============================================================================\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///             Universidade Federal do Rio Grande do Norte                 ///\n");
+    printf("///                 Centro de Ensino Superior do Seridó                     ///\n");
+    printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
+    printf("///            Projeto Locadora de bicicletas e patins elétricos            ///\n");
+    printf("///              Developed by @lima_g99 @erick_bzrs - 2022.2                ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
     printf("/// = = = = Sistema de Aluguel de bicicletas e patinetes elétricos = = = =  ///\n");
-    printf("===============================================================================\n");
+    printf("///                                                                         ///\n");
     printf("///            1. Menu Usuário:                                             ///\n");
     printf("///            2. Menu Veicúlos:                                            ///\n");
     printf("///            3. Menu Estoque:                                             ///\n");
@@ -84,17 +304,15 @@ char tela_inicial(void){
     printf("///            6. Menu Administração:                                       ///\n");
     printf("///            7. Menu Sobre:                                               ///\n");
     printf("///            0. Sair                                                      ///\n");
-<<<<<<< Updated upstream
     printf("///                                                                         ///\n");
-=======
-    printf("///            Escolha por onde você quer navegar:                          ///\n");
+    printf("///                                                                         ///\n");
     scanf("%c", &op);
     getchar();
-    printf("===============================================================================\n");
-    printf("===============================================================================\n");
-    printf("===============================================================================\n");
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
-    printf("\t\t\twaiting...\n");
+    printf("\t\t\t<<< ... Aguarde ... >>>\n");
     sleep(1);
     return op;
 }
@@ -108,35 +326,34 @@ char menu_usuario(void){
     system("clear||cls");
     setlocale(LC_ALL,"");
     printf("\n");
-    printf("===============================================================================\n");
-    printf("===============================================================================\n");
-    printf("=============    Universidade Federal do Rio Grande do Norte    ===============\n");
-    printf("=============       Centro de Ensino Superior do Seridó         ===============\n");
-    printf("=============        Disciplina DCT1106 -- Programação          ===============\n");
-    printf("=============  Projeto Locadora de bicicletas e patins elétricos===============\n");
-    printf("=============    Developed by @lima_g99 @erick_bzrs - 2022.2    ===============\n");
-    printf("~~~                                                                         ~~~\n");
-    printf("===============================================================================\n");
-    printf("/// = = = = Sistema de Aluguel de bicicletas e patinetes elétricos = = = =  ///\n");
-    printf("===============================================================================\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///             Universidade Federal do Rio Grande do Norte                 ///\n");
+    printf("///                 Centro de Ensino Superior do Seridó                     ///\n");
+    printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
+    printf("///            Projeto Locadora de bicicletas e patins elétricos            ///\n");
+    printf("///              Developed by @lima_g99 @erick_bzrs - 2022.2                ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("/// = = = = = = = = = = = = = = Menu de Usuário = = = = = = = = = = = = = = ///\n");
+    printf("///                                                                         ///\n");
     printf("///            1. Cadastro de Usuário:                                      ///\n");
-    printf("///            2. Lista Usuário:                                            ///\n");
-    printf("///            3. Apagar Usuário:                                           ///\n");
-    printf("///            4. Editar Usuário:                                           ///\n");
-    printf("///            0. Sair                                                      ///\n");
-    printf("///            Escolha por onde você quer navegar:                          ///\n");
+    printf("///            2. Lista de Usuários:                                        ///\n");
+    printf("///            3. Apagar Usuários:                                          ///\n");
+    printf("///            4. Editar Usuários:                                          ///\n");
+    printf("///            0. Voltar:                                                   ///\n");
+    printf("///                                                                         ///\n");
     scanf("%c", &op);
     getchar();
-    printf("===============================================================================\n");
-    printf("===============================================================================\n");
-    printf("===============================================================================\n");
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
-    printf("\t\t\twaiting...\n");
+    printf("\t\t\t<<< ... Aguarde ... >>>\n");
     sleep(1);
     return op;
 }
-
-
 
 /// crud menu veiculos:
 
@@ -146,30 +363,34 @@ char menu_veiculos(void){
     system("clear||cls");
     setlocale(LC_ALL,"");
     printf("\n");
-    printf("===============================================================================\n");
-    printf("===============================================================================\n");
-    printf("=============    Universidade Federal do Rio Grande do Norte    ===============\n");
-    printf("=============       Centro de Ensino Superior do Seridó         ===============\n");
-    printf("=============        Disciplina DCT1106 -- Programação          ===============\n");
-    printf("=============  Projeto Locadora de bicicletas e patins elétricos===============\n");
-    printf("=============    Developed by @lima_g99 @erick_bzrs - 2022.2    ===============\n");
-    printf("~~~                                                                         ~~~\n");
-    printf("===============================================================================\n");
-    printf("/// = = = = Sistema de Aluguel de bicicletas e patinetes elétricos = = = =  ///\n");
-    printf("===============================================================================\n");
-    printf("///            1. Cadastro de Veículos :                                    ///\n");
-    printf("///            2. Lista Veicúlos:                                           ///\n");
-    printf("///            3. Apagar Veículo:                                           ///\n");
-    printf("///            4. Editar Veículo:                                           ///\n");
-    printf("///            0. Sair                                                      ///\n");
-    printf("///            Escolha por onde você quer navegar:                          ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///             Universidade Federal do Rio Grande do Norte                 ///\n");
+    printf("///                 Centro de Ensino Superior do Seridó                     ///\n");
+    printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
+    printf("///            Projeto Locadora de bicicletas e patins elétricos            ///\n");
+    printf("///              Developed by @lima_g99 @erick_bzrs - 2022.2                ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("/// = = = = = = = = = = = = = = Menu de Veiculo = = = = = = = = = = = = = = ///\n");
+    printf("///                                                                         ///\n");
+    printf("///            1. Cadastro de Veiculos:                                     ///\n");
+    printf("///            2. Lista de Veiculos:                                        ///\n");
+    printf("///            3. Apagar veiculo:                                           ///\n");
+    printf("///            4. Editar lista de Veiculo:                                  ///\n");
+    printf("///            5. Agendar Manutenção de Veiculo:                            ///\n");
+    printf("///            6. Lista de manutenção:                                      ///\n");
+    printf("///            0. Voltar:                                                   ///\n");
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
     scanf("%c", &op);
     getchar();
-    printf("===============================================================================\n");
-    printf("===============================================================================\n");
-    printf("===============================================================================\n");
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
-    printf("\t\t\twaiting...\n");
+    printf("\t\t\t<<< ... Aguarde ... >>>\n");
     sleep(1);
     return op;
 }
@@ -183,36 +404,36 @@ char menu_estoque(void){
     system("clear||cls");
     setlocale(LC_ALL,"");
     printf("\n");
-    printf("===============================================================================\n");
-    printf("===============================================================================\n");
-    printf("=============    Universidade Federal do Rio Grande do Norte    ===============\n");
-    printf("=============       Centro de Ensino Superior do Seridó         ===============\n");
-    printf("=============        Disciplina DCT1106 -- Programação          ===============\n");
-    printf("=============  Projeto Locadora de bicicletas e patins elétricos===============\n");
-    printf("=============    Developed by @lima_g99 @erick_bzrs - 2022.2    ===============\n");
-    printf("~~~                                                                         ~~~\n");
-    printf("===============================================================================\n");
-    printf("/// = = = = Sistema de Aluguel de bicicletas e patinetes elétricos = = = =  ///\n");
-    printf("===============================================================================\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///             Universidade Federal do Rio Grande do Norte                 ///\n");
+    printf("///                 Centro de Ensino Superior do Seridó                     ///\n");
+    printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
+    printf("///            Projeto Locadora de bicicletas e patins elétricos            ///\n");
+    printf("///              Developed by @lima_g99 @erick_bzrs - 2022.2                ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("/// = = = = = = = = = = = = = = Menu de Estoque = = = = = = = = = = = = = = ///\n");
+    printf("///                                                                         ///\n");
     printf("///            1. Cadastro de Produto:                                      ///\n");
     printf("///            2. Lista de Produto:                                         ///\n");
-    printf("///            3. Editar produto:                                           ///\n");
-    printf("///            4. Apagar produto:                                           ///\n");
-    printf("///            0. Sair                                                      ///\n");
->>>>>>> Stashed changes
-    printf("///            Escolha por onde você quer navegar:                          ///\n");
+    printf("///            3. Editar Produto:                                           ///\n");
+    printf("///            4. Apagar Produto:                                           ///\n");
+    printf("///            5. Lista de Produtos em falta:                               ///\n");
+    printf("///            0. Voltar:                                                   ///\n");
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
     scanf("%c", &op);
     getchar();
-    printf("===============================================================================\n");
-    printf("===============================================================================\n");
-    printf("===============================================================================\n");
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
-    printf("\t\t\twaiting...\n");
+    printf("\t\t\t<<< ... Aguarde ... >>>\n");
     sleep(1);
     return op;
 }
-<<<<<<< Updated upstream
-=======
 
 // Crud menu Aluguel:
 
@@ -222,65 +443,68 @@ char menu_aluguel(void){
     system("clear||cls");
     setlocale(LC_ALL,"");
     printf("\n");
-    printf("===============================================================================\n");
-    printf("===============================================================================\n");
-    printf("=============    Universidade Federal do Rio Grande do Norte    ===============\n");
-    printf("=============       Centro de Ensino Superior do Seridó         ===============\n");
-    printf("=============        Disciplina DCT1106 -- Programação          ===============\n");
-    printf("=============  Projeto Locadora de bicicletas e patins elétricos===============\n");
-    printf("=============    Developed by @lima_g99 @erick_bzrs - 2022.2    ===============\n");
-    printf("~~~                                                                         ~~~\n");
-    printf("===============================================================================\n");
-    printf("/// = = = = Sistema de Aluguel de bicicletas e patinetes elétricos = = = =  ///\n");
-    printf("===============================================================================\n");
-    printf("///            1. Cadastrar Aluguel:                                        ///\n");
-    printf("///            2. Lista de aluguéis:                                        ///\n");
-    printf("///            3. Editar Aluguel:                                           ///\n");
-    printf("///            4. Apagar Aluguel:                                           ///\n");
-    printf("///            0. Sair                                                      ///\n");
-    printf("///            Escolha por onde você quer navegar:                          ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///             Universidade Federal do Rio Grande do Norte                 ///\n");
+    printf("///                 Centro de Ensino Superior do Seridó                     ///\n");
+    printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
+    printf("///            Projeto Locadora de bicicletas e patins elétricos            ///\n");
+    printf("///              Developed by @lima_g99 @erick_bzrs - 2022.2                ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("/// = = = = = = = = = = = = = = Menu de Aluguel = = = = = = = = = = = = = = ///\n");
+    printf("///                                                                         ///\n");
+    printf("///            1. Cadastro novo Aluguel:                                    ///\n");
+    printf("///            2. Lista de Veiculos Disponiveis:                            ///\n");
+    printf("///            3. Lista de veiculos alugados:                               ///\n");
+    printf("///            4. Lista de alugueis atrazados:                              ///\n");
+    printf("///            0. Voltar:                                                   ///\n");
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
     scanf("%c", &op);
     getchar();
-    printf("===============================================================================\n");
-    printf("===============================================================================\n");
-    printf("===============================================================================\n");
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
-    printf("\t\t\twaiting...\n");
+    printf("\t\t\t<<< ... Aguarde ... >>>\n");
     sleep(1);
     return op;
 }
 
-
-cchar menu_vendas(void){
+char menu_vendas(void){
     char op;
 
     system("clear||cls");
     setlocale(LC_ALL,"");
     printf("\n");
-    printf("===============================================================================\n");
-    printf("===============================================================================\n");
-    printf("=============    Universidade Federal do Rio Grande do Norte    ===============\n");
-    printf("=============       Centro de Ensino Superior do Seridó         ===============\n");
-    printf("=============        Disciplina DCT1106 -- Programação          ===============\n");
-    printf("=============  Projeto Locadora de bicicletas e patins elétricos===============\n");
-    printf("=============    Developed by @lima_g99 @erick_bzrs - 2022.2    ===============\n");
-    printf("~~~                                                                         ~~~\n");
-    printf("===============================================================================\n");
-    printf("/// = = = = Sistema de Aluguel de bicicletas e patinetes elétricos = = = =  ///\n");
-    printf("===============================================================================\n");
-    printf("///            1. Cadastrar Venda:                                          ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///             Universidade Federal do Rio Grande do Norte                 ///\n");
+    printf("///                 Centro de Ensino Superior do Seridó                     ///\n");
+    printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
+    printf("///            Projeto Locadora de bicicletas e patins elétricos            ///\n");
+    printf("///              Developed by @lima_g99 @erick_bzrs - 2022.2                ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("/// = = = = = = = = = = = = = = Menu de Vendas = = = = = = = = = = = = = = =///\n");
+    printf("///                                                                         ///\n");
+    printf("///            1. Cadastro de Vendas:                                       ///\n");
     printf("///            2. Lista de Vendas:                                          ///\n");
-    printf("///            3. Editar Venda:                                             ///\n");
-    printf("///            4. Apagar Venda:                                             ///\n");
-    printf("///            0. Sair                                                      ///\n");
+    printf("///            3. Deletar Vendas:                                           ///\n");
+    printf("///            4. Editar Vendas:                                            ///\n");
+    printf("///            0. Voltar:                                                   ///\n");
+    printf("///                                                                         ///\n");
     printf("///            Escolha por onde você quer navegar:                          ///\n");
     scanf("%c", &op);
     getchar();
-    printf("===============================================================================\n");
-    printf("===============================================================================\n");
-    printf("===============================================================================\n");
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
-    printf("\t\t\twaiting...\n");
+    printf("\t\t\t<<< ... Aguarde ... >>>\n");
     sleep(1);
     return op;
 }
@@ -291,29 +515,58 @@ char menu_adm(void){
     system("clear||cls");
     setlocale(LC_ALL,"");
     printf("\n");
-    printf("===============================================================================\n");
-    printf("===============================================================================\n");
-    printf("=============    Universidade Federal do Rio Grande do Norte    ===============\n");
-    printf("=============       Centro de Ensino Superior do Seridó         ===============\n");
-    printf("=============        Disciplina DCT1106 -- Programação          ===============\n");
-    printf("=============  Projeto Locadora de bicicletas e patins elétricos===============\n");
-    printf("=============    Developed by @lima_g99 @erick_bzrs - 2022.2    ===============\n");
-    printf("~~~                                                                         ~~~\n");
-    printf("===============================================================================\n");
-    printf("/// = = = = Sistema de Aluguel de bicicletas e patinetes elétricos = = = =  ///\n");
-    printf("===============================================================================\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///             Universidade Federal do Rio Grande do Norte                 ///\n");
+    printf("///                 Centro de Ensino Superior do Seridó                     ///\n");
+    printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
+    printf("///            Projeto Locadora de bicicletas e patins elétricos            ///\n");
+    printf("///              Developed by @lima_g99 @erick_bzrs - 2022.2                ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("/// = = = = = = = = = = = = = Menu  Administrativo = = = = = = = = = = = =  ///\n");
+    printf("///                                                                         ///\n");
     printf("///            1. Gastos da Empresa:                                        ///\n");
     printf("///            2. Fluxo de Caixa:                                           ///\n");
-    printf("///            0. Sair                                                      ///\n");
+    printf("///            0. Voltar:                                                   ///\n");
+    printf("///                                                                         ///\n");
     printf("///            Escolha por onde você quer navegar:                          ///\n");
     scanf("%c", &op);
     getchar();
-    printf("===============================================================================\n");
-    printf("===============================================================================\n");
-    printf("===============================================================================\n");
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
-    printf("\t\t\twaiting...\n");
+    printf("\t\t\t<<< ... Aguarde ... >>>\n");
     sleep(1);
     return op;
 }
->>>>>>> Stashed changes
+
+char menu_sobre(void){
+    char op;
+
+    system("clear||cls");
+    setlocale(LC_ALL,"");
+    printf("\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("///             Universidade Federal do Rio Grande do Norte                 ///\n");
+    printf("///                 Centro de Ensino Superior do Seridó                     ///\n");
+    printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
+    printf("///            Projeto Locadora de bicicletas e patins elétricos            ///\n");
+    printf("///                              SIG - BIKE                                 ///\n");
+    printf("///              Developed by @lima_g99 @erick_bzrs - 2022.2                ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("///                                                                         ///\n");
+    printf("/// = = = = = = = = = = = = =  Menu Sobre Projeto  = = = = = = = = = = = = =///\n");
+    printf("///                                                                         ///\n");
+    printf("///            0. Voltar:                                                   ///\n");
+    printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
+    printf("\n");
+    printf("\t\t\t<<< ... Aguarde ... >>>\n");
+    sleep(1);
+    return op;
+}
