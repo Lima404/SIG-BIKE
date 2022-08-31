@@ -133,29 +133,6 @@ char tela_inicial(void){
     return op;
 }
 
-/// Navegação Módulo usuário:
-
-int main(void){
-    char opcao;
-
-    do {
-        opcao = menu_usuario();
-        switch (opcao){
-        case '1': //cadastro_usuario();
-            break;
-        
-        case '2': //lista_usuario();
-            break;
-        
-        case '3': //apagar_usuario();
-            break;
-
-        case '4': //editar_usuario();
-            break;
-        }
-    }   while (opcao != '0');
-    return 0;
-}
 
 /// CRUD MENU USUÁRIO:
 
@@ -192,38 +169,6 @@ char menu_usuario(void){
     sleep(1);
     return op;
 }
-
-
-/// Navegação Módulo Veiculos
-
-int main(void){
-    char opcao;
-
-    do {
-        opcao = menu_veiculos();
-        switch (opcao){
-        case '1': //cadastro_veiculo();
-            break;
-        
-        case '2': //lista_veiculo();
-            break;
-        
-        case '3': //apagar_veiculo();
-            break;
-
-        case '4': //editar_veiculo();
-            break;
-
-        case '5': //manutencao();
-            break;
-
-        case '6': //lista_manutencao();
-            break;
-        }
-    }   while (opcao != '0');
-    return 0;
-}
-
 
 /// crud menu veiculos:
 
@@ -263,32 +208,6 @@ char menu_veiculos(void){
     return op;
 }
 
-/// Navegação Módulo Estoque:
-
-int main(void){
-    char opcao;
-
-    do {
-        opcao = menu_estoque();
-        switch (opcao){
-        case '1': //cadastro_produto();
-            break;
-        
-        case '2': //lista_produto();
-            break;
-        
-        case '3': //editar_produto();
-            break;
-
-        case '4': //apagar_produto();
-            break;
-
-        case '5': //lista_falta();
-            break;
-        }
-    }   while (opcao != '0');
-    return 0;
-}
 
 /// Crud menu estoque:
 
