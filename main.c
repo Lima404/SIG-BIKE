@@ -305,7 +305,7 @@ char tela_inicial(void){
     printf("///            7. Menu Sobre:                                               ///\n");
     printf("///            0. Sair                                                      ///\n");
     printf("///                                                                         ///\n");
-    printf("///            Escolha por onde você quer navegar:                          ///\n");
+    printf("///                                                                         ///\n");
     scanf("%c", &op);
     getchar();
     printf("///                                                                         ///\n");
@@ -383,7 +383,7 @@ char menu_veiculos(void){
     printf("///            6. Lista de manutenção:                                      ///\n");
     printf("///            0. Voltar:                                                   ///\n");
     printf("///                                                                         ///\n");
-    printf("///            Escolha por onde você quer navegar:                          ///\n");
+    printf("///                                                                         ///\n");
     scanf("%c", &op);
     getchar();
     printf("///                                                                         ///\n");
@@ -423,7 +423,7 @@ char menu_estoque(void){
     printf("///            5. Lista de Produtos em falta:                               ///\n");
     printf("///            0. Voltar:                                                   ///\n");
     printf("///                                                                         ///\n");
-    printf("///            Escolha por onde você quer navegar:                          ///\n");
+    printf("///                                                                         ///\n");
     scanf("%c", &op);
     getchar();
     printf("///                                                                         ///\n");
@@ -461,7 +461,7 @@ char menu_aluguel(void){
     printf("///            4. Lista de alugueis atrazados:                              ///\n");
     printf("///            0. Voltar:                                                   ///\n");
     printf("///                                                                         ///\n");
-    printf("///            Escolha por onde você quer navegar:                          ///\n");
+    printf("///                                                                         ///\n");
     scanf("%c", &op);
     getchar();
     printf("///                                                                         ///\n");
