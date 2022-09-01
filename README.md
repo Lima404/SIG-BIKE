@@ -20,10 +20,14 @@
 <h1 align="left">INTEGRANTES</h1>
 
 
-<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/87135960.jpg" width=115 class="foto"><br><sub>Gabriel Lima</sub>(https://github.com/Lima404) 
+<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/87135960.jpg" width=115/>
 
-<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/102674727.jpg" width=115 align = center ><br><sub>Erick Bezerra </sub>(https://github.com/ErickBezerrar)
+[Lima404](https://github.com/Lima404)
+
+<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/102674727.jpg" width=115/>
+
+[ErickBezerrar](https://github.com/ErickBezerrar)
 
 <h1 align="left">APRESENTAÇÃO DO PROJETO -SIG BIKE</h1>
 
-https://lucid.app/lucidspark/0963cc5e-d476-4cef-8ff3-eca54b3245a6/edit?invitationId=inv_ca4db195-dcd7-48dd-ba61-f0fa85212af7#
+[<img src = https://github.com/Lima404/SIG-BIKE/blob/main/imagens/PROJETO%20DO%20SISTEMA.png width=200>] (https://lucid.app/lucidspark/0963cc5e-d476-4cef-8ff3-eca54b3245a6/edit?invitationId=inv_ca4db195-dcd7-48dd-ba61-f0fa85212af7#)
