@@ -30,4 +30,4 @@
 
 <h1 align="left">APRESENTAÇÃO DO PROJETO -SIG BIKE</h1>
 
-[<img src = "https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white">] (https://lucid.app/lucidspark/0963cc5e-d476-4cef-8ff3-eca54b3245a6/edit?invitationId=inv_ca4db195-dcd7-48dd-ba61-f0fa85212af7#)
+[<img src = "https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white">](https://lucid.app/lucidspark/0963cc5e-d476-4cef-8ff3-eca54b3245a6/edit?invitationId=inv_ca4db195-dcd7-48dd-ba61-f0fa85212af7#)
