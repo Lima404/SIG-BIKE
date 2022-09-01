@@ -295,6 +295,7 @@ char tela_inicial(void){
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
     printf("/// = = = = Sistema de Aluguel de bicicletas e patinetes elétricos = = = =  ///\n");
+    printf("/// = = = = = = = = = = = = = = Menu Principal  = = = = = = = = = = = = = = ///\n");
     printf("///                                                                         ///\n");
     printf("///            1. Menu Usuário:                                             ///\n");
     printf("///            2. Menu Veicúlos:                                            ///\n");
@@ -569,4 +570,4 @@ char menu_sobre(void){
     printf("\t\t\t<<< ... Aguarde ... >>>\n");
     sleep(1);
     return op;
-}
+} 
