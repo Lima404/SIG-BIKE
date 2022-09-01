@@ -17,18 +17,18 @@
 
 • O sistema permitirá o monitoramento diário das bicicletas e dos patins elétricos
 
+
 <h1 align="left">INTEGRANTES</h1>
 
 
 <img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/87135960.jpg" width=115/>
 
-[Lima404]
-[<img src = "https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white>"](https://github.com/Lima404)
+[<img src = "https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">](https://github.com/Lima404)
 
 <img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/102674727.jpg" width=115/>
 
-[ErickBezerrar]
 [<img src ="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">](https://github.com/ErickBezerrar)
+
 
 <h1 align="left">APRESENTAÇÃO DO PROJETO -SIG BIKE</h1>
 
