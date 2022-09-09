@@ -8,7 +8,7 @@
 <h1 align="left">LIGUAGUEM UTILIZADA</h1>
 
 <p align="center">
-<img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white
+<img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white"
 </p>
 
 <h1 align="left">DESCRIÇÃO DO PROJETO</h1>
