@@ -9,7 +9,7 @@
 ///               Departamento de Computação e Tecnologia                   ///
 ///                  Disciplina DCT1106 -- Programação                      ///
 ///     Projeto Sistema de de aluguel de patins elétricos e bicicletas      ///
-///         Developed by @lima_g23 / @erick_bzrs -- since Mar, 2022         ///
+///         Developed by @lima_g23 / @erick_bzrs -- since Agoust, 2022      ///
 ///////////////////////////////////////////////////////////////////////////////
 ///                                 SEMANA 1                                ///
 ///////////////////////////////////////////////////////////////////////////////
