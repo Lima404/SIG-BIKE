@@ -8,23 +8,23 @@
 <p align="center">
 <img align="center" src="imagens/SIG-BIKE.gif"/>
 </p>
-<h1 align="left">LIGUAGUEM UTILIZADA</h1>
+<h1 align="center">LIGUAGUEM UTILIZADA</h1>
 
 <p align="left">
 <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white"
 </p>
 
-<h1 align="left">DESCRIÇÃO DO PROJETO</h1>
+<h1 align="center">DESCRIÇÃO DO PROJETO</h1>
 
 • O projeto em desenvolvimento para a disciplina de Programação do curso Sistemas de Informação. O SIG BIKE é um sistema de gerenciamento de bicicletas e patins elétricos que serve para atenção especializada da empresa afim de gerir seus gastos e também ter controle sobre os veículos da sua empresa.
 
 • O sistema permitirá o monitoramento diário das bicicletas e dos patins elétricos
 
-<span> SOBRE NOSSO SISTEMA: </span>
-<div class="box">
+<h1 align="center">DESCRIÇÃO DO PROJETO</h1>
+<div align="center" class="box">
     <img src="imagens/postsgif.gif"/>
     <img src="imagens/postmalone.gif"/>
-    <span> UTILIZAÇÕES DO NOSSO SITEMA </span>
+
 </div>
 
 <h1 align="left">INTEGRANTES</h1>
