@@ -8,7 +8,7 @@
 <h1 align="left">LIGUAGUEM UTILIZADA</h1>
 
 <p align="center">
-<img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/c.png" width=150/>
+https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white
 </p>
 
 <h1 align="left">DESCRIÇÃO DO PROJETO</h1>
