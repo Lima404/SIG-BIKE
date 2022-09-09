@@ -84,7 +84,7 @@ int main(void){
     char adm;
     char sobre;
 
-    inicio = menu_principal();
+    inicio = tela_inicial();
     switch (inicio)
     {
         case '1': menu_usuario();
@@ -109,7 +109,7 @@ int main(void){
             break;
 
         case '0':
-            printf('fim do programa');
+            //printf('fim do programa');
             break;
 
         default:
@@ -132,7 +132,7 @@ int main(void){
         case '4': //editar_usuario();
             break;
     
-        case '0': tela_principal();
+        case '0': tela_inicial();
             break;
             
         default:
@@ -161,7 +161,7 @@ int main(void){
         case '6': //lista_manutencao();
             break;
     
-        case '0': tela_principal();
+        case '0': tela_inicial();
             break;
             
         default:
@@ -187,7 +187,7 @@ int main(void){
         case '5': //lista_falta();
             break;
 
-        case '0': tela_principal();
+        case '0': tela_inicial();
             break;
             
         default:
@@ -211,7 +211,7 @@ int main(void){
             break;
 
 
-        case '0': tela_principal();
+        case '0': tela_inicial();
             break;
             
         default:
@@ -234,7 +234,7 @@ int main(void){
         case '4': //editar_vendas();
             break;
     
-        case '0': tela_principal();
+        case '0': tela_inicial();
             break;
             
         default:
@@ -251,7 +251,7 @@ int main(void){
         case '2': //gastos_da_empresa();
             break;
     
-        case '0': tela_principal();
+        case '0': tela_inicial();
             break;
             
         default:
@@ -266,7 +266,7 @@ int main(void){
             //printf('vai dar certo!');
         
     
-        case '0': tela_principal();
+        case '0': tela_inicial();
             break;
             
         default:
@@ -278,7 +278,7 @@ int main(void){
 
 /// menu tela inicial:
 
-char tela_principal(void){
+char tela_inicial(void){
     char op;
 
     system("clear||cls");
