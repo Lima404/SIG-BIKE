@@ -28,6 +28,7 @@
 <img src="https://github.com/Lima404/Locadora-de-bicicletas-e-patins-eletricos/blob/main/imagens/102674727.jpg" width=115/>
 
 [<img src ="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">](https://github.com/ErickBezerrar)
+<img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 
 
 <h1 align="left">APRESENTAÇÃO DO PROJETO -SIG BIKE</h1>
