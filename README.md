@@ -8,7 +8,7 @@
 <p align="center">
 <img align="center" src="imagens/SIG-BIKE.gif"/>
 </p>
-<h1 align="center">LIGUAGUEM UTILIZADA</h1>
+<h1 align="center">LINGUAGUEM UTILIZADA</h1>
 
 <p align="center">
 <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white"
