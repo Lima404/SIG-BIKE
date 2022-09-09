@@ -2,7 +2,13 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <locale.h>
+#include "moduloadministracao.h"
 #include "modulocliente.h"
+#include "moduloestoque.h"
+#include "modulorelatorio.h"
+#include "modulosobre.h"
+#include "moduloveiculo.h"
+#include "modulovendas.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 ///             Universidade Federal do Rio Grande do Norte                 ///
