@@ -4,7 +4,7 @@
 <p align="center">
 <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 </p>
-<img src="imagens/SIG-BIKE.gif"/>
+<img align="center" src="imagens/SIG-BIKE.gif"/>
 <h1 align="left">LIGUAGUEM UTILIZADA</h1>
 
 <p align="left">
