@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <locale.h>
+#include "modulocliente.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 ///             Universidade Federal do Rio Grande do Norte                 ///
