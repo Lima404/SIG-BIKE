@@ -54,6 +54,7 @@ char menu_sobre (void);
 //char lista_veiculo(void);
 //char apagar_veiculo(void);
 //char editar_veiculo(void);
+
 //char manutencao(void);
 //char lista_manutencao(void);
 
@@ -65,6 +66,7 @@ char menu_sobre (void);
 //char lista_produto(void);
 //char editar_produto(void);
 //char apagar_produto(void);
+
 //char lista_falta(void);
 
 ///////////////////////////////////////////////////////////////////////////
@@ -73,8 +75,8 @@ char menu_sobre (void);
 
 //char cadastro_aluguel(void);
 //char lista_aluguel(void);
-//char lista_alugados(void);
-//char lista_atrazados(void);
+//char editar_aluguel(void);
+//char excluir_aluguel(void);
 
 //////
 ////// Navegação principal:
@@ -211,10 +213,10 @@ int main(void){
         case '2': //lista_aluguel();
             break;
 
-        case '3': //lista_alugados();
+        case '3': //editar_aluguel();
             break;
 
-        case '4': //lista_atrazados():
+        case '4': //excluir_aluguel():
             break;
 
 
