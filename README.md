@@ -20,7 +20,7 @@
 
 • O sistema permitirá o monitoramento diário das bicicletas e dos patins elétricos
 
-<h1 align="center">DESCRIÇÃO DO PROJETO</h1>
+<h1 align="center"><b>SOBRE O NOSSO PROJETO<b></h1>
 <div align="center" class="box">
     <img src="imagens/postsgif.gif"/>
     <img src="imagens/vetor.gif"/>
