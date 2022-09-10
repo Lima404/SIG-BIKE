@@ -1,12 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <locale.h>
-
-
-
-/// funções para menu usuario
-//char cadastro_usuario(void);
-//char lista_usuario(void);
-//char apagar_usuario(void);
-//char editar_usuario(void);
+char cadastro_usuario(void);
+char lista_usuario(void);
+char apagar_usuario(void);
+char editar_usuario(void);
