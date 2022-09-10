@@ -40,3 +40,9 @@ char tela_inicial(void){
     return op;
 
 }
+
+Universidade Federal do Rio Grande do Norte                 
+Centro de Ensino Superior do Seridó                     
+Disciplina DCT1106 -- Programação                      
+Projeto Locadora de bicicletas e patins elétricos            
+Developed by @lima_g99 @erick_bzrs - 2022.2 
