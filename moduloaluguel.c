@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <locale.h>
 
-char menu_sobre(void){
+char menu_aluguel(void){
     char op;
 
     system("clear||cls");
@@ -15,18 +15,26 @@ char menu_sobre(void){
     printf("///                 Centro de Ensino Superior do Seridó                     ///\n");
     printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
     printf("///            Projeto Locadora de bicicletas e patins elétricos            ///\n");
-    printf("///                              SIG - BIKE                                 ///\n");
     printf("///              Developed by @lima_g99 @erick_bzrs - 2022.2                ///\n");
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
-    printf("/// = = = = = = = = = = = = =  Menu Sobre Projeto  = = = = = = = = = = = = =///\n");
+    printf("/// = = = = = = = = = = = = = = Menu de Aluguel = = = = = = = = = = = = = = ///\n");
     printf("///                                                                         ///\n");
+    printf("///            1. Cadastro novo Aluguel:                                    ///\n");
+    printf("///            2. Lista de Veiculos Disponiveis:                            ///\n");
+    printf("///            3. Lista de veiculos alugados:                               ///\n");
+    printf("///            4. Lista de alugueis atrazados:                              ///\n");
     printf("///            0. Voltar:                                                   ///\n");
+    printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
+    scanf("%c", &op);
+    getchar();
+    printf("///                                                                         ///\n");
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
     printf("\t\t\t<<< ... Aguarde ... >>>\n");
     sleep(1);
     return op;
-} 
+}
