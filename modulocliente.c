@@ -30,6 +30,7 @@ char menu_usuario(void){
     printf("///            2. Lista de Usuários:                                        ///\n");
     printf("///            3. Apagar Usuários:                                          ///\n");
     printf("///            4. Editar Usuários:                                          ///\n");
+    printf("///            5. Procurar Usuário:                                         ///\n");
     printf("///            0. Voltar:                                                   ///\n");
     printf("///                                                                         ///\n");
     scanf("%c", &op);

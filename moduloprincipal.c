@@ -392,8 +392,9 @@ char menu_veiculos(void){
     printf("///            2. Lista de Veiculos:                                        ///\n");
     printf("///            3. Apagar veiculo:                                           ///\n");
     printf("///            4. Editar lista de Veiculo:                                  ///\n");
-    printf("///            5. Agendar Manutenção de Veiculo:                            ///\n");
-    printf("///            6. Lista de manutenção:                                      ///\n");
+    printf("///            5. Lista de manutenção:                                      ///\n");
+    printf("///            6. Agendar Manutenção de Veiculo:                            ///\n");
+    printf("///            7. Lista de agendamentos:                                    ///\n");
     printf("///            0. Voltar:                                                   ///\n");
     printf("///                                                                         ///\n");
     printf("///                                                                         ///\n");
