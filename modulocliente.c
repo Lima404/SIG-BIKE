@@ -8,7 +8,7 @@
 
 void lista_usuario(void);
 void apagar_usuario(void);
-void editar_usuario(void);
+char editar_usuario(void);
 void cadastro_usuario(void);
 char menu_usuario(void); 
 
@@ -131,6 +131,9 @@ void lista_usuario(void){
 
 void apagar_usuario(void){
 
+    char nome [20];
+    char CPF [11];
+
     system("clear||cls");
     setlocale(LC_ALL,"");
     printf("\n");
@@ -162,4 +165,4 @@ void apagar_usuario(void){
     getchar();
 }
 
-void editar_usuario(void);
+void editar_usuario(void)
