@@ -24,7 +24,7 @@ int  main (void)
         case '2':
             menu_veiculo();
             break; 
-        case  '3':
+        case '3':
             menu_estoque();
             break;
         case '4':
@@ -39,7 +39,7 @@ int  main (void)
         case '7';
             menu_sobre();
             break;
-        defaut :
+        default:
             printf ('Opcao invalida \n');
             break;
     }
