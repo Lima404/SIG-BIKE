@@ -11,12 +11,6 @@
 
 
 char tela_inicial (void);
-char menu_veiculos (void);
-char menu_estoque (void);
-char menu_aluguel (void);
-char menu_vendas (void);
-char menu_adm (void);
-char menu_sobre (void);
 
 int main(void){
 
