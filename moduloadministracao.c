@@ -23,7 +23,7 @@ char menu_adm(void){
     printf("=====================================================\n");
     printf("=====================================================\n");
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("=====================Menu Estoque====================\n");
+    printf("==================Menu Administração=================\n");
     printf("===                                               ===\n");
     printf("===              1.Cadastro Venda                 ===\n");
     printf("===              2.Lista de Venda                 ===\n");
