@@ -161,3 +161,5 @@ void apagar_usuario(void){
     printf(" Press ENTER to exit...");
     getchar();
 }
+
+void editar_usuario(void);
