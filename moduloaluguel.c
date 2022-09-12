@@ -1,14 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <locale.h>
 #include "moduloaluguel.h"
 
 char menu_aluguel(void){
     char op;
 
     system("clear||cls");
-    setlocale(LC_ALL,"");
     printf("\n");
     printf("=====================================================\n");
     printf("=====================================================\n");

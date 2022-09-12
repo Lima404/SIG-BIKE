@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <locale.h>
 #include "modulocliente.h"
 
 
@@ -12,7 +11,7 @@ char editar_usuario(void);
 void cadastro_usuario(void);
 char menu_usuario(void); 
 
-int  main (void)
+int main (void)
 {
     char esc;
     do {
@@ -45,7 +44,6 @@ char menu_usuario(void){
     char op;
 
     system("clear||cls");
-    setlocale(LC_ALL,"");
     printf("\n");
     printf("=====================================================\n");
     printf("=====================================================\n");
@@ -92,7 +90,6 @@ void cadastro_usuario(void){
     char data_de_nascimento[20];
 
     system("clear||cls");
-    setlocale(LC_ALL,"");
     printf("\n");
     printf("=====================================================\n");
     printf("=====================================================\n");
@@ -131,7 +128,6 @@ void cadastro_usuario(void){
 void lista_usuario(void){
 
     system("clear||cls");
-    setlocale(LC_ALL,"");
     printf("\n");
     printf("=====================================================\n");
     printf("=====================================================\n");
@@ -162,7 +158,6 @@ void apagar_usuario(void){
     char CPF [11];
 
     system("clear||cls");
-    setlocale(LC_ALL,"");
     printf("\n");
     printf("=====================================================\n");
     printf("=====================================================\n");
@@ -197,7 +192,6 @@ char editar_usuario(void){
     char op;
 
     system("clear||cls");
-    setlocale(LC_ALL,"");
     printf("\n");
     printf("=====================================================\n");
     printf("=====================================================\n");

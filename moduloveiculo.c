@@ -8,7 +8,6 @@ char menu_veiculo(void){
     char op;
 
     system("clear||cls");
-    setlocale(LC_ALL,"");
     printf("\n");
     printf("=====================================================\n");
     printf("=====================================================\n");

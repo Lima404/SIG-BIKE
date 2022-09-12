@@ -12,35 +12,42 @@
 
 char tela_inicial (void);
 
-int main(void){
-
-    inicio = tela_inicial();
-    switch (inicio)
-    {
-        case '1': menu_usuario();
+int  main (void)
+{
+    char escolha;
+    do {
+        escolha = tela_inicial();
+        switch (escolha) {
+        case '1':
+            menu_usuario();
             break;
-        
-        case '2': menu_veiculos();
+        case '2':
+            menu_veiculo();
+            break; 
+        case  '3':
+            menu_estoque();
             break;
-        
-        case '3': menu_estoque();
+        case '4':
+            menu_aluguel();
+            break; 
+        case '5':
+            menu_vendas();
             break;
-        
-        case '4': menu_aluguel();
+        case '6':
+            menu_adm();
             break;
-
-        case '5': menu_vendas();
+        case '7';
+            menu_sobre();
             break;
-        
-        case '6': menu_adm();
-            break;
-        
-        case '7': menu_sobre();
-            break;
-        default:
-            printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
+        defaut :
+            printf ('Opcao invalida \n');
             break;
     }
+
+    } while(escolha != '0');
+
+    return 0 ;
+}
     
 
     /*veiculos = menu_veiculos();
@@ -175,17 +182,16 @@ int main(void){
         default:
             //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
             break;
-    }
+    }*/
       
-}*/
+}
 
 /// menu tela inicial:
 
 char tela_inicial(void){
     char op;
 
-    system("clear||cls");
-    setlocale(LC_ALL,"");
+    system("clear||cls");;
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
