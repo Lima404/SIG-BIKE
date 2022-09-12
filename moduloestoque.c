@@ -23,12 +23,12 @@ char menu_estoque(void){
     printf("=====================================================\n");
     printf("=====================================================\n");
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("=====================Menu Veículo====================\n");
+    printf("=====================Menu Estoque====================\n");
     printf("===                                               ===\n");
-    printf("===              1.Cadastro Veículo               ===\n");
-    printf("===              2.Lista de Veículos              ===\n");
-    printf("===              3.Apagar Veículo                 ===\n");
-    printf("===              4.Editar Veículo                 ===\n");
+    printf("===              1.Cadastro Venda                 ===\n");
+    printf("===              2.Lista de Venda                 ===\n");
+    printf("===              3.Apagar Venda                   ===\n");
+    printf("===              4.Editar Venda                   ===\n");
     printf("===              0.Voltar                         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
