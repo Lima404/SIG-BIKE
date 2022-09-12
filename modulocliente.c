@@ -96,7 +96,7 @@ void cadastro_usuario(void){
     printf("===                                               ===\n");
     printf(" | Digite seu nome: ");
     scanf("%[A-Z a-z]", nome);
-    getchar(); 
+    getchar();
     printf(" | Digite seu CPF: ");
     scanf("%[0-9.,..,-]", CPF); 
     getchar();
@@ -213,5 +213,5 @@ char editar_usuario(void){
     printf("\t\t\t ... Aguarde ... \n");
     sleep(1);
     return op;
-
 }
+

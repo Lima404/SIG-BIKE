@@ -4,6 +4,40 @@
 #include <locale.h>
 #include "moduloveiculo.h"
 
+void menuprincipalveiculo(char esc)
+{
+    do {
+        esc = menu_veiculo();
+        switch (esc) {
+        case '1':
+            cadastro_veiculo();
+            break;
+        case '2':
+            lista_veiculo();
+            break; 
+        case '3':
+            apagar_veiculo();
+            break;
+        case '4':
+            editar_veiculo();
+            break;
+        case '5':
+            agendar_manutencao();
+            break;
+        case '6':
+            lista_manutencao();
+            break;
+        case '7':
+            lista_agendamento();
+            break;
+        default:
+            printf ("Opção Inválida\n");
+            break;
+    }
+
+    } while(esc != '0');
+}
+
 char menu_veiculo(void){
     char op;
 
