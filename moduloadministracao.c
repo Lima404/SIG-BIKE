@@ -25,8 +25,8 @@ char menu_adm(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("==================Menu Administração=================\n");
     printf("===                                               ===\n");
-    printf("===              1.Cadastro Venda                 ===\n");
-    printf("===              2.Lista de Venda                 ===\n");
+    printf("===              1.Gastos da Empresa              ===\n");
+    printf("===              2.Fluxo de Caixa                 ===\n");
     printf("===              0.Voltar                         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
