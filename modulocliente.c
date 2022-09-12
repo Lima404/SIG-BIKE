@@ -16,20 +16,21 @@ int  main (void)
 {
     char escolha;
     do {
-        escolha = telaCadastroUsuario();
+        escolha = menu_usuario();
         switch (escolha) {
         case '1':
-            cadastroUsuario();
+            cadastro_usuario();
             break;
         case '2':
-            telaEditar();
+            lista_usuario();
             break; 
         case  '3':
-            telaListar();
+            apagar_usuario();
             break;
         case '4':
-            telaRemove();
+            editar_usuario();
             break;
+        case '5':
 
         default :
             printf ("Opcao invalida \n");
@@ -40,6 +41,7 @@ int  main (void)
 
     return  0 ;
 }
+
 
 char  menu_usuario(void){
     char op;
