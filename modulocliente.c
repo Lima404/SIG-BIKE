@@ -30,7 +30,6 @@ int  main (void)
         case '4':
             editar_usuario();
             break;
-        case '5':
 
         default :
             printf ("Opcao invalida \n");
@@ -68,7 +67,6 @@ char  menu_usuario(void){
     printf("===              2.Lista de Usuários              ===\n");
     printf("===              3.Apagar Usuários                ===\n");
     printf("===              4.Editar Usuários                ===\n");
-    printf("===              5.Procurar Usuário               ===\n");
     printf("===              0.Voltar                         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
