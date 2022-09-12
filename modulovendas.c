@@ -25,10 +25,10 @@ char menu_vendas(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("======================Menu Vendas====================\n");
     printf("===                                               ===\n");
-    printf("===              1.Cadastro Venda                 ===\n");
-    printf("===              2.Lista Venda                    ===\n");
-    printf("===              3.Apagar Venda                   ===\n");
-    printf("===              4.Editar Venda                   ===\n");
+    printf("===              1.Cadastro Venda:                ===\n");
+    printf("===              2.Lista Venda:                   ===\n");
+    printf("===              3.Apagar Venda:                  ===\n");
+    printf("===              4.Devolução:                     ===\n");
     printf("===              0.Voltar                         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
