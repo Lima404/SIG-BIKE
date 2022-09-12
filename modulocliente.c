@@ -3,9 +3,8 @@
 #include <unistd.h>
 #include "modulocliente.h"
 
-void menuprincipalusuario(char);
+void menuprincipalusuario(char esc)
 {
-    char esc;
     do {
         esc = menu_usuario();
         switch (esc) {
@@ -27,8 +26,6 @@ void menuprincipalusuario(char);
     }
 
     } while(esc != '0');
-
-    return  0 ;
 }
 
 
