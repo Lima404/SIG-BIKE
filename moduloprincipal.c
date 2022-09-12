@@ -10,23 +10,10 @@
 #include "moduloveiculo.h"
 #include "modulovendas.h"
 
-///////////////////////////////////////////////////////////////////////////////
-///             Universidade Federal do Rio Grande do Norte                 ///
-///                 Centro de Ensino Superior do Seridó                     ///
-///               Departamento de Computação e Tecnologia                   ///
-///                  Disciplina DCT1106 -- Programação                      ///
-///     Projeto Sistema de de aluguel de patins elétricos e bicicletas      ///
-///         Developed by @lima_g23 / @erick_bzrs -- since Agoust, 2022      ///
-///////////////////////////////////////////////////////////////////////////////
-///                                 SEMANA 1                                ///
-///////////////////////////////////////////////////////////////////////////////
-
-
-
 ////// funções:
 
 char tela_inicial (void);
-char menu_usuario(void);
+void menu_usuario(void);
 char menu_veiculos (void);
 char menu_estoque (void);
 char menu_aluguel (void);
@@ -117,40 +104,13 @@ int main(void){
         
         case '7': menu_sobre();
             break;
-
-        case '0':
-            //printf('fim do programa');
-            break;
-
         default:
-            //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
+            printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
             break;
     }
     
-    usuario = menu_usuario();
-    switch (usuario)
-    {
-        case '1': //cadastro_usuario();
-            break;
-        
-        case '2': //lista_usuario();
-            break;
-        
-        case '3': //apagar_usuario();
-            break;
 
-        case '4': //editar_usuario();
-            break;
-    
-        case '0': tela_inicial();
-            break;
-            
-        default:
-            //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
-            break;
-    }
-
-    veiculos = menu_veiculos();
+    /*veiculos = menu_veiculos();
     switch (veiculos)
     {
         case '1': //cadastro_veiculo();
@@ -284,7 +244,7 @@ int main(void){
             break;
     }
       
-}
+}*/
 
 /// menu tela inicial:
 

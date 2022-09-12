@@ -14,29 +14,28 @@ char menu_usuario(void);
 
 int  main (void)
 {
-    char escolha;
+    char esc;
     do {
-        escolha = menu_usuario();
-        switch (escolha) {
+        esc = menu_usuario();
+        switch (esc) {
         case '1':
             cadastro_usuario();
             break;
         case '2':
             lista_usuario();
             break; 
-        case  '3':
+        case '3':
             apagar_usuario();
             break;
         case '4':
             editar_usuario();
             break;
-
-        default :
-            printf ("Opcao invalida \n");
+        default:
+            printf ("Opção Inválida\n");
             break;
     }
 
-    } while(escolha != '0');
+    } while(esc != '0');
 
     return  0 ;
 }
