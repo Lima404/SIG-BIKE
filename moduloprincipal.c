@@ -12,7 +12,7 @@
 
 char tela_inicial (void);
 
-int  main (void)
+int main (void)
 {
     char escolha;
     do {
