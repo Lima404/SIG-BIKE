@@ -29,6 +29,7 @@ char menu_estoque(void){
     printf("===              2.Lista de Itens                 ===\n");
     printf("===              3.Apagar Item                    ===\n");
     printf("===              4.Editar Item                    ===\n");
+    printf("===              5.Lista de Produtos em falta:    ===\n");
     printf("===              0.Voltar                         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
