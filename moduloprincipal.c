@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <locale.h>
 #include "moduloadministracao.h"
 #include "modulocliente.h"
 #include "moduloestoque.h"
@@ -13,7 +12,6 @@
 ////// funções:
 
 char tela_inicial (void);
-void menu_usuario(void);
 char menu_veiculos (void);
 char menu_estoque (void);
 char menu_aluguel (void);
@@ -21,38 +19,6 @@ char menu_vendas (void);
 char menu_adm (void);
 char menu_sobre (void);
 
-
-
-/////////////////////////////////////////////////////////////////////////////
-
-/// funções para menu usuario:
-
-
-//char cadastro_usuario(void);
-//char lista_usuario(void);
-//char apagar_usuario(void);
-//char editar_usuario(void);
-
-////////////////////////////////////////////////////////////////////////////
-
-/// Funções para menu Veiculos:
-
-//char cadastro_veiculo(void);
-//char lista_veiculo(void);
-//char apagar_veiculo(void);
-//char editar_veiculo(void);
-
-//char manutencao(void);
-//char lista_manutencao(void);
-
-///////////////////////////////////////////////////////////////////////////
-
-/// Funções para menu estoque:
-
-//char cadastro_produto(void);
-//char lista_produto(void);
-//char editar_produto(void);
-//char apagar_produto(void);
 
 //char lista_falta(void);
 
@@ -71,15 +37,6 @@ char menu_sobre (void);
 //////
 
 int main(void){
-    setlocale(LC_ALL,"");
-    char inicio;
-    char usuario;
-    char veiculos;
-    char estoque;
-    char aluguel;
-    char vendas;
-    char adm;
-    char sobre;
 
     inicio = tela_inicial();
     switch (inicio)
@@ -288,88 +245,6 @@ char tela_inicial(void){
     return op;
 
 }
-
-
-/// CRUD MENU USUÁRIO:
-
-char menu_usuario(void){
-    char op;
-
-    system("clear||cls");
-    setlocale(LC_ALL,"");
-    printf("\n");
-    printf("///////////////////////////////////////////////////////////////////////////////\n");
-    printf("///                                                                         ///\n");
-    printf("///             Universidade Federal do Rio Grande do Norte                 ///\n");
-    printf("///                 Centro de Ensino Superior do Seridó                     ///\n");
-    printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
-    printf("///            Projeto Locadora de bicicletas e patins elétricos            ///\n");
-    printf("///              Developed by @lima_g99 @erick_bzrs - 2022.2                ///\n");
-    printf("///                                                                         ///\n");
-    printf("///////////////////////////////////////////////////////////////////////////////\n");
-    printf("///                                                                         ///\n");
-    printf("/// = = = = = = = = = = = = = = Menu de Usuário = = = = = = = = = = = = = = ///\n");
-    printf("///                                                                         ///\n");
-    printf("///            1. Cadastro de Usuário:                                      ///\n");
-    printf("///            2. Lista de Usuários:                                        ///\n");
-    printf("///            3. Apagar Usuários:                                          ///\n");
-    printf("///            4. Editar Usuários:                                          ///\n");
-    printf("///            5. Procurar Usuário:                                         ///\n");
-    printf("///            0. Voltar:                                                   ///\n");
-    printf("///                                                                         ///\n");
-    scanf("%c", &op);
-    getchar();
-    printf("///                                                                         ///\n");
-    printf("///                                                                         ///\n");
-    printf("///////////////////////////////////////////////////////////////////////////////\n");
-    printf("\n");
-    printf("\t\t\t<<< ... Aguarde ... >>>\n");
-    sleep(1);
-    return op;
-}
-
-/// crud menu veiculos:
-
-char menu_veiculos(void){
-    char op;
-
-    system("clear||cls");
-    setlocale(LC_ALL,"");
-    printf("\n");
-    printf("///////////////////////////////////////////////////////////////////////////////\n");
-    printf("///                                                                         ///\n");
-    printf("///             Universidade Federal do Rio Grande do Norte                 ///\n");
-    printf("///                 Centro de Ensino Superior do Seridó                     ///\n");
-    printf("///                  Disciplina DCT1106 -- Programação                      ///\n");
-    printf("///            Projeto Locadora de bicicletas e patins elétricos            ///\n");
-    printf("///              Developed by @lima_g99 @erick_bzrs - 2022.2                ///\n");
-    printf("///                                                                         ///\n");
-    printf("///////////////////////////////////////////////////////////////////////////////\n");
-    printf("///                                                                         ///\n");
-    printf("/// = = = = = = = = = = = = = = Menu de Veiculo = = = = = = = = = = = = = = ///\n");
-    printf("///                                                                         ///\n");
-    printf("///            1. Cadastro de Veiculos:                                     ///\n");
-    printf("///            2. Lista de Veiculos:                                        ///\n");
-    printf("///            3. Apagar veiculo:                                           ///\n");
-    printf("///            4. Editar lista de Veiculo:                                  ///\n");
-    printf("///            5. Lista de manutenção:                                      ///\n");
-    printf("///            6. Agendar Manutenção de Veiculo:                            ///\n");
-    printf("///            7. Lista de agendamentos:                                    ///\n");
-    printf("///            0. Voltar:                                                   ///\n");
-    printf("///                                                                         ///\n");
-    printf("///                                                                         ///\n");
-    scanf("%c", &op);
-    getchar();
-    printf("///                                                                         ///\n");
-    printf("///                                                                         ///\n");
-    printf("///////////////////////////////////////////////////////////////////////////////\n");
-    printf("\n");
-    printf("\t\t\t<<< ... Aguarde ... >>>\n");
-    sleep(1);
-    return op;
-}
-
-
 /// Crud menu estoque:
 
 char menu_estoque(void){

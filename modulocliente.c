@@ -41,7 +41,7 @@ int  main (void)
 }
 
 
-char  menu_usuario(void){
+char menu_usuario(void){
     char op;
 
     system("clear||cls");
