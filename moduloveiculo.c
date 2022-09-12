@@ -28,6 +28,9 @@ char menu_veiculo(void){
     printf("===              2.Lista de Veículos              ===\n");
     printf("===              3.Apagar Veículo                 ===\n");
     printf("===              4.Editar Veículo                 ===\n");
+    printf("===              5.Agendar Manutenção:            ===\n");
+    printf("===              6.Lista de Manutenção:           ===\n");
+    printf("===              7.Lista de Agendamentos:         ===\n");
     printf("===              0.Voltar                         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
