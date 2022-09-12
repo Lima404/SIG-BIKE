@@ -25,5 +25,23 @@
 - RF008: Para cada aluguel, deve-se cadastrar um usúario e linkar uma chave correspondete a este item alugado, com data de aluguel, modelo que o usuario alugou, quanto tempo o usuário pretende ficar com o item alugado, valor do aluguel / mês;
 - RF009: Estabelecer manutenções mensais para os item, com visão de sempre estarem em condições adequadas;
 - RF0010: Estabelecer multa para os usuários que atrazaram na devolução do item alugado;
-- RF0011: Criar um estoque com movimentação de produtos para venda, como peças de bicicleta (marcha, pneu, gidon, quadro), esclarecer no estoque marca, preço, código para cadastro, quantidade.
-- RF0012: Caso algum item especifico cadastrados no sistema já estejam alugados, e não possua outro disponivel para o aluguel o sistema deve retornar uma mensagem avisando ao atendente que aquele item não esta disponivel para aluguel por um determinado preço.
+- RF0011: Criar um estoque com movimentação de produtos para venda, como peças de bicicleta (marcha, pneu, gidon, quadro), esclarecer no estoque marca, preço, código para cadastro, quantidade;
+- RF0012: Caso algum item especifico cadastrados no sistema já estejam alugados, e não possua outro disponivel para o aluguel o sistema deve retornar uma mensagem avisando ao atendente que aquele item não esta disponivel para aluguel por um determinado preço;
+- RF0013: Terminar Módulo Usuario, refazer alguns requisitos de cadastramento de usuários;
+- RF0014: Começar módulo Veiculos, Lógica de programação já está na apresentação do projeto;
+- RF0015:
+- RF0016:
+- RF0017:
+- RF0018:
+- RF0019:
+- RF0020:
+- RF0021:
+- RF0022:
+- RF0023:
+- RF0024:
+- RF0025:
+- RF0026:
+- RF0027:
+- RF0028:
+- RF0029:
+- RF0030:
