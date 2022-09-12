@@ -82,3 +82,50 @@ char menu_veiculo(void){
 }
 
 
+void cadastro_veiculo(void){
+    
+    char marca [20];
+    char codigo [11];
+    char tipo [20];
+    char descricao[300];
+    char aluguel [20];
+
+    system("clear||cls");
+    printf("\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("-----------------------------------------------------\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+    printf("=============== Menu Cadastro de Veiculos ===========\n");
+    printf("===                                               ===\n");
+    printf(" | Digite a marca do veiculo: ");
+    scanf("%[A-Z a-z]", marca);
+    getchar();
+    printf(" | Digite código para o veiculo: ");
+    scanf("%[0-9.,..,-]", codigo); 
+    getchar();
+    printf(" | Digite o tipo do veiculo: ");   
+    scanf("%[A-Z a-z]", tipo);
+    getchar();
+    printf(" | De uma descrição sobre o veiculo: ");
+    scanf("%[A-Z]", descricao);
+    getchar();
+    printf(" | Quanto será o aluguel do veiculo: ");
+    scanf("%[A-Z a-z, 0-9, $, , , . ,]", aluguel);
+    getchar();
+    printf("=== Usuário foi cadastrado no sistema!!           ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf(" Press ENTER to exit...");
+    getchar();
+}
