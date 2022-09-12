@@ -39,7 +39,7 @@ char menu_veiculo(void){
     printf("===                                               ===\n");
     printf("=====================================================\n");
     printf
-    printf("\t\t\t<<< ... Aguarde ... >>>\n");
+    printf("\t\t\t ... Aguarde ... \n");
     sleep(1);
     return op;
 

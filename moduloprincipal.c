@@ -36,11 +36,11 @@ int main (void)
         case '6':
             menu_adm();
             break;
-        case '7';
+        case '7':
             menu_sobre();
             break;
         default:
-            printf ('Opcao invalida \n');
+            printf ("Opcao invalida \n");
             break;
     }
 
