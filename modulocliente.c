@@ -3,31 +3,38 @@
 #include <unistd.h>
 #include "modulocliente.h"
 
-void menuprincipalusuario(char esc)
-{
-    do {
-        esc = menu_usuario();
-        switch (esc) {
-        case '1':
-            cadastro_usuario();
-            break;
-        case '2':
-            lista_usuario();
-            break; 
-        case '3':
-            apagar_usuario();
-            break;
-        case '4':
-            editar_usuario();
-            break;
-        default:
-            printf ("Opção Inválida\n");
-            break;
-    }
 
-    } while(esc != '0');
+int main (void); {
+
+        char esc;
+        do {
+            esc = menu_usuario();
+            switch (esc) {
+            case '1':
+                cadastro_usuario();
+                break;
+            case '2':
+                lista_usuario();
+                break; 
+            case '3':
+                apagar_usuario();
+                break;
+            case '4':
+                editar_usuario();
+                break;
+            case '5':
+                procurar_usuario();
+                break;
+            default:
+                printf ("Opção Inválida\n");
+                break;
+        }
+
+        } while(esc != '0');
+    }
 }
 
+// =========================== menu de cadastro ==============================
 
 char menu_usuario(void){
     char op;
@@ -48,10 +55,11 @@ char menu_usuario(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("=====================Menu Cliente====================\n");
     printf("===                                               ===\n");
-    printf("===              1.Cadastro Usuário               ===\n");
-    printf("===              2.Lista de Usuários              ===\n");
-    printf("===              3.Apagar Usuários                ===\n");
-    printf("===              4.Editar Usuários                ===\n");
+    printf("===              1.Cadastro Usuário:              ===\n");
+    printf("===              2.Lista de Usuários:             ===\n");
+    printf("===              3.Apagar Usuários:               ===\n");
+    printf("===              4.Editar Usuários:               ===\n");
+    printf("===              5.Procurar Usuário:              ===\n");
     printf("===              0.Voltar                         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
@@ -214,4 +222,3 @@ char editar_usuario(void){
     sleep(1);
     return op;
 }
-
