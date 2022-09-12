@@ -12,6 +12,34 @@ char editar_usuario(void);
 void cadastro_usuario(void);
 char menu_usuario(void); 
 
+int  main (void)
+{
+    char escolha;
+    do {
+        escolha = telaCadastroUsuario();
+        switch (escolha) {
+        case '1':
+            cadastroUsuario();
+            break;
+        case '2':
+            telaEditar();
+            break; 
+        case  '3':
+            telaListar();
+            break;
+        case '4':
+            telaRemove();
+            break;
+
+        default :
+            printf ("Opcao invalida \n");
+            break;
+    }
+
+    } while(escolha != '0');
+
+    return  0 ;
+}
 
 char  menu_usuario(void){
     char op;
