@@ -39,7 +39,6 @@ char menu_estoque(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("=====================================================\n");
-    printf
     printf("\t\t\t ... Aguarde ... \n");
     sleep(1);
     return op;

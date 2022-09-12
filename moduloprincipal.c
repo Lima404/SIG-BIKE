@@ -14,10 +14,10 @@ char tela_inicial (void);
 
 int main (void)
 {
-    char escolha;
+    char esc;
     do {
-        escolha = tela_inicial();
-        switch (escolha) {
+        esc = tela_inicial();
+        switch (esc) {
         case '1':
             menu_usuario();
             break;
@@ -44,7 +44,7 @@ int main (void)
             break;
     }
 
-    } while(escolha != '0');
+    } while(esc != '0');
 
     return 0 ;
 }
@@ -184,7 +184,7 @@ int main (void)
             break;
     }*/
       
-}
+
 
 /// menu tela inicial:
 
@@ -222,7 +222,7 @@ char tela_inicial(void){
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
-    printf("\t\t\t<<< ... Aguarde ... >>>\n");
+    printf("\t\t\t ... Aguarde ... \n");
     sleep(1);
     return op;
 

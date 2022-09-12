@@ -3,15 +3,7 @@
 #include <unistd.h>
 #include "modulocliente.h"
 
-
-
-void lista_usuario(void);
-void apagar_usuario(void);
-char editar_usuario(void);
-void cadastro_usuario(void);
-char menu_usuario(void); 
-
-int main (void)
+void menuprincipalusuario(char)
 {
     char esc;
     do {
@@ -74,7 +66,6 @@ char menu_usuario(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("=====================================================\n");
-    printf
     printf("\t\t\t ... Aguarde ...\n");
     sleep(1);
     return op;
