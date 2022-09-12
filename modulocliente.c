@@ -3,38 +3,34 @@
 #include <unistd.h>
 #include "modulocliente.h"
 
-
-int main (void); {
-
-        char esc;
-        do {
-            esc = menu_usuario();
-            switch (esc) {
-            case '1':
-                cadastro_usuario();
-                break;
-            case '2':
-                lista_usuario();
-                break; 
-            case '3':
-                apagar_usuario();
-                break;
-            case '4':
-                editar_usuario();
-                break;
-            case '5':
-                procurar_usuario();
-                break;
-            default:
-                printf ("Opção Inválida\n");
-                break;
-        }
-
-        } while(esc != '0');
+void menuprincipalcliente(char esc)
+{
+    do {
+        esc = menu_usuario();
+        switch (esc) {
+        case '1':
+            cadastro_usuario();
+            break;
+        case '2':
+            lista_usuario();
+            break; 
+        case '3':
+            apagar_usuario();
+            break;
+        case '4':
+            editar_usuario();
+            break;
+        case '5':
+            procurar_usuario();
+            break;
+        default:
+            printf ("Opção Inválida\n");
+            break;
     }
+
+    } while(esc != '0');
 }
 
-// =========================== menu de cadastro ==============================
 
 char menu_usuario(void){
     char op;
