@@ -24,7 +24,7 @@ void menu_principal_cliente(char esc)
             procurar_cliente();
             break;
         default:
-            printf ("Opção Inválida\n");
+            printf ("Opcao Invalida\n");
             break;
     }
 
@@ -108,10 +108,10 @@ void cadastro_cliente(void){
     printf(" | Digite sua data de nascimento: \n");
     scanf("%[0-9.,/]", data_de_nascimento);
     getchar();
-    printf(" | Digite seu endereço: \n");
+    printf(" | Digite seu endereco: \n");
     scanf("%[A-Z., 0-9.,]", Endereco);
     getchar();
-    printf("=== Usuário foi cadastrado no sistema!!           ===\n");
+    printf("=== Usuario foi cadastrado no sistema!!           ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...");
