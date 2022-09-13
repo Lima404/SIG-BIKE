@@ -59,7 +59,7 @@ char menu_gastos_empresa(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
-    printf("===           1.Mostrar Gastos da Empresa         ===\n");
+    printf("===           1.Mostrar Gastos da Empresa:        ===\n");
     printf("===           0.Voltar                            ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
