@@ -186,6 +186,7 @@ char tela_inicial(void){
     printf("///            0. Sair                                                      ///\n");
     printf("///                                                                         ///\n");
     printf("///                                                                         ///\n");
+    printf("///////////////////////////////////////////////////////////////////////////////\n");
     scanf("%c", &op);
     getchar();
     printf("\n");

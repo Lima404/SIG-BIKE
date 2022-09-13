@@ -32,9 +32,6 @@ char menu_adm(void){
     printf("=====================================================\n");
     scanf("%c", &op);
     getchar();
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("=====================================================\n");
     printf("\t\t\t ... Aguarde ...\n");
     sleep(1);
     return op;
