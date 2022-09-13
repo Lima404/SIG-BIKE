@@ -42,7 +42,7 @@ char menu_estoque(void){
 }
 
 char cadastro_estoque(void){
-
+    //Declarar variáveis
     system("clear||cls");
     printf("\n");
     printf("=====================================================\n");
