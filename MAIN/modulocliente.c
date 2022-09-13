@@ -3,25 +3,25 @@
 #include <unistd.h>
 #include "modulocliente.h"
 
-void menuprincipalcliente(char esc)
+void menu_principal_cliente(char esc)
 {
     do {
-        esc = menu_usuario();
+        esc = menu_cliente();
         switch (esc) {
         case '1':
-            cadastro_usuario();
+            cadastro_cliente();
             break;
         case '2':
-            lista_usuario();
+            lista_cliente();
             break; 
         case '3':
-            apagar_usuario();
+            apagar_cliente();
             break;
         case '4':
-            editar_usuario();
+            editar_cliente();
             break;
         case '5':
-            procurar_usuario();
+            procurar_cliente();
             break;
         default:
             printf ("Opção Inválida\n");
@@ -32,7 +32,7 @@ void menuprincipalcliente(char esc)
 }
 
 
-char menu_usuario(void){
+char menu_cliente(void){
     char op;
 
     system("clear||cls");
@@ -70,7 +70,7 @@ char menu_usuario(void){
 }
 
 
-void cadastro_usuario(void){
+void cadastro_cliente(void){
     
     char nome [20];
     char CPF [11];
@@ -118,7 +118,7 @@ void cadastro_usuario(void){
     getchar();
 }
 
-void lista_usuario(void){
+void lista_cliente(void){
 
     system("clear||cls");
     printf("\n");
@@ -145,7 +145,7 @@ void lista_usuario(void){
     getchar();
 }
 
-void apagar_usuario(void){
+void apagar_cliente(void){
 
     char nome [20];
     char CPF [11];
@@ -180,7 +180,7 @@ void apagar_usuario(void){
     getchar();
 }
 
-char editar_usuario(void){
+char editar_cliente(void){
 
     char op;
 

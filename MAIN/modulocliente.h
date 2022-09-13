@@ -1,7 +1,7 @@
-void cadastro_usuario(void);
-void lista_usuario(void);
-void apagar_usuario(void);
-void procurar_usuario(void);
-char editar_usuario(void);
-char menu_usuario(void); 
-void menuprincipalcliente(char);
+void cadastro_cliente(void);
+void lista_cliente(void);
+void apagar_cliente(void);
+void procurar_cliente(void);
+char editar_cliente(void);
+char menu_cliente(void); 
+void menu_principal_cliente(char);
