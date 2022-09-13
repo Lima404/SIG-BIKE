@@ -42,10 +42,8 @@ char menu_estoque(void){
 }
 
 char cadastro_estoque(void){
-    char op;
 
     system("clear||cls");
-    setlocale(LC_ALL,"");
     printf("\n");
     printf("=====================================================\n");
     printf("=====================================================\n");
@@ -66,8 +64,8 @@ char cadastro_estoque(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
-    printf("===                                       ===\n");
-    printf("===                                      ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
