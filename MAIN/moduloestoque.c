@@ -74,3 +74,6 @@ char cadastro_estoque(void){
     getchar();
 
 }
+
+char lista_estoque(char){
+    

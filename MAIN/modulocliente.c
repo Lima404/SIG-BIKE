@@ -94,7 +94,7 @@ void cadastro_cliente(void){
     printf("=====================================================\n");
     printf("=====================================================\n");
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("================Menu Cadastro de Cliente=============\n");
+    printf("================Menu Cliente - Cadastro==============\n");
     printf("===                                               ===\n");
     printf(" | Digite seu nome: \n");
     scanf("%[A-Z a-z]", nome);
@@ -135,7 +135,7 @@ void lista_cliente(void){
     printf("=====================================================\n");
     printf("=====================================================\n");
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("===================Lista de Clientes=================\n");
+    printf("=================Menu Cliente - Listar===============\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("===        1.Clientes cadastrados no sistema:     ===\n");
@@ -165,7 +165,7 @@ void apagar_cliente(void){
     printf("=====================================================\n");
     printf("=====================================================\n");
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("==================Menu Apagar Cliente================\n");
+    printf("=================Menu Cliente - Apagar===============\n");
     printf("===                                               ===\n");
     printf(" | Digite seu nome: ");
     scanf("%[A-Z a-z]", nome);
@@ -198,7 +198,7 @@ char editar_cliente(void){
     printf("=====================================================\n");
     printf("=====================================================\n");
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("=================Menu Editar Cliente=================\n");
+    printf("================Menu Cliente - Editar================\n");
     printf("===                                               ===\n");
     printf("===              1.Editar Nome:                   ===\n");
     printf("===              2.Editar CPF:                    ===\n");
