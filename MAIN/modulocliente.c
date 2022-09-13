@@ -79,7 +79,7 @@ void cadastro_usuario(void){
     char CPF [11];
     char Telefone [20];
     char data_de_nascimento[20];
-    char Endereço [40];
+    char Endereco [40];
 
     system("clear||cls");
     printf("\n");
@@ -112,7 +112,7 @@ void cadastro_usuario(void){
     scanf("%[0-9.,/]", data_de_nascimento);
     getchar();
     printf(" | Digite seu endereço: \n");
-    scanf("%[A-Z., 0-9.,]", Endereço);
+    scanf("%[A-Z., 0-9.,]", Endereco);
     getchar();
     printf("=== Usuário foi cadastrado no sistema!!           ===\n");
     printf("===                                               ===\n");
