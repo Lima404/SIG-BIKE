@@ -138,8 +138,8 @@ void lista_cliente(void){
     printf("===================Lista de Clientes=================\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
-    printf("===        Clientes cadastrados no sistema        ===\n");
-    printf("===                                               ===\n");
+    printf("===        1.Clientes cadastrados no sistema:     ===\n");
+    printf("===        0.Voltar                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...");
     getchar();

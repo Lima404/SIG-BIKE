@@ -23,8 +23,8 @@ char menu_adm(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("==================Menu Administração=================\n");
     printf("===                                               ===\n");
-    printf("===              1.Gastos da Empresa              ===\n");
-    printf("===              2.Fluxo de Caixa                 ===\n");
+    printf("===              1.Gastos da Empresa:             ===\n");
+    printf("===              2.Fluxo de Caixa:                ===\n");
     printf("===              0.Voltar                         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
@@ -60,7 +60,7 @@ char menu_gastos_empresa(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("===           1.Mostrar Gastos da Empresa         ===\n");
-    printf("===                                               ===\n");
+    printf("===           0.Voltar                            ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("=====================================================\n");
@@ -93,8 +93,8 @@ char menu_fluxo_caixa(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
-    printf("===           1.Mostrar Fluxo de Caixa            ===\n");
-    printf("===                                               ===\n");
+    printf("===           1.Mostrar Fluxo de Caixa:           ===\n");
+    printf("===           0.Voltar                            ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("=====================================================\n");

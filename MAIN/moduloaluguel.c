@@ -23,9 +23,9 @@ char menu_aluguel(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("=====================Menu Aluguel====================\n");
     printf("===                                               ===\n");
-    printf("===              1.Cadastro Aluguel               ===\n");
-    printf("===              2.Apagar Aluguel                 ===\n");
-    printf("===              3.Editar Aluguel                 ===\n");
+    printf("===              1.Cadastro Aluguel:              ===\n");
+    printf("===              2.Apagar Aluguel:                ===\n");
+    printf("===              3.Editar Aluguel:                ===\n");
     printf("===              4.Lista de Veiculos disponiveis: ===\n");
     printf("===              5.Lista de veiculos alugados:    ===\n");  
     printf("===              6.Lista de Alugueis atrazado:    ===\n");
