@@ -28,8 +28,8 @@
 - RF0011: Criar um estoque com movimentação de produtos para venda, como peças de bicicleta (marcha, pneu, gidon, quadro), esclarecer no estoque marca, preço, código para cadastro, quantidade;
 - RF0012: Caso algum item especifico cadastrados no sistema já estejam alugados, e não possua outro disponivel para o aluguel o sistema deve retornar uma mensagem avisando ao atendente que aquele item não esta disponivel para aluguel por um determinado preço;
 - RF0013: Terminar Módulo Usuario, refazer alguns requisitos de cadastramento de usuários;
-- RF0014: Começar módulo Veiculos, Lógica de programação já está na apresentação do projeto;
-- RF0015: 
+- RF0014: Criar tela de buscar usuário;
+- RF0015: Começar módulo Veiculos, Lógica de programação já está na apresentação do projeto;
 - RF0016:
 - RF0017:
 - RF0018:

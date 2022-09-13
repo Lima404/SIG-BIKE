@@ -77,8 +77,9 @@ void cadastro_usuario(void){
     
     char nome [20];
     char CPF [11];
-    char Email [20];
+    char Telefone [20];
     char data_de_nascimento[20];
+    char Endereço [40];
 
     system("clear||cls");
     printf("\n");
@@ -98,17 +99,20 @@ void cadastro_usuario(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("================Menu Cadastro de Cliente=============\n");
     printf("===                                               ===\n");
-    printf(" | Digite seu nome: ");
+    printf(" | Digite seu nome: \n");
     scanf("%[A-Z a-z]", nome);
     getchar();
-    printf(" | Digite seu CPF: ");
+    printf(" | Digite seu CPF: \n");
     scanf("%[0-9.,..,-]", CPF); 
     getchar();
-    printf(" | Digite seu E-mail: ");   
-    scanf("%[A-Z a-z.,0-9.,@.,_.,..,-.,/]", Email);
+    printf(" | Digite seu Telefone: \n");   
+    scanf("%[0-9.,-.,(.,).,/]", Telefone);
     getchar();
-    printf(" | Digite sua data de nascimento: ");
-    scanf("%[A-Z]", data_de_nascimento);
+    printf(" | Digite sua data de nascimento: \n");
+    scanf("%[0-9.,/]", data_de_nascimento);
+    getchar();
+    printf(" | Digite seu endereço: \n");
+    scanf("%[A-Z., 0-9.,]", Endereço);
     getchar();
     printf("=== Usuário foi cadastrado no sistema!!           ===\n");
     printf("===                                               ===\n");
