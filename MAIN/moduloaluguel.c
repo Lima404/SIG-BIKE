@@ -28,7 +28,7 @@ char menu_aluguel(void){
     printf("===              3.Editar Aluguel:                ===\n");
     printf("===              4.Lista de Veiculos disponiveis: ===\n");
     printf("===              5.Lista de veiculos alugados:    ===\n");  
-    printf("===              6.Lista de Alugueis atrazado:    ===\n");
+    printf("===              6.Lista de Alugueis atrasado:    ===\n");
     printf("===              0.Voltar                         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");

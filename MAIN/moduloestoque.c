@@ -42,3 +42,5 @@ char menu_estoque(void){
     return op;
 
 }
+
+char cadastro(void){
