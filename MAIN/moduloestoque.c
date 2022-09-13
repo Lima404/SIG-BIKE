@@ -1,14 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <locale.h>
 #include "moduloestoque.h"
 
 char menu_estoque(void){
     char op;
 
     system("clear||cls");
-    setlocale(LC_ALL,"");
     printf("\n");
     printf("=====================================================\n");
     printf("=====================================================\n");
@@ -43,4 +41,41 @@ char menu_estoque(void){
 
 }
 
-char cadastro(void){
+char cadastro_estoque(void){
+    char op;
+
+    system("clear||cls");
+    setlocale(LC_ALL,"");
+    printf("\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+    printf("===========Menu Estoque - Cadastro de Item===========\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===                                       ===\n");
+    printf("===                                      ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("=====================================================\n");
+    scanf("%c", &op);
+    getchar();
+    printf("\t\t\t ... Aguarde ... \n");
+    sleep(1);
+    return op;
+
+}
