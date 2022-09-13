@@ -132,6 +132,7 @@ char apagar_estoque(void){
     getchar();
 }
 
+
 char editar_estoque(void){
 
     char op;
@@ -152,11 +153,11 @@ char editar_estoque(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("================Menu Estoque - Editar================\n");
     printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
+    printf("===              1.Editar Item:                   ===\n");
+    printf("===              2.Editar Quantidade:             ===\n");
+    printf("===              3.Editar Marca:                  ===\n");
+    printf("===              4.Editar Valor:                  ===\n");
+    printf("===              0.Voltar                         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
