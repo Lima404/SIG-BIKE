@@ -29,7 +29,7 @@
 - RF0012: Caso algum item especifico cadastrados no sistema já estejam alugados, e não possua outro disponivel para o aluguel o sistema deve retornar uma mensagem avisando ao atendente que aquele item não esta disponivel para aluguel por um determinado preço;
 - RF0013: Terminar Módulo Usuario, refazer alguns requisitos de cadastramento de usuários;
 - RF0014: Começar módulo Veiculos, Lógica de programação já está na apresentação do projeto;
-- RF0015:
+- RF0015: 
 - RF0016:
 - RF0017:
 - RF0018:
