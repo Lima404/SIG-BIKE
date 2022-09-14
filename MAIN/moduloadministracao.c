@@ -3,6 +3,25 @@
 #include <unistd.h>
 #include "moduloadministracao.h"
 
+void menu_navegacao_adm(char esc)
+{
+    do {
+        esc = menu_adm();
+        switch (esc) {
+        case '1':
+            menu_gastos_da_empresa();
+            break;
+        case '2':
+            menu_fluxo_caixa();
+            break; 
+        default:
+            printf ("Opcao Invalida\n");
+            break;
+    }
+
+    } while(esc != '0');
+}
+
 char menu_adm(void){
     char op;
 
