@@ -58,7 +58,6 @@ char menu_gastos_da_empresa(void){
     printf("================Menu Gastos da Empresa===============\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
-    printf("===                                               ===\n");
     printf("===           1.Mostrar Gastos da Empresa:        ===\n");
     printf("===           0.Voltar                            ===\n");
     printf("===                                               ===\n");
@@ -90,7 +89,6 @@ char menu_fluxo_caixa(void){
     printf("=====================================================\n");
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("==================Menu Fluxo de Caixa================\n");
-    printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("===           1.Mostrar Fluxo de Caixa:           ===\n");
