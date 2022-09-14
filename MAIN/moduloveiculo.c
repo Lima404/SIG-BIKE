@@ -12,7 +12,7 @@ void menuprincipalveiculo(char esc)
             menu_cadastro_veiculo();
             break;
         case '2':
-            lista_veiculo();
+            menu_lista_veiculo();
             break; 
         case '3':
             apagar_veiculo();
