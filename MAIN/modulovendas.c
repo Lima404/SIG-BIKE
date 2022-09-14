@@ -3,7 +3,32 @@
 #include <unistd.h>
 #include "modulovendas.h"
 
-char menu_vendas(void){
+
+void menu_nav_venda(char esc)
+{
+    do {
+        esc = menu_venda();
+        switch (esc) {
+        case '1':
+            menu_nova_venda();
+            break;
+        case '2':
+            menu_lista_venda();
+            break; 
+        case '3':
+            menu_editar_venda();
+            break;
+        case '4':
+            menu_devolucao_produto();
+            break;
+        default:
+            printf ("Opção Inválida\n");
+            break;
+    }
+
+    } while(esc != '0');
+}
+char menu_venda(void){
     char op;
 
     system("clear||cls");
@@ -39,35 +64,6 @@ char menu_vendas(void){
     return op;
 
 }
-
-void menu_lista_vendas(void){
-    
-    system("clear||cls");
-    printf("\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("-----------------------------------------------------\n");
-    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
-    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
-    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
-    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
-    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
-    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
-    printf("-----------------------------------------------------\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("================= Menu Vendas - Lista ===============\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===     1.Listar Vendas cadastrados no sistema:   ===\n");
-    printf("===     0.Voltar                                  ===\n");
-    printf("===                                               ===\n");
-    printf(" Press ENTER to exit...");
-    getchar();
-
-}
-
 
 void menu_nova_venda(void){
 
@@ -113,7 +109,38 @@ void menu_nova_venda(void){
     getchar();
 }
 
-char menu_editar_vendas(void){
+void menu_lista_venda(void){
+    
+    system("clear||cls");
+    printf("\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+    printf("================= Menu Vendas - Lista ===============\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===     1.Listar Vendas cadastrados no sistema:   ===\n");
+    printf("===     0.Voltar                                  ===\n");
+    printf("===                                               ===\n");
+    printf(" Press ENTER to exit...");
+    getchar();
+
+}
+
+
+
+
+char menu_editar_venda(void){
     char op;
 
     system("clear||cls");
