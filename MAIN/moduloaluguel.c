@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include "moduloaluguel.h"
 
-char menu_principal_aluguel(void){
+char menu_aluguel(void){
     char op;
 
     system("clear||cls");
