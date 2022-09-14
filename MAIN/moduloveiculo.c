@@ -21,13 +21,10 @@ void menuprincipalveiculo(char esc)
             menu_editar_veiculo();
             break;
         case '5':
-            agendar_manutencao();
+            menu_veiculo_manutencao();
             break;
         case '6':
-            lista_manutencao();
-            break;
-        case '7':
-            lista_agendamento();
+            menu_lista_agendamento();
             break;
         default:
             printf ("Opção Inválida\n");
@@ -234,7 +231,7 @@ char menu_editar_veiculo(void){
 }
 
 
-char menu_agendar_manutencao(void){
+char menu_veiculo_manutencao(void){
 
     system("clear||cls");
     printf("\n");
@@ -270,7 +267,7 @@ char menu_agendar_manutencao(void){
     getchar();
 }
 
-void menu_veiculos_agendamentos(void){
+void menu_lista_agendamentos(void){
 
     system("clear||cls");
     printf("\n");
