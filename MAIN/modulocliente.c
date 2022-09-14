@@ -51,11 +51,11 @@ char menu_cliente(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("=====================Menu Cliente====================\n");
     printf("===                                               ===\n");
-    printf("===              1.Cadastro Usuário:              ===\n");
-    printf("===              2.Lista de Usuários:             ===\n");
-    printf("===              3.Apagar Usuários:               ===\n");
-    printf("===              4.Editar Usuários:               ===\n");
-    printf("===              5.Procurar Usuário:              ===\n");
+    printf("===              1.Cadastro Cliente:              ===\n");
+    printf("===              2.Lista de Clientes:             ===\n");
+    printf("===              3.Apagar Cliente:               ===\n");
+    printf("===              4.Editar Cliente:               ===\n");
+    printf("===              5.Procurar Cliente:              ===\n");
     printf("===              0.Voltar                         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
