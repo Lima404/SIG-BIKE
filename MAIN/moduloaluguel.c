@@ -43,7 +43,11 @@ char menu_aluguel(void){
 
 void menu_cadastro_aluguel(void){
 
-    //Declarar variáveis que precisaremos usar no cadastro de aluguel
+    char nome [20];
+    char cpf [11];
+    char telefonde [20];
+    char cod [10];
+    char endereco [20];
 
     system("clear||cls");
     printf("\n");
@@ -63,20 +67,20 @@ void menu_cadastro_aluguel(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("================Menu Aluguel - Cadastro==============\n");
     printf("===                                               ===\n");
-    printf(" | Digite seu nome: \n"); //copiei do menu de cadastro de clientes, depois só trocar as variáveis para Cadastro de aluguel
+    printf(" | Digite seu nome: \n");
     scanf("%[A-Z a-z]", nome);
     getchar();
-    printf(" | Digite seu CPF: \n");
-    scanf("%[0-9.,..,-]", CPF); 
+    printf(" | Digite seu CPF (só numeros): \n");
+    scanf("%[0-9]", cpf); 
     getchar();
     printf(" | Digite seu Telefone: \n");   
-    scanf("%[0-9.,-.,(.,).,/]", Telefone);
+    scanf("%[0-9.,-.,(.,).,/]", telefone);
     getchar();
     printf(" | Digite o código do veiculo: \n");
     scanf("%[0-9.,/]", cod);
     getchar();
     printf(" | Digite seu endereco: \n");
-    scanf("%[A-Z., 0-9.,]", Endereco);
+    scanf("%[A-Z., 0-9.,]", endereco);
     getchar();
     printf("=== Aluguel foi cadastrado no sistema!!           ===\n");
     printf("===                                               ===\n");
@@ -154,7 +158,7 @@ char menu_editar_aluguel(void){
 void menu_excluir_aluguel(void){
     
     char nome [20];
-    char CPF [11];
+    char cpf [11];
 
     system("clear||cls");
     printf("\n");
@@ -177,7 +181,7 @@ void menu_excluir_aluguel(void){
     scanf("%[A-Z a-z]", nome);
     getchar(); 
     printf(" | Digite seu CPF, (só numeros): ");
-    scanf("%[0-9.,..,-]", CPF); 
+    scanf("%[0-9.,..,-]", cpf); 
     getchar();
     printf("=== Usuário foi deletado com sucesso!!            ===\n");
     printf("===                                               ===\n");

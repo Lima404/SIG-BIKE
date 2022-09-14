@@ -73,8 +73,8 @@ char menu_cliente(void){
 void menu_cadastro_cliente(void){
     
     char nome [20];
-    char CPF [11];
-    char Telefone [20];
+    char cpf [11];
+    char telefone [20];
     char data_de_nascimento[20];
     char endereco [40];
 
@@ -100,15 +100,15 @@ void menu_cadastro_cliente(void){
     scanf("%[A-Z a-z]", nome);
     getchar();
     printf(" | Digite seu CPF: \n");
-    scanf("%[0-9.,..,-]", CPF); 
+    scanf("%[0-9.,..,-]", cpf); 
     getchar();
     printf(" | Digite seu Telefone: \n");   
-    scanf("%[0-9.,-.,(.,).,/]", Telefone);
+    scanf("%[0-9.,-.,(.,).,/]", telefone);
     getchar();
     printf(" | Digite sua data de nascimento: \n");
     scanf("%[0-9.,/]", data_de_nascimento);
     getchar();
-    printf(" | Digite seu endereco: \n");
+    printf(" | Digite seu endereço: \n");
     scanf("%[A-Z., 0-9.,]", endereco);
     getchar();
     printf("=== Usuario foi cadastrado no sistema!!           ===\n");
@@ -148,7 +148,7 @@ void menu_lista_cliente(void){
 void menu_apagar_cliente(void){
 
     char nome [20];
-    char CPF [11];
+    char cpf [11];
 
     system("clear||cls");
     printf("\n");
@@ -171,7 +171,7 @@ void menu_apagar_cliente(void){
     scanf("%[A-Z a-z]", nome);
     getchar(); 
     printf(" | Digite seu CPF, (só numeros): ");
-    scanf("%[0-9.,..,-]", CPF); 
+    scanf("%[0-9.,..,-]", cpf); 
     getchar();
     printf("=== Usuário foi deletado com sucesso!!            ===\n");
     printf("===                                               ===\n");
