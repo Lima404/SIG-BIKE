@@ -23,7 +23,7 @@ char menu_sobre(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("======================Menu Sobre=====================\n");
     printf("===                                               ===\n");
-    printf("===                  0.Voltar                     ===\n");
+    printf("== Nossa opinião no estudo na criação desse sistema =\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");

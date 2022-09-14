@@ -96,3 +96,7 @@ char menu_editar_aluguel(void){
 char menu_excluir_aluguel(void){
 
 }
+
+char menu_lista_atrasados(void){
+    
+}
