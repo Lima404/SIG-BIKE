@@ -9,7 +9,7 @@ void menuprincipalveiculo(char esc)
         esc = menu_veiculo();
         switch (esc) {
         case '1':
-            cadastro_veiculo();
+            menu_cadastro_veiculo();
             break;
         case '2':
             lista_veiculo();
