@@ -237,7 +237,7 @@ void menu_procurar_cliente(void){
     printf("================Menu Cliente - Buscar================\n");
     printf("===                                               ===\n");
     printf("===           1.Buscar clente CPF:                ===\n");
-    printf("===                                               ===\n");
+    printf("===           0. Voltar:                          ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");

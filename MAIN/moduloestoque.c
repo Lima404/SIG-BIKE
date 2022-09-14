@@ -43,7 +43,10 @@ char menu_estoque(void){
 
 void menu_cadastro_estoque(void){
 
-    //Declarar variáveis
+    char marca [20];
+    char valor [10];
+    char quantidade [3];
+    char cod [5];
     
     system("clear||cls");
     printf("\n");
@@ -64,15 +67,23 @@ void menu_cadastro_estoque(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
     printf("=====================================================\n");
-    scanf("%c", &op);
+    printf(" | Digite a marca do produto: \n");
+    scanf("%[A-Z a-z]", marca);
+    getchar();
+    printf(" | Digite o valor: \n");
+    scanf("%[0-9.,..,-]", valor); 
+    getchar();
+    printf(" | Digite a quantidade: \n");   
+    scanf("%[0-9.,-.,(.,).,/]", quantidade);
+    getchar();
+    printf(" | Digite o código: \n");
+    scanf("%[0-9.,/]", cod);
+    getchar();
+    printf("=== Usuario foi cadastrado no sistema!!           ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf(" Press ENTER to exit...");
     getchar();
 
 }
@@ -106,7 +117,9 @@ void menu_lista_estoque(char){
 
 void menu_apagar_estoque(void){
 
-    //Usar alguma variavel de indentificacao para poder apagar determinado item, variável precisa ser declarada dentro da função: cadastro_estoque
+    char marca[20];
+    char cod [5];
+
     system("clear||cls");
     printf("\n");
     printf("=====================================================\n");

@@ -234,7 +234,7 @@ char menu_editar_veiculo(void){
 }
 
 
-void menu_agendar_manutencao(void){
+char menu_agendar_manutencao(void){
 
     system("clear||cls");
     printf("\n");
@@ -270,7 +270,7 @@ void menu_agendar_manutencao(void){
     getchar();
 }
 
-char menu_veiculos_agendamentos(void){
+void menu_veiculos_agendamentos(void){
 
     system("clear||cls");
     printf("\n");
