@@ -125,7 +125,7 @@ void menu_cadastro_veiculo(void){
     printf(" | Digite o preço: \n");
     scanf("%[R., $., 0-9.,]", preco);
     getchar();
-    printf("=== Usuario foi cadastrado no sistema!!           ===\n");
+    printf("=== O Veiculo foi cadastrado no sistema!!         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...");
@@ -234,13 +234,7 @@ char menu_editar_veiculo(void){
 }
 
 
-void menu_cadastro_veiculo(void){
-    
-    char tipo [20];
-    char marca [20];
-    char desc [200];
-    char cod[20];
-    char preco [20];
+void menu_agendar_manutencao(void){
 
     system("clear||cls");
     printf("\n");
@@ -260,43 +254,45 @@ void menu_cadastro_veiculo(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("==============Menu Veiculo - Manutenção==============\n");
     printf("===                                               ===\n");
-    printf("===         Tipo da Bike:                         ===\n");
-    printf("===         1. Bicicleta:                         ===\n");
-    printf("===         2. Patins Elétricos:                  ===\n");
+    printf("===         Tipo da Serviços:                     ===\n");
+    printf("===         1. Limpeza:                           ===\n");
+    printf("===         2. Troca de componente:               ===\n");
+    printf("===         3. Montagem de Veiculo:               ===\n");
+    printf("===         4. Manutenção:                        ===\n");
     printf("===                                               ===\n");
     printf("=====================================================\n");
     printf("=====================================================\n");
     
-    printf(" | Digite o tipo do veículo: \n");
-    scanf("%[A-Z a-z]", tipo);
-    getchar();
-    printf(" | Digite a marca do veículo: \n");
-    scanf("%[A-Z a-z]", marca); 
-    getchar();
-    printf(" | Digite uma descrição sobre o veiculo: \n");   
-    scanf("%[A-Z a-z]", desc);
-    getchar();
-    printf(" | Digite o código pra registrar o veiculo: \n");
-    scanf("%[0-9.,/]", cod);
-    getchar();
-    printf(" | Digite o preço: \n");
-    scanf("%[R., $., 0-9.,]", preco);
-    getchar();
-    printf("=== Usuario foi cadastrado no sistema!!           ===\n");
+    printf("=== Seu agendamento foi cadastrado no sistema!!   ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...");
     getchar();
 }
 
-char menu_agendar_manutencao(void){
+char menu_veiculos_agendamentos(void){
 
-}
-
-char menu_lista_manutencao(void){
-
-}
-
-char menu_lista_agendamento(void){
-    
+    system("clear||cls");
+    printf("\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+    printf("=========Menu Veiculo - Listas Agendamentos==========\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("=== 1.Listar Agendamentos cadastrados no sistema: ===\n");
+    printf("===     0.Voltar                                  ===\n");
+    printf("===                                               ===\n");
+    printf(" Press ENTER to exit...");
+    getchar();
 }
