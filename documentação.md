@@ -33,7 +33,7 @@
 - RF0016: Criar menus de navegação dos módulos vendas, estoque, veiculos, adm, aluguel; ✅
 - RF0017: Criar todas as telas de todos os módulos; ✅
 - RF0018: Começar a lógica de programação para menú usuário; 🛑
-- RF0019:
+- RF0019: 
 - RF0020:
 - RF0021:
 - RF0022:
