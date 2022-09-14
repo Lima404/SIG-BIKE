@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include "moduloaluguel.h"
 
-char menu_aluguel(void){
+char menu_principal_aluguel(void){
     char op;
 
     system("clear||cls");
@@ -83,4 +83,16 @@ char menu_cadastro_aluguel(void){
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...");
     getchar();
+}
+
+char menu_lista_aluguel(void){
+
+}
+
+char menu_editar_aluguel(void){
+
+}
+
+char menu_excluir_aluguel(void){
+
 }
