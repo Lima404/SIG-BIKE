@@ -288,3 +288,15 @@ void menu_cadastro_veiculo(void){
     printf(" Press ENTER to exit...");
     getchar();
 }
+
+char menu_agendar_manutencao(void){
+
+}
+
+char menu_lista_manutencao(void){
+
+}
+
+char menu_lista_agendamento(void){
+    
+}
