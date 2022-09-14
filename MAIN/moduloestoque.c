@@ -41,7 +41,7 @@ char menu_estoque(void){
 
 }
 
-char cadastro_estoque(void){
+char menu_cadastro_estoque(void){
 
     //Declarar variáveis
     
@@ -77,7 +77,7 @@ char cadastro_estoque(void){
 
 }
 
-char lista_estoque(char){
+char menu_lista_estoque(char){
 
     system("clear||cls");
     printf("\n");
@@ -104,7 +104,7 @@ char lista_estoque(char){
     getchar();
 }
 
-char apagar_estoque(void){
+char menu_apagar_estoque(void){
 
     //Usar alguma variavel de indentificacao para poder apagar determinado item, variável precisa ser declarada dentro da função: cadastro_estoque
     system("clear||cls");
@@ -133,7 +133,7 @@ char apagar_estoque(void){
 }
 
 
-char editar_estoque(void){
+char menu_editar_estoque(void){
 
     char op;
 
