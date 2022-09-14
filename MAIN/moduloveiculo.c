@@ -18,7 +18,7 @@ void menuprincipalveiculo(char esc)
             menu_apagar_veiculo();
             break;
         case '4':
-            editar_veiculo();
+            menu_editar_veiculo();
             break;
         case '5':
             agendar_manutencao();
