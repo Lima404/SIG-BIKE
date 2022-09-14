@@ -37,7 +37,7 @@ char menu_adm(void){
     return op;
 }
 
-char menu_gastos_empresa(void){
+char menu_gastos_da_empresa(void){
     char op;
 
     system("clear||cls");
