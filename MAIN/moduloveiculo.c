@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include "moduloveiculo.h"
 
-void menuprincipalveiculo(char esc)
+void menu_nav_veiculo(char esc)
 {
     do {
         esc = menu_veiculo();

@@ -3,6 +3,37 @@
 #include <unistd.h>
 #include "moduloaluguel.h"
 
+void menu_nav_aluguel(char esc)
+{
+    do {
+        esc = menu_aluguel();
+        switch (esc) {
+        case '1':
+            menu_cadastro_aluguel();
+            break;
+        case '2':
+            menu_excluir_aluguel();
+            break; 
+        case '3':
+            menu_editar_aluguel();
+            break;
+        case '4':
+            menu_lista_disp();
+            break;
+        case '5':
+            menu_lista_indisp();
+            break;
+        case '6':
+            menu_lista_atrasados();
+            break;
+        default:
+            printf ("Opção Inválida\n");
+            break;
+    }
+
+    } while(esc != '0');
+}
+
 char menu_aluguel(void){
     char op;
 
@@ -89,7 +120,10 @@ void menu_cadastro_aluguel(void){
     getchar();
 }
 
-void menu_lista_aluguel(void){
+void menu_excluir_aluguel(void){
+    
+    char nome [20];
+    char cpf [11];
 
     system("clear||cls");
     printf("\n");
@@ -106,16 +140,20 @@ void menu_lista_aluguel(void){
     printf("=====================================================\n");
     printf("=====================================================\n");
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("=================Menu Aluguel - Lista================\n");
+    printf("=================Menu Aluguel - Apagar===============\n");
+    printf("===                                               ===\n");
+    printf(" | Digite seu nome: ");
+    scanf("%[A-Z a-z]", nome);
+    getchar(); 
+    printf(" | Digite seu CPF, (só numeros): ");
+    scanf("%[0-9.,..,-]", cpf); 
+    getchar();
+    printf("=== Usuário foi deletado com sucesso!!            ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
-    printf("===     1.Listar Alugueis cadastrados no sistema: ===\n");
-    printf("===     0.Voltar                                  ===\n");
-    printf("===                                               ===\n");
-    printf("... Press ENTER to exit...");
+    printf(" Press ENTER to exit...");
     getchar();
 }
-
 
 char menu_editar_aluguel(void){
     char op;
@@ -155,10 +193,7 @@ char menu_editar_aluguel(void){
 
 }
 
-void menu_excluir_aluguel(void){
-    
-    char nome [20];
-    char cpf [11];
+void menu_lista_disp(void){
 
     system("clear||cls");
     printf("\n");
@@ -175,20 +210,44 @@ void menu_excluir_aluguel(void){
     printf("=====================================================\n");
     printf("=====================================================\n");
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("=================Menu Aluguel - Apagar===============\n");
-    printf("===                                               ===\n");
-    printf(" | Digite seu nome: ");
-    scanf("%[A-Z a-z]", nome);
-    getchar(); 
-    printf(" | Digite seu CPF, (só numeros): ");
-    scanf("%[0-9.,..,-]", cpf); 
-    getchar();
-    printf("=== Usuário foi deletado com sucesso!!            ===\n");
+    printf("=================Menu Aluguel - Lista================\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
-    printf(" Press ENTER to exit...");
+    printf("===     1.Listar Alugueis disponiveis:            ===\n");
+    printf("===     0.Voltar                                  ===\n");
+    printf("===                                               ===\n");
+    printf("... Press ENTER to exit...");
     getchar();
 }
+
+void menu_lista_indisp(void){
+
+    system("clear||cls");
+    printf("\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+    printf("=================Menu Aluguel - Lista================\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===     1.Listar Alugueis indisponiveis:          ===\n");
+    printf("===     0.Voltar                                  ===\n");
+    printf("===                                               ===\n");
+    printf("... Press ENTER to exit...");
+    getchar();
+}
+
+
 
 void menu_lista_atrasados(void){
     system("clear||cls");
