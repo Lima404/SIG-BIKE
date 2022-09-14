@@ -15,7 +15,7 @@ void menuprincipalveiculo(char esc)
             menu_lista_veiculo();
             break; 
         case '3':
-            apagar_veiculo();
+            menu_apagar_veiculo();
             break;
         case '4':
             editar_veiculo();
