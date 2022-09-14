@@ -3,6 +3,35 @@
 #include <unistd.h>
 #include "moduloestoque.h"
 
+void menu_nav_estoque(char esc)
+{
+    do {
+        esc = menu_estoque();
+        switch (esc) {
+        case '1':
+            menu_cadastro_estoque();
+            break;
+        case '2':
+            menu_lista_estoque();
+            break; 
+        case '3':
+            menu_apagar_estoque();
+            break;
+        case '4':
+            menu_editar_estoque();
+            break;
+        case '5':
+            menu_lista_falta();
+            break;
+        default:
+            printf ("Opção Inválida\n");
+            break;
+    }
+
+    } while(esc != '0');
+}
+
+
 char menu_estoque(void){
     char op;
 
@@ -181,4 +210,31 @@ char menu_editar_estoque(void){
     printf("\t\t\t ... Aguarde ... \n");
     sleep(1);
     return op;
+}
+
+void menu_lista_falta(char){
+
+    system("clear||cls");
+    printf("\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+    printf("==============Menu Estoque - Listar falta============\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===        1.Listar Itens em falta no sistema:    ===\n");
+    printf("===        0.Voltar                               ===\n");
+    printf("===                                               ===\n");
+    printf(" Press ENTER to exit...");
+    getchar();
 }
