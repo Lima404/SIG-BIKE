@@ -70,7 +70,7 @@ char menu_cliente(void){
 }
 
 
-void cadastro_cliente(void){
+void menu_cadastro_cliente(void){
     
     char nome [20];
     char CPF [11];
@@ -118,7 +118,7 @@ void cadastro_cliente(void){
     getchar();
 }
 
-void lista_cliente(void){
+void menu_lista_cliente(void){
 
     system("clear||cls");
     printf("\n");
@@ -145,7 +145,7 @@ void lista_cliente(void){
     getchar();
 }
 
-void apagar_cliente(void){
+void menu_apagar_cliente(void){
 
     char nome [20];
     char CPF [11];
@@ -180,7 +180,7 @@ void apagar_cliente(void){
     getchar();
 }
 
-char editar_cliente(void){
+char menu_editar_cliente(void){
 
     char op;
 
@@ -217,7 +217,7 @@ char editar_cliente(void){
     return op;
 }
 
-void procurar_cliente(void){
+void menu_procurar_cliente(void){
     char op;
 
     system("clear||cls");
