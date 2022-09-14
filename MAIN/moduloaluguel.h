@@ -1,4 +1,4 @@
-char cadastro_aluguel(void);
+char menu_cadastro_aluguel(void);
 char lista_aluguel(void);
 char editar_aluguel(void);
 char excluir_aluguel(void);
