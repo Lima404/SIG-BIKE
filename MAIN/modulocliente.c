@@ -9,19 +9,19 @@ void menu_principal_cliente(char esc)
         esc = menu_cliente();
         switch (esc) {
         case '1':
-            cadastro_cliente();
+            menu_cadastro_cliente();
             break;
         case '2':
-            lista_cliente();
+            menu_lista_cliente();
             break; 
         case '3':
-            apagar_cliente();
+            menu_apagar_cliente();
             break;
         case '4':
-            editar_cliente();
+            menu_editar_cliente();
             break;
         case '5':
-            procurar_cliente();
+            menu_procurar_cliente();
             break;
         default:
             printf ("Opcao Invalida\n");
@@ -216,3 +216,41 @@ char editar_cliente(void){
     sleep(1);
     return op;
 }
+
+void procurar_cliente(void){
+    char op;
+
+    system("clear||cls");
+    printf("\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("=====================================================\n");
+    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+    printf("================Menu Cliente - Buscar================\n");
+    printf("===                                               ===\n");
+    printf("===           1.Buscar algum cliente CPF          ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("=====================================================\n");
+    scanf("%c", &op);
+    getchar();
+    printf("\t\t\t ... Aguarde ...\n");
+    sleep(1);
+    return op;
+
+}
+
