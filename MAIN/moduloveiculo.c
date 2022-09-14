@@ -76,3 +76,58 @@ char menu_veiculo(void){
     return op;
 
 }
+
+void menu_cadastro_veiculo(void){
+    
+    char tipo [20];
+    char marca [20];
+    char desc [200];
+    char cod[20];
+    char preco [20];
+
+    system("clear||cls");
+    printf("\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("-----------------------------------------------------\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+    printf("================Menu Veiculo - Cadastro==============\n");
+    printf("===                                               ===\n");
+    printf("===         Tipo da Bike:                         ===\n");
+    printf("===         1. Bicicleta:                         ===\n");
+    printf("===         2. Patins Elétricos:                  ===\n");
+    printf("===                                               ===\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    
+    printf(" | Digite seu nome: \n");
+    scanf("%[A-Z a-z]", tipo);
+    getchar();
+    printf(" | Digite seu CPF: \n");
+    scanf("%[A-Z a-z]", marca); 
+    getchar();
+    printf(" | Digite seu Telefone: \n");   
+    scanf("%[A-Z a-z]", desc);
+    getchar();
+    printf(" | Digite sua data de nascimento: \n");
+    scanf("%[0-9.,/]", cod);
+    getchar();
+    printf(" | Digite seu endereco: \n");
+    scanf("%[R., $., 0-9.,]", preco);
+    getchar();
+    printf("=== Usuario foi cadastrado no sistema!!           ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf(" Press ENTER to exit...");
+    getchar();
+}
