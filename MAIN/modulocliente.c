@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include "modulocliente.h"
 
-void menu_principal_cliente(char esc)
+void menu_navegacao_cliente(char esc)
 {
     do {
         esc = menu_cliente();
@@ -76,7 +76,7 @@ void menu_cadastro_cliente(void){
     char CPF [11];
     char Telefone [20];
     char data_de_nascimento[20];
-    char Endereco [40];
+    char endereco [40];
 
     system("clear||cls");
     printf("\n");
@@ -109,7 +109,7 @@ void menu_cadastro_cliente(void){
     scanf("%[0-9.,/]", data_de_nascimento);
     getchar();
     printf(" | Digite seu endereco: \n");
-    scanf("%[A-Z., 0-9.,]", Endereco);
+    scanf("%[A-Z., 0-9.,]", endereco);
     getchar();
     printf("=== Usuario foi cadastrado no sistema!!           ===\n");
     printf("===                                               ===\n");
@@ -236,7 +236,7 @@ void menu_procurar_cliente(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("================Menu Cliente - Buscar================\n");
     printf("===                                               ===\n");
-    printf("===           1.Buscar algum cliente CPF          ===\n");
+    printf("===           1.Buscar clente CPF:                ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
