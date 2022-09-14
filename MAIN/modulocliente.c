@@ -170,7 +170,7 @@ void menu_apagar_cliente(void){
     printf(" | Digite seu nome: ");
     scanf("%[A-Z a-z]", nome);
     getchar(); 
-    printf(" | Digite seu CPF: ");
+    printf(" | Digite seu CPF, (só numeros): ");
     scanf("%[0-9.,..,-]", CPF); 
     getchar();
     printf("=== Usuário foi deletado com sucesso!!            ===\n");

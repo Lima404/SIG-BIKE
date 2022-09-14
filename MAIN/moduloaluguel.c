@@ -41,7 +41,7 @@ char menu_aluguel(void){
     return op;
 }
 
-char menu_cadastro_aluguel(void){
+void menu_cadastro_aluguel(void){
 
     //Declarar variáveis que precisaremos usar no cadastro de aluguel
 
@@ -72,31 +72,142 @@ char menu_cadastro_aluguel(void){
     printf(" | Digite seu Telefone: \n");   
     scanf("%[0-9.,-.,(.,).,/]", Telefone);
     getchar();
-    printf(" | Digite sua data de nascimento: \n");
-    scanf("%[0-9.,/]", data_de_nascimento);
+    printf(" | Digite o código do veiculo: \n");
+    scanf("%[0-9.,/]", cod);
     getchar();
     printf(" | Digite seu endereco: \n");
     scanf("%[A-Z., 0-9.,]", Endereco);
     getchar();
-    printf("=== Usuario foi cadastrado no sistema!!           ===\n");
+    printf("=== Aluguel foi cadastrado no sistema!!           ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...");
     getchar();
 }
 
-char menu_lista_aluguel(void){
+void menu_lista_aluguel(void){
 
+    system("clear||cls");
+    printf("\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+    printf("=================Menu Aluguel - Lista================\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===     1.Listar Alugueis cadastrados no sistema: ===\n");
+    printf("===     0.Voltar                                  ===\n");
+    printf("===                                               ===\n");
+    printf("... Press ENTER to exit...");
+    getchar();
 }
+
 
 char menu_editar_aluguel(void){
+    char op;
+
+    system("clear||cls");
+    printf("\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+    printf("================Menu Aluguel - Editar================\n");
+    printf("===                                               ===\n");
+    printf("===              1.Editar Nome:                   ===\n");
+    printf("===              2.Editar CPF:                    ===\n");
+    printf("===              3.Editar Telefone:               ===\n");
+    printf("===              4.Editar Código:                 ===\n");
+    printf("===              5.Editar Endereço:               ===\n");
+    printf("===              0.Voltar                         ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("=====================================================\n");
+    scanf("%c", &op);
+    getchar();
+    printf("\t\t\t ... Aguarde ... \n");
+    sleep(1);
+    return op;
 
 }
 
-char menu_excluir_aluguel(void){
-
-}
-
-char menu_lista_atrasados(void){
+void menu_excluir_aluguel(void){
     
+    char nome [20];
+    char CPF [11];
+
+    system("clear||cls");
+    printf("\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+    printf("=================Menu Aluguel - Apagar===============\n");
+    printf("===                                               ===\n");
+    printf(" | Digite seu nome: ");
+    scanf("%[A-Z a-z]", nome);
+    getchar(); 
+    printf(" | Digite seu CPF, (só numeros): ");
+    scanf("%[0-9.,..,-]", CPF); 
+    getchar();
+    printf("=== Usuário foi deletado com sucesso!!            ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf(" Press ENTER to exit...");
+    getchar();
+}
+
+void menu_lista_atrasados(void){
+    system("clear||cls");
+    printf("\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+    printf("=================Menu Aluguel - Lista================\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===     1.Listar Alugueis Atrazados no sistema:   ===\n");
+    printf("===     0.Voltar                                  ===\n");
+    printf("===                                               ===\n");
+    printf("... Press ENTER to exit...");
+    getchar();
 }

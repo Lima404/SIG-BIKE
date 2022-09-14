@@ -1,5 +1,5 @@
-char menu_cadastro_produto(void);
-char menu_lista_produto(void);
-char menu_editar_produto(void);
-char menu_apagar_produto(void);
-char menu_vendas(void);
+char menu_venda(void);
+void menu_lista_vendas(void);
+char menu_editar_vendas(void);
+void menu_devolucao_produto(void);
+void menu_nova_venda(void);

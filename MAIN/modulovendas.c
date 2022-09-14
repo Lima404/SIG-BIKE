@@ -24,11 +24,10 @@ char menu_vendas(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("======================Menu Vendas====================\n");
     printf("===                                               ===\n");
-    printf("===              1.Cadastro Venda:                ===\n");
-    printf("===              2.Lista Venda:                   ===\n");
-    printf("===              3.Apagar Venda:                  ===\n");
-    printf("===              4.Devolução:                     ===\n");
-    printf("===              0.Voltar                         ===\n");
+    printf("===              1. Venda:                        ===\n");
+    printf("===              2. Lista Venda:                  ===\n");
+    printf("===              3. Devolução:                    ===\n");
+    printf("===              0. Voltar                        ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
@@ -40,3 +39,84 @@ char menu_vendas(void){
     return op;
 
 }
+
+void menu_lista_vendas(void){
+
+}
+
+
+void menu_nova_venda(void){
+
+}
+
+char menu_editar_vendas(void){
+    char op;
+
+    system("clear||cls");
+    printf("\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+    printf("================Menu Vendas - Editar=================\n");
+    printf("===                                               ===\n");
+    printf("===              1.Editar Item:                   ===\n");
+    printf("===              2.Editar Quantidade:             ===\n");
+    printf("===              0.Voltar                         ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("=====================================================\n");
+    scanf("%c", &op);
+    getchar();
+    printf("\t\t\t ... Aguarde ... \n");
+    sleep(1);
+    return op;
+}
+
+void menu_devolucao_produto(void){
+    char op;
+
+    system("clear||cls");
+    printf("\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("=====================================================\n");
+    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+    printf("===============Menu Vendas - DEvolução===============\n");
+    printf("===                                               ===\n");
+    printf("===       1.Digite o Código para devolução:       ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("=====================================================\n");
+    scanf("%c", &op);
+    getchar();
+    printf("\t\t\t ... Aguarde ...\n");
+    sleep(1);
+    return op;
+
+}
+
