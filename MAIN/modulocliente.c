@@ -218,7 +218,6 @@ char menu_editar_cliente(void){
 }
 
 void menu_procurar_cliente(void){
-    char op;
 
     system("clear||cls");
     printf("\n");
@@ -250,7 +249,6 @@ void menu_procurar_cliente(void){
     getchar();
     printf("\t\t\t ... Aguarde ...\n");
     sleep(1);
-    return op;
 
 }
 
