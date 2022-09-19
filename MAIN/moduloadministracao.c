@@ -17,7 +17,7 @@ void menu_navegacao_adm(char esc)
         default:
             printf ("Opcao Invalida\n");
             break;
-    }
+        }
 
     } while(esc != '0');
 }
