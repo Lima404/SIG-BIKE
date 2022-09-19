@@ -3,8 +3,9 @@
 #include <unistd.h>
 #include "moduloveiculo.h"
 
-void menu_nav_veiculo(char esc)
+void menu_nav_veiculo(void)
 {
+    char esc = ' ';
     do {
         esc = menu_veiculo();
         switch (esc) {
@@ -29,8 +30,7 @@ void menu_nav_veiculo(char esc)
         default:
             printf ("Opção Inválida\n");
             break;
-    }
-
+        }
     } while(esc != '0');
 }
 
@@ -231,7 +231,7 @@ char menu_editar_veiculo(void){
 }
 
 
-char menu_veiculo_manutencao(void){
+void menu_veiculo_manutencao(void){
 
     system("clear||cls");
     printf("\n");
