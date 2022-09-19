@@ -3,8 +3,9 @@
 #include <unistd.h>
 #include "moduloestoque.h"
 
-void menu_nav_estoque(char esc)
+void menu_nav_estoque(void)
 {
+    char esc = ' ';
     do {
         esc = menu_estoque();
         switch (esc) {
@@ -117,7 +118,7 @@ void menu_cadastro_estoque(void){
 
 }
 
-void menu_lista_estoque(char){
+void menu_lista_estoque(void){
 
     system("clear||cls");
     printf("\n");
@@ -146,8 +147,8 @@ void menu_lista_estoque(char){
 
 void menu_apagar_estoque(void){
 
-    char marca[20];
-    char cod [5];
+    //char marca[20];
+    //char cod [5];
 
     system("clear||cls");
     printf("\n");
@@ -212,7 +213,7 @@ char menu_editar_estoque(void){
     return op;
 }
 
-void menu_lista_falta(char){
+void menu_lista_falta(void){
 
     system("clear||cls");
     printf("\n");
