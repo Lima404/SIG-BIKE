@@ -157,7 +157,7 @@ void menu_lista_veiculo(void){
     getchar();
 }
 
-void menu_apagar_veiculos(void){
+void menu_apagar_veiculo(void){
 
     char marca[20];
     char cod [11];
@@ -267,7 +267,7 @@ void menu_veiculo_manutencao(void){
     getchar();
 }
 
-void menu_lista_agendamentos(void){
+void menu_lista_agendamento(void){
 
     system("clear||cls");
     printf("\n");

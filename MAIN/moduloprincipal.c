@@ -31,7 +31,7 @@ int main (void)
             menu_aluguel();
             break; 
         case '5':
-            menu_vendas();
+            menu_venda();
             break;
         case '6':
             menu_adm();
