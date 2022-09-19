@@ -3,8 +3,8 @@
 #include <unistd.h>
 #include "moduloaluguel.h"
 
-void menu_nav_aluguel(char esc)
-{
+void menu_nav_aluguel(void)
+{   char esc = ' ';
     do {
         esc = menu_aluguel();
         switch (esc) {
@@ -29,8 +29,7 @@ void menu_nav_aluguel(char esc)
         default:
             printf ("Opção Inválida\n");
             break;
-    }
-
+        }
     } while(esc != '0');
 }
 
@@ -76,7 +75,7 @@ void menu_cadastro_aluguel(void){
 
     char nome [20];
     char cpf [11];
-    char telefonde [20];
+    char telefone [20];
     char cod [10];
     char endereco [20];
 
