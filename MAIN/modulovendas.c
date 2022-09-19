@@ -32,7 +32,7 @@ char menu_venda(void){
     char op;
 
     system("clear||cls");
-    setlocale(LC_ALL,"");
+    // setlocale(LC_ALL,"");
     printf("\n");
     printf("=====================================================\n");
     printf("=====================================================\n");
@@ -137,9 +137,6 @@ void menu_lista_venda(void){
 
 }
 
-
-
-
 char menu_editar_venda(void){
     char op;
 
@@ -174,7 +171,7 @@ char menu_editar_venda(void){
     return op;
 }
 
-void menu_devolucao_produto(void){
+char menu_devolucao_produto(void){
     char op;
 
     system("clear||cls");
