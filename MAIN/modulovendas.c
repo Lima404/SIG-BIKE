@@ -4,8 +4,8 @@
 #include "modulovendas.h"
 
 
-void menu_nav_venda(char esc)
-{
+void menu_nav_venda(void)
+{   char esc = ' ';
     do {
         esc = menu_venda();
         switch (esc) {
