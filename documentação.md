@@ -23,7 +23,7 @@
 - RF006: Na parte principal do sistema (Aluguel de bicicletas e Patinetes Elétricos), Determinar marcas, componentes, tempo de uso, ano de fabricação, manutenção, valor unitário para cada item, quantidade de cada item disponivel para aluguel; 🛑
 - RF007: Gerar uma chave correspondete para cada item tanto do estoque para venda como tambem para cada item disponivel para aluguel; 🛑
 - RF008: Para cada aluguel, deve-se cadastrar um usúario e linkar uma chave correspondete a este item alugado, com data de aluguel,  modelo que o usuario alugou, quanto tempo o usuário pretende ficar com o item alugado, valor do aluguel / mês; 🛑
-- RF009: Estabelecer manutenções mensais para os item, com visão de sempre estarem em condições adequadas; (CANCELADO)
+- RF009: ~Estabelecer manutenções mensais para os item, com visão de sempre estarem em condições adequadas;~ (CANCELADO)
 - RF0010: Estabelecer multa para os usuários que atrazaram na devolução do item alugado; 🛑
 - RF0011: Criar um estoque com movimentação de produtos para venda, como peças de bicicleta (marcha, pneu, gidon, quadro), esclarecer no estoque marca, preço, código para cadastro, quantidade; 🛑
 - RF0012: Caso algum item especifico cadastrados no sistema já estejam alugados, e não possua outro disponivel para o aluguel o sistema deve retornar uma mensagem avisando ao atendente que aquele item não esta disponivel para aluguel por um determinado preço; 🛑
@@ -32,7 +32,7 @@
 - RF0015: Começar módulo Veiculos, (A Lógica de programação já está na apresentação do projeto!); ✅
 - RF0016: Criar menus de navegação dos módulos vendas, estoque, veiculos, adm, aluguel; ✅
 - RF0017: Criar todas as telas de todos os módulos; ✅
-- RF0018: Começar a lógica de programação para menú usuário; 🛑
+- RF0018: Começar a lógica de programação para menú usuário, com a parte de cadastro de cliente, lista, editar e apagar cliente, e procurar usuário; 🛑
 - RF0019: 
 - RF0020:
 - RF0021:

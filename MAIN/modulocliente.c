@@ -3,8 +3,8 @@
 #include <unistd.h>
 #include "modulocliente.h"
 
-void menu_navegacao_cliente(char esc)
-{
+void menu_nav_cliente(void)
+{   char esc = ' ';
     do {
         esc = menu_cliente();
         switch (esc) {
@@ -53,8 +53,8 @@ char menu_cliente(void){
     printf("===                                               ===\n");
     printf("===              1.Cadastro Cliente:              ===\n");
     printf("===              2.Lista de Clientes:             ===\n");
-    printf("===              3.Apagar Cliente:               ===\n");
-    printf("===              4.Editar Cliente:               ===\n");
+    printf("===              3.Apagar Cliente:                ===\n");
+    printf("===              4.Editar Cliente:                ===\n");
     printf("===              5.Procurar Cliente:              ===\n");
     printf("===              0.Voltar                         ===\n");
     printf("===                                               ===\n");

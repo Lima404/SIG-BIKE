@@ -1,4 +1,4 @@
-void menu_navegacao_cliente(char);
+void menu_nav_cliente(void);
 char menu_cliente(void);
 char menu_cadastro_cliente(void);
 char menu_lista_cliente(void);

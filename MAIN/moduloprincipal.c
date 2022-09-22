@@ -19,22 +19,22 @@ int main (void)
         esc = tela_inicial();
         switch (esc) {
         case '1':
-            menu_cliente();
+            menu_nav_cliente();
             break;
         case '2':
-            menu_veiculo();
+            menu_nav_veiculo();
             break; 
         case '3':
-            menu_estoque();
+            menu_nav_estoque();
             break;
         case '4':
-            menu_aluguel();
+            menu_nav_aluguel();
             break; 
         case '5':
-            menu_venda();
+            menu_nav_venda();
             break;
         case '6':
-            menu_adm();
+            menu_nav_adm();
             break;
         case '7':
             menu_sobre();
@@ -175,7 +175,7 @@ char tela_inicial(void){
     printf("-----------------------------------------------------\n");
     printf("=====================================================\n");
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("=====================Menu Cliente====================\n");
+    printf("====================Menu Principal===================\n");
     printf("===                                               ===\n");
     printf("===               1.Menu Usuário:                 ===\n");
     printf("===               2.Menu Veicúlos:                ===\n");

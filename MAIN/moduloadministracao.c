@@ -3,8 +3,8 @@
 #include <unistd.h>
 #include "moduloadministracao.h"
 
-void menu_navegacao_adm(char esc)
-{
+void menu_nav_adm(void)
+{   char esc = ' ';
     do {
         esc = menu_adm();
         switch (esc) {
