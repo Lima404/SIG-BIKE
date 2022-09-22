@@ -264,7 +264,7 @@ void menu_lista_atrasados(void){
     printf("=====================================================\n");
     printf("=====================================================\n");
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("=================Menu Aluguel - Lista================\n");
+    printf("=================Menu Aluguel - Lista ===============\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("===     1.Listar Alugueis Atrazados no sistema:   ===\n");
