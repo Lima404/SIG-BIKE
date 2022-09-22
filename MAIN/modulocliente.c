@@ -95,7 +95,7 @@ char  menu_cadastro_cliente(void){
     printf("=====================================================\n");
     printf("=====================================================\n");
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("================Menu Cliente - Cadastro==============\n");
+    printf("================ Menu Cliente - Cadastro ===========\n");
     printf("===                                               ===\n");
     printf(" | Digite seu nome: ");
     scanf("%[A-Z a-z]", nome);
@@ -138,8 +138,8 @@ char menu_lista_cliente(void){
     printf("-----------------------------------------------------\n");
     printf("=====================================================\n");
     printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("=================Menu Cliente - Listar===============\n");
+    printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+    printf("=============== =Menu Cliente - Listar ==============\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("===     1.Listar clientes cadastrados no sistema: ===\n");
@@ -172,8 +172,8 @@ char menu_apagar_cliente(void){
     printf("-----------------------------------------------------\n");
     printf("=====================================================\n");
     printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("=================Menu Cliente - Apagar===============\n");
+    printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+    printf("================ Menu Cliente - Apagar ==============\n");
     printf("===                                               ===\n");
     printf(" | Digite seu nome: ");
     scanf("%[A-Z a-z]", nome);
@@ -208,8 +208,8 @@ char menu_editar_cliente(void){
     printf("-----------------------------------------------------\n");
     printf("=====================================================\n");
     printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("================Menu Cliente - Editar================\n");
+    printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+    printf("=============== Menu Cliente - Editar ===============\n");
     printf("===                                               ===\n");
     printf("===              1.Editar Nome:                   ===\n");
     printf("===              2.Editar CPF:                    ===\n");
