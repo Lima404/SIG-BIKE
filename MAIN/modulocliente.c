@@ -3,11 +3,21 @@
 #include <unistd.h>
 #include "modulocliente.h"
 
-void menu_navegacao_cliente(char esc)
+char menu_navegacao_cliente(void);
+char menu_cliente(void);
+char menu_cadastro_cliente(void);
+char menu_lista_cliente(void);
+char menu_apagar_cliente(void);
+char menu_editar_cliente(void);
+char menu_procurar_cliente(void);
+
+
+char  menu_navegacao_cliente(void)
 {
+    char op;
     do {
-        esc = menu_cliente();
-        switch (esc) {
+        op = menu_cliente();
+        switch (op) {
         case '1':
             menu_cadastro_cliente();
             break;
@@ -28,13 +38,16 @@ void menu_navegacao_cliente(char esc)
             break;
     }
 
-    } while(esc != '0');
+    } while(op != '0');
+   
+   return op;
+   
 }
 
 
 char menu_cliente(void){
-    char op;
-
+    
+    char esc;
     system("clear||cls");
     printf("\n");
     printf("=====================================================\n");
@@ -53,24 +66,25 @@ char menu_cliente(void){
     printf("===                                               ===\n");
     printf("===              1.Cadastro Cliente:              ===\n");
     printf("===              2.Lista de Clientes:             ===\n");
-    printf("===              3.Apagar Cliente:               ===\n");
-    printf("===              4.Editar Cliente:               ===\n");
+    printf("===              3.Apagar Cliente:                ===\n");
+    printf("===              4.Editar Cliente:                ===\n");
     printf("===              5.Procurar Cliente:              ===\n");
     printf("===              0.Voltar                         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
-    printf("=====================================================\n");
-    scanf("%c", &op);
+    printf("Escolha uma opcao: ");
+    scanf("%c", &esc );
     getchar();
-    printf("\t\t\t ... Aguarde ...\n");
-    sleep(1);
-    return op;
+    //printf("\t\t\t ... Aguarde ...\n");
+    //sleep(1);
+   
+    return esc;
 
 }
 
 
-char  menu_cadastro_cliente(void){
+char menu_cadastro_cliente(void){
     
     char nome [20];
     char cpf [11];
@@ -246,7 +260,7 @@ char  menu_procurar_cliente(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("================Menu Cliente - Buscar================\n");
     printf("===                                               ===\n");
-    printf("===           1.Buscar clente CPF:                ===\n");
+    printf("===           1.Buscar cliente CPF:               ===\n");
     printf("===           0. Voltar:                          ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");

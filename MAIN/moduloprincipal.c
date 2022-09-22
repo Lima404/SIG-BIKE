@@ -9,7 +9,13 @@
 #include "moduloveiculo.h"
 #include "modulovendas.h"
 
-
+char menu_cliente(void);
+char menu_veiculo(void);
+char menu_estoque(void);
+char menu_aluguel(void);
+char menu_venda(void);
+char menu_adm(void);
+char menu_sobre(void);
 char tela_inicial (void);
 
 int main (void)
@@ -177,12 +183,12 @@ char tela_inicial(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("=====================Menu Cliente====================\n");
     printf("===                                               ===\n");
-    printf("===               1.Menu Usuário:                 ===\n");
-    printf("===               2.Menu Veicúlos:                ===\n");
+    printf("===               1.Menu Cliente:                 ===\n");
+    printf("===               2.Menu Veiculos:                ===\n");
     printf("===               3.Menu Estoque:                 ===\n");
     printf("===               4.Menu Aluguel:                 ===\n");
     printf("===               5.Menu Vendas:                  ===\n");
-    printf("===               6.Menu Administração:           ===\n");
+    printf("===               6.Menu Administracao:           ===\n");
     printf("===               7.Menu Sobre:                   ===\n");
     printf("===               0.Sair                          ===\n");
     printf("===                                               ===\n");
