@@ -107,19 +107,19 @@ void menu_cadastro_veiculo(void){
     printf("=====================================================\n");
     printf("=====================================================\n");
     
-    printf(" | Digite o tipo do veículo: \n");
+    printf(" | Digite o tipo do veículo: ");
     scanf("%[A-Z a-z]", tipo);
     getchar();
-    printf(" | Digite a marca do veículo: \n");
+    printf(" | Digite a marca do veículo: ");
     scanf("%[A-Z a-z]", marca); 
     getchar();
-    printf(" | Digite uma descrição sobre o veiculo: \n");   
+    printf(" | Digite uma descrição sobre o veiculo: ");   
     scanf("%[A-Z a-z]", desc);
     getchar();
-    printf(" | Digite o código pra registrar o veiculo: \n");
+    printf(" | Digite o código pra registrar o veiculo: ");
     scanf("%[0-9.,/]", cod);
     getchar();
-    printf(" | Digite o preço: \n");
+    printf(" | Digite o preço: ");
     scanf("%[R., $., 0-9.,]", preco);
     getchar();
     printf("=== O Veiculo foi cadastrado no sistema!!         ===\n");
