@@ -213,8 +213,9 @@ char menu_editar_estoque(void){
     return op;
 }
 
-void menu_lista_falta(void){
+char menu_lista_falta(void){
 
+    char esc;
     system("clear||cls");
     printf("\n");
     printf("=====================================================\n");
@@ -237,5 +238,7 @@ void menu_lista_falta(void){
     printf("===        0.Voltar                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...");
+    scanf("%c", &esc);
     getchar();
+    return esc;
 }

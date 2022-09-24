@@ -192,8 +192,9 @@ char menu_editar_aluguel(void){
 
 }
 
-void menu_lista_disp(void){
+char menu_lista_disp(void){
 
+    char esc;
     system("clear||cls");
     printf("\n");
     printf("=====================================================\n");
@@ -216,11 +217,14 @@ void menu_lista_disp(void){
     printf("===     0.Voltar                                  ===\n");
     printf("===                                               ===\n");
     printf("... Press ENTER to exit...");
+    scanf("%c", &esc);
     getchar();
+    return esc;
 }
 
-void menu_lista_indisp(void){
+char menu_lista_indisp(void){
 
+    char esc;
     system("clear||cls");
     printf("\n");
     printf("=====================================================\n");
@@ -243,12 +247,16 @@ void menu_lista_indisp(void){
     printf("===     0.Voltar                                  ===\n");
     printf("===                                               ===\n");
     printf("... Press ENTER to exit...");
+    scanf("%c", &esc);
     getchar();
+    return esc;
 }
 
 
 
-void menu_lista_atrasados(void){
+char menu_lista_atrasados(void){
+
+    char esc;
     system("clear||cls");
     printf("\n");
     printf("=====================================================\n");
@@ -271,5 +279,7 @@ void menu_lista_atrasados(void){
     printf("===     0.Voltar                                  ===\n");
     printf("===                                               ===\n");
     printf("... Press ENTER to exit...");
+    scanf("%c", &esc);
     getchar();
+    return esc;
 }

@@ -10,16 +10,16 @@ void menu_nav_venda(void)
         esc = menu_venda();
         switch (esc) {
         case '1':
-            menu_nova_venda();
+            menu_cadastro_venda();
             break;
         case '2':
             menu_lista_venda();
             break; 
         case '3':
-            menu_editar_venda();
+            menu_excluir_venda();
             break;
         case '4':
-            menu_devolucao_produto();
+            menu_editar_venda();
             break;
         default:
             printf ("Opção Inválida\n");
@@ -32,7 +32,6 @@ char menu_venda(void){
     char op;
 
     system("clear||cls");
-    // setlocale(LC_ALL,"");
     printf("\n");
     printf("=====================================================\n");
     printf("=====================================================\n");
@@ -49,9 +48,10 @@ char menu_venda(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("======================Menu Vendas====================\n");
     printf("===                                               ===\n");
-    printf("===              1. Venda:                        ===\n");
+    printf("===              1. Cadastrar Venda:              ===\n");
     printf("===              2. Lista Venda:                  ===\n");
-    printf("===              3. Devolução:                    ===\n");
+    printf("===              3. Apagar:                       ===\n");
+    printf("===              4. Editar:                       ===\n");
     printf("===              0. Voltar                        ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
@@ -65,7 +65,7 @@ char menu_venda(void){
 
 }
 
-void menu_nova_venda(void){
+void menu_cadastro_venda(void){
 
     char nome [20];
     char cpf [11];
@@ -96,10 +96,10 @@ void menu_nova_venda(void){
     printf(" | Digite seu CPF: \n");
     scanf("%[0-9.,..,-]", cpf); 
     getchar();
-    printf(" | Digite seu Telefone: \n");   
+    printf(" | Digite seu marca: \n");   
     scanf("%[A-Z a-z]", marca);
     getchar();
-    printf(" | Digite sua data de nascimento: \n");
+    printf(" | Digite sua data de codigo: \n");
     scanf("%[0-9]", cod);
     getchar();
     printf("=== Usuario foi cadastrado no sistema!!           ===\n");
@@ -109,8 +109,9 @@ void menu_nova_venda(void){
     getchar();
 }
 
-void menu_lista_venda(void){
+char menu_lista_venda(void){
     
+    char esc;
     system("clear||cls");
     printf("\n");
     printf("=====================================================\n");
@@ -133,7 +134,9 @@ void menu_lista_venda(void){
     printf("===     0.Voltar                                  ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...");
+    scanf("%c", &esc);
     getchar();
+    return esc;
 
 }
 
@@ -171,7 +174,7 @@ char menu_editar_venda(void){
     return op;
 }
 
-char menu_devolucao_produto(void){
+char menu_excluir_venda(void){
     char op;
 
     system("clear||cls");
@@ -188,17 +191,9 @@ char menu_devolucao_produto(void){
     printf("-----------------------------------------------------\n");
     printf("=====================================================\n");
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("===============Menu Vendas - DEvolução===============\n");
+    printf("===============Menu Vendas - Exclusão================\n");
     printf("===                                               ===\n");
-    printf("===       1.Digite o Código para devolução:       ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
+    printf("===       1.Digite o código para a exclusão       ===\n");
     printf("=====================================================\n");
     scanf("%c", &op);
     getchar();
@@ -207,4 +202,3 @@ char menu_devolucao_produto(void){
     return op;
 
 }
-
