@@ -105,7 +105,7 @@ void menu_nova_venda(void){
     printf("=== Usuario foi cadastrado no sistema!!           ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
-    printf(" Press ENTER to exit...");
+    printf(" Press ENTER to exit...\n");
     getchar();
 }
 
@@ -132,7 +132,7 @@ void menu_lista_venda(void){
     printf("===     1.Listar Vendas cadastrados no sistema:   ===\n");
     printf("===     0.Voltar                                  ===\n");
     printf("===                                               ===\n");
-    printf(" Press ENTER to exit...");
+    printf(" Press ENTER to exit...\n");
     getchar();
 
 }
