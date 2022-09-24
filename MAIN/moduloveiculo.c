@@ -130,7 +130,7 @@ void menu_cadastro_veiculo(void){
 }
 
 
-void menu_lista_veiculo(void){
+char menu_lista_veiculo(void){
 
     system("clear||cls");
     printf("\n");
@@ -267,7 +267,7 @@ void menu_veiculo_manutencao(void){
     getchar();
 }
 
-void menu_lista_agendamento(void){
+char menu_lista_agendamento(void){
 
     system("clear||cls");
     printf("\n");
