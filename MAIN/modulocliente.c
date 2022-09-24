@@ -229,7 +229,8 @@ char menu_editar_cliente(void){
 }
 
 char  menu_procurar_cliente(void){
-    char op;
+
+    char esc;
     system("clear||cls");
     printf("\n");
     printf("=====================================================\n");
@@ -248,19 +249,12 @@ char  menu_procurar_cliente(void){
     printf("===                                               ===\n");
     printf("===           1.Buscar clente CPF:                ===\n");
     printf("===           0. Voltar:                          ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
     printf("=====================================================\n");
-    scanf("%c", &op);
+    scanf("%c", &esc);
     getchar();
     printf("\t\t\t ... Aguarde ...\n");
     sleep(1);
 
-    return op;
+    return esc;
 }
 
