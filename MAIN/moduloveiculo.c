@@ -35,7 +35,7 @@ void menu_nav_veiculo(void)
 }
 
 char menu_veiculo(void){
-    char op;
+    char esc;
 
     system("clear||cls");
     printf("\n");
@@ -66,11 +66,11 @@ char menu_veiculo(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("=====================================================\n");
-    scanf("%c", &op);
+    scanf("%c", &esc);
     getchar();
     printf("\t\t\t ... Aguarde ... \n");
     sleep(1);
-    return op;
+    return esc;
 
 }
 
@@ -132,6 +132,7 @@ void menu_cadastro_veiculo(void){
 
 char menu_lista_veiculo(void){
 
+    char esc;
     system("clear||cls");
     printf("\n");
     printf("=====================================================\n");
@@ -155,6 +156,8 @@ char menu_lista_veiculo(void){
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...");
     getchar();
+    scanf("%c", &esc);
+    return esc;
 }
 
 void menu_apagar_veiculo(void){
@@ -269,6 +272,7 @@ void menu_veiculo_manutencao(void){
 
 char menu_lista_agendamento(void){
 
+    char esc;
     system("clear||cls");
     printf("\n");
     printf("=====================================================\n");
@@ -291,5 +295,7 @@ char menu_lista_agendamento(void){
     printf("===     0.Voltar                                  ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...");
+    scanf("%c", &esc);
     getchar();
+    return esc;
 }

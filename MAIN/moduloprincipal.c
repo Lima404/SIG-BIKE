@@ -40,7 +40,7 @@ int main (void)
             menu_sobre();
             break;
         default:
-            printf ("Opcao invalida \n");
+            printf ("Programa Finalizado! \n");
             break;
     }
 
