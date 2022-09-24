@@ -150,7 +150,7 @@ void menu_excluir_aluguel(void){
     printf("=== Usuário foi deletado com sucesso!!            ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
-    printf(" Press ENTER to exit...");
+    printf(" Press ENTER to exit...\n");
     getchar();
 }
 
@@ -215,7 +215,7 @@ void menu_lista_disp(void){
     printf("===     1.Listar Alugueis disponiveis:            ===\n");
     printf("===     0.Voltar                                  ===\n");
     printf("===                                               ===\n");
-    printf("... Press ENTER to exit...");
+    printf("... Press ENTER to exit...\n");
     getchar();
 }
 
@@ -242,7 +242,7 @@ void menu_lista_indisp(void){
     printf("===     1.Listar Alugueis indisponiveis:          ===\n");
     printf("===     0.Voltar                                  ===\n");
     printf("===                                               ===\n");
-    printf("... Press ENTER to exit...");
+    printf("... Press ENTER to exit...\n");
     getchar();
 }
 
@@ -270,6 +270,6 @@ void menu_lista_atrasados(void){
     printf("===     1.Listar Alugueis Atrazados no sistema:   ===\n");
     printf("===     0.Voltar                                  ===\n");
     printf("===                                               ===\n");
-    printf("... Press ENTER to exit...");
+    printf("... Press ENTER to exit...\n");
     getchar();
 }
