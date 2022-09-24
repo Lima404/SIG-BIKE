@@ -141,7 +141,7 @@ void menu_lista_estoque(void){
     printf("===        1.Listar Itens Cadastrados no sistema: ===\n");
     printf("===        0.Voltar                               ===\n");
     printf("===                                               ===\n");
-    printf(" Press ENTER to exit...");
+    printf(" Press ENTER to exit...\n");
     getchar();
 }
 
@@ -171,7 +171,7 @@ void menu_apagar_estoque(void){
     printf("=== Item foi deletado com sucesso!!               ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
-    printf(" Press ENTER to exit...");
+    printf(" Press ENTER to exit...\n");
     getchar();
 }
 
@@ -236,6 +236,6 @@ void menu_lista_falta(void){
     printf("===        1.Listar Itens em falta no sistema:    ===\n");
     printf("===        0.Voltar                               ===\n");
     printf("===                                               ===\n");
-    printf(" Press ENTER to exit...");
+    printf(" Press ENTER to exit...\n");
     getchar();
 }
