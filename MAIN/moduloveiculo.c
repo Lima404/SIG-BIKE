@@ -27,9 +27,12 @@ void menu_nav_veiculo(void)
         case '6':
             menu_lista_agendamento();
             break;
+        case '7':
+            menu_lista_agendamento();
         default:
             printf ("Opção Inválida\n");
             break;
+        
         }
     } while(esc != '0');
 }
