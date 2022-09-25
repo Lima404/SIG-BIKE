@@ -145,7 +145,7 @@ char menu_lista_cliente(void){
     printf("===     1.Listar clientes cadastrados no sistema: ===\n");
     printf("===     0.Voltar                                  ===\n");
     printf("===                                               ===\n");
-    printf(" Press ENTER to exit...");
+    printf(" Press ENTER to exit...\n");
     scanf("%c", &esc);
     getchar();
 
@@ -184,7 +184,7 @@ char menu_apagar_cliente(void){
     printf("=== Usuário foi deletado com sucesso!!            ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
-    printf(" Press ENTER to exit...");
+    printf(" Press ENTER to exit...\n");
     scanf("%c", &esc);
     getchar();
 

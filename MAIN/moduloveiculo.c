@@ -125,7 +125,7 @@ void menu_cadastro_veiculo(void){
     printf("=== O Veiculo foi cadastrado no sistema!!         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
-    printf(" Press ENTER to exit...");
+    printf(" Press ENTER to exit...\n");
     getchar();
 }
 
@@ -154,7 +154,7 @@ char menu_lista_veiculo(void){
     printf("===     1.Listar veiculos cadastrados no sistema: ===\n");
     printf("===     0.Voltar                                  ===\n");
     printf("===                                               ===\n");
-    printf(" Press ENTER to exit...");
+    printf(" Press ENTER to exit...\n");
     getchar();
     scanf("%c", &esc);
     return esc;
@@ -191,7 +191,7 @@ void menu_apagar_veiculo(void){
     printf("=== Usuário foi deletado com sucesso!!            ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
-    printf(" Press ENTER to exit...");
+    printf(" Press ENTER to exit...\n");
     getchar();
 }
 
@@ -266,7 +266,7 @@ void menu_veiculo_manutencao(void){
     printf("=== Seu agendamento foi cadastrado no sistema!!   ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
-    printf(" Press ENTER to exit...");
+    printf(" Press ENTER to exit...\n");
     getchar();
 }
 
@@ -294,8 +294,7 @@ char menu_lista_agendamento(void){
     printf("=== 1.Listar Agendamentos cadastrados no sistema: ===\n");
     printf("===     0.Voltar                                  ===\n");
     printf("===                                               ===\n");
-    printf(" Press ENTER to exit...");
-    scanf("%c", &esc);
+    printf(" Press ENTER to exit...\n");
     getchar();
     return esc;
 }
