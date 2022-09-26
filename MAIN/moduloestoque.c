@@ -102,13 +102,13 @@ void menu_cadastro_estoque(void){
     scanf("%[A-Z a-z]", marca);
     getchar();
     printf(" | Digite o valor: \n");
-    scanf("%[0-9.,..,-]", valor); 
+    scanf("%[0-9,-]", valor); 
     getchar();
     printf(" | Digite a quantidade: \n");   
-    scanf("%[0-9.,-.,(.,).,/]", quantidade);
+    scanf("%[0-9,-,(,),/]", quantidade);
     getchar();
     printf(" | Digite o código: \n");
-    scanf("%[0-9.,/]", cod);
+    scanf("%[0-9,/]", cod);
     getchar();
     printf("=== Usuario foi cadastrado no sistema!!           ===\n");
     printf("===                                               ===\n");
