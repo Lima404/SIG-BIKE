@@ -21,12 +21,12 @@ void menu_nav_veiculo(void)
         case '4':
             menu_editar_veiculo();
             break;
-        case '5':
+        /* case '5':
             menu_veiculo_manutencao();
             break;
         case '6':
             menu_lista_agendamento();
-            break;
+            break; */
         default:
             printf ("Opção Inválida\n");
             break;
