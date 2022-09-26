@@ -31,12 +31,9 @@ int main (void)
             menu_nav_aluguel();
             break; 
         case '5':
-            menu_nav_venda();
-            break;
-        case '6':
             menu_nav_adm();
             break;
-        case '7':
+        case '6':
             menu_sobre();
             break;
         default:
