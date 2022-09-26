@@ -14,8 +14,11 @@ void menu_nav_adm(void)
         case '2':
             menu_fluxo_caixa();
             break; 
+        case '3':
+            menu_relatorio();
+            break;
         default:
-            printf ("Opcao Invalida\n");
+            printf ("opcao Invalida\n");
             break;
         }
 
@@ -23,7 +26,7 @@ void menu_nav_adm(void)
 }
 
 char menu_adm(void){
-    char op;
+    char esc;
 
     system("clear||cls");
     printf("\n");
@@ -49,15 +52,15 @@ char menu_adm(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("=====================================================\n");
-    scanf("%c", &op);
+    scanf("%c", &esc);
     getchar();
     printf("\t\t\t ... Aguarde ...\n");
     sleep(1);
-    return op;
+    return esc;
 }
 
 char menu_gastos_da_empresa(void){
-    char op;
+    char esc;
 
     system("clear||cls");
     printf("\n");
@@ -82,15 +85,15 @@ char menu_gastos_da_empresa(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("=====================================================\n");
-    scanf("%c", &op);
+    scanf("%c", &esc);
     getchar();
     printf("\t\t\t ... Aguarde ...\n");
     sleep(1);
-    return op;
+    return esc;
 }
 
 char menu_fluxo_caixa(void){
-    char op;
+    char esc;
 
     system("clear||cls");
     printf("\n");
@@ -115,9 +118,42 @@ char menu_fluxo_caixa(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("=====================================================\n");
-    scanf("%c", &op);
+    scanf("%c", &esc);
     getchar();
     printf("\t\t\t ... Aguarde ...\n");
     sleep(1);
-    return op;
+    return esc;
+}
+
+char menu_relatorio(void){
+    char esc;
+
+    system("clear||cls");
+    printf("\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+    printf("================== Menu Relatório ===================\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===           1.Mostrar Relatórios gerais:        ===\n");
+    printf("===           0.Voltar                            ===\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("=====================================================\n");
+    scanf("%c", &esc);
+    getchar();
+    printf("\t\t\t ... Aguarde ...\n");
+    sleep(1);
+    return esc;
 }
