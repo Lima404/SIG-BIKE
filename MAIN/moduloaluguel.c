@@ -104,13 +104,13 @@ void menu_cadastro_aluguel(void){
     scanf("%[0-9]", cpf); 
     getchar();
     printf(" | Digite seu Telefone: \n");   
-    scanf("%[0-9.,-.,(.,).,/]", telefone);
+    scanf("%[0-9,-,(,),/]", telefone);
     getchar();
     printf(" | Digite o código do veiculo: \n");
-    scanf("%[0-9.,/]", cod);
+    scanf("%[0-9,/]", cod);
     getchar();
     printf(" | Digite seu endereco: \n");
-    scanf("%[A-Z., 0-9.,]", endereco);
+    scanf("%[A-Z, 0-9,]", endereco);
     getchar();
     printf("=== Aluguel foi cadastrado no sistema!!           ===\n");
     printf("===                                               ===\n");
