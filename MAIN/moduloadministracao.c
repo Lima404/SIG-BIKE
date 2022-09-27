@@ -26,7 +26,7 @@ void menu_nav_adm(void)
 }
 
 char menu_adm(void){
-    char esc;
+    char op;
 
     system("clear||cls");
     printf("\n");
@@ -52,11 +52,11 @@ char menu_adm(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("=====================================================\n");
-    scanf("%c", &esc);
+    scanf("%c", &op);
     getchar();
     printf("\t\t\t ... Aguarde ...\n");
     sleep(1);
-    return esc;
+    return op;
 }
 
 char menu_gastos_da_empresa(void){
