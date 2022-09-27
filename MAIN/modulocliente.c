@@ -116,10 +116,7 @@ char  menu_cadastro_cliente(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...");
-    scanf("%c", &esc);
     getchar();
-
-    return esc;
 }
 
 char menu_lista_cliente(void){
@@ -156,7 +153,6 @@ char menu_apagar_cliente(void){
 
     char nome [20];
     char cpf [11];
-    char esc;
 
     system("clear||cls");
     printf("\n");
@@ -185,15 +181,12 @@ char menu_apagar_cliente(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...");
-    scanf("%c", &esc);
     getchar();
-
-    return esc;
 }
 
 char menu_editar_cliente(void){
 
-    char op;
+    char esc;
 
     system("clear||cls");
     printf("\n");
@@ -221,15 +214,15 @@ char menu_editar_cliente(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("=====================================================\n");
-    scanf("%c", &op);
+    scanf("%c", &esc);
     getchar();
     printf("\t\t\t ... Aguarde ... \n");
     sleep(1);
-    return op;
+    return esc;
 }
 
 char  menu_procurar_cliente(void){
-    char op;
+    char esc;
     system("clear||cls");
     printf("\n");
     printf("=====================================================\n");
@@ -256,11 +249,11 @@ char  menu_procurar_cliente(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("=====================================================\n");
-    scanf("%c", &op);
+    scanf("%c", &esc);
     getchar();
     printf("\t\t\t ... Aguarde ...\n");
     sleep(1);
 
-    return op;
+    return esc;
 }
 
