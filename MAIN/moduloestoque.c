@@ -178,7 +178,7 @@ void menu_apagar_estoque(void){
 
 char menu_editar_estoque(void){
 
-    char op;
+    char esc;
 
     system("clear||cls");
     printf("\n");
@@ -206,11 +206,11 @@ char menu_editar_estoque(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("=====================================================\n");
-    scanf("%c", &op);
+    scanf("%c", &esc);
     getchar();
     printf("\t\t\t ... Aguarde ... \n");
     sleep(1);
-    return op;
+    return esc;
 }
 
 void menu_lista_falta(void){
