@@ -102,10 +102,10 @@ void menu_cadastro_estoque(void){
     scanf("%[A-Z a-z]", marca);
     getchar();
     printf(" | Digite o valor: \n");
-    scanf("%[0-9.,..,-]", valor); 
+    scanf("%[0-9 R $ -]", valor); 
     getchar();
     printf(" | Digite a quantidade: \n");   
-    scanf("%[0-9.,-.,(.,).,/]", quantidade);
+    scanf("%[0-9]", quantidade);
     getchar();
     printf(" | Digite o código: \n");
     scanf("%[0-9.,/]", cod);
@@ -145,10 +145,11 @@ void menu_lista_estoque(void){
     getchar();
 }
 
-void menu_apagar_estoque(void){
+char menu_apagar_estoque(void){
 
-    //char marca[20];
-    //char cod [5];
+    /* char marca[20];
+    char cod [5]; */
+    char esc;
 
     system("clear||cls");
     printf("\n");
@@ -172,13 +173,17 @@ void menu_apagar_estoque(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...\n");
+    scanf("%c", &esc);
     getchar();
+    
+    return esc;
 }
 
 
 char menu_editar_estoque(void){
 
-    char op;
+    char esc;
+
 
     system("clear||cls");
     printf("\n");
@@ -201,16 +206,12 @@ char menu_editar_estoque(void){
     printf("===              3.Editar Marca:                  ===\n");
     printf("===              4.Editar Valor:                  ===\n");
     printf("===              0.Voltar                         ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
     printf("=====================================================\n");
-    scanf("%c", &op);
+    scanf("%c", &esc);
     getchar();
     printf("\t\t\t ... Aguarde ... \n");
     sleep(1);
-    return op;
+    return esc;
 }
 
 char menu_lista_falta(void){
@@ -238,6 +239,7 @@ char menu_lista_falta(void){
     printf("===        0.Voltar                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...\n");
+    scanf("%c",&esc);
     getchar();
     return esc;
 }

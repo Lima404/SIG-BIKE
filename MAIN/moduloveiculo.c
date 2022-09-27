@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "moduloveiculo.h"
+#include "moduloestoque.h"
 
 void menu_nav_veiculo(void)
 {
@@ -22,13 +23,17 @@ void menu_nav_veiculo(void)
             menu_editar_veiculo();
             break;
         case '5':
+            menu_nav_estoque();
+            break;
+        /* case '7':
             menu_veiculo_manutencao();
             break;
-        case '6':
+        case '8':
             menu_lista_agendamento();
             break;
-        case '7':
+        case '9':
             menu_lista_agendamento();
+            break; */
         default:
             printf ("Opção Inválida\n");
             break;
@@ -61,9 +66,10 @@ char menu_veiculo(void){
     printf("===              2.Lista de Veículos              ===\n");
     printf("===              3.Apagar Veículo                 ===\n");
     printf("===              4.Editar Veículo                 ===\n");
-    printf("===              5.Agendar Manutenção:            ===\n");
-    printf("===              6.Lista de Manutenção:           ===\n");
-    printf("===              7.Lista de Agendamentos:         ===\n");
+    printf("===              5.Menu Estoque:                  ===\n");
+ /* printf("===              6.Agendar Manutenção:            ===\n");
+    printf("===              7.Lista de Manutenção:           ===\n");
+    printf("===              8.Lista de Agendamentos:         ===\n"); */
     printf("===              0.Voltar                         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
@@ -120,10 +126,10 @@ void menu_cadastro_veiculo(void){
     scanf("%[A-Z a-z]", desc);
     getchar();
     printf(" | Digite o código pra registrar o veiculo: \n");
-    scanf("%[0-9.,/]", cod);
+    scanf("%[0-9]", cod);
     getchar();
     printf(" | Digite o preço: \n");
-    scanf("%[R., $., 0-9.,]", preco);
+    scanf("%[R., $ 0-9]", preco);
     getchar();
     printf("=== O Veiculo foi cadastrado no sistema!!         ===\n");
     printf("===                                               ===\n");
@@ -200,7 +206,7 @@ void menu_apagar_veiculo(void){
 
 char menu_editar_veiculo(void){
 
-    char op;
+    char esc;
 
     system("clear||cls");
     printf("\n");
@@ -229,11 +235,11 @@ char menu_editar_veiculo(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("=====================================================\n");
-    scanf("%c", &op);
+    scanf("%c", &esc);
     getchar();
     printf("\t\t\t ... Aguarde ... \n");
     sleep(1);
-    return op;
+    return esc;
 }
 
 

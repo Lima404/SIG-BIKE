@@ -77,7 +77,6 @@ char  menu_cadastro_cliente(void){
     char telefone [20];
     char data_de_nascimento[20];
     char endereco [40];
-    char esc;
 
     system("clear||cls");
     printf("\n");
@@ -101,25 +100,22 @@ char  menu_cadastro_cliente(void){
     scanf("%[A-Z a-z]", nome);
     getchar();
     printf(" | Digite seu CPF: ");
-    scanf("%[0-9.,..,-]", cpf); 
+    scanf("%[0-9 . -]", cpf); 
     getchar();
     printf(" | Digite seu Telefone: ");   
-    scanf("%[0-9.,-.,(.,).,/]", telefone);
+    scanf("%[0-9.,()/]", telefone);
     getchar();
     printf(" | Digite sua data de nascimento: ");
-    scanf("%[0-9.,/]", data_de_nascimento);
+    scanf("%[0-9 /]", data_de_nascimento);
     getchar();
     printf(" | Digite seu endereço: ");
-    scanf("%[A-Z., 0-9.,]", endereco);
+    scanf("%[A-Z 0-9]", endereco);
     getchar();
     printf("=== Usuario foi cadastrado no sistema!!           ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...");
-    scanf("%c", &esc);
     getchar();
-
-    return esc;
 }
 
 char menu_lista_cliente(void){
@@ -193,7 +189,7 @@ char menu_apagar_cliente(void){
 
 char menu_editar_cliente(void){
 
-    char op;
+    char esc;
 
     system("clear||cls");
     printf("\n");
@@ -221,11 +217,11 @@ char menu_editar_cliente(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("=====================================================\n");
-    scanf("%c", &op);
+    scanf("%c", &esc);
     getchar();
     printf("\t\t\t ... Aguarde ... \n");
     sleep(1);
-    return op;
+    return esc;
 }
 
 char  menu_procurar_cliente(void){
