@@ -99,7 +99,7 @@ char  menu_cadastro_cliente(void){
     printf(" | Digite seu nome: ");
     scanf("%[A-Z a-z]", nome);
     getchar();
-    printf(" | Digite seu CPF: ");
+    printf(" | Digite seu CPF: (Somente números!)");
     scanf("%[0-9 . -]", cpf); 
     getchar();
     printf(" | Digite seu Telefone: ");   

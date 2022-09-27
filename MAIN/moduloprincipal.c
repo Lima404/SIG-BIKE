@@ -171,7 +171,7 @@ char tela_inicial(void){
     printf("====================Menu Principal===================\n");
     printf("===                                               ===\n");
     printf("===               1.Menu Usuário:                 ===\n");
-    printf("===               2.Menu Veicúlos:                ===\n");
+    printf("===               2.Menu Veículos:                ===\n");
     printf("===               3.Menu Aluguel:                 ===\n");
     printf("===               4.Menu Administração:           ===\n");
     printf("===               5.Menu Sobre:                   ===\n");
