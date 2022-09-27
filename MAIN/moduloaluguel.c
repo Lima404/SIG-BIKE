@@ -155,7 +155,7 @@ void menu_excluir_aluguel(void){
 }
 
 char menu_editar_aluguel(void){
-    char op;
+    char esc;
 
     system("clear||cls");
     printf("\n");
@@ -184,11 +184,11 @@ char menu_editar_aluguel(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("=====================================================\n");
-    scanf("%c", &op);
+    scanf("%c", &esc);
     getchar();
     printf("\t\t\t ... Aguarde ... \n");
     sleep(1);
-    return op;
+    return esc;
 
 }
 
