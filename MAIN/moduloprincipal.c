@@ -25,15 +25,12 @@ int main (void)
             menu_nav_veiculo();
             break; 
         case '3':
-            menu_nav_estoque();
-            break;
-        case '4':
             menu_nav_aluguel();
             break; 
-        case '5':
+        case '4':
             menu_nav_adm();
             break;
-        case '6':
+        case '5':
             menu_sobre();
             break;
         default:
@@ -176,11 +173,9 @@ char tela_inicial(void){
     printf("===                                               ===\n");
     printf("===               1.Menu Usuário:                 ===\n");
     printf("===               2.Menu Veicúlos:                ===\n");
-    printf("===               3.Menu Estoque:                 ===\n");
-    printf("===               4.Menu Aluguel:                 ===\n");
-    printf("===               5.Menu Vendas:                  ===\n");
-    printf("===               6.Menu Administração:           ===\n");
-    printf("===               7.Menu Sobre:                   ===\n");
+    printf("===               3.Menu Aluguel:                 ===\n");
+    printf("===               4.Menu Administração:           ===\n");
+    printf("===               5.Menu Sobre:                   ===\n");
     printf("===               0.Sair                          ===\n");
     printf("===                                               ===\n");
     printf("=====================================================\n");
