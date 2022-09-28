@@ -150,7 +150,6 @@ char menu_lista_cliente(void){
 
 char menu_apagar_cliente(void){
 
-    char nome [20];
     char cpf [11];
     char esc;
 
