@@ -24,7 +24,7 @@ void menu_nav_cliente(void)
             menu_procurar_cliente();
             break;
         default:
-            printf ("Opcao Invalida\n");
+            printf ("Opção Inválida\n");
             break;
     }
 
@@ -54,7 +54,7 @@ char menu_cliente(void){
     printf("===              1.Cadastro Cliente:              ===\n");
     printf("===              2.Lista de Clientes:             ===\n");
     printf("===              3.Apagar Cliente:                ===\n");
-    printf("===              4.Editar Cliente:                ===\n");
+    printf("===              4.Alterar Cliente:               ===\n");
     printf("===              5.Procurar Cliente:              ===\n");
     printf("===              0.Voltar                         ===\n");
     printf("===                                               ===\n");
@@ -102,16 +102,16 @@ char  menu_cadastro_cliente(void){
     printf(" | Digite seu CPF: ");
     scanf("%[0-9 . -]", cpf); 
     getchar();
-    printf(" | Digite seu Telefone: ");   
+    printf(" | Digite seu telefone: ");   
     scanf("%[0-9.,()/]", telefone);
     getchar();
-    printf(" | Digite sua data de nascimento: ");
+    printf(" | Digite sua data de nascimento (DD/MM/AAAA): ");
     scanf("%[0-9 /]", data_de_nascimento);
     getchar();
     printf(" | Digite seu endereço: ");
     scanf("%[A-Z 0-9]", endereco);
     getchar();
-    printf("=== Usuario foi cadastrado no sistema!!           ===\n");
+    printf("=== Usuário foi cadastrado no sistema!!           ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...");
@@ -135,7 +135,7 @@ char menu_lista_cliente(void){
     printf("=====================================================\n");
     printf("=====================================================\n");
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("=================Menu Cliente - Listar===============\n");
+    printf("================Menu Cliente - Listar================\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("===     1.Listar clientes cadastrados no sistema: ===\n");
@@ -171,13 +171,10 @@ char menu_apagar_cliente(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("=================Menu Cliente - Apagar===============\n");
     printf("===                                               ===\n");
-    printf(" | Digite seu nome: ");
-    scanf("%[A-Z a-z]", nome);
-    getchar(); 
-    printf(" | Digite seu CPF, (só numeros): ");
+    printf(" | Digite o CPF do cliente, (só números): ");
     scanf("%[0-9.,..,-]", cpf); 
     getchar();
-    printf("=== Usuário foi deletado com sucesso!!            ===\n");
+    printf("=== O usuário foi deletado com sucesso!!          ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...\n");
@@ -243,7 +240,7 @@ char  menu_procurar_cliente(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("================Menu Cliente - Buscar================\n");
     printf("===                                               ===\n");
-    printf("===           1.Buscar clente CPF:                ===\n");
+    printf("===           1.Buscar cliente pelo CPF:          ===\n");
     printf("===           0. Voltar:                          ===\n");
     printf("=====================================================\n");
     scanf("%c", &esc);

@@ -42,114 +42,6 @@ int main (void)
     return 0 ;
 }
 
-    // estoque = menu_estoque();
-    // switch (estoque)
-    // {
-    //     case '1': //cadastro_produto();
-    //         break;
-        
-    //     case '2': //lista_produto();
-    //         break;
-        
-    //     case '3': //editar_produto();
-    //         break;
-
-    //     case '4': //apagar_produto();
-    //         break;
-
-    //     case '5': //lista_falta();
-    //         break;
-
-    //     case '0': tela_inicial();
-    //         break;
-            
-    //     default:
-    //         //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
-    //         break;
-    // }
-
-    // aluguel = menu_aluguel();
-    // switch (aluguel)
-    // {
-    //     case '1': //cadastro_aluguel();
-    //         break;
-        
-    //     case '2': //lista_aluguel();
-    //         break;
-
-    //     case '3': //editar_aluguel();
-    //         break;
-
-    //     case '4': //excluir_aluguel():
-    //         break;
-
-
-    //     case '0': tela_inicial();
-    //         break;
-            
-    //     default:
-    //         //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
-    //         break;
-    // }
-
-    // vendas = menu_vendas();
-    // switch (vendas)
-    // {
-    //     case '1': //cadastro_vendas();
-    //         break;
-        
-    //     case '2': //listar_vendas();
-    //         break;
-        
-    //     case '3': //apagar_vendas();
-    //         break;
-
-    //     case '4': //editar_vendas();
-    //         break;
-    
-    //     case '0': tela_inicial();
-    //         break;
-            
-    //     default:
-    //         //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
-    //         break;
-    // }
-    
-    // adm = menu_adm();
-    // switch (adm)
-    // {
-    //     case '1': //fluxo_de_caixa();
-    //         break;
-        
-    //     case '2': //gastos_da_empresa();
-    //         break;
-    
-    //     case '0': tela_inicial();
-    //         break;
-            
-    //     default:
-    //         //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
-    //         break;
-    // }
-    
-    // sobre = menu_sobre();
-    // switch (sobre)
-    // {   
-    //     case '1':
-    //         //printf('vai dar certo!');
-        
-    
-    //     case '0': tela_inicial();
-    //         break;
-            
-    //     default:
-    //         //printf('Você inseriu uma opção invalida, por favor insira uma opção válida!');
-    //         break;
-    // }*/
-      
-
-
-/// menu tela inicial:
 
 char tela_inicial(void){
     char op;
@@ -171,7 +63,7 @@ char tela_inicial(void){
     printf("====================Menu Principal===================\n");
     printf("===                                               ===\n");
     printf("===               1.Menu Usuário:                 ===\n");
-    printf("===               2.Menu Veicúlos:                ===\n");
+    printf("===               2.Menu Veículos:                ===\n");
     printf("===               3.Menu Aluguel:                 ===\n");
     printf("===               4.Menu Administração:           ===\n");
     printf("===               5.Menu Sobre:                   ===\n");
