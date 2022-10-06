@@ -104,13 +104,13 @@ void menu_cadastro_aluguel(void){
     scanf("%[0-9]", cpf); 
     getchar();
     printf(" | Digite seu Telefone: \n");   
-    scanf("%[0-9.,-.,(.,).,/]", telefone);
+    scanf("%[0-9 ( ) /]", telefone);
     getchar();
     printf(" | Digite o código do veiculo: \n");
-    scanf("%[0-9.,/]", cod);
+    scanf("%[0-9 /]", cod);
     getchar();
     printf(" | Digite seu endereco: \n");
-    scanf("%[A-Z., 0-9.,]", endereco);
+    scanf("%[A-Z 0-9]", endereco);
     getchar();
     printf("=== Aluguel foi cadastrado no sistema!!           ===\n");
     printf("===                                               ===\n");
@@ -119,10 +119,11 @@ void menu_cadastro_aluguel(void){
     getchar();
 }
 
-void menu_excluir_aluguel(void){
+char menu_excluir_aluguel(void){
     
     char nome [20];
     char cpf [11];
+    char esc;
 
     system("clear||cls");
     printf("\n");
@@ -151,11 +152,13 @@ void menu_excluir_aluguel(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...\n");
+    scanf("%c",&esc);
     getchar();
+    return esc;
 }
 
 char menu_editar_aluguel(void){
-    char op;
+    char esc;
 
     system("clear||cls");
     printf("\n");
@@ -184,11 +187,11 @@ char menu_editar_aluguel(void){
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("=====================================================\n");
-    scanf("%c", &op);
+    scanf("%c", &esc);
     getchar();
     printf("\t\t\t ... Aguarde ... \n");
     sleep(1);
-    return op;
+    return esc;
 
 }
 
@@ -217,6 +220,7 @@ char menu_lista_disp(void){
     printf("===     0.Voltar                                  ===\n");
     printf("===                                               ===\n");
     printf("... Press ENTER to exit...\n");
+    scanf("%c",&esc);
     getchar();
     return esc;
 }
@@ -246,6 +250,7 @@ char menu_lista_indisp(void){
     printf("===     0.Voltar                                  ===\n");
     printf("===                                               ===\n");
     printf("... Press ENTER to exit...\n");
+    scanf("%c",&esc);
     getchar();
     return esc;
 }
@@ -277,6 +282,7 @@ char menu_lista_atrasados(void){
     printf("===     0.Voltar                                  ===\n");
     printf("===                                               ===\n");
     printf("... Press ENTER to exit...\n");
+    scanf("%c",&esc);
     getchar();
     return esc;
 }

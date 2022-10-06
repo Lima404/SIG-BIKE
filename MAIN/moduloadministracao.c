@@ -13,9 +13,12 @@ void menu_nav_adm(void)
             break;
         case '2':
             menu_fluxo_caixa();
-            break; 
+            break;
+        case '3':
+            menu_relatorios();
+            break;
         default:
-            printf ("Opcao Invalida\n");
+            printf("Opcao Invalida\n");
             break;
         }
 
@@ -44,6 +47,7 @@ char menu_adm(void){
     printf("===                                               ===\n");
     printf("===              1.Gastos da Empresa:             ===\n");
     printf("===              2.Fluxo de Caixa:                ===\n");
+    printf("===              3.Relatorios:                    ===\n");
     printf("===              0.Voltar                         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
@@ -120,4 +124,35 @@ char menu_fluxo_caixa(void){
     printf("\t\t\t ... Aguarde ...\n");
     sleep(1);
     return op;
+}
+
+char menu_relatorios(void)
+{
+    char esc;
+    system("clear||cls");
+    printf("\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+    printf("===============Menu Cliente -Relatorios==============\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===     1.Escolha o seu tipo de relatóri:         ===\n");
+    printf("===     0.Voltar                                  ===\n");
+    printf("===                                               ===\n");
+    printf(" Press ENTER to exit...\n");
+    scanf("%c", &esc);
+    getchar();
+
+    return esc;
 }
