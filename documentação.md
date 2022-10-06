@@ -33,7 +33,7 @@
 - RF0016: Criar menus de navegação dos módulos vendas, estoque, veiculos, adm, aluguel; ✅
 - RF0017: Criar todas as telas de todos os módulos; ✅
 - RF0018: Começar a lógica de programação para menú usuário, com a parte de cadastro de cliente, lista, editar e apagar cliente, e procurar usuário; 🛑
-- RF0019: 
+- RF0019: Criar validações, os módulos necessários de validações vão ser, CPF, string, email, telefone, inteiro, float, data.
 - RF0020:
 - RF0021:
 - RF0022:
