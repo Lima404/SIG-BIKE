@@ -179,11 +179,9 @@ char tela_inicial(void){
     printf("===                                               ===\n");
     printf("===               1.Menu Usuário:                 ===\n");
     printf("===               2.Menu Veículos:                ===\n");
-    printf("===               3.Menu Estoque:                 ===\n");
-    printf("===               4.Menu Aluguel:                 ===\n");
-    printf("===               5.Menu Vendas:                  ===\n");
-    printf("===               6.Menu Administração:           ===\n");
-    printf("===               7.Menu Sobre:                   ===\n");
+    printf("===               3.Menu Aluguel:                 ===\n");
+    printf("===               4.Menu Administração:           ===\n");
+    printf("===               5.Menu Sobre:                   ===\n");
     printf("===               0.Sair                          ===\n");
     printf("===                                               ===\n");
     printf("=====================================================\n");
