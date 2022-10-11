@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "modulosobre.h"
+#include "modulosobre/modulosobre.h"
+#include "modulovalidacoes/validacoes.h"
 
 char menu_sobre(void){
     char op;

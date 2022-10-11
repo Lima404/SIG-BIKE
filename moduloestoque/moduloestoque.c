@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "moduloestoque.h"
+#include "moduloestoque/moduloestoque.h"
+#include "modulovalidacoes/validacoes.h"
 
 void menu_nav_estoque(void)
 {

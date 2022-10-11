@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "moduloestoque.h": "c",
+        "moduloadministracao.h": "c"
+    }
+}

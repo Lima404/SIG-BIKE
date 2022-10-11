@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "modulocliente.h"
+#include "modulocliente/modulocliente.h"
+#include "modulovalidacoes/validacoes.h"
 
 void menu_nav_cliente(void)
 {   char esc = ' ';

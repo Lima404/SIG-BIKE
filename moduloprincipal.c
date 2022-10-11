@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "moduloadministracao.h"
-#include "modulocliente.h"
-#include "moduloestoque.h"
-#include "moduloaluguel.h"
-#include "modulosobre.h"
-#include "moduloveiculo.h"
-
+#include "moduloadministracao/moduloadministracao.h"
+#include "modulocliente/modulocliente.h"
+#include "moduloestoque/moduloestoque.h"
+#include "moduloaluguel/moduloaluguel.h"
+#include "modulosobre/modulosobre.h"
+#include "moduloveiculo/moduloveiculo.h"
+#include "modulovalidacoes/validacoes.h"
 
 char tela_inicial (void);
 

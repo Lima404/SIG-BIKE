@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "moduloadministracao.h"
+#include "moduloadministracao/moduloadministracao.h"
+#include "modulovalidacoes/validacoes.h"
 
 void menu_nav_adm(void)
 {   char esc = ' ';

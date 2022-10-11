@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "moduloaluguel.h"
+#include "moduloaluguel/moduloaluguel.h"
+#include "modulovalidacoes/validacoes.h"
 
 void menu_nav_aluguel(void)
 {   char esc = ' ';
