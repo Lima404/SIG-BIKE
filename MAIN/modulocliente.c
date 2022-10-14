@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "modulocliente.h"
+#include "validacoes.h"
 
 void menu_nav_cliente(void)
 {   char esc = ' ';
@@ -77,6 +78,8 @@ char  menu_cadastro_cliente(void){
     char telefone [20];
     char data_de_nascimento[20];
     char endereco [40];
+
+    
 
     system("clear||cls");
     printf("\n");
