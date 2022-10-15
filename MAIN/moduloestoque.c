@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
+#include <ctype.h>
 #include "moduloestoque.h"
 
 void menu_nav_estoque(void)
