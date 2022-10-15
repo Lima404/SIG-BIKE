@@ -70,8 +70,7 @@ char menu_cliente(void){
 
 }
 
-
-char  menu_cadastro_cliente(void){
+void menu_cadastro_cliente(void){
     
     char nome [20];
     char cpf [11];
