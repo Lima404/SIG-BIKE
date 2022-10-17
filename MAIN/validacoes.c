@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <ctype.h>
 #include "validacoes.h"
 
 
@@ -69,7 +70,7 @@ int validar_cpf(void){
 }  
 
 
-int validar_ano_bissexto(void){
+int validar_data(void){
     
     //https://www.guj.com.br/t/ano-bissexto-linguagem-c/5696/13//
     
@@ -109,4 +110,14 @@ void validar_string(void){
 
  void validar_inteiro(void){
     
+}
+
+int tamanho_string(char lista[]){
+    int cont;
+
+    for(int i=0; lista[i]; != '\n'; i++){
+        cont++;
+
+    }
+        return cont;
 }
