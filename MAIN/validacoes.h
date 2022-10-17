@@ -1,5 +1,11 @@
 int validar_cpf(void);
+
+int validar_bissexto(void);
+
 int validar_data(void);
-void validar_string(void);
-void validar_inteiro(void);
-int tamanho_string(void);
+
+int validar_letras(char);
+
+int validar_tamanho_string(void);
+
+int validar_nome(char);

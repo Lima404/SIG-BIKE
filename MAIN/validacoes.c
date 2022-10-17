@@ -70,49 +70,75 @@ int validar_cpf(void){
 }  
 
 
-int validar_data(void){
+int validar_bissexto(void){
     
     //https://www.guj.com.br/t/ano-bissexto-linguagem-c/5696/13//
     
-    int dia, mes, ano;
-    int ultimo_dia[] = {-1,31,28,31,30,31,30,31,31,30,31,30,31};
-
-    for(;;) {
-        printf ("Digite a data no formato dd/mm/yyyy \n");
-
-        scanf("%d/%d/%d",&dia,&mes,&ano);
-                
-        if(dia<=0||mes<1||mes>12||ano<=0){	
-            printf("Data invalida\n");
-            continue;
-        }
-        
-
-        if(ano%4==0 && (ano%400==0 || ano%100!=0))
-            ultimo_dia[2]=29;					
-        else
-            ultimo_dia[2]=28;
+  if ((aa % 4 == 0) && (aa % 100 != 0)) {
+    return 1;
+  } else if (aa % 400 == 0) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
 
 
-        if(dia>ultimo_dia[mes])
-            printf("Data invalida\n");
-        else 
-            break;
+int validar_data(int dd, int mm, int aa) {
+  int maiorDia;
+  if (aa < 0 || mm < 1 || mm > 12)
+    return 0;
+  if (mm == 2) {
+    if (validar_bissexto(aa)) 
+      maiorDia = 29;
+    else
+      maiorDia = 28;
+  } else if (mm == 4 || mm == 6 || mm == 9 || mm == 11) {
+    maiorDia = 30;
+  } else
+    maiorDia = 31;
+  if (dd < 1 || dd > maiorDia)
+    return 0;
+  return 1;
+}
+
+int validar_letra(char c) {
+
+  //https://github.com/rauan-meirelles/Projeto-ParkingMod---DCT1106/blob/master/utilidade.c
+
+  if (c >= 'A' && c <= 'Z') {
+    return 1;
+  } else if (c >= 'a' && c <= 'z') {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
+int validar_nome(char* nome) {
+
+  //ttps://github.com/rauan-meirelles/Projeto-ParkingMod---DCT1106/blob/master/utilidade.c
+
+  for (int i=0; nome[i]!='\0'; i++) {
+    if (!validar_nome(nome[i])) {
+      return 1;
     }
-
- return 0;
+  }
+	return 1;
 }
 
 
-void validar_string(void){
+int validar_numeros(int n){
 
- }
-
- void validar_inteiro(void){
-    
+    if (n >= '1' && n <= '9') {
+    return 1;
+  } 
+}   else {
+    return 0;
 }
 
-int tamanho_string(char lista[]){
+
+int validar_tamanho_string(char lista[]){
     int cont;
 
     for(int i=0; lista[i]; != '\n'; i++){
@@ -120,4 +146,5 @@ int tamanho_string(char lista[]){
 
     }
         return cont;
+
 }
