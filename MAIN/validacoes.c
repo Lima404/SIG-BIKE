@@ -102,11 +102,22 @@ int validar_ano_bissexto(void){
  return 0;
 }
 
+    int validar_letra(char c) {
+  if (c >= 'A' && c <= 'Z') {
+    return 1;
+  } else if (c >= 'a' && c <= 'z') {
+    return 1;
+  } else {
+    return 0;
+  }
+}
 
-void validar_string(void){
 
- }
-
- void validar_inteiro(void){
+ void validar_numeros(void){
     
+}
+
+void limpa_tela(void) {
+  if (system("clear") || system("cls")) {
+  }
 }
