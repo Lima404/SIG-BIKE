@@ -84,7 +84,7 @@ int validar_bissexto(void){
 }
 
 
-int validar_data(int dd, int mm, int aa) {
+int validar_data(int dd, int mm, int aa){
   int maiorDia;
   if (aa < 0 || mm < 1 || mm > 12)
     return 0;
@@ -115,26 +115,16 @@ int validar_letra(char c) {
   }
 }
 
-int validar_nome(char* nome) {
+int validar_nome(char nome) {
 
-  //ttps://github.com/rauan-meirelles/Projeto-ParkingMod---DCT1106/blob/master/utilidade.c
+  //https://github.com/rauan-meirelles/Projeto-ParkingMod---DCT1106/blob/master/utilidade.c
 
   for (int i=0; nome[i]!='\0'; i++) {
-    if (!validar_nome(nome[i])) {
+    if (!validar_letra(nome[i])) {
       return 1;
     }
   }
 	return 1;
-}
-
-
-int validar_numeros(int n){
-
-    if (n >= '1' && n <= '9') {
-    return 1;
-  } 
-}   else {
-    return 0;
 }
 
 

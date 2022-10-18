@@ -4,7 +4,7 @@ int validar_bissexto(void);
 
 int validar_data(void);
 
-int validar_letras(char);
+int validar_letra(void);
 
 int validar_tamanho_string(void);
 
