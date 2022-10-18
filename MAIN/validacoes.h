@@ -1,11 +1,11 @@
-int validar_cpf(void);
+int validar_cpf(char cpf[]);
 
-int validar_bissexto(void);
+int validar_bissexto(int aa);
 
-int validar_data(void);
+int validar_data(int dd, int mm, int aa);
 
-int validar_letra(void);
+int validar_letra(char c);
 
-int validar_tamanho_string(void);
+int validar_tamanho_string(char lista[]);
 
-int validar_nome(char);
+int validar_nome(char nome []);

@@ -79,7 +79,7 @@ void menu_cadastro_cliente(void){
     char telefone [20];
     char data_de_nascimento[20];
     char endereco [40];
-    int dd, mm, aa(void);
+    int dd, mm, aa;
 
     
 
@@ -140,7 +140,7 @@ void menu_cadastro_cliente(void){
         scanf("%d", &aa);
         getchar();
         
-    } while(!validar_bissexto(dd, mm, aa) || (!validar_data(dd, mm, aa)));
+    } while(!validar_data(dd, mm, aa));
     
 //endereço
 

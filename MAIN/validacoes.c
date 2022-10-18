@@ -7,20 +7,20 @@
 
 
 
-int validar_cpf(void){
+int validar_cpf(char cpf []){
     
     //http://pog-carlos.blogspot.com/2011/11/validacao-de-cpf-em-c-usando-vetor.html
 
-    char cpf[12];  
+    char codp[12];  
     int icpf[12];  
     int i,somador=0,digito1,result1,result2,digito2,valor;  
     
     printf("Digite o cpf: ");  
-    scanf(" %s",cpf);  
+    scanf(" %s",codp);  
     
     //Efetua a conversao de array de char para um array de int.  
     for(i=0;i<11;i++){  
-    icpf[i]=cpf[i]-48;
+    icpf[i]=codp[i]-48;
     }  
     
     //PRIMEIRO DIGITO.  
@@ -70,7 +70,7 @@ int validar_cpf(void){
 }  
 
 
-int validar_bissexto(void){
+int validar_bissexto(int aa){
     
     //https://www.guj.com.br/t/ano-bissexto-linguagem-c/5696/13//
     
@@ -115,13 +115,13 @@ int validar_letra(char c) {
   }
 }
 
-int validar_nome(char nome) {
+int validar_nome(char nome []) {
 
   //https://github.com/rauan-meirelles/Projeto-ParkingMod---DCT1106/blob/master/utilidade.c
 
   for (int i=0; nome[i]!='\0'; i++) {
     if (!validar_letra(nome[i])) {
-      return 1;
+      return 0;
     }
   }
 	return 1;
@@ -131,7 +131,7 @@ int validar_nome(char nome) {
 int validar_tamanho_string(char lista[]){
     int cont;
 
-    for(int i=0; lista[i]; != '\n'; i++){
+    for(int i=0; lista[i] != '\n'; i++){
         cont++;
 
     }
