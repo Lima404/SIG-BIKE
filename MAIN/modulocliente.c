@@ -79,6 +79,7 @@ void menu_cadastro_cliente(void){
     char telefone [20];
     char data_de_nascimento[20];
     char endereco [40];
+    int dd, mm, aa;
 
     
 
@@ -100,25 +101,57 @@ void menu_cadastro_cliente(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("================Menu Cliente - Cadastro==============\n");
     printf("===                                               ===\n");
-    printf(" | Digite seu nome: ");
-    scanf("%[A-Z a-z]", nome);
-    getchar();
-    printf(" | Digite seu CPF: ");
-    scanf("%[0-9 . -]", cpf); 
-    getchar();
+    
+//Nome
+
+    do{
+        printf(" | Digite seu nome por favor! ");
+        scanf("%s", nome);
+        getchar();
+        
+    } while (!validar_nome(nome));
+
+//CPF
+
+    do{
+        printf(" | Digite seu CPF por favor! ");
+        scanf("%s", cpf);
+        getchar();
+        
+    } while (!validar_cpf(cpf));
+
+//telefone
+
     printf(" | Digite seu telefone: ");   
     scanf("%[0-9.,()/]", telefone);
     getchar();
-    printf(" | Digite sua data de nascimento (DD/MM/AAAA): ");
-    scanf("%[0-9 /]", data_de_nascimento);
-    getchar();
+
+    
+// Data de nascimento
+
+     do {
+        printf(" | Digite o dia que você nasceu por favor! ");
+        scanf("%d", &dd);
+        getchar();
+        printf(" | Digite o seu mês de nascimento! ");
+        scanf("%d", &mm);
+        getchar();
+        printf(" | digite o seu ano de nascimento! ");
+        scanf("%d", &aa);
+        getchar();
+        
+    } while(!validar_data(dd, mm, aa));
+    
+//endereço
+
     printf(" | Digite seu endereço: ");
     scanf("%[A-Z 0-9]", endereco);
     getchar();
+
     printf("=== Usuário foi cadastrado no sistema!!           ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
-    printf(" Press ENTER to exit...");
+    sleep(3);
     getchar();
 }
 
