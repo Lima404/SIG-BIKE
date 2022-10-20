@@ -308,6 +308,7 @@ char menu_lista_agendamento(void){
     printf("===     0.Voltar                                  ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...\n");
+    scanf("%c", &esc);
     getchar();
     return esc;
 }

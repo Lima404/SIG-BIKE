@@ -77,7 +77,7 @@ void menu_cadastro_cliente(void){
     char nome [20];
     char cpf [11];
     char telefone [20];
-    char data_de_nascimento[20];
+    //char data_de_nascimento[20];
     char endereco [40];
     int dd, mm, aa;
 
@@ -105,8 +105,8 @@ void menu_cadastro_cliente(void){
 //Nome
 
     do{
-        printf(" | Digite seu nome por favor! ");
-        scanf("%s", nome);
+        printf(" Digite seu nome por favor: ");
+        scanf("%s", nome);                            //executa tudo isso até que a condição da função seja satisfeita
         getchar();
         
     } while (!validar_nome(nome));
@@ -114,7 +114,7 @@ void menu_cadastro_cliente(void){
 //CPF
 
     do{
-        printf(" | Digite seu CPF por favor! ");
+        printf(" Digite seu CPF por favor: ");
         scanf("%s", cpf);
         getchar();
         
@@ -122,21 +122,21 @@ void menu_cadastro_cliente(void){
 
 //telefone
 
-    printf(" | Digite seu telefone: ");   
-    scanf("%[0-9.,()/]", telefone);
+    printf(" Digite seu telefone: ");   
+    scanf("%[0-9.,()/,-]", telefone);
     getchar();
 
     
 // Data de nascimento
 
      do {
-        printf(" | Digite o dia que você nasceu por favor! ");
+        printf(" Digite o dia que você nasceu por favor: ");
         scanf("%d", &dd);
         getchar();
-        printf(" | Digite o seu mês de nascimento! ");
+        printf(" Digite o seu mês de nascimento: ");
         scanf("%d", &mm);
         getchar();
-        printf(" | digite o seu ano de nascimento! ");
+        printf(" digite o seu ano de nascimento: ");
         scanf("%d", &aa);
         getchar();
         
@@ -144,14 +144,12 @@ void menu_cadastro_cliente(void){
     
 //endereço
 
-    printf(" | Digite seu endereço: ");
+    printf(" Digite seu endereço: ");
     scanf("%[A-Z 0-9]", endereco);
     getchar();
 
-    printf("=== Usuário foi cadastrado no sistema!!           ===\n");
+    printf("=== Usuário foi cadastrado no sistema!            ===\n");
     printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    sleep(3);
     getchar();
 }
 
