@@ -23,8 +23,7 @@ int validar_cpf(char cpf []){
     icpf[i]=codp[i]-48;
     }  
     
-    //PRIMEIRO DIGITO.  
-    
+    //PRIMEIRO DIGITO.
     for(i=0;i<9;i++){  
     somador+=icpf[i]*(10-i);  
     }  
@@ -39,8 +38,7 @@ int validar_cpf(char cpf []){
     digito1 = 11-result1;  
     }  
     
-    //SEGUNDO DIGITO.  
-    
+    //SEGUNDO DIGITO.
     somador=0;  
     
     for(i=0;i<10;i++){  
@@ -59,7 +57,6 @@ int validar_cpf(char cpf []){
     }  
     
     //RESULTADOS DA VALIDACÃO
-    
     if((digito1==icpf[9]) && (digito2==icpf[10])){  
         printf("\nCPF VALIDADO.\n");  
         }  
