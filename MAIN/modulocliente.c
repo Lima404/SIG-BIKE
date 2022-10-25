@@ -6,6 +6,17 @@
 #include "modulocliente.h"
 #include "validacoes.h"
 
+struct cliente {
+
+    char nome [20];
+    char cpf [11];
+    char telefone [20];
+    char data_de_nascimento[20];
+    char endereco [40];
+    int dd, mm, aa;
+
+};
+
 void menu_nav_cliente(void)
 {   char esc = ' ';
     do {
@@ -72,16 +83,11 @@ char menu_cliente(void){
 
 }
 
-void menu_cadastro_cliente(void){
-    
-    char nome [20];
-    char cpf [11];
-    char telefone [20];
-    //char data_de_nascimento[20];
-    char endereco [40];
-    int dd, mm, aa;
+void menu_cadastro_cliente(Aluno*,void){
+    int pos;
+    char resp;
+    Cliente cliente[50];
 
-    
 
     system("clear||cls");
     printf("\n");
@@ -103,7 +109,7 @@ void menu_cadastro_cliente(void){
     printf("===                                               ===\n");
     
 //Nome
-
+    pos = 0;
     do{
         printf(" Digite seu nome por favor: ");
         scanf("%s", nome);                            //executa tudo isso até que a condição da função seja satisfeita
@@ -153,7 +159,7 @@ void menu_cadastro_cliente(void){
     getchar();
 }
 
-char menu_lista_cliente(void){
+char menu_lista_cliente(Aluno*,void){
     char esc;
     system("clear||cls");
     printf("\n");
@@ -220,6 +226,7 @@ char menu_apagar_cliente(void){
 
 char menu_editar_cliente(void){
 
+    char cpf[11];
     char esc;
 
     system("clear||cls");
