@@ -7,18 +7,20 @@
 #include "validacoes.h"
 
 void menu_nav_cliente(void)
-{   char esc = ' ';
+{   Cadastro* menu_cadastro_cliente;
+    Apagar* menu_apagar_cliente;
+    char esc = ' ';
     do {
         esc = menu_cliente();
         switch (esc) {
         case '1':
-            menu_cadastro_cliente();
+            menu_cadastro_cliente = cadastroCliente( );
             break;
         case '2':
             menu_lista_cliente();
             break; 
         case '3':
-            menu_apagar_cliente();
+            menu_apagar_cliente = apagarCliente( );
             break;
         case '4':
             menu_editar_cliente();
@@ -72,17 +74,10 @@ char menu_cliente(void){
 
 }
 
-void menu_cadastro_cliente(void){
-    
-    char nome [20];
-    char cpf [11];
-    char telefone [20];
-    //char data_de_nascimento[20];
-    char endereco [40];
-    int dd, mm, aa;
+Cadastro* cadastroCliente( ){
 
-    
-
+    Cadastro* cad;
+    cad = (Cadastro*) malloc(sizeof(Cadastro));
     system("clear||cls");
     printf("\n");
     printf("=====================================================\n");
@@ -106,52 +101,53 @@ void menu_cadastro_cliente(void){
 
     do{
         printf(" Digite seu nome por favor: ");
-        scanf("%s", nome);                            //executa tudo isso até que a condição da função seja satisfeita
+        scanf("%s", cad->nome);                            //executa tudo isso até que a condição da função seja satisfeita
         getchar();
         
-    } while (!validar_nome(nome));
+    } while (!validar_nome(cad->nome));
 
 //CPF
 
     do{
         printf(" Digite seu CPF por favor: ");
-        scanf("%s", cpf);
+        scanf("%s", cad->cpf);
         getchar();
         
-    } while (!validar_cpf(cpf));
+    } while (!validar_cpf(cad->cpf));
 
 //telefone
 
     printf(" Digite seu telefone: ");   
-    scanf("%[0-9.,()/,-]", telefone);
+    scanf("%[0-9.,()/,-]", cad->telefone);
     getchar();
-
-    
-// Data de nascimento
-
-     do {
-        printf(" Digite o dia que você nasceu por favor: ");
-        scanf("%d", &dd);
-        getchar();
-        printf(" Digite o seu mês de nascimento: ");
-        scanf("%d", &mm);
-        getchar();
-        printf(" digite o seu ano de nascimento: ");
-        scanf("%d", &aa);
-        getchar();
-        
-    } while(!validar_data(dd, mm, aa));
     
 //endereço
 
     printf(" Digite seu endereço: ");
-    scanf("%[A-Z 0-9]", endereco);
+    scanf("%[A-Z 0-9]", cad->endereco);
     getchar();
 
     printf("=== Usuário foi cadastrado no sistema!            ===\n");
     printf("===                                               ===\n");
     getchar();
+
+// Data de nascimento
+
+    do {
+        printf(" Digite o dia que você nasceu por favor: ");
+        scanf("%d", &cad->dd);
+        getchar();
+        printf(" Digite o seu mês de nascimento: ");
+        scanf("%d", &cad->mm);
+        getchar();
+        printf(" digite o seu ano de nascimento: ");
+        scanf("%d", &cad->aa);
+        getchar();
+        
+    } while(!validar_data(cad->dd, cad->mm, cad->aa));
 }
+
+//  LISTA DE CLIENTES
 
 char menu_lista_cliente(void){
     char esc;
@@ -183,9 +179,12 @@ char menu_lista_cliente(void){
     return esc;
 }
 
-char menu_apagar_cliente(void){
+// APAGAR CLIENTE
 
-    char cpf [11];
+Apagar* apagarCliente( ){
+
+    Apagar* apa;
+    apa = (Apagar*) malloc(sizeof(Apagar));
     char esc;
 
     system("clear||cls");
@@ -205,16 +204,21 @@ char menu_apagar_cliente(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("=================Menu Cliente - Apagar===============\n");
     printf("===                                               ===\n");
-    printf(" | Digite o CPF do cliente, (só números): ");
-    scanf("%[0-9.,..,-]", cpf); 
-    getchar();
+
+    do{
+        printf(" Digite seu CPF por favor: ");
+        scanf("%s", apa->cpf);
+        getchar();
+        
+    } while (!validar_cpf(apa->cpf));
+
     printf("=== O usuário foi deletado com sucesso!!          ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...\n");
     scanf("%c", &esc);
     getchar();
-
+    
     return esc;
 }
 
