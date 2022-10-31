@@ -118,6 +118,7 @@ Cadastro* cadastroCliente( ){
 
 //telefone
 
+    
         printf(" Digite seu telefone: ");   
         scanf("%[0-9 -]", cad->telefone);
         getchar();
