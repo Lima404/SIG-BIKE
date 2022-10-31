@@ -11,16 +11,13 @@ int validar_cpf(char cpf []){
     
     //http://pog-carlos.blogspot.com/2011/11/validacao-de-cpf-em-c-usando-vetor.html
 
-    char codp[12];  
     int icpf[12];  
     int i,somador=0,digito1,result1,result2,digito2,valor;  
     
-    printf("Digite o cpf: ");  
-    scanf(" %s",codp);  
     
     //Efetua a conversao de array de char para um array de int.  
     for(i=0;i<11;i++){  
-    icpf[i]=codp[i]-48;
+    icpf[i]=cpf[i]-48;
     }  
     
     //PRIMEIRO DIGITO.
@@ -58,11 +55,9 @@ int validar_cpf(char cpf []){
     
     //RESULTADOS DA VALIDACÃO
     if((digito1==icpf[9]) && (digito2==icpf[10])){  
-        printf("\nCPF VALIDADO.\n");  
+        return 1;
         }  
-    else{  
-        printf("Problema com os digitos.\n");  
-    }  
+
     return 0;  
 }  
 

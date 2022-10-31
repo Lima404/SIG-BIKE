@@ -15,7 +15,7 @@ void menu_nav_cliente(void)
         esc = menu_cliente();
         switch (esc) {
         case '1':
-            cliente = cadastroCliente( );
+            cliente = cadastroCliente();
             break;
         case '2':
             menu_lista_cliente();
@@ -149,6 +149,7 @@ Cadastro* cadastroCliente( ){
         getchar();
         
     } while(!validar_data(cad->dd, cad->mm, cad->aa));
+    return cad;
 }
 
 //  LISTA DE CLIENTES

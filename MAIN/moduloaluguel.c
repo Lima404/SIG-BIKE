@@ -4,6 +4,7 @@
 #include <string.h>
 #include <ctype.h>
 #include "moduloaluguel.h"
+#include "validacoes.h"
 
 void menu_nav_aluguel(void)
 {   
@@ -163,6 +164,7 @@ ApagarAluguel* apagarAluguel( ){
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...\n");
     getchar();
+    
     return apaaluguel;
 
 }
