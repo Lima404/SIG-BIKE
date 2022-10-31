@@ -5,21 +5,24 @@
 #include <ctype.h>
 #include "moduloveiculo.h"
 #include "moduloestoque.h"
+#include "validacoes.h"
 
 void menu_nav_veiculo(void)
 {
+    ApagarVeiculo* cadaveiculo( );
+    CadastroVeiculo* apaveiculo( );
     char esc = ' ';
     do {
         esc = menu_veiculo();
         switch (esc) {
         case '1':
-            menu_cadastro_veiculo();
+            cadaveiculo = CadastroVeiculo();
             break;
         case '2':
             menu_lista_veiculo();
             break; 
         case '3':
-            menu_apagar_veiculo();
+            apaveiculo = ApagarVeiculo( );
             break;
         case '4':
             menu_editar_veiculo();
@@ -85,13 +88,10 @@ char menu_veiculo(void){
 
 }
 
-void menu_cadastro_veiculo(void){
+CadastroVeiculo* cadastroVeiculo( ){
     
-    char tipo [20];
-    char marca [20];
-    char desc [200];
-    char cod[20];
-    char preco [20];
+    CadastroVeiculo* cadaveiculo;
+    cadaveiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
 
     system("clear||cls");
     printf("\n");
@@ -118,26 +118,54 @@ void menu_cadastro_veiculo(void){
     printf("=====================================================\n");
     printf("=====================================================\n");
     
-    printf(" | Digite o tipo do veículo: \n");
-    scanf("%[A-Z a-z]", tipo);
+    do{
+
+    printf(" | Digite o tipo do veículo: ");
+    scanf("%[A-Z a-z]", cadaveiculo->tipo);
     getchar();
-    printf(" | Digite a marca do veículo: \n");
-    scanf("%[A-Z a-z]", marca); 
+
+    } while (cadaveiculo->tipo);
+
+    do{
+
+    printf(" | Digite a marca do veículo: ");
+    scanf("%[A-Z a-z]", cadaveiculo->marca); 
     getchar();
-    printf(" | Digite uma descrição sobre o veículo: \n");   
-    scanf("%[A-Z a-z]", desc);
+
+    }while (cadaveiculo->marca);
+
+    do{
+
+    printf(" | Digite uma descrição sobre o veículo: ");   
+    scanf("%[A-Z a-z]", cadaveiculo->desc);
     getchar();
-    printf(" | Digite o código pra registrar o veículo: \n");
-    scanf("%[0-9]", cod);
+
+    }while (cadaveiculo->desc);
+
+    do{
+
+    printf(" | Digite o código pra registrar o veículo: ");
+    scanf("%[0-9]", cadaveiculo->cod);
     getchar();
-    printf(" | Digite o preço: \n");
-    scanf("%[R., $ 0-9]", preco);
+
+    }while (cadaveiculo->cod);
+
+    do{
+
+    printf(" | Digite o preço: ");
+    scanf("%[R., $ 0-9]", cadaveiculo->preco);
     getchar();
+
+    }while (cadaveiculo->preco);
+
     printf("=== O Veículo foi cadastrado no sistema!!         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...\n");
     getchar();
+
+    return cadaveiculo;
+
 }
 
 
@@ -171,10 +199,10 @@ char menu_lista_veiculo(void){
     return esc;
 }
 
-void menu_apagar_veiculo(void){
+ApagarVeiculo* apagarVeiculo( ){
 
-    char marca[20];
-    char cod [11];
+    ApagarVeiculo* apaveiculo;
+    apaveiculo = (ApagarVeiculo*) malloc(sizeof(ApagarVeiculo));
 
     system("clear||cls");
     printf("\n");
@@ -193,17 +221,22 @@ void menu_apagar_veiculo(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("=================Menu Veículo - Apagar===============\n");
     printf("===                                               ===\n");
-    printf(" | Digite a marca do veículo: ");
-    scanf("%[A-Z a-z]", marca);
-    getchar(); 
+
+    do {
+
     printf(" | Digite o código para encontrar o veículo: ");
-    scanf("%[0-9.,/]", cod); 
+    scanf("%[0-9.,/]", apaveiculo->cod); 
     getchar();
+
+    }while (apaveiculo->cod);
+
     printf("=== O veículo foi deletado com sucesso!!          ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...\n");
     getchar();
+
+    return apaveiculo;
 }
 
 char menu_editar_veiculo(void){

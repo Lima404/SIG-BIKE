@@ -4,17 +4,21 @@
 #include <string.h>
 #include <ctype.h>
 #include "moduloaluguel.h"
+#include "validacoes.h"
 
 void menu_nav_aluguel(void)
-{   char esc = ' ';
+{   
+    CadastroAluguel* cadaluguel;
+    ApagarAluguel* apaexcluir;
+    char esc = ' ';
     do {
         esc = menu_aluguel();
         switch (esc) {
         case '1':
-            menu_cadastro_aluguel();
+            cadaluguel = cadastroAluguel( );
             break;
         case '2':
-            menu_excluir_aluguel();
+            apaexcluir = apagarAluguel( );
             break; 
         case '3':
             menu_editar_aluguel();
@@ -73,13 +77,10 @@ char menu_aluguel(void){
     return op;
 }
 
-void menu_cadastro_aluguel(void){
+CadastroAluguel* cadastroAluguel( ){
 
-    char nome [20];
-    char cpf [11];
-    char telefone [20];
-    char cod [10];
-    char endereco [20];
+    CadastroAluguel* cadaaluguel;
+    cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
 
     system("clear||cls");
     printf("\n");
@@ -99,33 +100,38 @@ void menu_cadastro_aluguel(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("================Menu Aluguel - Cadastro==============\n");
     printf("===                                               ===\n");
-    printf(" | Digite seu nome: \n");
-    scanf("%[A-Z a-z]", nome);
-    getchar();
-    printf(" | Digite seu CPF (só numeros): \n");
-    scanf("%[0-9]", cpf); 
-    getchar();
-    printf(" | Digite seu Telefone: \n");   
-    scanf("%[0-9 ( ) /]", telefone);
-    getchar();
-    printf(" | Digite o código do veiculo: \n");
-    scanf("%[0-9 /]", cod);
-    getchar();
-    printf(" | Digite seu endereco: \n");
-    scanf("%[A-Z 0-9]", endereco);
-    getchar();
+    
+
+    do{
+
+        printf("Digite seu CPF: ");
+        scanf("%s", cadaaluguel->cpf);
+        getchar();
+
+    } while (!validar_cpf(cadaaluguel->cpf));
+
+    do{
+
+        printf(" | Digite o código do veiculo: \n");
+        scanf("%s", cadaaluguel->cod);
+        getchar();
+
+    } while(cadaaluguel->cod);
+
     printf("=== Aluguel foi cadastrado no sistema!!           ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...");
     getchar();
+
+    return cadaaluguel;
+
 }
 
-char menu_excluir_aluguel(void){
+ApagarAluguel* apagarAluguel( ){
     
-    char nome [20];
-    char cpf [11];
-    char esc;
+    ApagarAluguel* apaaluguel;
+    apaaluguel =(ApagarAluguel*) malloc(sizeof(ApagarAluguel));
 
     system("clear||cls");
     printf("\n");
@@ -144,19 +150,23 @@ char menu_excluir_aluguel(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("=================Menu Aluguel - Apagar===============\n");
     printf("===                                               ===\n");
-    printf(" | Digite seu nome: ");
-    scanf("%[A-Z a-z]", nome);
-    getchar(); 
-    printf(" | Digite seu CPF, (só numeros): ");
-    scanf("%[0-9.,..,-]", cpf); 
-    getchar();
+
+    do{
+
+        printf(" | Digite seu CPF, (só numeros): ");
+        scanf("%s", apaaluguel->cpf); 
+        getchar();
+
+    }while (!validar_cpf(apaaluguel->cpf));
+
     printf("=== Usuário foi deletado com sucesso!!            ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...\n");
-    scanf("%c",&esc);
     getchar();
-    return esc;
+    
+    return apaaluguel;
+
 }
 
 char menu_editar_aluguel(void){

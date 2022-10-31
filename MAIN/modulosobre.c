@@ -4,6 +4,7 @@
 #include <string.h>
 #include <ctype.h>
 #include "modulosobre.h"
+#include "validacoes.h"
 
 char menu_sobre(void){
     char op;

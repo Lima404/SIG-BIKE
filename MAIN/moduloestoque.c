@@ -4,6 +4,7 @@
 #include <string.h>
 #include <ctype.h>
 #include "moduloestoque.h"
+#include "validacoes.h"
 
 void menu_nav_estoque(void)
 {

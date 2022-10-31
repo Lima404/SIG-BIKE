@@ -4,6 +4,7 @@
 #include <string.h>
 #include <ctype.h>
 #include "moduloadministracao.h"
+#include "validacoes.h"
 
 void menu_nav_adm(void)
 {   char esc = ' ';
