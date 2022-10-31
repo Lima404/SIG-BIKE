@@ -7,20 +7,21 @@
 #include "validacoes.h"
 
 void menu_nav_cliente(void)
-{   Cadastro* menu_cadastro_cliente;
-    Apagar* menu_apagar_cliente;
+{   
+    Cadastro* cliente;
+    Apagar* excluir;
     char esc = ' ';
     do {
         esc = menu_cliente();
         switch (esc) {
         case '1':
-            menu_cadastro_cliente = cadastroCliente( );
+            cliente = cadastroCliente( );
             break;
         case '2':
             menu_lista_cliente();
             break; 
         case '3':
-            menu_apagar_cliente = apagarCliente( );
+            excluir = apagarCliente( );
             break;
         case '4':
             menu_editar_cliente();
@@ -117,9 +118,11 @@ Cadastro* cadastroCliente( ){
 
 //telefone
 
-    printf(" Digite seu telefone: ");   
-    scanf("%[0-9.,()/,-]", cad->telefone);
-    getchar();
+        printf(" Digite seu telefone: ");   
+        scanf("%[0-9 -]", cad->telefone);
+        getchar();
+
+
     
 //endereço
 
@@ -219,7 +222,7 @@ Apagar* apagarCliente( ){
     scanf("%c", &esc);
     getchar();
     
-    return esc;
+    return apa;
 }
 
 char menu_editar_cliente(void){

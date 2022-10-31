@@ -17,8 +17,6 @@ struct cadastro{
     int dd, mm, aa;
 };
 
-Cadastro* cadastroCliente( );
-
 // APAGAR CLIENTE
 
 typedef struct apagar Apagar;
@@ -27,3 +25,4 @@ struct apagar{
 };
 
 Apagar* apagarCliente( );
+Cadastro* cadastroCliente( );
