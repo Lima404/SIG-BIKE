@@ -15,10 +15,10 @@ void menu_nav_aluguel(void)
         esc = menu_aluguel();
         switch (esc) {
         case '1':
-            cadaluguel = cadastroAluguel( );
+            cadaluguel = cadastroAluguel( ;
             break;
         case '2':
-            apaexcluir = apagarAluguel( );
+            apaexcluir = apagarAluguel();
             break; 
         case '3':
             menu_editar_aluguel();

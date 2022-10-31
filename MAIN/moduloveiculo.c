@@ -9,20 +9,20 @@
 
 void menu_nav_veiculo(void)
 {
-    ApagarVeiculo* cadaveiculo( );
-    CadastroVeiculo* apaveiculo( );
+    ApagarVeiculo* apaveiculo;
+    CadastroVeiculo* cadveiculo;
     char esc = ' ';
     do {
         esc = menu_veiculo();
         switch (esc) {
         case '1':
-            cadaveiculo = CadastroVeiculo();
+            cadveiculo = cadastroVeiculo();
             break;
         case '2':
             menu_lista_veiculo();
             break; 
         case '3':
-            apaveiculo = ApagarVeiculo( );
+            apaveiculo = apagarVeiculo();
             break;
         case '4':
             menu_editar_veiculo();
