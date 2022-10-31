@@ -16,7 +16,7 @@ void menu_nav_veiculo(void)
         esc = menu_veiculo();
         switch (esc) {
         case '1':
-            cadaveiculo = CadastroVeiculo( );
+            cadaveiculo = CadastroVeiculo();
             break;
         case '2':
             menu_lista_veiculo();
