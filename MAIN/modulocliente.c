@@ -21,7 +21,7 @@ void menu_nav_cliente(void)
             menu_lista_cliente();
             break; 
         case '3':
-            excluir = apagarCliente( );
+            excluir = apagarCliente();
             break;
         case '4':
             menu_editar_cliente();
