@@ -15,13 +15,13 @@ void menu_nav_cliente(void)
         esc = menu_cliente();
         switch (esc) {
         case '1':
-            cliente = cadastroCliente();
+            cliente = cadastroCliente(cliente);
             break;
         case '2':
             menu_lista_cliente();
             break; 
         case '3':
-            excluir = apagarCliente();
+            excluir = apagarCliente(excluir);
             break;
         case '4':
             menu_editar_cliente();
