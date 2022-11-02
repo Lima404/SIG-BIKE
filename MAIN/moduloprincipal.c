@@ -5,7 +5,6 @@
 #include <ctype.h>
 #include "moduloadministracao.h"
 #include "modulocliente.h"
-#include "moduloestoque.h"
 #include "moduloaluguel.h"
 #include "modulosobre.h"
 #include "moduloveiculo.h"
