@@ -110,7 +110,7 @@ Cadastro* cadastroCliente( ){
 //CPF
 
     do{
-        printf(" Digite seu CPF por favor: ");
+        printf(" Digite seu CPF(APENAS NUMEROS): ");
         scanf("%s", cad->cpf);
         getchar();
         
@@ -119,7 +119,7 @@ Cadastro* cadastroCliente( ){
 //telefone
 
     
-        printf(" Digite seu telefone: ");   
+        printf(" Digite seu telefone(APENAS NUMEROS): ");   
         scanf("%[0-9 -]", cad->telefone);
         getchar();
 
