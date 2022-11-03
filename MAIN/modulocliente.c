@@ -15,7 +15,9 @@ void menu_nav_cliente(void)
         esc = menu_cliente();
         switch (esc) {
         case '1':
-            cliente = cadastroCliente();
+            cliente = preencheCliente();
+            gravaCliente(cliente);
+            free(cliente);
             break;
         case '2':
             menu_lista_cliente();
@@ -75,7 +77,7 @@ char menu_cliente(void){
 
 }
 
-Cadastro* cadastroCliente( ){
+Cadastro* preencheCliente(void){
 
     Cadastro* cad;
     cad = (Cadastro*) malloc(sizeof(Cadastro));
@@ -102,7 +104,7 @@ Cadastro* cadastroCliente( ){
 
     do{
         printf(" Digite seu nome por favor: ");
-        scanf("%s", cad->nome);                            //executa tudo isso até que a condição da função seja satisfeita
+        scanf("%20[^\n]", cad->nome);                            //executa tudo isso até que a condição da função seja satisfeita
         getchar();
         
     } while (!validar_nome(cad->nome));
@@ -111,7 +113,7 @@ Cadastro* cadastroCliente( ){
 
     do{
         printf(" Digite seu CPF por favor: ");
-        scanf("%s", cad->cpf);
+        scanf("%c", &cad->cpf);
         getchar();
         
     } while (!validar_cpf(cad->cpf));
@@ -120,7 +122,7 @@ Cadastro* cadastroCliente( ){
 
     
         printf(" Digite seu telefone: ");   
-        scanf("%[0-9 -]", cad->telefone);
+        scanf("%20[^\n]", cad->telefone);
         getchar();
 
 
@@ -128,7 +130,7 @@ Cadastro* cadastroCliente( ){
 //endereço
 
     printf(" Digite seu endereço: ");
-    scanf("%[A-Z 0-9]", cad->endereco);
+    scanf("%40[^\n]", cad->endereco);
     getchar();
 
     printf("=== Usuário foi cadastrado no sistema!            ===\n");
@@ -149,7 +151,23 @@ Cadastro* cadastroCliente( ){
         getchar();
         
     } while(!validar_data(cad->dd, cad->mm, cad->aa));
+    cad->status = "m";
     return cad;
+}
+
+
+// Gravar em arquivo
+
+void gravaCliente(Cadastro* cad){
+    FILE* fp;
+    fp = fopen("cliente.dat", "ab");
+    if (fp ==  NULL){
+        printf("Ops, Ocorreu um erro na abertura!/n");
+        printf("Não é possivel continuar esse programa... /n");
+        exit(1);
+    }
+    fwrite(cad, sizeof(Cadastro), 1, fp);
+    fclose(fp);
 }
 
 //  LISTA DE CLIENTES
