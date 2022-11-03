@@ -104,7 +104,7 @@ Cadastro* preencheCliente(void){
 
     do{
         printf(" Digite seu nome por favor: ");
-        scanf("%20[^\n]", cad->nome);                            //executa tudo isso até que a condição da função seja satisfeita
+        scanf("%[A-Z a-z 0-9] \n", cad->nome);                            //executa tudo isso até que a condição da função seja satisfeita
         getchar();
         
     } while (!validar_nome(cad->nome));
