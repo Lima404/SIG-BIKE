@@ -151,7 +151,7 @@ Cadastro* preencheCliente(void){
     } while(!validar_data(cad->dd, cad->mm, cad->aa));
     cad->status = "m";
     return cad;
-    
+
     printf("=== Usuário foi cadastrado no sistema!            ===\n");
     printf("===                                               ===\n");
     getchar();
