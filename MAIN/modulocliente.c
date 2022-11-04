@@ -104,7 +104,7 @@ Cadastro* preencheCliente(void){
 
     do{
         printf(" Digite seu nome por favor: ");
-        scanf("%[A-Z a-z 0-9] \n", cad->nome);                            //executa tudo isso até que a condição da função seja satisfeita
+        scanf("%[A-Z a-z]", cad->nome);                            //executa tudo isso até que a condição da função seja satisfeita
         getchar();
         
     } while (!validar_nome(cad->nome));
@@ -113,7 +113,7 @@ Cadastro* preencheCliente(void){
 
     do{
         printf(" Digite seu CPF por favor: ");
-        scanf("%c", &cad->cpf);
+        scanf("%s", &cad->cpf);
         getchar();
         
     } while (!validar_cpf(cad->cpf));
@@ -133,10 +133,6 @@ Cadastro* preencheCliente(void){
     scanf("%40[^\n]", cad->endereco);
     getchar();
 
-    printf("=== Usuário foi cadastrado no sistema!            ===\n");
-    printf("===                                               ===\n");
-    getchar();
-
 // Data de nascimento
 
     do {
@@ -153,6 +149,10 @@ Cadastro* preencheCliente(void){
     } while(!validar_data(cad->dd, cad->mm, cad->aa));
     cad->status = "m";
     return cad;
+    
+    printf("=== Usuário foi cadastrado no sistema!            ===\n");
+    printf("===                                               ===\n");
+    getchar();
 }
 
 

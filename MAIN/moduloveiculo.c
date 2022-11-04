@@ -4,7 +4,6 @@
 #include <string.h>
 #include <ctype.h>
 #include "moduloveiculo.h"
-#include "moduloestoque.h"
 #include "validacoes.h"
 
 void menu_nav_veiculo(void)
@@ -27,10 +26,10 @@ void menu_nav_veiculo(void)
         case '4':
             menu_editar_veiculo();
             break;
-        case '5':
+        /* case '5':
             menu_nav_estoque();
             break;
-        /* case '7':
+         case '7':
             menu_veiculo_manutencao();
             break;
         case '8':
@@ -71,8 +70,8 @@ char menu_veiculo(void){
     printf("===              2.Lista de Veículos              ===\n");
     printf("===              3.Apagar Veículo                 ===\n");
     printf("===              4.Editar Veículo                 ===\n");
-    printf("===              5.Menu Estoque:                  ===\n");
- /* printf("===              6.Agendar Manutenção:            ===\n");
+ /* printf("===              5.Menu Estoque:                  ===\n");
+    printf("===              6.Agendar Manutenção:            ===\n");
     printf("===              7.Lista de Manutenção:           ===\n");
     printf("===              8.Lista de Agendamentos:         ===\n"); */
     printf("===              0.Voltar                         ===\n");
