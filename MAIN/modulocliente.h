@@ -35,5 +35,7 @@ struct apagar{
 };
 
 Apagar* apagarCliente( );
+
 // Cadastro* cadastroCliente( );
+Cadastro* cadastroCliente( );
 

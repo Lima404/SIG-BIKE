@@ -15,21 +15,21 @@ void menu_nav_veiculo(void)
         esc = menu_veiculo();
         switch (esc) {
         case '1':
-            cadveiculo = cadastroVeiculo();
+            cadveiculo = cadastroVeiculo(cadveiculo);
             break;
         case '2':
             menu_lista_veiculo();
             break; 
         case '3':
-            apaveiculo = apagarVeiculo();
+            apaveiculo = apagarVeiculo(apaveiculo);
             break;
         case '4':
             menu_editar_veiculo();
             break;
-        /* case '5':
+        /*  case '5':
             menu_nav_estoque();
             break;
-         case '7':
+             case '7':
             menu_veiculo_manutencao();
             break;
         case '8':

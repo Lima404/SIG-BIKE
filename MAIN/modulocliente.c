@@ -23,7 +23,7 @@ void menu_nav_cliente(void)
             menu_lista_cliente();
             break; 
         case '3':
-            excluir = apagarCliente();
+            excluir = apagarCliente(excluir);
             break;
         case '4':
             menu_editar_cliente();
@@ -112,8 +112,9 @@ Cadastro* preencheCliente(void){
 //CPF
 
     do{
-        printf(" Digite seu CPF por favor: ");
-        scanf("%s", &cad->cpf);
+    
+        printf(" Digite seu CPF(APENAS NUMEROS): ");
+        scanf("%s", cad->cpf);
         getchar();
         
     } while (!validar_cpf(cad->cpf));
@@ -121,6 +122,7 @@ Cadastro* preencheCliente(void){
 //telefone
 
     
+
         printf(" Digite seu telefone: ");   
         scanf("%20[^\n]", cad->telefone);
         getchar();
