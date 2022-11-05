@@ -25,17 +25,16 @@ struct cadastro{
 
 Cadastro* preencheCliente(void);
 void gravaCliente(Cadastro*);
+void exibeCliente(Cadastro*);
 
 
 // APAGAR CLIENTE
 
 typedef struct apagar Apagar;
 struct apagar{
-    char cpf [11];
+    char cpf [12];
 };
 
 Apagar* apagarCliente( );
 
-// Cadastro* cadastroCliente( );
-Cadastro* cadastroCliente( );
 
