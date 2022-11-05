@@ -124,7 +124,7 @@ Cadastro* preencheCliente(void){
         printf(" Digite seu telefone: ");   
         scanf("%20[^\n]", cad->telefone);
         getchar();
-        
+
 //endereço
 
     printf(" Digite seu endereço: ");
@@ -145,7 +145,7 @@ Cadastro* preencheCliente(void){
         getchar();
         
     } while(!validar_data(cad->dd, cad->mm, cad->aa));
-    cad->status = "m";
+    cad->status = 'm';
     return cad;
     
     printf("=== Usuário foi cadastrado no sistema!            ===\n");

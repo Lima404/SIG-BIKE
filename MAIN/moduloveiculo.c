@@ -158,7 +158,7 @@ CadastroVeiculo* cadastroVeiculo( ){
     getchar();
 
     }while (cadaveiculo->preco);
-    cadaveiculo->status = "m";
+    cadaveiculo->status = 'm';
     return cadaveiculo;
 
     printf("=== O Veículo foi cadastrado no sistema!!         ===\n");
