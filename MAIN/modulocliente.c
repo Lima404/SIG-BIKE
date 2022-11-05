@@ -121,14 +121,10 @@ Cadastro* preencheCliente(void){
 
 //telefone
 
-    
-
         printf(" Digite seu telefone: ");   
         scanf("%20[^\n]", cad->telefone);
         getchar();
-
-
-    
+        
 //endereço
 
     printf(" Digite seu endereço: ");
