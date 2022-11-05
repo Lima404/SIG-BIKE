@@ -8,14 +8,16 @@
 
 void menu_nav_veiculo(void)
 {
-    ApagarVeiculo* apaveiculo;
     CadastroVeiculo* cadveiculo;
+    ApagarVeiculo* apaveiculo;
     char esc = ' ';
     do {
         esc = menu_veiculo();
         switch (esc) {
         case '1':
-            cadveiculo = cadastroVeiculo(cadveiculo);
+            cadveiculo = preencheVeiculo();
+            gravaVeiculo(cadveiculo);
+            free(cadveiculo);
             break;
         case '2':
             menu_lista_veiculo();
@@ -156,15 +158,28 @@ CadastroVeiculo* cadastroVeiculo( ){
     getchar();
 
     }while (cadaveiculo->preco);
+    cadaveiculo->status = "m";
+    return cadaveiculo;
 
     printf("=== O Veículo foi cadastrado no sistema!!         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...\n");
     getchar();
+}
 
-    return cadaveiculo;
+// Gravação em arquivo
 
+void gravaVeiculo(CadastroVeiculo* cadaveiculo){
+    FILE* fp;
+    fp = fopen("veiculo.dat", "ab");
+    if (fp == NULL){
+        printf("Ops, Ocorreu um erro na abertura!/n");
+        printf("Não é possivel continuar esse programa... /n");
+        exit(1);
+    }
+    fwrite(cadaveiculo, sizeof(CadastroVeiculo), 1, fp);
+    fclose(fp);
 }
 
 
