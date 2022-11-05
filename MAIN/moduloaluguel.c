@@ -15,7 +15,9 @@ void menu_nav_aluguel(void)
         esc = menu_aluguel();
         switch (esc) {
         case '1':
-            cadaluguel = cadastroAluguel(cadaluguel);
+            cadaluguel = preencheAluguel();
+            gravaAluguel(cadaluguel);
+            free(cadaluguel);
             break;
         case '2':
             apaexcluir = apagarAluguel(apaexcluir);
@@ -117,15 +119,27 @@ CadastroAluguel* cadastroAluguel( ){
         getchar();
 
     } while(cadaaluguel->cod);
+    cadaaluguel->status = 'm';
+    return cadaaluguel;
 
     printf("=== Aluguel foi cadastrado no sistema!!           ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...");
     getchar();
+}
 
-    return cadaaluguel;
-
+// Gravar em arquivo
+void gravaAluguel(CadastroAluguel* cadaaluguel){
+    FILE* fp;
+    fp = fopen("aluguel.dat", "ab");
+    if (fp ==  NULL){
+        printf("Ops, Ocorreu um erro na abertura!/n");
+        printf("Não é possivel continuar esse programa... /n");
+        exit(1);
+    }
+    fwrite(cadaaluguel, sizeof(CadastroAluguel), 1, fp);
+    fclose(fp);
 }
 
 ApagarAluguel* apagarAluguel( ){
