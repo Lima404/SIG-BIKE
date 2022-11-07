@@ -178,7 +178,7 @@ void gravaCliente(Cadastro* cad){
 
 //  LISTA DE CLIENTES
 
-void exibeCliente(Cadastro* cliente){
+/*void exibeCliente(Cadastro* cliente){
     
 
     char situacao[20];
@@ -198,10 +198,12 @@ void exibeCliente(Cadastro* cliente){
     printf(" | Ano de nascimento: %d\n", cliente->aa); 
     printf(" |                                                 | \n");
     printf(" | ================================================| \n");
+    system("Pause");
+    system(cls | clear);
 
     } 
     printf("Status: %s\n", situacao);
-}   
+}*/
 
 void buscaCliente(void) {  
 
