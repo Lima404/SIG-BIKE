@@ -6,21 +6,23 @@
 #include "modulocliente.h"
 #include "validacoes.h"
 
+
 void menu_nav_cliente(void)
 {   
-    Cadastro* cliente;
+    Cadastro* user;
     Apagar* excluir;
     char esc = ' ';
     do {
         esc = menu_cliente();
         switch (esc) {
         case '1':
-            cliente = preencheCliente();
-            gravaCliente(cliente);
-            free(cliente);
+            user = preencheCliente();
+            gravaCliente(user);
+            free(user);
             break;
         case '2':
-            menu_lista_cliente();
+            exibeCliente(user);
+            free(user);
             break; 
         case '3':
             excluir = apagarCliente(excluir);
@@ -149,13 +151,14 @@ Cadastro* preencheCliente(void){
         getchar();
         
     } while(!validar_data(cad->dd, cad->mm, cad->aa));
-    cad->status = "m";
+    cad->status = 't';
     return cad;
-    
+
     printf("=== Usuário foi cadastrado no sistema!            ===\n");
     printf("===                                               ===\n");
     getchar();
 }
+
 
 
 // Gravar em arquivo
@@ -174,34 +177,28 @@ void gravaCliente(Cadastro* cad){
 
 //  LISTA DE CLIENTES
 
-char menu_lista_cliente(void){
-    char esc;
-    system("clear||cls");
-    printf("\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("-----------------------------------------------------\n");
-    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
-    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
-    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
-    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
-    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
-    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
-    printf("-----------------------------------------------------\n");
-    printf("=====================================================\n");
+void exibeCliente(Cadastro* cliente){
+    
+    char situacao[20];
+    if((cliente == NULL) || (cliente->status == 'x')) {
+        printf("Usuário inexistente");
+    } else {
     printf("=====================================================\n");
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("================Menu Cliente - Listar================\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===     1.Listar clientes cadastrados no sistema: ===\n");
-    printf("===     0.Voltar                                  ===\n");
-    printf("===                                               ===\n");
-    printf(" Press ENTER to exit...\n");
-    scanf("%c", &esc);
-    getchar();
+    printf(" | =============================================== | \n");
+    printf(" | Nome: %s\n", cliente->nome);    
+    printf(" | CPF: %s\n", cliente->cpf);
+    printf(" | Telefone: %s\n", cliente->telefone);
+    printf(" | Endereço: %s\n", cliente->endereco);
+    printf(" | Dia de nascimento: %d\n", cliente->dd); 
+    printf(" | Mês de nascimento: %d\n", cliente->mm); 
+    printf(" | Ano de nascimento: %d\n", cliente->aa); 
+    printf(" |                                                 | \n");
+    printf(" | ================================================| \n");
 
-    return esc;
+    } 
+    printf("Status: %s\n", situacao);
 }
 
 // APAGAR CLIENTE
