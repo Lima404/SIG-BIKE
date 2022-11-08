@@ -26,6 +26,7 @@ void menu_nav_cliente(void)
             break; 
         case '3':
             excluir = apagarCliente(excluir);
+            free(excluir);
             break;
         case '4':
             menu_editar_cliente();
@@ -106,7 +107,7 @@ Cadastro* preencheCliente(void){
 
     do{
         printf(" Digite seu nome por favor: ");
-        scanf("%[A-Z a-z]", cad->nome);                            //executa tudo isso até que a condição da função seja satisfeita
+        scanf("%80[^\n]", cad->nome);                            //executa tudo isso até que a condição da função seja satisfeita
         getchar();
         
     } while (!validar_nome(cad->nome));
@@ -129,9 +130,9 @@ Cadastro* preencheCliente(void){
 
 //endereço
 
-    printf(" Digite seu endereço: ");
-    scanf("%40[^\n]", cad->endereco);
-    getchar();
+        printf(" Digite seu endereço: ");
+        scanf("%40[^\n]", cad->endereco);
+        getchar();
 
 // Data de nascimento
 
@@ -173,8 +174,9 @@ void gravaCliente(Cadastro* cad){
 
 //  LISTA DE CLIENTES
 
-void exibeCliente(Cadastro* cliente){
+/*void exibeCliente(Cadastro* cliente){
     
+
     char situacao[20];
     if((cliente == NULL) || (cliente->status == 'x')) {
         printf("Usuário inexistente");
@@ -192,10 +194,40 @@ void exibeCliente(Cadastro* cliente){
     printf(" | Ano de nascimento: %d\n", cliente->aa); 
     printf(" |                                                 | \n");
     printf(" | ================================================| \n");
+    system("Pause");
+    system(cls | clear);
 
     } 
     printf("Status: %s\n", situacao);
+}*/
+
+void exibeCliente(Cadastro* cl){
+	char escolha;
+	if ((cl == NULL) || (cl->status == 'x')) {
+		printf("\n= = = Cliente Inexistente = = =\n");
+		printf("1- Voltar");
+		int valid;
+		do{
+			scanf("%c", &escolha);
+			getchar();
+			int esc= validarEscolhas(escolha);
+			if (esc==0){
+				if (escolha=='1'){
+					menu_cliente();
+				}else{
+					valid=1;
+				}
+			}
+		}while(valid==1);
+	}else{
+		printf("\n");
+		printf("||  Nome: %s\n", cl->nome);
+		printf("||  cpf: %s\n", cl->cpf);
+		printf("||  Telefone: %s\n", cl->telefone);
+		printf("||  Endereço: %s\n", cl->endereco);
+	}
 }
+
 
 // APAGAR CLIENTE
 
