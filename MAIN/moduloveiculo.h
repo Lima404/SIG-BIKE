@@ -24,6 +24,7 @@ struct cadastroveiculo{
     char desc [200];
     char cod [20];
     char preco [20];
+    char status;
 };
 
 // PONTEIROS DECLARADOS

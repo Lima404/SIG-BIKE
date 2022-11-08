@@ -14,6 +14,7 @@ typedef struct cadastroaluguel CadastroAluguel;
 struct cadastroaluguel{
     char cpf [11];
     char cod[10];
+    char status;
 };
 
 // PONTEIROS DECLARADOS
