@@ -130,3 +130,22 @@ int validar_tamanho_string(char lista[]){
         return cont;
 
 }
+
+int validarEscolhas(char esc){
+    char numeros[8]={'0','1','2','3','4','5','6'};
+
+    int escolha;
+
+    for(int x=0; x<=7 ; x++){
+        if(esc == numeros[x]){
+            escolha=1;
+            break;
+        } 
+    }
+
+    if (escolha==1){
+        return 0;
+    }else{
+        return 1;
+    } 
+    }

@@ -9,3 +9,5 @@ int validar_letra(char c);
 int validar_tamanho_string(char lista[]);
 
 int validar_nome(char nome []);
+
+int validarEscolhas(char);

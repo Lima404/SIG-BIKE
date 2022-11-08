@@ -12,11 +12,11 @@ void menu_nav_cliente(void)
     Cadastro* user;
     Apagar* excluir;
     char esc = ' ';
-    user = preencheCliente();
     do {
         esc = menu_cliente();
         switch (esc) {
         case '1':
+            user = preencheCliente();
             gravaCliente(user);
             free(user);
             break;
@@ -107,7 +107,7 @@ Cadastro* preencheCliente(void){
 
     do{
         printf(" Digite seu nome por favor: ");
-        scanf("%40[^\n]", cad->nome);                            //executa tudo isso até que a condição da função seja satisfeita
+        scanf("%80[^\n]", cad->nome);                            //executa tudo isso até que a condição da função seja satisfeita
         getchar();
         
     } while (!validar_nome(cad->nome));
@@ -205,28 +205,33 @@ void gravaCliente(Cadastro* cad){
     printf("Status: %s\n", situacao);
 }*/
 
-void buscaCliente(void) {  
-
-  FILE* fp;
-  Cadastro* cliente;
-  printf("\n = Busca Cliente = \n");
-  cadas = (Cadastro*) malloc(sizeof(Cadastro));
-  fp = fopen("cliente.dat", "rt");
-  if (fp == NULL) {
-    printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
-    printf("Não é possível continuar este programa...\n");
-    exit(1);
-  }
-  while(!feof(fp)) {
-    fread(cad, sizeof(Cliente), 1, fp);
-    if (cad->status != 'x') {
-      exibeCliente(Cadastro);
-      fclose(fp);
-    }
-  }
-
-  fclose(fp);
+void exibeCliente(Cadastro* cl){
+	char escolha;
+	if ((cl == NULL) || (cl->status == 'x')) {
+		printf("\n= = = Cliente Inexistente = = =\n");
+		printf("1- Voltar");
+		int valid;
+		do{
+			scanf("%c", &escolha);
+			getchar();
+			int esc= validarEscolhas(escolha);
+			if (esc==0){
+				if (escolha=='1'){
+					menu_cliente();
+				}else{
+					valid=1;
+				}
+			}
+		}while(valid==1);
+	}else{
+		printf("\n");
+		printf("||  Nome: %s\n", cl->nome);
+		printf("||  cpf: %s\n", cl->cpf);
+		printf("||  Telefone: %s\n", cl->telefone);
+		printf("||  Endereço: %s\n", cl->endereco);
+	}
 }
+
 
 // APAGAR CLIENTE
 
