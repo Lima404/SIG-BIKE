@@ -10,14 +10,15 @@ char menu_lista_indisp(void);
 
 char menu_lista_atrasados(void);
 
-
-
-
 typedef struct cadastroaluguel CadastroAluguel;
 struct cadastroaluguel{
     char cpf [11];
     char cod[10];
 };
+
+// PONTEIROS DECLARADOS
+CadastroAluguel* preencheAluguel(void);
+void gravaAluguel(CadastroAluguel*);
 
 
 typedef struct apagaraluguel ApagarAluguel;
