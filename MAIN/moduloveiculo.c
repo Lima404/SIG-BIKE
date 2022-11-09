@@ -89,7 +89,7 @@ char menu_veiculo(void){
 
 }
 
-CadastroVeiculo* cadastroVeiculo( ){
+CadastroVeiculo* preencheVeiculo( ){
     
     CadastroVeiculo* cadaveiculo;
     cadaveiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));

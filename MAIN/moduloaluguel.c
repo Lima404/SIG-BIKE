@@ -79,7 +79,7 @@ char menu_aluguel(void){
     return op;
 }
 
-CadastroAluguel* cadastroAluguel( ){
+CadastroAluguel* preencheAluguel( ){
 
     CadastroAluguel* cadaaluguel;
     cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));

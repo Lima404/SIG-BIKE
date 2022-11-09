@@ -102,6 +102,10 @@ int validar_letra(char c) {
     return 1;
   } else if (c >= 'a' && c <= 'z') {
     return 1;
+  
+  } else if (c == ' '){
+    return 1;
+  
   } else {
     return 0;
   }
