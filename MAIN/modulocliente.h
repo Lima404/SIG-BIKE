@@ -12,7 +12,7 @@ char menu_procurar_cliente(void);
 typedef struct cadastro Cadastro;
 struct cadastro{
 
-    char nome [21];
+    char nome [81];
     char cpf [12];
     char telefone [21];
     char endereco [41];
