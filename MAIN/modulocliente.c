@@ -174,59 +174,18 @@ void gravaCliente(Cadastro* cad){
 
 //  LISTA DE CLIENTES
 
-/*void exibeCliente(Cadastro* cliente){
-    
-
-    char situacao[20];
-    if((cliente == NULL) || (cliente->status == 'x')) {
-        printf("Usuário inexistente");
-    } else {
-    printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("================Menu Cliente - Listar================\n");
-    printf(" | =============================================== | \n");
-    printf(" | Nome: %s\n", cliente->nome);    
-    printf(" | CPF: %s\n", cliente->cpf);
-    printf(" | Telefone: %s\n", cliente->telefone);
-    printf(" | Endereço: %s\n", cliente->endereco);
-    printf(" | Dia de nascimento: %d\n", cliente->dd); 
-    printf(" | Mês de nascimento: %d\n", cliente->mm); 
-    printf(" | Ano de nascimento: %d\n", cliente->aa); 
-    printf(" |                                                 | \n");
-    printf(" | ================================================| \n");
-    system("Pause");
-    system(cls | clear);
-
-    } 
-    printf("Status: %s\n", situacao);
-}*/
-
-void exibeCliente(Cadastro* cl){
-	char escolha;
-	if ((cl == NULL) || (cl->status == 'x')) {
-		printf("\n= = = Cliente Inexistente = = =\n");
-		printf("1- Voltar");
-		int valid;
-		do{
-			scanf("%c", &escolha);
-			getchar();
-			int esc= validarEscolhas(escolha);
-			if (esc==0){
-				if (escolha=='1'){
-					menu_cliente();
-				}else{
-					valid=1;
-				}
-			}
-		}while(valid==1);
-	}else{
-		printf("\n");
-		printf("||  Nome: %s\n", cl->nome);
-		printf("||  cpf: %s\n", cl->cpf);
-		printf("||  Telefone: %s\n", cl->telefone);
-		printf("||  Endereço: %s\n", cl->endereco);
-	}
-}
+void exibeCliente(Cadastro* cliente) {
+  printf("CPF: %s\n", cliente->cpf);
+  printf("Nome: %s\n", cliente->nome);
+  printf("telefone: %s\n", cliente->telefone);
+  printf("endereco: %s\n", cliente->endereco);
+  printf("Nascimento(dia): %d\n", cliente->dd);
+  printf("Nascimento(mes): %d\n", cliente->mm);
+  printf("Nascimento(ano): %d\n", cliente->aa);
+  printf("Status: %c\n", cliente->status);
+  printf("\n");
+  sleep(3);
+}   
 
 
 // APAGAR CLIENTE
