@@ -19,11 +19,11 @@ void menu_cadastro_veiculo(void);
 
 typedef struct cadastroveiculo CadastroVeiculo;
 struct cadastroveiculo{
-    char tipo [20];
-    char marca[20];
-    char desc [200];
-    char cod [20];
-    char preco [20];
+    char tipo [21];
+    char marca[21];
+    char desc [101];
+    char cod [7];
+    char preco [21];
     char status;
 };
 

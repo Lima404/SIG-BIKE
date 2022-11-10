@@ -116,7 +116,7 @@ Cadastro* preencheCliente(void){
 
     do{
     
-        printf(" Digite seu CPF(APENAS NUMEROS): ");
+        printf(" Digite seu CPF(APENAS NUMEROS SEM ESPAÇO): ");
         scanf("%s", cad->cpf);
         getchar();
         
@@ -124,7 +124,7 @@ Cadastro* preencheCliente(void){
 
 //telefone
 
-        printf(" Digite seu telefone: ");   
+        printf(" Digite seu telefone(XXXXX-XXXX): ");   
         scanf("%20[^\n]", cad->telefone);
         getchar();
 
