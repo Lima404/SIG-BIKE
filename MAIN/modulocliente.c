@@ -184,7 +184,6 @@ void exibeCliente(Cadastro* cliente) {
   printf("Nascimento(ano): %d\n", cliente->aa);
   printf("Status: %c\n", cliente->status);
   printf("\n");
-  sleep(3);
 }   
 
 
