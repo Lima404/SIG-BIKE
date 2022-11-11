@@ -105,6 +105,8 @@ CadastroVeiculo* preencheVeiculo( ){
     printf("=====================================================\n");
     printf("=====================================================\n");
     
+
+    // tipo
     do{
 
     printf(" | Digite o tipo do veículo(PATINS ou BIKE): ");
@@ -112,6 +114,8 @@ CadastroVeiculo* preencheVeiculo( ){
     getchar();
 
     } while (!validar_nome(cadaveiculo->tipo));
+
+    // Marca
 
     do{
 
@@ -121,15 +125,21 @@ CadastroVeiculo* preencheVeiculo( ){
 
     }while (!validar_nome(cadaveiculo->marca));
 
+// Descrição
+
 
     printf(" | Digite uma descrição sobre o veículo: ");   
     scanf("%100[^\n]", cadaveiculo->desc);
     getchar();
 
 
+// CÓDIGO DE RASTREIO
+
     printf(" | Digite um código pra registrar o veículo(6 números): ");
     scanf("%s", cadaveiculo->cod);
     getchar();
+
+// PREÇO
 
 
     printf(" | Digite o preço em reais(APENAS NÚMEROS): ");
@@ -161,6 +171,21 @@ void gravaVeiculo(CadastroVeiculo* cadaveiculo){
     fclose(fp);
 }
 
+// EXIBE VEICULO
+
+void exibeVeiculo(CadastroVeiculo* cadveiculo){
+    printf("Tipo do veiculo %s\n", cadveiculo->tipo);
+    printf("Marca do veiculo %s\n", cadveiculo->marca);
+    printf("Descrição do veiculo %s\n", cadveiculo->desc);
+    printf("Código do veiculo %s\n", cadveiculo->cod);
+    printf("Preço do veiculo %s\n", cadveiculo->preco);
+    printf("Status: %c\n", cadveiculo->status);
+    printf("\n");
+    system("Pause");
+}
+
+
+// BUSCA VEICULO
 
 CadastroVeiculo* buscaVeiculo() {
     FILE *fp;

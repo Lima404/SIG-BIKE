@@ -17,9 +17,15 @@ struct cadastroaluguel{
     char status;
 };
 
+
+
 // PONTEIROS DECLARADOS
+
 CadastroAluguel* preencheAluguel(void);
 void gravaAluguel(CadastroAluguel*);
+CadastroAluguel* buscaAluguel();
+void exibeAluguel(CadastroAluguel* cadaluguel);
+void listaAluguel(void);
 
 
 typedef struct apagaraluguel ApagarAluguel;
