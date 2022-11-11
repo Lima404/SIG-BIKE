@@ -5,6 +5,8 @@
 #include <ctype.h>
 #include "moduloaluguel.h"
 #include "validacoes.h"
+#include "modulocliente.h"
+#include "moduloveiculo.h"
 
 void menu_nav_aluguel(void)
 {   
@@ -21,11 +23,13 @@ void menu_nav_aluguel(void)
             break;
 
         case '2':
-            apaexcluir = apagarAluguel(apaexcluir);
+            cadaluguel = buscaAluguel();
+            exibeAluguel(cadaluguel);
+            free(cadaluguel);
             break;
-
+        
         case '3':
-            menu_editar_aluguel();
+            apaexcluir = apagarAluguel(apaexcluir);
             break;
 
         case '4':
@@ -109,6 +113,7 @@ CadastroAluguel* preencheAluguel( ){
     printf("================Menu Aluguel - Cadastro==============\n");
     printf("===                                               ===\n");
     
+    char 
 
     do{
 
@@ -145,6 +150,16 @@ void gravaAluguel(CadastroAluguel* cadaaluguel){
     fwrite(cadaaluguel, sizeof(CadastroAluguel), 1, fp);
     fclose(fp);
 }
+
+// EXIBE ALUGUEL
+
+void exibeAluguel(CadastroAluguel* cadaaluguel) {
+  printf("CPF: %s\n", cadaaluguel->cpf);
+  printf("Nome: %s\n", cadaaluguel->cod);
+  printf("Status: %c\n", cadaaluguel->status);
+  printf("\n");
+  system("Pause");
+}  
 
 ApagarAluguel* apagarAluguel( ){
     
