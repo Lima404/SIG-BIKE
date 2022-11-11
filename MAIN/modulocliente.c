@@ -21,18 +21,20 @@ void menu_nav_cliente(void)
             free(user);
             break;
         case '2':
+            user = buscaCliente();
+            exibeCliente(user);
+            free(user);
+            break;
+        case '3':
             exibeCliente(user);
             free(user);
             break; 
-        case '3':
+        case '4':
             excluir = apagarCliente(excluir);
             free(excluir);
-            break;
-        case '4':
-            menu_editar_cliente();
-            break;
+            break;            
         case '5':
-            menu_procurar_cliente();
+            menu_editar_cliente();
             break;
         default:
             printf ("Opção Inválida\n");
@@ -63,10 +65,10 @@ char menu_cliente(void){
     printf("=====================Menu Cliente====================\n");
     printf("===                                               ===\n");
     printf("===              1.Cadastro Cliente:              ===\n");
-    printf("===              2.Lista de Clientes:             ===\n");
-    printf("===              3.Apagar Cliente:                ===\n");
-    printf("===              4.Alterar Cliente:               ===\n");
-    printf("===              5.Procurar Cliente:              ===\n");
+    printf("===              2.Procurar Cliente:              ===\n");
+    printf("===              3.Lista de Clientes:             ===\n");
+    printf("===              4.Apagar Cliente:                ===\n");
+    printf("===              5.Alterar Cliente:               ===\n");
     printf("===              0.Voltar                         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
@@ -186,6 +188,50 @@ void exibeCliente(Cadastro* cliente) {
   printf("\n");
 }   
 
+//
+
+Cadastro* buscaCliente(void) {
+  FILE* fp;
+  Cadastro* cliente;
+  int achou;
+  char procurado[15];
+  fp = fopen("cliente.dat", "rb");
+  if (fp == NULL) {
+    printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
+    printf("Não é possível continuar o programa...\n");
+    exit(1);
+  }
+    printf("\n\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+    printf("================Menu Cliente - Buscar================\n");
+    printf("Informe o nome do cliente a ser buscado: ");
+    
+  scanf(" %14[^\n]", procurado);
+  cliente = (Cadastro*) malloc(sizeof(Cadastro));
+  achou = 0;
+  
+  while((!achou) && (fread(cliente, sizeof(Cadastro), 1, fp))) {
+   if ((strcmp(cliente->cpf, procurado) == 0) && (cliente->status == '1')) {
+     achou = 1;
+   }
+  }
+  fclose(fp);
+  if (achou) {
+    exibeCliente(cliente);
+  } else {
+    printf("O Cliente %s não foi encontrado...\n", procurado);
+  }
+  free(cliente);
+}
 
 // APAGAR CLIENTE
 
@@ -266,34 +312,3 @@ char menu_editar_cliente(void){
     sleep(1);
     return esc;
 }
-
-char  menu_procurar_cliente(void){
-
-    char esc;
-    system("clear||cls");
-    printf("\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("-----------------------------------------------------\n");
-    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
-    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
-    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
-    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
-    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
-    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
-    printf("-----------------------------------------------------\n");
-    printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("================Menu Cliente - Buscar================\n");
-    printf("===                                               ===\n");
-    printf("===           1.Buscar cliente pelo CPF:          ===\n");
-    printf("===           0. Voltar:                          ===\n");
-    printf("=====================================================\n");
-    scanf("%c", &esc);
-    getchar();
-    printf("\t\t\t ... Aguarde ...\n");
-    sleep(1);
-
-    return esc;
-}
-
