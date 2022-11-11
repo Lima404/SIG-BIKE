@@ -20,7 +20,9 @@ void menu_nav_veiculo(void)
             free(cadveiculo);
             break;
         case '2':
-            menu_lista_veiculo();
+            cadveiculo = buscaVeiculo();
+            exibeVeiculo(cadveiculo);
+            free(cadveiculo);
             break; 
         case '3':
             apaveiculo = apagarVeiculo(apaveiculo);
@@ -160,12 +162,12 @@ void gravaVeiculo(CadastroVeiculo* cadaveiculo){
 }
 
 
-char menu_lista_veiculo(void){
-
-    char esc;
+CadastroVeiculo* buscaVeiculo() {
+    FILE *fp;
+    CadastroVeiculo* cadaveiculo;
+    char cod[7];
     system("clear||cls");
-    printf("\n");
-    printf("=====================================================\n");
+    printf("\n\n");
     printf("=====================================================\n");
     printf("-----------------------------------------------------\n");
     printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
@@ -175,19 +177,32 @@ char menu_lista_veiculo(void){
     printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
     printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
     printf("-----------------------------------------------------\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("=================Menu Veículo - Listar===============\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===     1.Listar veiculos cadastrados no sistema: ===\n");
-    printf("===     0.Voltar                                  ===\n");
-    printf("===                                               ===\n");
-    printf(" Press ENTER to exit...\n");
+    printf("================Menu Cliente - Listar================\n");
+    printf("        Informe o número o código do veiculo:          ");
+    scanf(" %[0-9]", cod);
     getchar();
-    scanf("%c", &esc);
-    return esc;
+    cadaveiculo = (CadastroVeiculo*)malloc(sizeof(CadastroVeiculo));
+    fp = fopen("veiculo.dat", "rb");
+
+    if (fp == NULL)
+    {
+        printf("Ocorreu um erxro na abertura do arquivo, não é possivel continuar o programa");
+        exit(1);
+    }
+
+    while (!feof(fp))
+    { // Busca até o final do arquivo
+        fread(cadaveiculo, sizeof(CadastroVeiculo), 1, fp);
+        if (strcmp(cadaveiculo->cod, cod) == 0 && (cadaveiculo->status != 'x'))
+        { /*Verifica se o código é igual e o status*/
+            fclose(fp);
+            return cadaveiculo;
+        }
+    }
+
+    fclose(fp);
+    return NULL;
 }
 
 ApagarVeiculo* apagarVeiculo( ){
