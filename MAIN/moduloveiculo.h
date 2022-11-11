@@ -30,6 +30,8 @@ struct cadastroveiculo{
 // PONTEIROS DECLARADOS
 CadastroVeiculo* preencheVeiculo(void);
 void gravaVeiculo(CadastroVeiculo*);
+CadastroVeiculo* buscaVeiculo(void);
+void exibeVeiculo(CadastroVeiculo* cadveiculo);
 
 typedef struct apagarveiculo ApagarVeiculo;
 struct apagarveiculo{
@@ -37,4 +39,3 @@ struct apagarveiculo{
 };
 
 ApagarVeiculo* apagarVeiculo( );
-// CadastroVeiculo* cadastroVeiculo( );
