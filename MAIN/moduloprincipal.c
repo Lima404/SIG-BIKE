@@ -21,18 +21,23 @@ int main (void)
         case '1':
             menu_nav_cliente();
             break;
+
         case '2':
             menu_nav_veiculo();
-            break; 
+            break;
+
         case '3':
             menu_nav_aluguel();
-            break; 
+            break;
+
         case '4':
             menu_nav_adm();
             break;
+
         case '5':
             menu_sobre();
             break;
+            
         default:
             printf ("Programa Finalizado! \n");
             break;
