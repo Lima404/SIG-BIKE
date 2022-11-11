@@ -25,7 +25,8 @@ struct cadastro{
 
 Cadastro* preencheCliente(void);
 void gravaCliente(Cadastro*);
-void exibeCliente(Cadastro*);
+Cadastro* buscaCliente (void);
+void exibeCliente(Cadastro* user);
 
 
 // APAGAR CLIENTE

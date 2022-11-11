@@ -119,29 +119,21 @@ CadastroVeiculo* preencheVeiculo( ){
 
     }while (!validar_nome(cadaveiculo->marca));
 
-    do{
 
     printf(" | Digite uma descrição sobre o veículo: ");   
     scanf("%100[^\n]", cadaveiculo->desc);
     getchar();
 
-    }while (cadaveiculo->desc);
-
-    do{
 
     printf(" | Digite um código pra registrar o veículo(6 números): ");
     scanf("%s", cadaveiculo->cod);
     getchar();
 
-    }while (cadaveiculo->cod);
-
-    do{
 
     printf(" | Digite o preço em reais(APENAS NÚMEROS): ");
     scanf("%20[^\n]", cadaveiculo->preco);
     getchar();
 
-    }while (!validar_nome(cadaveiculo->preco));
 
     cadaveiculo->status = 'm';
     return cadaveiculo;

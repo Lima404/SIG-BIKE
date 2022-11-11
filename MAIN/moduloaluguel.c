@@ -112,13 +112,11 @@ CadastroAluguel* preencheAluguel( ){
 
     } while (!validar_cpf(cadaaluguel->cpf));
 
-    do{
 
-        printf(" | Digite o código do veiculo: \n");
-        scanf("%s", cadaaluguel->cod);
+        printf(" | Digite o código do veiculo que você quer alugar: ");
+        scanf("%6[^\n]", cadaaluguel->cod);
         getchar();
 
-    } while(cadaaluguel->cod);
     cadaaluguel->status = 'm';
     return cadaaluguel;
 
