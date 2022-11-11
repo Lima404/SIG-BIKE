@@ -178,7 +178,7 @@ void gravaCliente(Cadastro* cad){
     fclose(fp);
 }
 
-//  LISTA DE CLIENTES
+//  EXIBIR CLIENTES
 
 void exibeCliente(Cadastro* cliente) {
   printf("CPF: %s\n", cliente->cpf);
@@ -190,7 +190,9 @@ void exibeCliente(Cadastro* cliente) {
   printf("Nascimento(ano): %d\n", cliente->aa);
   printf("Status: %c\n", cliente->status);
   printf("\n");
-}   
+}  
+
+// Lista Clientes
 
 void listaCliente() {
   FILE* fp;
@@ -224,7 +226,7 @@ void listaCliente() {
   free(cliente);
 }
 
-//
+// Buscar cliente
 
 Cadastro* buscaCliente() {
   FILE* fp;
