@@ -14,12 +14,15 @@ void menu_nav_adm(void)
         case '1':
             menu_gastos_da_empresa();
             break;
+
         case '2':
             menu_fluxo_caixa();
             break;
+
         case '3':
             menu_relatorios();
             break;
+            
         default:
             printf("Opcao Invalida\n");
             break;

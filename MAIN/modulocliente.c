@@ -20,22 +20,26 @@ void menu_nav_cliente(void)
             gravaCliente(user);
             free(user);
             break;
+
         case '2':
             user = buscaCliente();
             exibeCliente(user);
             free(user);
             break;
+
         case '3':
-            exibeCliente(user);
-            free(user);
-            break; 
+            listaCliente();
+            break;
+
         case '4':
             excluir = apagarCliente(excluir);
             free(excluir);
-            break;            
+            break;
+
         case '5':
             menu_editar_cliente();
             break;
+
         default:
             printf ("Opção Inválida\n");
             break;
@@ -66,7 +70,7 @@ char menu_cliente(void){
     printf("===                                               ===\n");
     printf("===              1.Cadastro Cliente:              ===\n");
     printf("===              2.Procurar Cliente:              ===\n");
-    printf("===              3.Lista de Clientes:             ===\n");
+    printf("===              3.Listar Clientes:               ===\n");
     printf("===              4.Apagar Cliente:                ===\n");
     printf("===              5.Alterar Cliente:               ===\n");
     printf("===              0.Voltar                         ===\n");
@@ -188,9 +192,41 @@ void exibeCliente(Cadastro* cliente) {
   printf("\n");
 }   
 
+void listaCliente() {
+  FILE* fp;
+  Cadastro* cliente;
+  fp = fopen("cliente.dat", "rb");
+  if (fp == NULL) {
+    printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
+    printf("Não é possível continuar o programa...\n");
+    exit(1);
+  }
+    printf("\n\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+    printf("================Menu Cliente - Listar================\n");
+
+  cliente = (Cadastro*) malloc(sizeof(Cadastro));
+  while(fread(cliente, sizeof(cliente), 1, fp)) {
+    if (cliente->status == '1') {
+      exibeCliente(cliente);
+    }
+  }
+  fclose(fp);
+  free(cliente);
+}
+
 //
 
-Cadastro* buscaCliente(void) {
+Cadastro* buscaCliente() {
   FILE* fp;
   Cadastro* cliente;
   int achou;
@@ -215,7 +251,7 @@ Cadastro* buscaCliente(void) {
     printf("================Menu Cliente - Buscar================\n");
     printf("Informe o nome do cliente a ser buscado: ");
     
-  scanf(" %14[^\n]", procurado);
+    scanf(" %14[^\n]", procurado);
   cliente = (Cadastro*) malloc(sizeof(Cadastro));
   achou = 0;
   

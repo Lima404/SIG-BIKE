@@ -19,21 +19,27 @@ void menu_nav_aluguel(void)
             gravaAluguel(cadaluguel);
             free(cadaluguel);
             break;
+
         case '2':
             apaexcluir = apagarAluguel(apaexcluir);
-            break; 
+            break;
+
         case '3':
             menu_editar_aluguel();
             break;
+
         case '4':
             menu_lista_disp();
             break;
+
         case '5':
             menu_lista_indisp();
             break;
+
         case '6':
             menu_lista_atrasados();
             break;
+            
         default:
             printf ("Opção Inválida\n");
             break;
