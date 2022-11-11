@@ -190,6 +190,7 @@ void exibeCliente(Cadastro* cliente) {
   printf("Nascimento(ano): %d\n", cliente->aa);
   printf("Status: %c\n", cliente->status);
   printf("\n");
+  system("Pause");
 }  
 
 // Lista Clientes
@@ -229,16 +230,10 @@ void listaCliente() {
 // Buscar cliente
 
 Cadastro* buscaCliente() {
-  FILE* fp;
-  Cadastro* cliente;
-  int achou;
-  char procurado[15];
-  fp = fopen("cliente.dat", "rb");
-  if (fp == NULL) {
-    printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
-    printf("Não é possível continuar o programa...\n");
-    exit(1);
-  }
+    FILE *fp;
+    Cadastro* cad;
+    char cpf[12];
+    system("clear||cls");
     printf("\n\n");
     printf("=====================================================\n");
     printf("-----------------------------------------------------\n");
@@ -250,26 +245,33 @@ Cadastro* buscaCliente() {
     printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
     printf("-----------------------------------------------------\n");
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("================Menu Cliente - Buscar================\n");
-    printf("Informe o nome do cliente a ser buscado: ");
-    
-    scanf(" %14[^\n]", procurado);
-  cliente = (Cadastro*) malloc(sizeof(Cadastro));
-  achou = 0;
-  
-  while((!achou) && (fread(cliente, sizeof(Cadastro), 1, fp))) {
-   if ((strcmp(cliente->cpf, procurado) == 0) && (cliente->status == '1')) {
-     achou = 1;
-   }
-  }
-  fclose(fp);
-  if (achou) {
-    exibeCliente(cliente);
-  } else {
-    printf("O Cliente %s não foi encontrado...\n", procurado);
-  }
-  free(cliente);
+    printf("================Menu Cliente - Listar================\n");
+    printf("       Informe o número do seu cpf por gentileza:      ");
+    scanf(" %[0-9]", cpf);
+    getchar();
+    cad = (Cadastro *)malloc(sizeof(Cadastro));
+    fp = fopen("cliente.dat", "rb");
+
+    if (fp == NULL)
+    {
+        printf("Ocorreu um erxro na abertura do arquivo, não é possivel continuar o programa");
+        exit(1);
+    }
+
+    while (!feof(fp))
+    { // Busca até o final do arquivo
+        fread(cad, sizeof(Cadastro), 1, fp);
+        if (strcmp(cad->cpf, cpf) == 0 && (cad->status != 'x'))
+        { /*Verifica se o código é igual e o status*/
+            fclose(fp);
+            return cad;
+        }
+    }
+
+    fclose(fp);
+    return NULL;
 }
+
 
 // APAGAR CLIENTE
 
