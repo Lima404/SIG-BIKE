@@ -190,7 +190,6 @@ void exibeCliente(Cadastro* cliente) {
   printf("Nascimento(ano): %d\n", cliente->aa);
   printf("Status: %c\n", cliente->status);
   printf("\n");
-  system("Pause");
 }  
 
 // Lista Clientes
@@ -249,7 +248,7 @@ Cadastro* buscaCliente() {
     printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
     printf("-----------------------------------------------------\n");
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("================Menu Cliente - Listar================\n");
+    printf("===============Menu Cliente - Procurar===============\n");
     printf("       Informe o número do seu cpf por gentileza:      ");
     scanf(" %[0-9]", cpf);
     getchar();
