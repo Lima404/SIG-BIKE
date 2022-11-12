@@ -218,12 +218,16 @@ void listaCliente() {
     printf("================Menu Cliente - Listar================\n");
 
   cliente = (Cadastro*) malloc(sizeof(Cadastro));
-  while(fread(cliente, sizeof(cliente), 1, fp)) {
-    if (cliente->status == '1') {
+  while (!feof(fp))
+  { // Busca até o final do arquivo
+      fread(cliente, sizeof(Cadastro), 1, fp);
       exibeCliente(cliente);
-    }
   }
   fclose(fp);
+  getchar();
+  getchar();
+  getchar();
+  getchar();
   free(cliente);
 }
 
