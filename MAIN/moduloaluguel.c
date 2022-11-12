@@ -112,8 +112,6 @@ CadastroAluguel* preencheAluguel( ){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("================Menu Aluguel - Cadastro==============\n");
     printf("===                                               ===\n");
-    
-    char 
 
     do{
 
