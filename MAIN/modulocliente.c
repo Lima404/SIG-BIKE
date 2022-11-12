@@ -24,6 +24,7 @@ void menu_nav_cliente(void)
         case '2':
             user = buscaCliente();
             exibeCliente(user);
+            getchar();
             free(user);
             break;
 
@@ -248,7 +249,7 @@ Cadastro* buscaCliente() {
     printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
     printf("-----------------------------------------------------\n");
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("===============Menu Cliente - Procurar===============\n");
+    printf("================Menu Cliente - Listar================\n");
     printf("       Informe o número do seu cpf por gentileza:      ");
     scanf(" %[0-9]", cpf);
     getchar();
