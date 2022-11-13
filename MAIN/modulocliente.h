@@ -28,7 +28,7 @@ void gravaCliente(Cadastro*);
 Cadastro* buscaCliente (void);
 void exibeCliente(Cadastro* user);
 void listaCliente(void);
-
+void apagaCliente(Cadastro*);
 
 // APAGAR CLIENTE
 
@@ -36,8 +36,6 @@ typedef struct apagar Apagar;
 struct apagar{
     char cpf [12];
 };
-
-Apagar* apagarCliente( );
 
 
 

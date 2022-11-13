@@ -10,7 +10,6 @@
 void menu_nav_cliente(void)
 {   
     Cadastro* user;
-    Apagar* excluir;
     char esc = ' ';
     do {
         esc = menu_cliente();
@@ -33,8 +32,9 @@ void menu_nav_cliente(void)
             break;
 
         case '4':
-            excluir = apagarCliente(excluir);
-            free(excluir);
+            user = buscaCliente();
+            apagaCliente(user);
+            free(user);
             break;
 
         case '5':
@@ -279,46 +279,60 @@ Cadastro* buscaCliente() {
 
 // APAGAR CLIENTE
 
-Apagar* apagarCliente( ){
-
-    Apagar* apa;
-    apa = (Apagar*) malloc(sizeof(Apagar));
-    char esc;
-
-    system("clear||cls");
-    printf("\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("-----------------------------------------------------\n");
-    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
-    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
-    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
-    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
-    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
-    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
-    printf("-----------------------------------------------------\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("=================Menu Cliente - Apagar===============\n");
-    printf("===                                               ===\n");
-
-    do{
-        printf(" Digite seu CPF por favor: ");
-        scanf("%s", apa->cpf);
-        getchar();
-        
-    } while (!validar_cpf(apa->cpf));
-
-    printf("=== O usuário foi deletado com sucesso!!          ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf(" Press ENTER to exit...\n");
-    scanf("%c", &esc);
+void apagaCliente(void) {
+  FILE* fp;
+  Cadastro* cliente;
+  int achou;
+  char resp;
+  char procurado[15];
+  fp = fopen("cliente.dat", "r+b");
+  if (fp == NULL) {
+    printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
+    printf("Não é possível continuar o programa...\n");
+    exit(1);
+  }
+  printf("\n\n");
+  printf("=====================================================\n");
+  printf("-----------------------------------------------------\n");
+  printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+  printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+  printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+  printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+  printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+  printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+  printf("-----------------------------------------------------\n");
+  printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+  printf("================Menu Cliente - Listar================\n");
+  printf("       Informe o número do seu cpf por gentileza:      ");
+  scanf(" %14[^\n]", procurado);
+  cliente = (Cadastro*) malloc(sizeof(Cadastro));
+  achou = 0;
+  while((!achou) && (fread(cliente, sizeof(Cadastro), 1, fp))) {
+   if ((strcmp(cliente->cpf, procurado) == 0) && (cliente->status == '1')) {
+     achou = 1;
+   }
+  }
+  
+  if (achou) {
+    exibeCliente(cliente);
     getchar();
-    
-    return apa;
+    printf("Deseja realmente apagar cliente do sistema (s/n)? ");
+    scanf("%c", &resp);
+    if (resp == 's' || resp == 'S') {
+      cliente->status = '0';
+      fseek(fp, (-1)*sizeof(Cadastro), SEEK_CUR);
+      fwrite(cliente, sizeof(Cadastro), 1, fp);
+      printf("\nCliente excluído com sucesso!!!\n");
+     } else {
+       printf("\nOk, os dados não foram alterados\n");
+     }
+  } else {
+    printf("O animal %s não foi encontrado...\n", procurado);
+  }
+  free(cliente);
+  fclose(fp);
 }
+
 
 char menu_editar_cliente(void){
 
