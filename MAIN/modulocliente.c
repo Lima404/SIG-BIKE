@@ -33,7 +33,7 @@ void menu_nav_cliente(void)
 
         case '4':
             user = buscaCliente();
-            apagarCliente(user);
+            apagaCliente(user);
             free(user);
             break;
 
