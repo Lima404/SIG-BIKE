@@ -22,11 +22,11 @@ void menu_nav_aluguel(void)
             free(cadaluguel);
             break;
 
-        case '2':
+        /*case '2':
             cadaluguel = buscaAluguel();
             exibeAluguel(cadaluguel);
             free(cadaluguel);
-            break;
+            break;*/
         
         case '3':
             apaexcluir = apagarAluguel(apaexcluir);
@@ -112,8 +112,6 @@ CadastroAluguel* preencheAluguel( ){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("================Menu Aluguel - Cadastro==============\n");
     printf("===                                               ===\n");
-    
-    char 
 
     do{
 

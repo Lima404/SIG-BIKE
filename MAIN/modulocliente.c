@@ -24,6 +24,7 @@ void menu_nav_cliente(void)
         case '2':
             user = buscaCliente();
             exibeCliente(user);
+            getchar();
             free(user);
             break;
 
@@ -190,7 +191,6 @@ void exibeCliente(Cadastro* cliente) {
   printf("Nascimento(ano): %d\n", cliente->aa);
   printf("Status: %c\n", cliente->status);
   printf("\n");
-  system("Pause");
 }  
 
 // Lista Clientes
@@ -218,12 +218,16 @@ void listaCliente() {
     printf("================Menu Cliente - Listar================\n");
 
   cliente = (Cadastro*) malloc(sizeof(Cadastro));
-  while(fread(cliente, sizeof(cliente), 1, fp)) {
-    if (cliente->status == '1') {
+  while (!feof(fp))
+  { // Busca até o final do arquivo
+      fread(cliente, sizeof(Cadastro), 1, fp);
       exibeCliente(cliente);
-    }
   }
   fclose(fp);
+  getchar();
+  getchar();
+  getchar();
+  getchar();
   free(cliente);
 }
 
