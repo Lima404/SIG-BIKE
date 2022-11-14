@@ -308,7 +308,7 @@ void apagaCliente(Cadastro* user) {
   cliente = (Cadastro*) malloc(sizeof(Cadastro));
   achou = 0;
   while((!achou) && (fread(cliente, sizeof(Cadastro), 1, fp))) {
-   if ((strcmp(cliente->cpf, procurado) == 0) && (cliente->status == '1')) {
+    if ((strcmp(cliente->cpf, procurado) == 0) && (cliente->status == '1')) {
      achou = 1;
    }
   }
