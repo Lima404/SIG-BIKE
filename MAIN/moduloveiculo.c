@@ -175,11 +175,11 @@ void gravaVeiculo(CadastroVeiculo* cadaveiculo){
 // EXIBE VEICULO
 
 void exibeVeiculo(CadastroVeiculo* cadveiculo){
-    printf("Tipo do veiculo %s\n", cadveiculo->tipo);
-    printf("Marca do veiculo %s\n", cadveiculo->marca);
-    printf("Descrição do veiculo %s\n", cadveiculo->desc);
-    printf("Código do veiculo %s\n", cadveiculo->cod);
-    printf("Preço do veiculo %s\n", cadveiculo->preco);
+    printf("Tipo do veiculo: %s\n", cadveiculo->tipo);
+    printf("Marca do veiculo: %s\n", cadveiculo->marca);
+    printf("Descrição do veiculo: %s\n", cadveiculo->desc);
+    printf("Código do veiculo: %s\n", cadveiculo->cod);
+    printf("Preço do veiculo: %s\n", cadveiculo->preco);
     printf("Status: %c\n", cadveiculo->status);
     printf("\n");
     system("Pause");
@@ -204,7 +204,7 @@ CadastroVeiculo* buscaVeiculo() {
     printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
     printf("-----------------------------------------------------\n");
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("================Menu Cliente - Listar================\n");
+    printf("================Menu Veiculo - Buscar================\n");
     printf("        Informe o número o código do veiculo:          ");
     scanf(" %[0-9]", cod);
     getchar();
