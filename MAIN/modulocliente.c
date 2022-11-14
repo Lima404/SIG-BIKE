@@ -327,7 +327,7 @@ void apagaCliente(Cadastro* user) {
        printf("\nOk, os dados não foram alterados\n");
      }
   } else {
-    printf("O animal %s não foi encontrado...\n", procurado);
+    printf("O Cliente %s não foi encontrado...\n", procurado);
   }
   free(cliente);
   fclose(fp);
