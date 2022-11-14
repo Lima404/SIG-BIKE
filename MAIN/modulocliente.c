@@ -155,7 +155,7 @@ Cadastro* preencheCliente(void){
         getchar();
         
     } while(!validar_data(cad->dd, cad->mm, cad->aa));
-    cad->status = 't';
+    cad->status = '1';
     return cad;
 
     printf("=== Usuário foi cadastrado no sistema!            ===\n");
@@ -284,51 +284,41 @@ void apagaCliente(Cadastro* user) {
   Cadastro* cliente;
   int achou;
   char resp;
-  char procurado[15];
   fp = fopen("cliente.dat", "r+b");
   if (fp == NULL) {
     printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
     printf("Não é possível continuar o programa...\n");
     exit(1);
   }
-  printf("\n\n");
-  printf("=====================================================\n");
-  printf("-----------------------------------------------------\n");
-  printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
-  printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
-  printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
-  printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
-  printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
-  printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
-  printf("-----------------------------------------------------\n");
-  printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-  printf("================Menu Cliente - Apagar================\n");
-  printf("       Informe o número do seu cpf por gentileza:      ");
-  scanf(" %14[^\n]", procurado);
   cliente = (Cadastro*) malloc(sizeof(Cadastro));
   achou = 0;
   while((!achou) && (fread(cliente, sizeof(Cadastro), 1, fp))) {
-    if ((strcmp(cliente->cpf, procurado) == 0) && (cliente->status == '1')) {
+    if ((strcmp(cliente->cpf, user->cpf) == 0) && (cliente->status == '1')) {
      achou = 1;
    }
   }
   
   if (achou) {
     exibeCliente(cliente);
-    getchar();
     printf("Deseja realmente apagar cliente do sistema (s/n)? ");
-    scanf("%c", &resp);
+    scanf("%c\n", &resp);
     if (resp == 's' || resp == 'S') {
       cliente->status = '0';
       fseek(fp, (-1)*sizeof(Cadastro), SEEK_CUR);
       fwrite(cliente, sizeof(Cadastro), 1, fp);
       printf("\nCliente excluído com sucesso!!!\n");
+      sleep(3);
      } else {
        printf("\nOk, os dados não foram alterados\n");
      }
   } else {
-    printf("O Cliente %s não foi encontrado...\n", procurado);
+    printf("O Cliente %s não foi encontrado...\n", user->cpf);
   }
+  getchar();
+  getchar();
+  getchar();
+  getchar();
+  getchar();
   free(cliente);
   fclose(fp);
 }

@@ -148,7 +148,7 @@ CadastroVeiculo* preencheVeiculo( ){
     getchar();
 
 
-    cadaveiculo->status = 'm';
+    cadaveiculo->status = '1';
     return cadaveiculo;
 
     printf("=== O Veículo foi cadastrado no sistema!!         ===\n");
