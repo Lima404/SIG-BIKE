@@ -279,7 +279,7 @@ Cadastro* buscaCliente() {
 
 // APAGAR CLIENTE
 
-void apagaCliente(void) {
+void apagaCliente(Cadastro* user) {
   FILE* fp;
   Cadastro* cliente;
   int achou;
@@ -302,7 +302,7 @@ void apagaCliente(void) {
   printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
   printf("-----------------------------------------------------\n");
   printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-  printf("================Menu Cliente - Listar================\n");
+  printf("================Menu Cliente - Apagar================\n");
   printf("       Informe o número do seu cpf por gentileza:      ");
   scanf(" %14[^\n]", procurado);
   cliente = (Cadastro*) malloc(sizeof(Cadastro));
