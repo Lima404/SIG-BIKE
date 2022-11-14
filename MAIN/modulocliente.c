@@ -279,7 +279,7 @@ Cadastro* buscaCliente() {
 
 // APAGAR CLIENTE
 
-void apagaCliente(void) {
+void apagaCliente(Cadastro* user) {
   FILE* fp;
   Cadastro* cliente;
   int achou;
@@ -302,13 +302,13 @@ void apagaCliente(void) {
   printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
   printf("-----------------------------------------------------\n");
   printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-  printf("================Menu Cliente - Listar================\n");
+  printf("================Menu Cliente - Apagar================\n");
   printf("       Informe o número do seu cpf por gentileza:      ");
   scanf(" %14[^\n]", procurado);
   cliente = (Cadastro*) malloc(sizeof(Cadastro));
   achou = 0;
   while((!achou) && (fread(cliente, sizeof(Cadastro), 1, fp))) {
-   if ((strcmp(cliente->cpf, procurado) == 0) && (cliente->status == '1')) {
+    if ((strcmp(cliente->cpf, procurado) == 0) && (cliente->status == '1')) {
      achou = 1;
    }
   }
@@ -327,7 +327,7 @@ void apagaCliente(void) {
        printf("\nOk, os dados não foram alterados\n");
      }
   } else {
-    printf("O animal %s não foi encontrado...\n", procurado);
+    printf("O Cliente %s não foi encontrado...\n", procurado);
   }
   free(cliente);
   fclose(fp);
