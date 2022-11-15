@@ -23,19 +23,11 @@ struct cadastro{
 
 // PONTEIROS DECLARADOS
 
-Cadastro* preencheCliente(void);
+void preencheCliente(void);
 void gravaCliente(Cadastro*);
-Cadastro* buscaCliente (void);
-void exibeCliente(Cadastro* user);
+void buscaCliente (void);
+void exibeCliente(Cadastro* cliente);
 void listaCliente(void);
-void apagaCliente(Cadastro* user);
-
-// APAGAR CLIENTE
-
-typedef struct apagar Apagar;
-struct apagar{
-    char cpf [12];
-};
-
+void apagaCliente(void);
 
 
