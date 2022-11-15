@@ -23,11 +23,12 @@ struct cadastro{
 
 // PONTEIROS DECLARADOS
 
-void preencheCliente(void);
 void gravaCliente(Cadastro*);
-void buscaCliente (void);
 void exibeCliente(Cadastro* cliente);
+void preencheCliente(void);
+void buscaCliente(void);
 void listaCliente(void);
 void apagaCliente(void);
+void editaCliente(void);
 
 
