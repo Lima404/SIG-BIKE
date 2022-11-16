@@ -316,7 +316,7 @@ void apagaCliente(void) {
 }
 
 
-void editaCliente(void) {
+/*void editaCliente(void) {
   FILE* fp;
   Cadastro* cliente;
   int achou;
@@ -400,4 +400,4 @@ void editaCliente(void) {
   }
   free(cliente);
   fclose(fp);
-}
+}*/
