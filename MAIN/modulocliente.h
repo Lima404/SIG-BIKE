@@ -29,6 +29,7 @@ Cadastro* buscaCliente (void);
 void exibeCliente(Cadastro* user);
 void listaCliente(void);
 void apagaCliente(Cadastro* user);
+void editaCliente(void);
 
 // APAGAR CLIENTE
 
