@@ -38,7 +38,7 @@ void menu_nav_cliente(void)
             break;
 
         case '5':
-            menu_editar_cliente();
+            // menu_editar_cliente();
             break;
 
         default:
@@ -204,6 +204,7 @@ void listaCliente() {
     printf("Não é possível continuar o programa...\n");
     exit(1);
   }
+    system("clear||cls");
     printf("\n\n");
     printf("=====================================================\n");
     printf("-----------------------------------------------------\n");
