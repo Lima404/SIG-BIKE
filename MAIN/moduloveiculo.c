@@ -297,7 +297,7 @@ void apagaVeiculo(CadastroVeiculo* cadveiculo) {
   
   if (achou) {
     exibeVeiculo(veiculo);
-    printf("Deseja realmente apagar o veículo do sistema (s/n)? ");
+    printf("Digite 's' duas vezes para apagar o veículo(s/n)? ");
     scanf("%c\n", &resp);
     if (resp == 's' || resp == 'S') {
       veiculo->status = '0';

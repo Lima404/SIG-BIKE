@@ -303,7 +303,7 @@ void apagaCliente(Cadastro* user) {
   
   if (achou) {
     exibeCliente(cliente);
-    printf("Deseja realmente apagar cliente do sistema (s/n)? ");
+    printf("Digite 's' duas vezes para apagar o cliente(s/n)? ");
     scanf("%c\n", &resp);
     if (resp == 's' || resp == 'S') {
       cliente->status = '0';
