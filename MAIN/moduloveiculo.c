@@ -9,7 +9,6 @@
 void menu_nav_veiculo(void)
 {
     CadastroVeiculo* cadveiculo;
-    ApagarVeiculo* apaveiculo;
     char esc = ' ';
     do {
         esc = menu_veiculo();
@@ -28,8 +27,9 @@ void menu_nav_veiculo(void)
             break; 
 
         case '3':
-            apaveiculo = apagarVeiculo(apaveiculo);
-            
+            cadveiculo = buscaVeiculo();
+            apagaVeiculo(cadveiculo);
+            free(cadveiculo);
             break;
 
         case '4':
@@ -236,46 +236,49 @@ CadastroVeiculo* buscaVeiculo() {
     return NULL;
 }
 
-ApagarVeiculo* apagarVeiculo( ){
-
-    ApagarVeiculo* apaveiculo;
-    apaveiculo = (ApagarVeiculo*) malloc(sizeof(ApagarVeiculo));
-
-    system("clear||cls");
-    printf("\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("-----------------------------------------------------\n");
-    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
-    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
-    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
-    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
-    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
-    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
-    printf("-----------------------------------------------------\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("=================Menu Veículo - Apagar===============\n");
-    printf("===                                               ===\n");
-
-    do {
-
-    printf(" | Digite o código para encontrar o veículo: ");
-    scanf("%[0-9.,/]", apaveiculo->cod); 
-    getchar();
-
-    }while (apaveiculo->cod);
-
-    printf("=== O veículo foi deletado com sucesso!!          ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf(" Press ENTER to exit...\n");
-    getchar();
-
-    return apaveiculo;
+void apagaCliente(CadastroVeiculo* cadveiculo) {
+  FILE* fp;
+  CadastroVeiculo* veiculo;
+  int achou;
+  char resp;
+  fp = fopen("cliente.dat", "r+b");
+  if (fp == NULL) {
+    printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
+    printf("Não é possível continuar o programa...\n");
+    exit(1);
+  }
+  cliente = (Cadastro*) malloc(sizeof(Cadastro));
+  achou = 0;
+  while((!achou) && (fread(cliente, sizeof(Cadastro), 1, fp))) {
+    if ((strcmp(cliente->cpf, user->cpf) == 0) && (cliente->status == '1')) {
+     achou = 1;
+   }
+  }
+  
+  if (achou) {
+    exibeCliente(cliente);
+    printf("Deseja realmente apagar cliente do sistema (s/n)? ");
+    scanf("%c\n", &resp);
+    if (resp == 's' || resp == 'S') {
+      cliente->status = '0';
+      fseek(fp, (-1)*sizeof(Cadastro), SEEK_CUR);
+      fwrite(cliente, sizeof(Cadastro), 1, fp);
+      printf("\nCliente excluído com sucesso!!!\n");
+      sleep(3);
+     } else {
+       printf("\nOk, os dados não foram alterados\n");
+     }
+  } else {
+    printf("O Cliente %s não foi encontrado...\n", user->cpf);
+  }
+  getchar();
+  getchar();
+  getchar();
+  getchar();
+  getchar();
+  free(cliente);
+  fclose(fp);
 }
-
 char menu_editar_veiculo(void){
 
     char esc;

@@ -254,7 +254,7 @@ Cadastro* buscaCliente() {
     printf("       Informe o número do seu cpf por gentileza:      ");
     scanf(" %[0-9]", cpf);
     getchar();
-    cad = (Cadastro *)malloc(sizeof(Cadastro));
+    cad = (Cadastro*)malloc(sizeof(Cadastro));
     fp = fopen("cliente.dat", "rb");
 
     if (fp == NULL)
@@ -325,7 +325,7 @@ void apagaCliente(Cadastro* user) {
 }
 
 
-/*void editaCliente(void) {
+void editaCliente(Cadastro* user) {
   FILE* fp;
   Cadastro* cliente;
   int achou;
@@ -409,4 +409,4 @@ void apagaCliente(Cadastro* user) {
   }
   free(cliente);
   fclose(fp);
-}*/
+}
