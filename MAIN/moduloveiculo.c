@@ -27,12 +27,15 @@ void menu_nav_veiculo(void)
             break; 
 
         case '3':
+            listaVeiculo();
+            break;
+        case '4':
             cadveiculo = buscaVeiculo();
             apagaVeiculo(cadveiculo);
             free(cadveiculo);
             break;
 
-        case '4':
+        case '5':
             menu_editar_veiculo();
             break;
 
@@ -65,9 +68,10 @@ char menu_veiculo(void){
     printf("=====================Menu Veículo====================\n");
     printf("===                                               ===\n");
     printf("===              1.Cadastro Veículo               ===\n");
-    printf("===              2.Lista de Veículos              ===\n");
-    printf("===              3.Apagar Veículo                 ===\n");
-    printf("===              4.Editar Veículo                 ===\n");
+    printf("===              2.Buscar Veículo                 ===\n");
+    printf("===              3.Listar Veículos                ===\n");
+    printf("===              4.Apagar Veículo                 ===\n");
+    printf("===              5.Editar Veículo                 ===\n");
     printf("===              0.Voltar                         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
@@ -81,11 +85,10 @@ char menu_veiculo(void){
 
 }
 
-CadastroVeiculo* preencheVeiculo( ){
+CadastroVeiculo* preencheVeiculo(void){
     
     CadastroVeiculo* cadaveiculo;
     cadaveiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
-
     system("clear||cls");
     printf("\n");
     printf("=====================================================\n");
@@ -104,9 +107,9 @@ CadastroVeiculo* preencheVeiculo( ){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("================Menu Veículo - Cadastro==============\n");
     printf("===                                               ===\n");
-    printf("===         Tipo de veículo:                      ===\n");
-    printf("===         1. Bike:                              ===\n");
-    printf("===         2. Patins Elétricos:                  ===\n");
+    printf("===         Tipos de veículos:                    ===\n");
+    printf("===          Bike.                                ===\n");
+    printf("===          Patins Elétricos.                    ===\n");
     printf("===                                               ===\n");
     printf("=====================================================\n");
     printf("=====================================================\n");
@@ -187,9 +190,44 @@ void exibeVeiculo(CadastroVeiculo* cadveiculo){
     printf("Preço do veiculo: %s\n", cadveiculo->preco);
     printf("Status: %c\n", cadveiculo->status);
     printf("\n");
-    system("Pause");
 }
 
+void listaVeiculo() {
+  FILE* fp;
+  CadastroVeiculo* cadveiculo;
+  fp = fopen("veiculo.dat", "rb");
+  if (fp == NULL) {
+    printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
+    printf("Não é possível continuar o programa...\n");
+    exit(1);
+  }
+    system("clear||cls");
+    printf("\n\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+    printf("================Menu Veículo - Listar================\n");
+
+  cadveiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
+  while (!feof(fp))
+  { // Busca até o final do arquivo
+      fread(cadveiculo, sizeof(CadastroVeiculo), 1, fp);
+      exibeVeiculo(cadveiculo);
+  }
+  fclose(fp);
+  getchar();
+  getchar();
+  getchar();
+  getchar();
+  free(cadveiculo);
+}
 
 // BUSCA VEICULO
 
@@ -236,47 +274,49 @@ CadastroVeiculo* buscaVeiculo() {
     return NULL;
 }
 
-void apagaCliente(CadastroVeiculo* cadveiculo) {
+// APAGAR VEICULO
+
+void apagaVeiculo(CadastroVeiculo* cadveiculo) {
   FILE* fp;
   CadastroVeiculo* veiculo;
   int achou;
   char resp;
-  fp = fopen("cliente.dat", "r+b");
+  fp = fopen("veiculo.dat", "r+b");
   if (fp == NULL) {
     printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
     printf("Não é possível continuar o programa...\n");
     exit(1);
   }
-  cliente = (Cadastro*) malloc(sizeof(Cadastro));
+  veiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
   achou = 0;
-  while((!achou) && (fread(cliente, sizeof(Cadastro), 1, fp))) {
-    if ((strcmp(cliente->cpf, user->cpf) == 0) && (cliente->status == '1')) {
+  while((!achou) && (fread(veiculo, sizeof(CadastroVeiculo), 1, fp))) {
+    if ((strcmp(veiculo->cod, cadveiculo->cod) == 0) && (veiculo->status == '1')) {
      achou = 1;
    }
   }
   
   if (achou) {
-    exibeCliente(cliente);
-    printf("Deseja realmente apagar cliente do sistema (s/n)? ");
+    exibeVeiculo(veiculo);
+    printf("Deseja realmente apagar o veículo do sistema (s/n)? ");
     scanf("%c\n", &resp);
     if (resp == 's' || resp == 'S') {
-      cliente->status = '0';
-      fseek(fp, (-1)*sizeof(Cadastro), SEEK_CUR);
-      fwrite(cliente, sizeof(Cadastro), 1, fp);
-      printf("\nCliente excluído com sucesso!!!\n");
+      veiculo->status = '0';
+      fseek(fp, (-1)*sizeof(CadastroVeiculo), SEEK_CUR);
+      fwrite(veiculo, sizeof(CadastroVeiculo), 1, fp);
+      printf("\nVeiculo excluído com sucesso!!!\n");
       sleep(3);
      } else {
        printf("\nOk, os dados não foram alterados\n");
      }
   } else {
-    printf("O Cliente %s não foi encontrado...\n", user->cpf);
+    printf("O veiculo %s não foi encontrado...\n", cadveiculo->cod);
   }
   getchar();
   getchar();
   getchar();
   getchar();
   getchar();
-  free(cliente);
+  free(veiculo);
   fclose(fp);
 }
 char menu_editar_veiculo(void){

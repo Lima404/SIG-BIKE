@@ -160,6 +160,8 @@ Cadastro* preencheCliente(void){
 
     printf("=== Usuário foi cadastrado no sistema!            ===\n");
     printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf(" Press ENTER to exit...\n");
     getchar();
 }
 

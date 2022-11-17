@@ -27,4 +27,6 @@ void gravaVeiculo(CadastroVeiculo*);
 CadastroVeiculo* buscaVeiculo(void);
 void exibeVeiculo(CadastroVeiculo* cadveiculo);
 void apagaVeiculo(CadastroVeiculo* cadveiculo);
-void editaCliente(void);
+void editaVeiculo(void);
+void listaVeiculo(void);
+
