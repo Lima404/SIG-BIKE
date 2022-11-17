@@ -19,18 +19,23 @@ void menu_nav_veiculo(void)
             gravaVeiculo(cadveiculo);
             free(cadveiculo);
             break;
+
         case '2':
             cadveiculo = buscaVeiculo();
             exibeVeiculo(cadveiculo);
             getchar();
             free(cadveiculo);
             break; 
+
         case '3':
             apaveiculo = apagarVeiculo(apaveiculo);
+            
             break;
+
         case '4':
             menu_editar_veiculo();
             break;
+
         default:
             printf ("Opção Inválida\n");
             break;

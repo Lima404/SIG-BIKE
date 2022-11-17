@@ -37,9 +37,9 @@ void menu_nav_cliente(void)
             free(user);
             break;
 
-        case '5':
+        /*case '5':
             menu_editar_cliente();
-            break;
+            break;*/
 
         default:
             printf ("Opção Inválida\n");
