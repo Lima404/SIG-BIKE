@@ -204,6 +204,7 @@ void listaCliente() {
     printf("Não é possível continuar o programa...\n");
     exit(1);
   }
+    system("clear||cls");
     printf("\n\n");
     printf("=====================================================\n");
     printf("-----------------------------------------------------\n");
