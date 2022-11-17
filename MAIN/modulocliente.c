@@ -37,9 +37,9 @@ void menu_nav_cliente(void)
             free(user);
             break;
 
-        case '5':
-            // menu_editar_cliente();
-            break;
+        /*case '5':
+            menu_editar_cliente();
+            break;*/
 
         default:
             printf ("Opção Inválida\n");
@@ -160,6 +160,8 @@ Cadastro* preencheCliente(void){
 
     printf("=== Usuário foi cadastrado no sistema!            ===\n");
     printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf(" Press ENTER to exit...\n");
     getchar();
 }
 
@@ -254,7 +256,7 @@ Cadastro* buscaCliente() {
     printf("       Informe o número do seu cpf por gentileza:      ");
     scanf(" %[0-9]", cpf);
     getchar();
-    cad = (Cadastro *)malloc(sizeof(Cadastro));
+    cad = (Cadastro*)malloc(sizeof(Cadastro));
     fp = fopen("cliente.dat", "rb");
 
     if (fp == NULL)
@@ -301,7 +303,7 @@ void apagaCliente(Cadastro* user) {
   
   if (achou) {
     exibeCliente(cliente);
-    printf("Deseja realmente apagar cliente do sistema (s/n)? ");
+    printf("Digite 's' duas vezes para apagar o cliente(s/n)? ");
     scanf("%c\n", &resp);
     if (resp == 's' || resp == 'S') {
       cliente->status = '0';
@@ -325,7 +327,7 @@ void apagaCliente(Cadastro* user) {
 }
 
 
-/*void editaCliente(void) {
+void editaCliente(Cadastro* user) {
   FILE* fp;
   Cadastro* cliente;
   int achou;
@@ -409,4 +411,4 @@ void apagaCliente(Cadastro* user) {
   }
   free(cliente);
   fclose(fp);
-}*/
+}

@@ -3,7 +3,7 @@ char menu_cliente(void);
 // void menu_cadastro_cliente(void);
 char menu_lista_cliente(void);
 // char menu_apagar_cliente(void);
-char menu_editar_cliente(void);
+//char menu_editar_cliente(void);
 char menu_procurar_cliente(void);
 
 
@@ -29,14 +29,7 @@ Cadastro* buscaCliente (void);
 void exibeCliente(Cadastro* user);
 void listaCliente(void);
 void apagaCliente(Cadastro* user);
-void editaCliente(void);
-
-// APAGAR CLIENTE
-
-typedef struct apagar Apagar;
-struct apagar{
-    char cpf [12];
-};
+void editaCliente(Cadastro* user);
 
 
 

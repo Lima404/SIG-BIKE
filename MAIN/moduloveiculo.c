@@ -9,7 +9,6 @@
 void menu_nav_veiculo(void)
 {
     CadastroVeiculo* cadveiculo;
-    ApagarVeiculo* apaveiculo;
     char esc = ' ';
     do {
         esc = menu_veiculo();
@@ -19,18 +18,27 @@ void menu_nav_veiculo(void)
             gravaVeiculo(cadveiculo);
             free(cadveiculo);
             break;
+
         case '2':
             cadveiculo = buscaVeiculo();
             exibeVeiculo(cadveiculo);
             getchar();
             free(cadveiculo);
             break; 
+
         case '3':
-            apaveiculo = apagarVeiculo(apaveiculo);
+            listaVeiculo();
             break;
         case '4':
+            cadveiculo = buscaVeiculo();
+            apagaVeiculo(cadveiculo);
+            free(cadveiculo);
+            break;
+
+        case '5':
             menu_editar_veiculo();
             break;
+
         default:
             printf ("Opção Inválida\n");
             break;
@@ -60,9 +68,10 @@ char menu_veiculo(void){
     printf("=====================Menu Veículo====================\n");
     printf("===                                               ===\n");
     printf("===              1.Cadastro Veículo               ===\n");
-    printf("===              2.Lista de Veículos              ===\n");
-    printf("===              3.Apagar Veículo                 ===\n");
-    printf("===              4.Editar Veículo                 ===\n");
+    printf("===              2.Buscar Veículo                 ===\n");
+    printf("===              3.Listar Veículos                ===\n");
+    printf("===              4.Apagar Veículo                 ===\n");
+    printf("===              5.Editar Veículo                 ===\n");
     printf("===              0.Voltar                         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
@@ -76,11 +85,10 @@ char menu_veiculo(void){
 
 }
 
-CadastroVeiculo* preencheVeiculo( ){
+CadastroVeiculo* preencheVeiculo(void){
     
     CadastroVeiculo* cadaveiculo;
     cadaveiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
-
     system("clear||cls");
     printf("\n");
     printf("=====================================================\n");
@@ -99,9 +107,9 @@ CadastroVeiculo* preencheVeiculo( ){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("================Menu Veículo - Cadastro==============\n");
     printf("===                                               ===\n");
-    printf("===         Tipo de veículo:                      ===\n");
-    printf("===         1. Bike:                              ===\n");
-    printf("===         2. Patins Elétricos:                  ===\n");
+    printf("===         Tipos de veículos:                    ===\n");
+    printf("===          Bike.                                ===\n");
+    printf("===          Patins Elétricos.                    ===\n");
     printf("===                                               ===\n");
     printf("=====================================================\n");
     printf("=====================================================\n");
@@ -182,9 +190,44 @@ void exibeVeiculo(CadastroVeiculo* cadveiculo){
     printf("Preço do veiculo: %s\n", cadveiculo->preco);
     printf("Status: %c\n", cadveiculo->status);
     printf("\n");
-    system("Pause");
 }
 
+void listaVeiculo() {
+  FILE* fp;
+  CadastroVeiculo* cadveiculo;
+  fp = fopen("veiculo.dat", "rb");
+  if (fp == NULL) {
+    printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
+    printf("Não é possível continuar o programa...\n");
+    exit(1);
+  }
+    system("clear||cls");
+    printf("\n\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+    printf("================Menu Veículo - Listar================\n");
+
+  cadveiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
+  while (!feof(fp))
+  { // Busca até o final do arquivo
+      fread(cadveiculo, sizeof(CadastroVeiculo), 1, fp);
+      exibeVeiculo(cadveiculo);
+  }
+  fclose(fp);
+  getchar();
+  getchar();
+  getchar();
+  getchar();
+  free(cadveiculo);
+}
 
 // BUSCA VEICULO
 
@@ -231,46 +274,51 @@ CadastroVeiculo* buscaVeiculo() {
     return NULL;
 }
 
-ApagarVeiculo* apagarVeiculo( ){
+// APAGAR VEICULO
 
-    ApagarVeiculo* apaveiculo;
-    apaveiculo = (ApagarVeiculo*) malloc(sizeof(ApagarVeiculo));
-
-    system("clear||cls");
-    printf("\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("-----------------------------------------------------\n");
-    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
-    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
-    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
-    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
-    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
-    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
-    printf("-----------------------------------------------------\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("=================Menu Veículo - Apagar===============\n");
-    printf("===                                               ===\n");
-
-    do {
-
-    printf(" | Digite o código para encontrar o veículo: ");
-    scanf("%[0-9.,/]", apaveiculo->cod); 
-    getchar();
-
-    }while (apaveiculo->cod);
-
-    printf("=== O veículo foi deletado com sucesso!!          ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf(" Press ENTER to exit...\n");
-    getchar();
-
-    return apaveiculo;
+void apagaVeiculo(CadastroVeiculo* cadveiculo) {
+  FILE* fp;
+  CadastroVeiculo* veiculo;
+  int achou;
+  char resp;
+  fp = fopen("veiculo.dat", "r+b");
+  if (fp == NULL) {
+    printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
+    printf("Não é possível continuar o programa...\n");
+    exit(1);
+  }
+  veiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
+  achou = 0;
+  while((!achou) && (fread(veiculo, sizeof(CadastroVeiculo), 1, fp))) {
+    if ((strcmp(veiculo->cod, cadveiculo->cod) == 0) && (veiculo->status == '1')) {
+     achou = 1;
+   }
+  }
+  
+  if (achou) {
+    exibeVeiculo(veiculo);
+    printf("Digite 's' duas vezes para apagar o veículo(s/n)? ");
+    scanf("%c\n", &resp);
+    if (resp == 's' || resp == 'S') {
+      veiculo->status = '0';
+      fseek(fp, (-1)*sizeof(CadastroVeiculo), SEEK_CUR);
+      fwrite(veiculo, sizeof(CadastroVeiculo), 1, fp);
+      printf("\nVeiculo excluído com sucesso!!!\n");
+      sleep(3);
+     } else {
+       printf("\nOk, os dados não foram alterados\n");
+     }
+  } else {
+    printf("O veiculo %s não foi encontrado...\n", cadveiculo->cod);
+  }
+  getchar();
+  getchar();
+  getchar();
+  getchar();
+  getchar();
+  free(veiculo);
+  fclose(fp);
 }
-
 char menu_editar_veiculo(void){
 
     char esc;
