@@ -230,8 +230,6 @@ void listaCliente() {
   fclose(fp);
   getchar();
   getchar();
-  getchar();
-  getchar();
   free(cliente);
 }
 
@@ -320,9 +318,6 @@ void apagaCliente(Cadastro* user) {
   }
   getchar();
   getchar();
-  getchar();
-  getchar();
-  getchar();
   free(cliente);
   fclose(fp);
 }
@@ -331,7 +326,6 @@ void apagaCliente(Cadastro* user) {
 void editaCliente(Cadastro* cliente) {
 
   FILE* fp;
-  int achou;
   char resp;
   char procurado[15];
   fp = fopen("cliente.dat", "r+b");
@@ -343,29 +337,29 @@ void editaCliente(Cadastro* cliente) {
     if (resp == 's' || resp == 'S') {
 
         do{
-        printf(" Digite seu nome por favor: ");
+        printf(" Digite seu novo nome por favor: ");
         scanf("%80[^\n]", cliente->nome);                            //executa tudo isso até que a condição da função seja satisfeita
         getchar();
         
         } while (!validar_nome(cliente->nome));
 
 
-        printf(" Digite seu telefone(XXXXX-XXXX): ");   
+        printf(" Digite seu novo telefone(XXXXX-XXXX): ");   
         scanf("%20[^\n]", cliente->telefone);
         getchar();
 
 
-        printf(" Digite seu endereço: ");
+        printf(" Digite seu novo endereço: ");
         scanf("%40[^\n]", cliente->endereco);
         getchar();
 
 
         do {
-        printf(" Digite o dia que você nasceu por favor: ");
+        printf(" Digite o novo dia que você nasceu por favor: ");
         scanf("%d", &cliente->dd);
-        printf(" Digite o seu mês de nascimento: ");
+        printf(" Digite o seu novo mês de nascimento: ");
         scanf("%d", &cliente->mm);
-        printf(" digite o seu ano de nascimento: ");
+        printf(" digite o seu novo ano de nascimento: ");
         scanf("%d", &cliente->aa);
 
         } while(!validar_data(cliente->dd, cliente->mm,  cliente->aa));
@@ -376,15 +370,17 @@ void editaCliente(Cadastro* cliente) {
       fseek(fp, (-1)*sizeof(Cadastro), SEEK_CUR);
       fwrite(cliente, sizeof(Cadastro), 1, fp);
       getchar();
-      getchar();
-      getchar();
       printf("\nCliente editado com sucesso!!!\n");
+
     } else {
       printf("\nOk, os dados não foram alterados\n");
     }
-  } else {
+
+  } else 
+  {
     printf("O cliente %s não foi encontrado...\n", procurado);
   }
+
   free(cliente);
   fclose(fp);
 }

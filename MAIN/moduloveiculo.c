@@ -36,7 +36,9 @@ void menu_nav_veiculo(void)
             break;
 
         case '5':
-            menu_editar_veiculo();
+            cadveiculo = buscaVeiculo();
+            editaVeiculo(cadveiculo);
+            free(cadveiculo);
             break;
 
         default:
@@ -71,7 +73,7 @@ char menu_veiculo(void){
     printf("===              2.Buscar Veículo                 ===\n");
     printf("===              3.Listar Veículos                ===\n");
     printf("===              4.Apagar Veículo                 ===\n");
-    printf("===              5.Editar Veículo                 ===\n");
+    printf("===              5.Alterar Veículo                ===\n");
     printf("===              0.Voltar                         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
@@ -224,8 +226,6 @@ void listaVeiculo() {
   fclose(fp);
   getchar();
   getchar();
-  getchar();
-  getchar();
   free(cadveiculo);
 }
 
@@ -277,6 +277,7 @@ CadastroVeiculo* buscaVeiculo() {
 // APAGAR VEICULO
 
 void apagaVeiculo(CadastroVeiculo* cadveiculo) {
+
   FILE* fp;
   CadastroVeiculo* veiculo;
   int achou;
@@ -313,48 +314,81 @@ void apagaVeiculo(CadastroVeiculo* cadveiculo) {
   }
   getchar();
   getchar();
-  getchar();
-  getchar();
-  getchar();
   free(veiculo);
   fclose(fp);
 }
-char menu_editar_veiculo(void){
 
-    char esc;
+void editaVeiculo(CadastroVeiculo* cadveiculo) {
 
-    system("clear||cls");
-    printf("\n");
-    printf("=====================================================\n");
-    printf("-----------------------------------------------------\n");
-    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
-    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
-    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
-    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
-    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
-    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
-    printf("-----------------------------------------------------\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("================Menu Veículo - Editar================\n");
-    printf("===                                               ===\n");
-    printf("===              1.Editar o Tipo:                 ===\n");
-    printf("===              2.Editar a Marca:                ===\n");
-    printf("===              3.Editar a Descrição:            ===\n");
-    printf("===              4.Editar o Código:               ===\n");
-    printf("===              5.Editar o Preço:                ===\n");
-    printf("===              0.Voltar                         ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("=====================================================\n");
-    scanf("%c", &esc);
+  FILE* fp;
+  char resp;
+  char procurado[15];
+  fp = fopen("veiculo.dat", "r+b");
+  if (cadveiculo != NULL) {
+    exibeVeiculo(cadveiculo);
     getchar();
-    printf("\t\t\t ... Aguarde ... \n");
-    sleep(1);
-    return esc;
+    printf("Deseja realmente editar este veículo (s/n)? ");
+    scanf("%c", &resp);
+    if (resp == 's' || resp == 'S') {
+
+        do{
+
+        printf(" | Digite o novo tipo do veículo(PATINS ou BIKE): ");
+        scanf("%20[^\n]", cadveiculo->tipo);
+        getchar();
+
+        } while (!validar_nome(cadveiculo->tipo));
+
+        // Marca
+
+        do{
+
+        printf(" | Digite a marca do veículo: ");
+        scanf("%20[^\n]", cadveiculo->marca); 
+        getchar();
+
+        }while (!validar_nome(cadveiculo->marca));
+
+        // Descrição
+
+
+        printf(" | Digite uma descrição sobre o veículo: ");   
+        scanf("%100[^\n]", cadveiculo->desc);
+        getchar();
+
+
+        // CÓDIGO DE RASTREIO
+
+        printf(" | Digite um código pra registrar o veículo(6 números): ");
+        scanf("%s", cadveiculo->cod);
+        getchar();
+
+        // PREÇO
+
+
+        printf(" | Digite o preço em reais(APENAS NÚMEROS): ");
+        scanf("%20[^\n]", cadveiculo->preco);
+        getchar();
+
+
+      cadveiculo->status = '1';
+
+      fseek(fp, (-1)*sizeof(CadastroVeiculo), SEEK_CUR);
+      fwrite(cadveiculo, sizeof(CadastroVeiculo), 1, fp);
+      getchar();
+      printf("\nVeículo editado com sucesso!!!\n");
+
+    } else {
+      printf("\nOk, os dados não foram alterados\n");
+    }
+
+  } else 
+  {
+    printf("O veículo %s não foi encontrado...\n", procurado);
+  }
+
+  free(cadveiculo);
+  fclose(fp);
 }
 
 
