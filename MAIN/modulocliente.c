@@ -37,9 +37,11 @@ void menu_nav_cliente(void)
             free(user);
             break;
 
-        /*case '5':
-            menu_editar_cliente();
-            break;*/
+        case '5':
+            user = buscaCliente();
+            editaCliente(user);
+            free(user);
+            break;
 
         default:
             printf ("Opção Inválida\n");
@@ -326,40 +328,14 @@ void apagaCliente(Cadastro* user) {
 }
 
 
-void editaCliente(Cadastro* user) {
+void editaCliente(Cadastro* cliente) {
+
   FILE* fp;
-  Cadastro* cliente;
   int achou;
   char resp;
   char procurado[15];
   fp = fopen("cliente.dat", "r+b");
-  if (fp == NULL) {
-    printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
-    printf("Não é possível continuar o programa...\n");
-    exit(1);
-  }
-  printf("\n\n");
-  printf("=====================================================\n");
-  printf("-----------------------------------------------------\n");
-  printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
-  printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
-  printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
-  printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
-  printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
-  printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
-  printf("-----------------------------------------------------\n");
-  printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-  printf("================Menu Cliente - Editar================\n");
-  printf("Informe o cpf do cliente a ser alterado: ");
-  scanf(" %[A-Z a-z 0-9]", procurado);
-  cliente = (Cadastro*) malloc(sizeof(Cadastro));
-  achou = 0;
-  while((!achou) && (fread(cliente, sizeof(Cadastro), 1, fp))) {
-   if ((strcmp(cliente->cpf, procurado) == 0) && (cliente->status == '1')) {
-     achou = 1;
-   }
-  }
-  if (achou) {
+  if (cliente != NULL) {
     exibeCliente(cliente);
     getchar();
     printf("Deseja realmente editar este cliente (s/n)? ");
@@ -387,20 +363,21 @@ void editaCliente(Cadastro* user) {
         do {
         printf(" Digite o dia que você nasceu por favor: ");
         scanf("%d", &cliente->dd);
-        getchar();
         printf(" Digite o seu mês de nascimento: ");
         scanf("%d", &cliente->mm);
-        getchar();
         printf(" digite o seu ano de nascimento: ");
         scanf("%d", &cliente->aa);
-        getchar();
 
         } while(!validar_data(cliente->dd, cliente->mm,  cliente->aa));
 
 
       cliente->status = '1';
+
       fseek(fp, (-1)*sizeof(Cadastro), SEEK_CUR);
       fwrite(cliente, sizeof(Cadastro), 1, fp);
+      getchar();
+      getchar();
+      getchar();
       printf("\nCliente editado com sucesso!!!\n");
     } else {
       printf("\nOk, os dados não foram alterados\n");
