@@ -37,9 +37,11 @@ void menu_nav_cliente(void)
             free(user);
             break;
 
-        /*case '5':
-            menu_editar_cliente();
-            break;*/
+        case '5':
+            user = buscaCliente();
+            editaCliente(user);
+            free(user);
+            break;
 
         default:
             printf ("Opção Inválida\n");
@@ -228,8 +230,6 @@ void listaCliente() {
   fclose(fp);
   getchar();
   getchar();
-  getchar();
-  getchar();
   free(cliente);
 }
 
@@ -318,48 +318,18 @@ void apagaCliente(Cadastro* user) {
   }
   getchar();
   getchar();
-  getchar();
-  getchar();
-  getchar();
   free(cliente);
   fclose(fp);
 }
 
 
-void editaCliente(Cadastro* user) {
+void editaCliente(Cadastro* cliente) {
+
   FILE* fp;
-  Cadastro* cliente;
-  int achou;
   char resp;
   char procurado[15];
   fp = fopen("cliente.dat", "r+b");
-  if (fp == NULL) {
-    printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
-    printf("Não é possível continuar o programa...\n");
-    exit(1);
-  }
-  printf("\n\n");
-  printf("=====================================================\n");
-  printf("-----------------------------------------------------\n");
-  printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
-  printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
-  printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
-  printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
-  printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
-  printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
-  printf("-----------------------------------------------------\n");
-  printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-  printf("================Menu Cliente - Editar================\n");
-  printf("Informe o cpf do cliente a ser alterado: ");
-  scanf(" %[A-Z a-z 0-9]", procurado);
-  cliente = (Cadastro*) malloc(sizeof(Cadastro));
-  achou = 0;
-  while((!achou) && (fread(cliente, sizeof(Cadastro), 1, fp))) {
-   if ((strcmp(cliente->cpf, procurado) == 0) && (cliente->status == '1')) {
-     achou = 1;
-   }
-  }
-  if (achou) {
+  if (cliente != NULL) {
     exibeCliente(cliente);
     getchar();
     printf("Deseja realmente editar este cliente (s/n)? ");
@@ -367,47 +337,50 @@ void editaCliente(Cadastro* user) {
     if (resp == 's' || resp == 'S') {
 
         do{
-        printf(" Digite seu nome por favor: ");
+        printf(" Digite seu novo nome por favor: ");
         scanf("%80[^\n]", cliente->nome);                            //executa tudo isso até que a condição da função seja satisfeita
         getchar();
         
         } while (!validar_nome(cliente->nome));
 
 
-        printf(" Digite seu telefone(XXXXX-XXXX): ");   
+        printf(" Digite seu novo telefone(XXXXX-XXXX): ");   
         scanf("%20[^\n]", cliente->telefone);
         getchar();
 
 
-        printf(" Digite seu endereço: ");
+        printf(" Digite seu novo endereço: ");
         scanf("%40[^\n]", cliente->endereco);
         getchar();
 
 
         do {
-        printf(" Digite o dia que você nasceu por favor: ");
+        printf(" Digite o novo dia que você nasceu por favor: ");
         scanf("%d", &cliente->dd);
-        getchar();
-        printf(" Digite o seu mês de nascimento: ");
+        printf(" Digite o seu novo mês de nascimento: ");
         scanf("%d", &cliente->mm);
-        getchar();
-        printf(" digite o seu ano de nascimento: ");
+        printf(" digite o seu novo ano de nascimento: ");
         scanf("%d", &cliente->aa);
-        getchar();
 
         } while(!validar_data(cliente->dd, cliente->mm,  cliente->aa));
 
 
       cliente->status = '1';
+
       fseek(fp, (-1)*sizeof(Cadastro), SEEK_CUR);
       fwrite(cliente, sizeof(Cadastro), 1, fp);
+      getchar();
       printf("\nCliente editado com sucesso!!!\n");
+
     } else {
       printf("\nOk, os dados não foram alterados\n");
     }
-  } else {
+
+  } else 
+  {
     printf("O cliente %s não foi encontrado...\n", procurado);
   }
+
   free(cliente);
   fclose(fp);
 }
