@@ -90,7 +90,7 @@ char menu_aluguel(void){
 }
 
 CadastroAluguel* preencheAluguel( ){
-
+    
     CadastroAluguel* cadaaluguel;
     cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
 
@@ -126,7 +126,7 @@ CadastroAluguel* preencheAluguel( ){
         scanf("%6[^\n]", cadaaluguel->cod);
         getchar();
 
-    cadaaluguel->status = 'm';
+    cadaaluguel->status = '1';
     return cadaaluguel;
 
     printf("=== Aluguel foi cadastrado no sistema!!           ===\n");
@@ -329,3 +329,4 @@ char menu_lista_atrasados(void){
     getchar();
     return esc;
 }
+
