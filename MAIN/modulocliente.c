@@ -262,7 +262,7 @@ Cadastro* buscaCliente() {
 
     if (fp == NULL)
     {
-        printf("Ocorreu um erxro na abertura do arquivo, não é possivel continuar o programa");
+        printf("Ocorreu um erro na abertura do arquivo, não é possivel continuar o programa");
         exit(1);
     }
 
@@ -339,8 +339,9 @@ void editaCliente(Cadastro* cliente) {
     if (resp == 's' || resp == 'S') {
 
         do{
+          
         printf(" Digite seu novo nome por favor: ");
-        scanf("%80[^\n]", cliente->nome);                            //executa tudo isso até que a condição da função seja satisfeita
+        scanf("%s", cliente->nome);                            //executa tudo isso até que a condição da função seja satisfeita
         getchar();
         
         } while (!validar_nome(cliente->nome));
@@ -359,10 +360,13 @@ void editaCliente(Cadastro* cliente) {
         do {
         printf(" Digite o novo dia que você nasceu por favor: ");
         scanf("%d", &cliente->dd);
+        getchar();
         printf(" Digite o seu novo mês de nascimento: ");
         scanf("%d", &cliente->mm);
+        getchar();
         printf(" digite o seu novo ano de nascimento: ");
         scanf("%d", &cliente->aa);
+        getchar();
 
         } while(!validar_data(cliente->dd, cliente->mm,  cliente->aa));
 
@@ -378,8 +382,7 @@ void editaCliente(Cadastro* cliente) {
       printf("\nOk, os dados não foram alterados\n");
     }
 
-  } else 
-  {
+  } else {
     printf("O cliente %s não foi encontrado...\n", procurado);
   }
 
