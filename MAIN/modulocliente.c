@@ -157,6 +157,8 @@ Cadastro* preencheCliente(void){
         getchar();
         
     } while(!validar_data(cad->dd, cad->mm, cad->aa));
+    
+    
     cad->status = '1';
     return cad;
 

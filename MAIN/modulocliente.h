@@ -27,6 +27,3 @@ void exibeCliente(Cadastro* user);
 void listaCliente(void);
 void apagaCliente(Cadastro* user);
 void editaCliente(Cadastro* user);
-
-
-
