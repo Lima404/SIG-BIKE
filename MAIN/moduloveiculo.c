@@ -382,8 +382,7 @@ void editaVeiculo(CadastroVeiculo* cadveiculo) {
       printf("\nOk, os dados não foram alterados\n");
     }
 
-  } else 
-  {
+  } else {
     printf("O veículo %s não foi encontrado...\n", procurado);
   }
 

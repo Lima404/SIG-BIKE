@@ -7,9 +7,13 @@ char menu_lista_atrasados(void);
 
 typedef struct cadastroaluguel CadastroAluguel;
 struct cadastroaluguel{
-    char cpf [11];
+
+    char cpf [12];
     char cod[7];
+    int dd, mm, aa;
+    char preco[10];
     char status;
+    
 };
 
 
@@ -18,14 +22,7 @@ struct cadastroaluguel{
 CadastroAluguel* preencheAluguel(void);
 void gravaAluguel(CadastroAluguel*);
 CadastroAluguel* buscaAluguel();
-void exibeAluguel(CadastroAluguel* cadaluguel);
+void exibeAluguel(CadastroAluguel* cadaaluguel);
 void listaAluguel(void);
-
-
-typedef struct apagaraluguel ApagarAluguel;
-struct apagaraluguel{
-    char cpf [11];
-};
-
-ApagarAluguel* apagarAluguel( );
-CadastroAluguel* cadastroAluguel( );
+void apagaAluguel(CadastroAluguel* cadaaluguel);
+void editaAluguel(CadastroAluguel* cadaaluguel);

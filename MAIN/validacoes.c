@@ -11,7 +11,7 @@ int validar_cpf(char cpf []){
     
     //http://pog-carlos.blogspot.com/2011/11/validacao-de-cpf-em-c-usando-vetor.html
 
-    int icpf[12];  
+    int icpf[15];  
     int i,somador=0,digito1,result1,result2,digito2,valor;  
     
     
