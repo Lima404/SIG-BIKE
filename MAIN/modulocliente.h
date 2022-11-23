@@ -12,7 +12,7 @@ struct cadastro{
     char nome [81];
     char cpf [12];
     char telefone [21];
-    char endereco [41];
+    char endereco [141];
     int dd, mm, aa;
     char status;
     

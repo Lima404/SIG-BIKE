@@ -115,6 +115,7 @@ Cadastro* preencheCliente(void){
 //Nome
 
     do{
+      
         printf(" Digite seu nome por favor: ");
         scanf("%80[^\n]", cad->nome);                            //executa tudo isso até que a condição da função seja satisfeita
         getchar();
@@ -125,7 +126,7 @@ Cadastro* preencheCliente(void){
 
     do{
     
-        printf(" Digite seu CPF(APENAS NUMEROS SEM ESPAÇO): ");
+        printf(" Digite seu CPF(APENAS NUMEROS): ");
         scanf("%s", cad->cpf);
         getchar();
         
@@ -140,12 +141,13 @@ Cadastro* preencheCliente(void){
 //endereço
 
         printf(" Digite seu endereço: ");
-        scanf("%40[^\n]", cad->endereco);
+        scanf("%140[^\n]", cad->endereco);
         getchar();
 
 // Data de nascimento
 
     do {
+
         printf(" Digite o dia que você nasceu por favor: ");
         scanf("%d", &cad->dd);
         getchar();
@@ -202,6 +204,7 @@ void exibeCliente(Cadastro* cliente) {
 // Lista Clientes
 
 void listaCliente() {
+  
   FILE* fp;
   Cadastro* cliente;
   fp = fopen("cliente.dat", "rb");
@@ -230,7 +233,7 @@ void listaCliente() {
       exibeCliente(cliente);
   }
   fclose(fp);
-  getchar();
+  printf(" Press ENTER to exit...\n");
   getchar();
   free(cliente);
 }
@@ -238,6 +241,7 @@ void listaCliente() {
 // Buscar cliente
 
 Cadastro* buscaCliente() {
+
     FILE *fp;
     Cadastro* cad;
     char cpf[12];
@@ -277,6 +281,8 @@ Cadastro* buscaCliente() {
     }
 
     fclose(fp);
+    printf(" Press ENTER to exit...\n");
+    getchar();
     return NULL;
 }
 
@@ -284,6 +290,7 @@ Cadastro* buscaCliente() {
 // APAGAR CLIENTE
 
 void apagaCliente(Cadastro* user) {
+
   FILE* fp;
   Cadastro* cliente;
   int achou;
@@ -329,19 +336,23 @@ void editaCliente(Cadastro* cliente) {
 
   FILE* fp;
   char resp;
-  char procurado[15];
+  int achou = 0;
+
+  Cadastro* aux_cliente = (Cadastro*) malloc(sizeof(Cadastro));
+
   fp = fopen("cliente.dat", "r+b");
   if (cliente != NULL) {
     exibeCliente(cliente);
     getchar();
     printf("Deseja realmente editar este cliente (s/n)? ");
     scanf("%c", &resp);
+    getchar();
     if (resp == 's' || resp == 'S') {
 
         do{
           
         printf(" Digite seu novo nome por favor: ");
-        scanf("%s", cliente->nome);                            //executa tudo isso até que a condição da função seja satisfeita
+        scanf("%80[^\n]", cliente->nome);                            //executa tudo isso até que a condição da função seja satisfeita
         getchar();
         
         } while (!validar_nome(cliente->nome));
@@ -358,6 +369,7 @@ void editaCliente(Cadastro* cliente) {
 
 
         do {
+          
         printf(" Digite o novo dia que você nasceu por favor: ");
         scanf("%d", &cliente->dd);
         getchar();
@@ -370,22 +382,32 @@ void editaCliente(Cadastro* cliente) {
 
         } while(!validar_data(cliente->dd, cliente->mm,  cliente->aa));
 
+      while(!feof(fp) && achou == 0) {
+        fread(aux_cliente, sizeof(Cadastro), 1, fp);
 
-      cliente->status = '1';
+         if ((strcmp(aux_cliente->cpf, cliente->cpf) == 0) && (cliente->status == '1')){
+            achou = 1;
 
-      fseek(fp, (-1)*sizeof(Cadastro), SEEK_CUR);
-      fwrite(cliente, sizeof(Cadastro), 1, fp);
+            fseek(fp, (-1)*sizeof(Cadastro), SEEK_CUR);
+
+            fwrite(cliente, sizeof(Cadastro), 1, fp);
+
+         }
+      }
+
       getchar();
       printf("\nCliente editado com sucesso!!!\n");
+      printf(" Press ENTER to exit...\n");
+      getchar();
 
     } else {
       printf("\nOk, os dados não foram alterados\n");
     }
 
-  } else {
-    printf("O cliente %s não foi encontrado...\n", procurado);
-  }
 
+     }
+
+  free(aux_cliente);
   free(cliente);
   fclose(fp);
 }
