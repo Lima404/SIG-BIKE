@@ -50,6 +50,7 @@ void menu_nav_veiculo(void)
 }
 
 char menu_veiculo(void){
+
     char esc;
 
     system("clear||cls");
@@ -195,6 +196,7 @@ void exibeVeiculo(CadastroVeiculo* cadveiculo){
 }
 
 void listaVeiculo() {
+
   FILE* fp;
   CadastroVeiculo* cadveiculo;
   fp = fopen("veiculo.dat", "rb");
@@ -218,13 +220,12 @@ void listaVeiculo() {
     printf("================Menu Veículo - Listar================\n");
 
   cadveiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
-  while (!feof(fp))
+  while (fread(cadveiculo, sizeof(CadastroVeiculo), 1, fp))
   { // Busca até o final do arquivo
-      fread(cadveiculo, sizeof(CadastroVeiculo), 1, fp);
       exibeVeiculo(cadveiculo);
   }
   fclose(fp);
-  getchar();
+  printf(" Press ENTER to exit...\n");
   getchar();
   free(cadveiculo);
 }
@@ -232,6 +233,7 @@ void listaVeiculo() {
 // BUSCA VEICULO
 
 CadastroVeiculo* buscaVeiculo() {
+
     FILE *fp;
     CadastroVeiculo* cadaveiculo;
     char cod[7];
@@ -271,6 +273,8 @@ CadastroVeiculo* buscaVeiculo() {
     }
 
     fclose(fp);
+    printf(" Press ENTER to exit...\n");
+    getchar();
     return NULL;
 }
 
@@ -322,74 +326,84 @@ void editaVeiculo(CadastroVeiculo* cadveiculo) {
 
   FILE* fp;
   char resp;
-  char procurado[15];
+  int achou = 0;
+
+  CadastroVeiculo* aux_veiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
+
   fp = fopen("veiculo.dat", "r+b");
   if (cadveiculo != NULL) {
     exibeVeiculo(cadveiculo);
     getchar();
     printf("Deseja realmente editar este veículo (s/n)? ");
     scanf("%c", &resp);
+    getchar();
     if (resp == 's' || resp == 'S') {
 
-        do{
+      do{
 
-        printf(" | Digite o novo tipo do veículo(PATINS ou BIKE): ");
-        scanf("%20[^\n]", cadveiculo->tipo);
-        getchar();
+      printf(" | Digite o novo tipo do veículo(PATINS ou BIKE): ");
+      scanf("%20[^\n]", cadveiculo->tipo);
+      getchar();
 
-        } while (!validar_nome(cadveiculo->tipo));
+    } while (!validar_nome(cadveiculo->tipo));
 
-        // Marca
+    // Marca
 
-        do{
+      do{
 
-        printf(" | Digite a marca do veículo: ");
-        scanf("%20[^\n]", cadveiculo->marca); 
-        getchar();
+      printf(" | Digite a nova marca do veículo: ");
+      scanf("%20[^\n]", cadveiculo->marca); 
+      getchar();
 
-        }while (!validar_nome(cadveiculo->marca));
+      } while (!validar_nome(cadveiculo->marca));
 
-        // Descrição
+// Descrição
 
+      printf(" | Digite uma nova descrição sobre o veículo: ");   
+      scanf("%100[^\n]", cadveiculo->desc);
+      getchar();
 
-        printf(" | Digite uma descrição sobre o veículo: ");   
-        scanf("%100[^\n]", cadveiculo->desc);
-        getchar();
+// CÓDIGO DE RASTREIO
 
+      printf(" | Digite um novo código pra registrar o veículo(6 números): ");
+      scanf("%s", cadveiculo->cod);
+      getchar();
 
-        // CÓDIGO DE RASTREIO
+    // PREÇO
 
-        printf(" | Digite um código pra registrar o veículo(6 números): ");
-        scanf("%s", cadveiculo->cod);
-        getchar();
+      printf(" | Digite o  novo preço em reais(APENAS NÚMEROS): ");
+      scanf("%20[^\n]", cadveiculo->preco);
+      getchar();
 
-        // PREÇO
+      while(!feof(fp) && achou == 0) {
+        fread(aux_veiculo, sizeof(CadastroVeiculo), 1, fp);
 
+         if ((strcmp(aux_veiculo->cod, cadveiculo->cod) == 0) && (cadveiculo->status == '1')){
+            achou = 1;
 
-        printf(" | Digite o preço em reais(APENAS NÚMEROS): ");
-        scanf("%20[^\n]", cadveiculo->preco);
-        getchar();
+            fseek(fp, (-1)*sizeof(CadastroVeiculo), SEEK_CUR);
 
+            fwrite(cadveiculo, sizeof(CadastroVeiculo), 1, fp);
 
-      cadveiculo->status = '1';
+         }
+      }
 
-      fseek(fp, (-1)*sizeof(CadastroVeiculo), SEEK_CUR);
-      fwrite(cadveiculo, sizeof(CadastroVeiculo), 1, fp);
       getchar();
       printf("\nVeículo editado com sucesso!!!\n");
+      printf(" Press ENTER to exit...\n");
+      getchar();
 
     } else {
       printf("\nOk, os dados não foram alterados\n");
     }
 
-  } else {
-    printf("O veículo %s não foi encontrado...\n", procurado);
-  }
 
+     }
+
+  free(aux_veiculo);
   free(cadveiculo);
   fclose(fp);
 }
-
 
 void menu_veiculo_manutencao(void){
 
