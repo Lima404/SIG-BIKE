@@ -92,6 +92,7 @@ CadastroVeiculo* preencheVeiculo(void){
     
     CadastroVeiculo* cadaveiculo;
     cadaveiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
+    
     system("clear||cls");
     printf("\n");
     printf("=====================================================\n");

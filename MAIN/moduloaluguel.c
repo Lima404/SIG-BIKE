@@ -131,7 +131,6 @@ CadastroAluguel* preencheAluguel( ){
             getchar();
 
         } while (!validar_cpf(cadaaluguel->cpf));
-            printf(cadaaluguel->cpf);
 
 
             printf(" | Digite o código do veículo que você quer alugar: ");
