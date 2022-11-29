@@ -287,7 +287,7 @@ CadastroAluguel* buscaAluguel() {
     printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
     printf("-----------------------------------------------------\n");
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("============Menu Cliente - Buscar Aluguel============\n");
+    printf("============Menu Aluguel - Buscar Aluguel============\n");
     printf("       Informe o número do seu cpf por gentileza:      ");
     scanf(" %[0-9]", cpf);
     getchar();
