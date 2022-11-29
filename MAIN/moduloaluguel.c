@@ -257,7 +257,7 @@ void listaAluguel() {
     printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
     printf("-----------------------------------------------------\n");
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("================Menu Cliente - Listar================\n");
+    printf("================Menu Aluguel - Listar================\n");
 
   cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
   while (fread(cadaaluguel, sizeof(CadastroAluguel), 1, fp))
