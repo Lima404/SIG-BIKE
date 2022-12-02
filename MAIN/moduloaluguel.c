@@ -24,6 +24,7 @@ void menu_nav_aluguel(void)
         case '2':
             cadaluguel = buscaAluguel();
             exibeAluguel(cadaluguel);
+            getchar();
             free(cadaluguel);
             break;
         
@@ -92,6 +93,7 @@ CadastroAluguel* preencheAluguel( ){
     Cadastro* cliente;
     CadastroVeiculo* veiculo;
     CadastroAluguel* cadaaluguel;
+    //char* nome_cliente;
     cliente = (Cadastro*) malloc(sizeof(Cadastro));
     veiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
     cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
@@ -124,38 +126,46 @@ CadastroAluguel* preencheAluguel( ){
     printf("================Menu Aluguel - Cadastro==============\n");
     printf("===                                               ===\n");
 
-        do{
+    do{
 
-            printf("Digite seu CPF: ");
-            scanf("%s", cadaaluguel->cpf);
-            getchar();
+      printf("Digite seu CPF: ");
+      scanf("%s", cadaaluguel->cpf);
+      getchar();
 
-        } while (!validar_cpf(cadaaluguel->cpf));
+    } while (!validar_cpf(cadaaluguel->cpf));
 
-
-            printf(" | Digite o código do veículo que você quer alugar: ");
-            scanf(" %9[^\n]", cadaaluguel->cod);
-            getchar();
-
-
-            printf(" | Digite a mensalidade do aluguel: ");
-            scanf(" %9[^\n]", cadaaluguel->preco);
-            getchar();
+    //nome_cliente = get_nome_cliente(cadaaluguel->cpf);
+    //if (nome_cliente != NULL) {
+      // exibe nome do cliente para confirmar
+    //} else {
+      // cliente nao encontrado
+      // return NULL
+    //}
 
 
-        do {
+    printf(" | Digite o código do veículo que você quer alugar: ");
+    scanf(" %9[^\n]", cadaaluguel->cod);
+    getchar();
 
-            printf(" Digite o dia do aluguel: ");
-            scanf("%d", &cadaaluguel->dd);
-            getchar();
-            printf(" Digite o mês do aluguel: ");
-            scanf("%d", &cadaaluguel->mm);
-            getchar();
-            printf(" Digite o ano do aluguel: ");
-            scanf("%d", &cadaaluguel->aa);
-            getchar();
-        
-        } while(!validar_data(cadaaluguel->dd, cadaaluguel->mm, cadaaluguel->aa));
+
+    printf(" | Digite a mensalidade do aluguel: ");
+    scanf(" %9[^\n]", cadaaluguel->preco);
+    getchar();
+
+
+    do {
+
+      printf(" Digite o dia do aluguel: ");
+      scanf("%d", &cadaaluguel->dd);
+      getchar();
+      printf(" Digite o mês do aluguel: ");
+      scanf("%d", &cadaaluguel->mm);
+      getchar();
+      printf(" Digite o ano do aluguel: ");
+      scanf("%d", &cadaaluguel->aa);
+      getchar();
+    
+    } while(!validar_data(cadaaluguel->dd, cadaaluguel->mm, cadaaluguel->aa));
 
 
     cadaaluguel->status = '1';
@@ -303,6 +313,7 @@ CadastroAluguel* buscaAluguel() {
     while (!feof(fp))
     { // Busca até o final do arquivo
         fread(cadaaluguel, sizeof(CadastroAluguel), 1, fp);
+        printf(">>> valor lido: %s\n", cadaaluguel->cpf);
         if (strcmp(cadaaluguel->cpf, cpf) == 0 && (cadaaluguel->status != 'x'))
         { /*Verifica se o código é igual e o status*/
             fclose(fp);

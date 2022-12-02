@@ -21,7 +21,7 @@ struct cadastroaluguel{
 
 CadastroAluguel* preencheAluguel(void);
 void gravaAluguel(CadastroAluguel*);
-CadastroAluguel* buscaAluguel();
+CadastroAluguel* buscaAluguel(void);
 void exibeAluguel(CadastroAluguel* cadaaluguel);
 void listaAluguel(void);
 void apagaAluguel(CadastroAluguel* cadaaluguel);
