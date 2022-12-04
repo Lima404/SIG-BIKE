@@ -51,7 +51,7 @@ void menu_nav_cliente(void)
     } while(esc != '0');
 }
 
-
+// menu cliente
 char menu_cliente(void){
     char op;
 
@@ -89,6 +89,8 @@ char menu_cliente(void){
 
 }
 
+
+// preenche cliente
 Cadastro* preencheCliente(void){
 
     Cadastro* cad;
@@ -331,7 +333,7 @@ void apagaCliente(Cadastro* user) {
   fclose(fp);
 }
 
-
+// EDITAR CLIENTE
 void editaCliente(Cadastro* cliente) {
 
   FILE* fp;
