@@ -40,17 +40,20 @@ void nav_relatorio_cliente(void){
         esc = menu_relatorios_cliente();
         switch (esc){
             case '1':
-            R_lista_cliente();
-            break;
+                R_lista_cliente();
+                break;
 
             case '2':
-            break;
+                //R_cliente_alfa();
+                break;
 
             case '3':
-            break;
+                //R_cliente_nasc();
+                break;
 
             case '4':
-            break;
+                //R_cliente_status();
+                break;
 
             default:
             printf("Opcao Invalida\n");
@@ -69,11 +72,7 @@ void nav_relatorio_veiculo(void){
             break;
 
             case '2':
-            veiculotipobike();
-            break;
-
-            case '3';
-            veiculotipopatins();
+            veiculo_tipo();
             break;
         }
     } while(esc != '0');
@@ -259,4 +258,8 @@ void R_lista_veiculo(void){
     getchar();
     fclose(fp);
     free(cadaveiculo);
+}
+
+void veiculo_tipo(void){
+    
 }
