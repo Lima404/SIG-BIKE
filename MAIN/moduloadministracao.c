@@ -15,25 +15,17 @@ void menu_nav_adm(void)
         esc = menu_adm();
         switch (esc) {
         case '1':
-            menu_gastos_da_empresa();
-            break;
-
-        case '2':
-            menu_fluxo_caixa();
-            break;
-
-        case '3':
             nav_relatorio_cliente();
             break;
 
-        case '4':
+        case '2':
             nav_relatorio_veiculo();
             break;
 
-        case '5':
-            nav_relatorio_aluguel();
+        case '3':
+            // nav_relatorio_aluguel();
             break;
-            
+
         default:
             printf("Opcao Invalida\n");
             break;
@@ -42,7 +34,7 @@ void menu_nav_adm(void)
     } while(esc != '0');
 }
 
-void nav_relatiorio_cliente(void){
+void nav_relatorio_cliente(void){
     char esc = ' ';
     do {
         esc = menu_relatorios_cliente();
@@ -99,77 +91,11 @@ char menu_adm(void){
     printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
     printf("==================Menu Administração=================\n");
     printf("===                                               ===\n");
-    printf("===              1.Gastos da Empresa:             ===\n");
-    printf("===              2.Fluxo de Caixa:                ===\n");
-    printf("===              3.Relatorios:                    ===\n");
+    printf("===              1.Relatorios Cliente:            ===\n");
+    printf("===              2.Relatorios Veiculo:            ===\n");
+    printf("===              3.Relatorios Aluguel:            ===\n");
     printf("===              0.Voltar                         ===\n");
     printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("=====================================================\n");
-    scanf("%c", &op);
-    getchar();
-    printf("\t\t\t ... Aguarde ...\n");
-    sleep(1);
-    return op;
-}
-
-char menu_gastos_da_empresa(void){
-    char op;
-
-    system("clear||cls");
-    printf("\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("-----------------------------------------------------\n");
-    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
-    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
-    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
-    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
-    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
-    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
-    printf("-----------------------------------------------------\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("================Menu Gastos da Empresa===============\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===           1.Mostrar Gastos da Empresa:        ===\n");
-    printf("===           0.Voltar                            ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("=====================================================\n");
-    scanf("%c", &op);
-    getchar();
-    printf("\t\t\t ... Aguarde ...\n");
-    sleep(1);
-    return op;
-}
-
-char menu_fluxo_caixa(void){
-    char op;
-
-    system("clear||cls");
-    printf("\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("-----------------------------------------------------\n");
-    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
-    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
-    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
-    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
-    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
-    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
-    printf("-----------------------------------------------------\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("==================Menu Fluxo de Caixa================\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===           1.Mostrar Fluxo de Caixa:           ===\n");
-    printf("===           0.Voltar                            ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("=====================================================\n");
@@ -207,10 +133,11 @@ char menu_relatorios_cliente(void)
     printf("===     4. Lista de clientes status:              ===\n");
     printf("===     0.Voltar                                  ===\n");
     printf("===                                               ===\n");
-    printf(" Press ENTER to exit...\n");
+    printf(" Que opção você deseja?\n");
     scanf("%c", &esc);
     getchar();
-
+    printf("\t\t\t ... Aguarde ...\n");
+    sleep(1);
     return esc;
 }
 
@@ -233,7 +160,7 @@ void R_lista_cliente(void)
         {
             if (cad->status != 'x')
             {
-                exibe_cliente(cad);
+                exibeCliente(cad);
                 cont++;
             }
         }
@@ -248,8 +175,8 @@ void R_lista_cliente(void)
     {
         printf("\nVocê não possui cliente(s) cadastrados!");
     }
-
-    espera();
+    getchar();
+    getchar();
     fclose(fp);
     free(cad);
 }
@@ -280,7 +207,7 @@ char menu_relatorio_veiculo(void){
     printf("===     3. Lista de veiculo tipo patins:          ===\n");
     printf("===     0.Voltar                                  ===\n");
     printf("===                                               ===\n");
-    printf(" Press ENTER to exit...\n");
+    printf(" Que opção você deseja?\n");
     scanf("%c", &esc);
     getchar();
 
@@ -292,7 +219,7 @@ void R_lista_veiculo(void){
     FILE *fp;
     CadastroVeiculo *cadaveiculo;
     cadaveiculo = (CadastroVeiculo *)malloc(sizeof(CadastroVeiculo));
-    fp = fopen("cliente.dat", "rt");
+    fp = fopen("veiculo.dat", "rt");
 
     if (fp == NULL)
     {
@@ -305,7 +232,7 @@ void R_lista_veiculo(void){
         {
             if (cadaveiculo->status != 'x')
             {
-                exibe_cliente(cadaveiculo);
+                exibeVeiculo(cadaveiculo);
                 cont++;
             }
         }
@@ -320,8 +247,8 @@ void R_lista_veiculo(void){
     {
         printf("\nVocê não possui cliente(s) cadastrados!");
     }
-
-    espera();
+    getchar();
+    getchar();
     fclose(fp);
     free(cadaveiculo);
 }
