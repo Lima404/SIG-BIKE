@@ -341,29 +341,29 @@ void editaAluguel(CadastroAluguel* cadaaluguel) {
     if (resp == 's' || resp == 'S') {
 
 
-            printf(" | Insira o código do novo veículo: ");
-            scanf("%6[^\n]", cadaaluguel->cod);
-            getchar();
+        printf(" | Insira o código do novo veículo: ");
+        scanf("%6[^\n]", cadaaluguel->cod);
+        getchar();
 
 
-            printf(" | Digite a mensalidade do novo veículo: ");
-            scanf("%9[^\n]", cadaaluguel->preco);
-            getchar();
+        printf(" | Digite a mensalidade do novo veículo: ");
+        scanf("%9[^\n]", cadaaluguel->preco);
+        getchar();
 
 
-        do {
+    do {
 
-            printf(" Digite o novo dia do aluguel: ");
-            scanf("%d", &cadaaluguel->dd);
-            getchar();
-            printf(" Digite o novo mês do aluguel: ");
-            scanf("%d", &cadaaluguel->mm);
-            getchar();
-            printf(" Digite o novo ano do aluguel: ");
-            scanf("%d", &cadaaluguel->aa);
-            getchar();
-        
-        } while(!validar_data(cadaaluguel->dd, cadaaluguel->mm, cadaaluguel->aa));
+        printf(" Digite o novo dia do aluguel: ");
+        scanf("%d", &cadaaluguel->dd);
+        getchar();
+        printf(" Digite o novo mês do aluguel: ");
+        scanf("%d", &cadaaluguel->mm);
+        getchar();
+        printf(" Digite o novo ano do aluguel: ");
+        scanf("%d", &cadaaluguel->aa);
+        getchar();
+    
+    } while(!validar_data(cadaaluguel->dd, cadaaluguel->mm, cadaaluguel->aa));
 
 
 
