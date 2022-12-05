@@ -4,6 +4,9 @@
 #include <string.h>
 #include <ctype.h>
 #include "moduloadministracao.h"
+#include "modulocliente.h"
+#include "moduloveiculo.h"
+#include "moduloaluguel.h"
 #include "validacoes.h"
 
 void menu_nav_adm(void)
@@ -20,7 +23,15 @@ void menu_nav_adm(void)
             break;
 
         case '3':
-            menu_relatorios();
+            nav_relatiorio_cliente();
+            break;
+
+        case '4':
+            nav_relatorio_veiculo();
+            break;
+
+        case '5':
+            nav_relatorio_aluguel();
             break;
             
         default:
@@ -28,6 +39,43 @@ void menu_nav_adm(void)
             break;
         }
 
+    } while(esc != '0');
+}
+
+void nav_relatiorio_cliente(void){
+    char esc = ' ';
+    do {
+        esc = menu_relatorios_cliente();
+        switch (esc){
+            case '1':
+            R_lista_cliente();
+            break;
+
+            case '2':
+            break;
+
+            case '3':
+            break;
+
+            case '4':
+            break;
+
+            default:
+            printf("Opcao Invalida\n");
+            break;
+        }
+    } while(esc != '0');
+}
+
+void nav_relatorio_veiculo(void){
+    char esc = ' ';
+    do {
+        esc = menu_relatorio_veiculo();
+        switch (esc){
+            case '1':
+            R_lista_veiculo();
+            break;
+        }
     } while(esc != '0');
 }
 
@@ -132,7 +180,7 @@ char menu_fluxo_caixa(void){
     return op;
 }
 
-char menu_relatorios(void)
+char menu_relatorios_cliente(void)
 {
     char esc;
     system("clear||cls");
@@ -153,7 +201,10 @@ char menu_relatorios(void)
     printf("===============Menu Cliente -Relatorios==============\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
-    printf("===     1.Escolha o seu tipo de relatóri:         ===\n");
+    printf("===     1. Lista todos os clientes:               ===\n");
+    printf("===     2. Lista de clientes ordem alfabetica:    ===\n");
+    printf("===     3. Lista de clientes data de nascimento:  ===\n");
+    printf("===     4. Lista de clientes status:              ===\n");
     printf("===     0.Voltar                                  ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...\n");
@@ -161,4 +212,116 @@ char menu_relatorios(void)
     getchar();
 
     return esc;
+}
+
+void R_lista_cliente(void)
+{
+    int cont = 0;
+    FILE *fp;
+    Cadastro *cad;
+    cad = (Cadastro *)malloc(sizeof(Cadastro));
+    fp = fopen("cliente.dat", "rt");
+
+    if (fp == NULL)
+    {
+        printf("\nNão foi possível abrir o arquivo.\n");
+    }
+
+    else
+    {
+        while (fread(cad, sizeof(Cadastro), 1, fp))
+        {
+            if (cad->status != 'x')
+            {
+                exibe_cliente(cad);
+                cont++;
+            }
+        }
+    }
+
+    if (cont > 0)
+    {
+        printf("\nVocê possúi %d cliente(s) cadastrados!\n", cont);
+    }
+
+    else
+    {
+        printf("\nVocê não possui cliente(s) cadastrados!");
+    }
+
+    espera();
+    fclose(fp);
+    free(cad);
+}
+
+
+char menu_relatorio_veiculo(void){
+    char esc;
+    system("clear||cls");
+    printf("\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+    printf("===============Menu Veiculo -Relatorios==============\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===     1. Lista todos os Veiculos:               ===\n");
+    printf("===     2. Lista de veiculo tipo bike:            ===\n");
+    printf("===     3. Lista de veiculo tipo patins:          ===\n");
+    printf("===     0.Voltar                                  ===\n");
+    printf("===                                               ===\n");
+    printf(" Press ENTER to exit...\n");
+    scanf("%c", &esc);
+    getchar();
+
+    return esc;
+}
+
+void R_lista_veiculo(void){
+    int cont = 0;
+    FILE *fp;
+    CadastroVeiculo *cadaveiculo;
+    cadaveiculo = (CadastroVeiculo *)malloc(sizeof(CadastroVeiculo));
+    fp = fopen("cliente.dat", "rt");
+
+    if (fp == NULL)
+    {
+        printf("\nNão foi possível abrir o arquivo.\n");
+    }
+
+    else
+    {
+        while (fread(cadaveiculo, sizeof(CadastroVeiculo), 1, fp))
+        {
+            if (cadaveiculo->status != 'x')
+            {
+                exibe_cliente(cadaveiculo);
+                cont++;
+            }
+        }
+    }
+
+    if (cont > 0)
+    {
+        printf("\nVocê possúi %d cliente(s) cadastrados!\n", cont);
+    }
+
+    else
+    {
+        printf("\nVocê não possui cliente(s) cadastrados!");
+    }
+
+    espera();
+    fclose(fp);
+    free(cadaveiculo);
 }

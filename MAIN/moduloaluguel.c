@@ -134,13 +134,13 @@ CadastroAluguel* preencheAluguel( ){
 
     } while (!validar_cpf(cadaaluguel->cpf));
 
-    //nome_cliente = get_nome_cliente(cadaaluguel->cpf);
-    //if (nome_cliente != NULL) {
-      // exibe nome do cliente para confirmar
-    //} else {
-      // cliente nao encontrado
-      // return NULL
-    //}
+    // nome_cliente = get_nome_cliente(cadaaluguel->nome);
+    // if (nome_cliente != NULL) {
+    //    printf("Nome do cliente: %s\n", cadaaluguel->nome);
+    // } else {
+    //   printf("Ops, usuário não encontrado");
+    //   return NULL;
+    // }
 
 
     printf(" | Digite o código do veículo que você quer alugar: ");
