@@ -23,7 +23,7 @@ void menu_nav_adm(void)
             break;
 
         case '3':
-            nav_relatiorio_cliente();
+            nav_relatorio_cliente();
             break;
 
         case '4':
