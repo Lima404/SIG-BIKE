@@ -67,6 +67,14 @@ void nav_relatorio_veiculo(void){
             case '1':
             R_lista_veiculo();
             break;
+
+            case '2':
+            veiculotipobike();
+            break;
+
+            case '3';
+            veiculotipopatins();
+            break;
         }
     } while(esc != '0');
 }
