@@ -6,7 +6,8 @@
 #include "modulosobre.h"
 #include "validacoes.h"
 
-char menu_sobre(void){
+char menu_sobre(void)
+{
     char op;
 
     system("clear||cls");

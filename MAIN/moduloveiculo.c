@@ -48,75 +48,77 @@ void menu_nav_veiculo(void)
     } while(esc != '0');
 }
 
-char menu_veiculo(void){
+char menu_veiculo(void)
+{
 
-    char esc;
+  char esc;
 
-    system("clear||cls");
-    printf("\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("-----------------------------------------------------\n");
-    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
-    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
-    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
-    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
-    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
-    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
-    printf("-----------------------------------------------------\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("=====================Menu Veículo====================\n");
-    printf("===                                               ===\n");
-    printf("===              1.Cadastro Veículo               ===\n");
-    printf("===              2.Buscar Veículo                 ===\n");
-    printf("===              3.Listar Veículos                ===\n");
-    printf("===              4.Apagar Veículo                 ===\n");
-    printf("===              5.Alterar Veículo                ===\n");
-    printf("===              0.Voltar                         ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("=====================================================\n");
-    scanf("%c", &esc);
-    getchar();
-    printf("\t\t\t ... Aguarde ... \n");
-    sleep(1);
-    return esc;
+  system("clear||cls");
+  printf("\n");
+  printf("=====================================================\n");
+  printf("=====================================================\n");
+  printf("-----------------------------------------------------\n");
+  printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+  printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+  printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+  printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+  printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+  printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+  printf("-----------------------------------------------------\n");
+  printf("=====================================================\n");
+  printf("=====================================================\n");
+  printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+  printf("=====================Menu Veículo====================\n");
+  printf("===                                               ===\n");
+  printf("===              1.Cadastro Veículo               ===\n");
+  printf("===              2.Buscar Veículo                 ===\n");
+  printf("===              3.Listar Veículos                ===\n");
+  printf("===              4.Apagar Veículo                 ===\n");
+  printf("===              5.Alterar Veículo                ===\n");
+  printf("===              0.Voltar                         ===\n");
+  printf("===                                               ===\n");
+  printf("===                                               ===\n");
+  printf("===                                               ===\n");
+  printf("=====================================================\n");
+  scanf("%c", &esc);
+  getchar();
+  printf("\t\t\t ... Aguarde ... \n");
+  sleep(1);
+  return esc;
 
 }
 
-CadastroVeiculo* preencheVeiculo(void){
+CadastroVeiculo* preencheVeiculo(void)
+{
     
-    CadastroVeiculo* cadaveiculo;
-    cadaveiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
-    
-    system("clear||cls");
-    printf("\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("-----------------------------------------------------\n");
-    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
-    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
-    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
-    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
-    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
-    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
-    printf("-----------------------------------------------------\n");
-    printf("-----------------------------------------------------\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("================Menu Veículo - Cadastro==============\n");
-    printf("===                                               ===\n");
-    printf("===         Tipos de veículos:                    ===\n");
-    printf("===          Bike.                                ===\n");
-    printf("===          Patins Elétricos.                    ===\n");
-    printf("===                                               ===\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    
+  CadastroVeiculo* cadaveiculo;
+  cadaveiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
+  
+  system("clear||cls");
+  printf("\n");
+  printf("=====================================================\n");
+  printf("=====================================================\n");
+  printf("-----------------------------------------------------\n");
+  printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+  printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+  printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+  printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+  printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+  printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+  printf("-----------------------------------------------------\n");
+  printf("-----------------------------------------------------\n");
+  printf("=====================================================\n");
+  printf("=====================================================\n");
+  printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+  printf("================Menu Veículo - Cadastro==============\n");
+  printf("===                                               ===\n");
+  printf("===         Tipos de veículos:                    ===\n");
+  printf("===          Bike                                 ===\n");
+  printf("===          Patins Elétricos                     ===\n");
+  printf("===                                               ===\n");
+  printf("=====================================================\n");
+  printf("=====================================================\n");
+  
 
     // tipo
     do{
@@ -171,10 +173,12 @@ CadastroVeiculo* preencheVeiculo(void){
 
 // Gravação em arquivo
 
-void gravaVeiculo(CadastroVeiculo* cadaveiculo){
+void gravaVeiculo(CadastroVeiculo* cadaveiculo)
+{
     FILE* fp;
     fp = fopen("veiculo.dat", "ab");
-    if (fp == NULL){
+    if (fp == NULL)
+    {
         printf("Ops, Ocorreu um erro na abertura!/n");
         printf("Não é possivel continuar esse programa... /n");
         exit(1);
@@ -185,7 +189,8 @@ void gravaVeiculo(CadastroVeiculo* cadaveiculo){
 
 // EXIBE VEICULO
 
-void exibeVeiculo(CadastroVeiculo* cadveiculo){
+void exibeVeiculo(CadastroVeiculo* cadveiculo)
+{
     printf("Tipo do veiculo: %s\n", cadveiculo->tipo);
     printf("Marca do veiculo: %s\n", cadveiculo->marca);
     printf("Descrição do veiculo: %s\n", cadveiculo->desc);
@@ -195,12 +200,14 @@ void exibeVeiculo(CadastroVeiculo* cadveiculo){
     printf("\n");
 }
 
-void listaVeiculo() {
+void listaVeiculo() 
+{
 
   FILE* fp;
   CadastroVeiculo* cadveiculo;
   fp = fopen("veiculo.dat", "rb");
-  if (fp == NULL) {
+  if (fp == NULL) 
+  {
     printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
     printf("Não é possível continuar o programa...\n");
     exit(1);
@@ -232,29 +239,30 @@ void listaVeiculo() {
 
 // BUSCA VEICULO
 
-CadastroVeiculo* buscaVeiculo() {
+CadastroVeiculo* buscaVeiculo() 
+{
 
-    FILE *fp;
-    CadastroVeiculo* cadaveiculo;
-    char cod[7];
-    system("clear||cls");
-    printf("\n\n");
-    printf("=====================================================\n");
-    printf("-----------------------------------------------------\n");
-    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
-    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
-    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
-    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
-    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
-    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
-    printf("-----------------------------------------------------\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("================Menu Veiculo - Buscar================\n");
-    printf("        Informe o número o código do veiculo:          ");
-    scanf(" %[0-9]", cod);
-    getchar();
-    cadaveiculo = (CadastroVeiculo*)malloc(sizeof(CadastroVeiculo));
-    fp = fopen("veiculo.dat", "rb");
+  FILE *fp;
+  CadastroVeiculo* cadaveiculo;
+  char cod[7];
+  system("clear||cls");
+  printf("\n\n");
+  printf("=====================================================\n");
+  printf("-----------------------------------------------------\n");
+  printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+  printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+  printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+  printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+  printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+  printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+  printf("-----------------------------------------------------\n");
+  printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+  printf("================Menu Veiculo - Buscar================\n");
+  printf("        Informe o número o código do veiculo:          ");
+  scanf(" %[0-9]", cod);
+  getchar();
+  cadaveiculo = (CadastroVeiculo*)malloc(sizeof(CadastroVeiculo));
+  fp = fopen("veiculo.dat", "rb");
 
     if (fp == NULL)
     {
@@ -280,7 +288,8 @@ CadastroVeiculo* buscaVeiculo() {
 
 // APAGAR VEICULO
 
-void apagaVeiculo(CadastroVeiculo* cadveiculo) {
+void apagaVeiculo(CadastroVeiculo* cadveiculo) 
+{
 
   FILE* fp;
   CadastroVeiculo* veiculo;
@@ -316,13 +325,15 @@ void apagaVeiculo(CadastroVeiculo* cadveiculo) {
   } else {
     printf("O veiculo %s não foi encontrado...\n", cadveiculo->cod);
   }
+
   getchar();
   getchar();
   free(veiculo);
   fclose(fp);
 }
 
-void editaVeiculo(CadastroVeiculo* cadveiculo) {
+void editaVeiculo(CadastroVeiculo* cadveiculo) 
+{
 
   FILE* fp;
   char resp;
@@ -375,7 +386,8 @@ void editaVeiculo(CadastroVeiculo* cadveiculo) {
       scanf("%20[^\n]", cadveiculo->preco);
       getchar();
 
-      while(!feof(fp) && achou == 0) {
+      while(!feof(fp) && achou == 0) 
+      {
         fread(aux_veiculo, sizeof(CadastroVeiculo), 1, fp);
 
          if ((strcmp(aux_veiculo->cod, cadveiculo->cod) == 0) && (cadveiculo->status == '1')){
