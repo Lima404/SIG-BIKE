@@ -327,7 +327,8 @@ void apagaCliente(Cadastro* user)
     exibeCliente(cliente);
     printf("Digite 's' duas vezes para apagar o cliente(s/n)? ");
     scanf("%c\n", &resp);
-    if (resp == 's' || resp == 'S') {
+    if (resp == 's' || resp == 'S') 
+    {
       cliente->status = '0';
       fseek(fp, (-1)*sizeof(Cadastro), SEEK_CUR);
       fwrite(cliente, sizeof(Cadastro), 1, fp);

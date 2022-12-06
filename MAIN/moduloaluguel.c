@@ -293,27 +293,27 @@ void listaAluguel()
 
 CadastroAluguel* buscaAluguel() 
 {
-    FILE *fp;
-    CadastroAluguel* cadaaluguel;
-    char cpf[12];
-    system("clear||cls");
-    printf("\n\n");
-    printf("=====================================================\n");
-    printf("-----------------------------------------------------\n");
-    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
-    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
-    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
-    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
-    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
-    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
-    printf("-----------------------------------------------------\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("============Menu Aluguel - Buscar Aluguel============\n");
-    printf("       Informe o número do seu cpf por gentileza:      ");
-    scanf(" %[0-9]", cpf);
-    getchar();
-    cadaaluguel = (CadastroAluguel*)malloc(sizeof(CadastroAluguel));
-    fp = fopen("aluguel.dat", "rb");
+  FILE *fp;
+  CadastroAluguel* cadaaluguel;
+  char cpf[12];
+  system("clear||cls");
+  printf("\n\n");
+  printf("=====================================================\n");
+  printf("-----------------------------------------------------\n");
+  printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+  printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+  printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+  printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+  printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+  printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+  printf("-----------------------------------------------------\n");
+  printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+  printf("============Menu Aluguel - Buscar Aluguel============\n");
+  printf("       Informe o número do seu cpf por gentileza:      ");
+  scanf(" %[0-9]", cpf);
+  getchar();
+  cadaaluguel = (CadastroAluguel*)malloc(sizeof(CadastroAluguel));
+  fp = fopen("aluguel.dat", "rb");
 
     if (fp == NULL)
     {
@@ -351,6 +351,7 @@ void editaAluguel(CadastroAluguel* cadaaluguel)
     getchar();
     printf("Deseja realmente editar este aluguel (s/n)? ");
     scanf("%c", &resp);
+    getchar();
     if (resp == 's' || resp == 'S') {
 
 

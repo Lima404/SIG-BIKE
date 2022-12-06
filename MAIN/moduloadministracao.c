@@ -216,7 +216,7 @@ char menu_relatorio_veiculo(void)
     printf("===     1. Lista todos os Veiculos:               ===\n");
     printf("===     2. Lista de veiculo tipo bike:            ===\n");
     printf("===     3. Lista de veiculo tipo patins:          ===\n");
-    printf("===     0.Voltar                                  ===\n");
+    printf("===     0. Voltar                                 ===\n");
     printf("===                                               ===\n");
     printf(" Que opção você deseja?\n");
     scanf("%c", &esc);
