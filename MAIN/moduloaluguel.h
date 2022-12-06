@@ -24,5 +24,6 @@ void gravaAluguel(CadastroAluguel*);
 CadastroAluguel* buscaAluguel(void);
 void exibeAluguel(CadastroAluguel* cadaaluguel);
 void listaAluguel(void);
-void apagaAluguel(CadastroAluguel* cadaaluguel);
-void editaAluguel(CadastroAluguel* cadaaluguel);
+void apagaAluguel(CadastroAluguel*);
+void editaAluguel(CadastroAluguel*);
+char* get_nome_cliente(char*);

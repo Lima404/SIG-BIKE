@@ -95,7 +95,7 @@ CadastroAluguel* preencheAluguel( )
   Cadastro* cliente;
   CadastroVeiculo* veiculo;
   CadastroAluguel* cadaaluguel;
-  //char* nome_cliente;
+  char* nome_cliente;
   cliente = (Cadastro*) malloc(sizeof(Cadastro));
   veiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
   cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
@@ -136,13 +136,14 @@ CadastroAluguel* preencheAluguel( )
 
   } while (!validar_cpf(cadaaluguel->cpf));
 
-  // nome_cliente = get_nome_cliente(cadaaluguel->nome);
-  // if (nome_cliente != NULL) {
-  //    printf("Nome do cliente: %s\n", cadaaluguel->nome);
-  // } else {
-  //   printf("Ops, usuário não encontrado");
-  //   return NULL;
-  // }
+  nome_cliente = get_nome_cliente(cadaaluguel->cpf);
+  if (nome_cliente != NULL) {
+     printf("Nome do cliente: %s\n", nome_cliente);
+     free(nome_cliente);
+   } else {
+     printf("Ops, usuário não encontrado");
+     return NULL;
+   }
 
 
   printf(" | Digite o código do veículo que você quer alugar: ");
@@ -178,6 +179,41 @@ CadastroAluguel* preencheAluguel( )
   printf("===                                               ===\n");
   printf(" Press ENTER to exit...");
   getchar();
+}
+
+char* get_nome_cliente(char* cpf) {
+
+  Cadastro* cad;
+  FILE* fp;
+  char* nome;
+
+  nome = (char*) malloc(81*sizeof(char));
+
+  cad = (Cadastro*)malloc(sizeof(Cadastro));
+  fp = fopen("cliente.dat", "rb");
+
+    if (fp == NULL)
+    {
+        printf("Ocorreu um erro na abertura do arquivo, não é possivel continuar o programa");
+        exit(1);
+    }
+
+    while (!feof(fp))
+    { // Busca até o final do arquivo
+        fread(cad, sizeof(Cadastro), 1, fp);
+        if (strcmp(cad->cpf, cpf) == 0 && (cad->status != 'x'))
+        { /*Verifica se o código é igual e o status*/
+            fclose(fp);
+            strcpy(nome, cad->nome);
+            free(cad);
+            return nome;
+        }
+    }
+
+    fclose(fp);
+    free(cad);
+    return NULL;
+
 }
 
 // Gravar em arquivo
