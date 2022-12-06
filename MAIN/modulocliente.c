@@ -52,67 +52,69 @@ void menu_nav_cliente(void)
 }
 
 // menu cliente
-char menu_cliente(void){
-    char op;
+char menu_cliente(void)
+{
+  char op;
 
-    system("clear||cls");
-    printf("\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("-----------------------------------------------------\n");
-    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
-    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
-    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
-    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
-    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
-    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
-    printf("-----------------------------------------------------\n");
-    printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("=====================Menu Cliente====================\n");
-    printf("===                                               ===\n");
-    printf("===              1.Cadastro Cliente:              ===\n");
-    printf("===              2.Procurar Cliente:              ===\n");
-    printf("===              3.Listar Clientes:               ===\n");
-    printf("===              4.Apagar Cliente:                ===\n");
-    printf("===              5.Alterar Cliente:               ===\n");
-    printf("===              0.Voltar                         ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("=====================================================\n");
-    scanf("%c", &op);
-    getchar();
-    printf("\t\t\t ... Aguarde ...\n");
-    sleep(1);
-    return op;
+  system("clear||cls");
+  printf("\n");
+  printf("=====================================================\n");
+  printf("=====================================================\n");
+  printf("-----------------------------------------------------\n");
+  printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+  printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+  printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+  printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+  printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+  printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+  printf("-----------------------------------------------------\n");
+  printf("=====================================================\n");
+  printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+  printf("=====================Menu Cliente====================\n");
+  printf("===                                               ===\n");
+  printf("===              1.Cadastro Cliente:              ===\n");
+  printf("===              2.Procurar Cliente:              ===\n");
+  printf("===              3.Listar Clientes:               ===\n");
+  printf("===              4.Apagar Cliente:                ===\n");
+  printf("===              5.Alterar Cliente:               ===\n");
+  printf("===              0.Voltar                         ===\n");
+  printf("===                                               ===\n");
+  printf("===                                               ===\n");
+  printf("===                                               ===\n");
+  printf("=====================================================\n");
+  scanf("%c", &op);
+  getchar();
+  printf("\t\t\t ... Aguarde ...\n");
+  sleep(1);
+  return op;
 
 }
 
 
 // preenche cliente
-Cadastro* preencheCliente(void){
+Cadastro* preencheCliente(void)
+{
 
-    Cadastro* cad;
-    cad = (Cadastro*) malloc(sizeof(Cadastro));
-    system("clear||cls");
-    printf("\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("-----------------------------------------------------\n");
-    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
-    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
-    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
-    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
-    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
-    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
-    printf("-----------------------------------------------------\n");
-    printf("-----------------------------------------------------\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("================Menu Cliente - Cadastro==============\n");
-    printf("===                                               ===\n");
+  Cadastro* cad;
+  cad = (Cadastro*) malloc(sizeof(Cadastro));
+  system("clear||cls");
+  printf("\n");
+  printf("=====================================================\n");
+  printf("=====================================================\n");
+  printf("-----------------------------------------------------\n");
+  printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+  printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+  printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+  printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+  printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+  printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+  printf("-----------------------------------------------------\n");
+  printf("-----------------------------------------------------\n");
+  printf("=====================================================\n");
+  printf("=====================================================\n");
+  printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+  printf("================Menu Cliente - Cadastro==============\n");
+  printf("===                                               ===\n");
     
 //Nome
 
@@ -177,10 +179,12 @@ Cadastro* preencheCliente(void){
 
 // Gravar em arquivo
 
-void gravaCliente(Cadastro* cad){
+void gravaCliente(Cadastro* cad)
+{
     FILE* fp;
     fp = fopen("cliente.dat", "ab");
-    if (fp ==  NULL){
+    if (fp ==  NULL)
+    {
         printf("Ops, Ocorreu um erro na abertura!/n");
         printf("Não é possivel continuar esse programa... /n");
         exit(1);
@@ -191,7 +195,8 @@ void gravaCliente(Cadastro* cad){
 
 //  EXIBIR CLIENTES
 
-void exibeCliente(Cadastro* cliente) {
+void exibeCliente(Cadastro* cliente) 
+{
   printf("CPF: %s\n", cliente->cpf);
   printf("Nome: %s\n", cliente->nome);
   printf("telefone: %s\n", cliente->telefone);
@@ -205,12 +210,14 @@ void exibeCliente(Cadastro* cliente) {
 
 // Lista Clientes
 
-void listaCliente() {
+void listaCliente() 
+{
   
   FILE* fp;
   Cadastro* cliente;
   fp = fopen("cliente.dat", "rb");
-  if (fp == NULL) {
+  if (fp == NULL) 
+  {
     printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
     printf("Não é possível continuar o programa...\n");
     exit(1);
@@ -234,6 +241,7 @@ void listaCliente() {
   { // Busca até o final do arquivo
       exibeCliente(cliente);
   }
+
   fclose(fp);
   printf(" Press ENTER to exit...\n");
   getchar();
@@ -242,7 +250,8 @@ void listaCliente() {
 
 // Buscar cliente
 
-Cadastro* buscaCliente() {
+Cadastro* buscaCliente() 
+{
 
     FILE *fp;
     Cadastro* cad;
@@ -291,14 +300,16 @@ Cadastro* buscaCliente() {
 
 // APAGAR CLIENTE
 
-void apagaCliente(Cadastro* user) {
+void apagaCliente(Cadastro* user) 
+{
 
   FILE* fp;
   Cadastro* cliente;
   int achou;
   char resp;
   fp = fopen("cliente.dat", "r+b");
-  if (fp == NULL) {
+  if (fp == NULL) 
+  {
     printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
     printf("Não é possível continuar o programa...\n");
     exit(1);
@@ -311,7 +322,8 @@ void apagaCliente(Cadastro* user) {
    }
   }
   
-  if (achou) {
+  if (achou) 
+  {
     exibeCliente(cliente);
     printf("Digite 's' duas vezes para apagar o cliente(s/n)? ");
     scanf("%c\n", &resp);
@@ -334,7 +346,8 @@ void apagaCliente(Cadastro* user) {
 }
 
 // EDITAR CLIENTE
-void editaCliente(Cadastro* cliente) {
+void editaCliente(Cadastro* cliente) 
+{
 
   FILE* fp;
   char resp;
@@ -343,7 +356,8 @@ void editaCliente(Cadastro* cliente) {
   Cadastro* aux_cliente = (Cadastro*) malloc(sizeof(Cadastro));
 
   fp = fopen("cliente.dat", "r+b");
-  if (cliente != NULL) {
+  if (cliente != NULL) 
+  {
     exibeCliente(cliente);
     getchar();
     printf("Deseja realmente editar este cliente (s/n)? ");
@@ -351,7 +365,7 @@ void editaCliente(Cadastro* cliente) {
     getchar();
     if (resp == 's' || resp == 'S') {
 
-        do{
+        do {
           
         printf(" Digite seu novo nome por favor: ");
         scanf("%80[^\n]", cliente->nome);                            //executa tudo isso até que a condição da função seja satisfeita
@@ -384,8 +398,9 @@ void editaCliente(Cadastro* cliente) {
 
         } while(!validar_data(cliente->dd, cliente->mm,  cliente->aa));
 
-      while(!feof(fp) && achou == 0) {
-        fread(aux_cliente, sizeof(Cadastro), 1, fp);
+        while(!feof(fp) && achou == 0) 
+        {
+          fread(aux_cliente, sizeof(Cadastro), 1, fp);
 
          if ((strcmp(aux_cliente->cpf, cliente->cpf) == 0) && (cliente->status == '1')){
             achou = 1;

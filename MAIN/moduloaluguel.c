@@ -51,149 +51,154 @@ void menu_nav_aluguel(void)
     } while(esc != '0');
 }
 
-char menu_aluguel(void){
-    char op;
+char menu_aluguel(void)
+{
+  char op;
 
-    system("clear||cls");
-    printf("\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("-----------------------------------------------------\n");
-    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
-    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
-    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
-    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
-    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
-    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
-    printf("-----------------------------------------------------\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("=====================Menu Aluguel====================\n");
-    printf("===                                               ===\n");
-    printf("===              1.Cadastro Aluguel:              ===\n");
-    printf("===              2.Procurar Aluguel:              ===\n");
-    printf("===              3.Listar Aluguel:                ===\n");
-    printf("===              4.Apagar Aluguel:                ===\n");
-    printf("===              5.Alterar Aluguel:               ===\n");
-    printf("===              0.Voltar                         ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("=====================================================\n");
-    scanf("%c", &op);
-    getchar();
-    printf("\t\t\t ... Aguarde ...\n");
-    sleep(1);
-    return op;
+  system("clear||cls");
+  printf("\n"); 
+  printf("=====================================================\n");
+  printf("=====================================================\n");
+  printf("-----------------------------------------------------\n");
+  printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+  printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+  printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+  printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+  printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+  printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+  printf("-----------------------------------------------------\n");
+  printf("=====================================================\n");
+  printf("=====================================================\n");
+  printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+  printf("=====================Menu Aluguel====================\n");
+  printf("===                                               ===\n");
+  printf("===              1.Cadastro Aluguel:              ===\n");
+  printf("===              2.Procurar Aluguel:              ===\n");
+  printf("===              3.Listar Aluguel:                ===\n");
+  printf("===              4.Apagar Aluguel:                ===\n");
+  printf("===              5.Alterar Aluguel:               ===\n");
+  printf("===              0.Voltar                         ===\n");
+  printf("===                                               ===\n");
+  printf("===                                               ===\n");
+  printf("===                                               ===\n");
+  printf("=====================================================\n");
+  scanf("%c", &op);
+  getchar();
+  printf("\t\t\t ... Aguarde ...\n");
+  sleep(1);
+  return op;
 }
 
-CadastroAluguel* preencheAluguel( ){
+CadastroAluguel* preencheAluguel( )
+{
 
-    Cadastro* cliente;
-    CadastroVeiculo* veiculo;
-    CadastroAluguel* cadaaluguel;
-    //char* nome_cliente;
-    cliente = (Cadastro*) malloc(sizeof(Cadastro));
-    veiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
-    cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
+  Cadastro* cliente;
+  CadastroVeiculo* veiculo;
+  CadastroAluguel* cadaaluguel;
+  //char* nome_cliente;
+  cliente = (Cadastro*) malloc(sizeof(Cadastro));
+  veiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
+  cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
 
-    cliente = buscaCliente();
-    exibeCliente(cliente);
-    getchar();
-    veiculo = buscaVeiculo();
-    exibeVeiculo(veiculo);
-    getchar();
-    free(cliente);
-    free(veiculo);
+  cliente = buscaCliente();
+  exibeCliente(cliente);
+  getchar();
+  veiculo = buscaVeiculo();
+  exibeVeiculo(veiculo);
+  getchar();
+  free(cliente);
+  free(veiculo);
 
-    system("clear||cls");
-    printf("\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("-----------------------------------------------------\n");
-    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
-    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
-    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
-    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
-    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
-    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
-    printf("-----------------------------------------------------\n");
-    printf("-----------------------------------------------------\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("================Menu Aluguel - Cadastro==============\n");
-    printf("===                                               ===\n");
+  system("clear||cls");
+  printf("\n");
+  printf("=====================================================\n");
+  printf("=====================================================\n");
+  printf("-----------------------------------------------------\n");
+  printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+  printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+  printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+  printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+  printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+  printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+  printf("-----------------------------------------------------\n");
+  printf("-----------------------------------------------------\n");
+  printf("=====================================================\n");
+  printf("=====================================================\n");
+  printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+  printf("================Menu Aluguel - Cadastro==============\n");
+  printf("===                                               ===\n");
 
-    do{
+  do{
 
-      printf("Digite seu CPF: ");
-      scanf("%s", cadaaluguel->cpf);
-      getchar();
-
-    } while (!validar_cpf(cadaaluguel->cpf));
-
-    // nome_cliente = get_nome_cliente(cadaaluguel->nome);
-    // if (nome_cliente != NULL) {
-    //    printf("Nome do cliente: %s\n", cadaaluguel->nome);
-    // } else {
-    //   printf("Ops, usuário não encontrado");
-    //   return NULL;
-    // }
-
-
-    printf(" | Digite o código do veículo que você quer alugar: ");
-    scanf(" %9[^\n]", cadaaluguel->cod);
+    printf("Digite seu CPF: ");
+    scanf("%s", cadaaluguel->cpf);
     getchar();
 
+  } while (!validar_cpf(cadaaluguel->cpf));
 
-    printf(" | Digite a mensalidade do aluguel: ");
-    scanf(" %9[^\n]", cadaaluguel->preco);
+  // nome_cliente = get_nome_cliente(cadaaluguel->nome);
+  // if (nome_cliente != NULL) {
+  //    printf("Nome do cliente: %s\n", cadaaluguel->nome);
+  // } else {
+  //   printf("Ops, usuário não encontrado");
+  //   return NULL;
+  // }
+
+
+  printf(" | Digite o código do veículo que você quer alugar: ");
+  scanf(" %9[^\n]", cadaaluguel->cod);
+  getchar();
+
+
+  printf(" | Digite a mensalidade do aluguel: ");
+  scanf(" %9[^\n]", cadaaluguel->preco);
+  getchar();
+
+
+  do {
+
+    printf(" Digite o dia do aluguel: ");
+    scanf("%d", &cadaaluguel->dd);
     getchar();
-
-
-    do {
-
-      printf(" Digite o dia do aluguel: ");
-      scanf("%d", &cadaaluguel->dd);
-      getchar();
-      printf(" Digite o mês do aluguel: ");
-      scanf("%d", &cadaaluguel->mm);
-      getchar();
-      printf(" Digite o ano do aluguel: ");
-      scanf("%d", &cadaaluguel->aa);
-      getchar();
-    
-    } while(!validar_data(cadaaluguel->dd, cadaaluguel->mm, cadaaluguel->aa));
-
-
-    cadaaluguel->status = '1';
-    return cadaaluguel;
-
-    printf("=== Aluguel foi cadastrado no sistema!!           ===\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf(" Press ENTER to exit...");
+    printf(" Digite o mês do aluguel: ");
+    scanf("%d", &cadaaluguel->mm);
     getchar();
+    printf(" Digite o ano do aluguel: ");
+    scanf("%d", &cadaaluguel->aa);
+    getchar();
+  
+  } while(!validar_data(cadaaluguel->dd, cadaaluguel->mm, cadaaluguel->aa));
+
+
+  cadaaluguel->status = '1';
+  return cadaaluguel;
+
+  printf("=== Aluguel foi cadastrado no sistema!!           ===\n");
+  printf("===                                               ===\n");
+  printf("===                                               ===\n");
+  printf(" Press ENTER to exit...");
+  getchar();
 }
 
 // Gravar em arquivo
-void gravaAluguel(CadastroAluguel* cadaaluguel){
-    FILE* fp;
-    fp = fopen("aluguel.dat", "ab");
-    if (fp ==  NULL){
-        printf("Ops, Ocorreu um erro na abertura!/n");
-        printf("Não é possivel continuar esse programa... /n");
-        exit(1);
-    }
-    fwrite(cadaaluguel, sizeof(CadastroAluguel), 1, fp);
-    fclose(fp);
+void gravaAluguel(CadastroAluguel* cadaaluguel)
+{
+  FILE* fp;
+  fp = fopen("aluguel.dat", "ab");
+  if (fp ==  NULL)
+  {
+      printf("Ops, Ocorreu um erro na abertura!/n");
+      printf("Não é possivel continuar esse programa... /n");
+      exit(1);
+  }
+  fwrite(cadaaluguel, sizeof(CadastroAluguel), 1, fp);
+  fclose(fp);
 }
 
 // EXIBE ALUGUEL
 
-void exibeAluguel(CadastroAluguel* cadaaluguel) {
+void exibeAluguel(CadastroAluguel* cadaaluguel) 
+{
   printf("CPF: %s\n", cadaaluguel->cpf);
   printf("cod: %s\n", cadaaluguel->cod);
   printf("Preço: %s\n", cadaaluguel->preco);
@@ -204,13 +209,15 @@ void exibeAluguel(CadastroAluguel* cadaaluguel) {
   printf("\n");
 }  
 
-void apagaAluguel(CadastroAluguel* cadaluguel) {
+void apagaAluguel(CadastroAluguel* cadaluguel) 
+{
   FILE* fp;
   CadastroAluguel* cadaaluguel;
   int achou;
   char resp;
   fp = fopen("aluguel.dat", "r+b");
-  if (fp == NULL) {
+  if (fp == NULL) 
+  {
     printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
     printf("Não é possível continuar o programa...\n");
     exit(1);
@@ -223,11 +230,13 @@ void apagaAluguel(CadastroAluguel* cadaluguel) {
    }
   }
   
-  if (achou) {
+  if (achou) 
+  {
     exibeAluguel(cadaaluguel);
     printf("Digite 's' duas vezes para apagar o aluguel(s/n)? ");
     scanf("%c\n", &resp);
-    if (resp == 's' || resp == 'S') {
+    if (resp == 's' || resp == 'S') 
+    {
       cadaaluguel->status = '0';
       fseek(fp, (-1)*sizeof(CadastroAluguel), SEEK_CUR);
       fwrite(cadaaluguel, sizeof(CadastroAluguel), 1, fp);
@@ -246,11 +255,13 @@ void apagaAluguel(CadastroAluguel* cadaluguel) {
 }
 
 
-void listaAluguel() {
+void listaAluguel() 
+{
   FILE* fp;
   CadastroAluguel* cadaaluguel;
   fp = fopen("aluguel.dat", "rb");
-  if (fp == NULL) {
+  if (fp == NULL) 
+  {
     printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
     printf("Não é possível continuar o programa...\n");
     exit(1);
@@ -280,8 +291,8 @@ void listaAluguel() {
   free(cadaaluguel);
 }
 
-CadastroAluguel* buscaAluguel() {
-
+CadastroAluguel* buscaAluguel() 
+{
     FILE *fp;
     CadastroAluguel* cadaaluguel;
     char cpf[12];
@@ -327,13 +338,15 @@ CadastroAluguel* buscaAluguel() {
     return NULL;
 }
 
-void editaAluguel(CadastroAluguel* cadaaluguel) {
+void editaAluguel(CadastroAluguel* cadaaluguel) 
+{
 
   FILE* fp;
   char resp;
   char procurado[15];
   fp = fopen("aluguel.dat", "r+b");
-  if (cadaaluguel != NULL) {
+  if (cadaaluguel != NULL) 
+  {
     exibeAluguel(cadaaluguel);
     getchar();
     printf("Deseja realmente editar este aluguel (s/n)? ");
@@ -387,32 +400,33 @@ void editaAluguel(CadastroAluguel* cadaaluguel) {
   fclose(fp);
 }
 
-char menu_lista_disp(void){
+char menu_lista_disp(void)
+{
 
-    char esc;
-    system("clear||cls");
-    printf("\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("-----------------------------------------------------\n");
-    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
-    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
-    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
-    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
-    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
-    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
-    printf("-----------------------------------------------------\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("=================Menu Aluguel - Lista================\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===     1.Listar Alugueis disponiveis:            ===\n");
-    printf("===     0.Voltar                                  ===\n");
-    printf("===                                               ===\n");
-    printf("... Press ENTER to exit...\n");
-    scanf("%c",&esc);
-    getchar();
-    return esc;
+  char esc;
+  system("clear||cls");
+  printf("\n");
+  printf("=====================================================\n");
+  printf("=====================================================\n");
+  printf("-----------------------------------------------------\n");
+  printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+  printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+  printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+  printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+  printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+  printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+  printf("-----------------------------------------------------\n");
+  printf("=====================================================\n");
+  printf("=====================================================\n");
+  printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
+  printf("=================Menu Aluguel - Lista================\n");
+  printf("===                                               ===\n");
+  printf("===                                               ===\n");
+  printf("===     1.Listar Alugueis disponiveis:            ===\n");
+  printf("===     0.Voltar                                  ===\n");
+  printf("===                                               ===\n");
+  printf("... Press ENTER to exit...\n");
+  scanf("%c",&esc);
+  getchar();
+  return esc;
 }

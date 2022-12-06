@@ -78,7 +78,8 @@ void nav_relatorio_veiculo(void){
     } while(esc != '0');
 }
 
-char menu_adm(void){
+char menu_adm(void)
+{
     char op;
 
     system("clear||cls");
@@ -116,6 +117,7 @@ char menu_adm(void){
 char menu_relatorios_cliente(void)
 {
     char esc;
+
     system("clear||cls");
     printf("\n");
     printf("=====================================================\n");
@@ -189,8 +191,10 @@ void R_lista_cliente(void)
 }
 
 
-char menu_relatorio_veiculo(void){
+char menu_relatorio_veiculo(void)
+{
     char esc;
+
     system("clear||cls");
     printf("\n");
     printf("=====================================================\n");
@@ -217,11 +221,11 @@ char menu_relatorio_veiculo(void){
     printf(" Que opção você deseja?\n");
     scanf("%c", &esc);
     getchar();
-
     return esc;
 }
 
-void R_lista_veiculo(void){
+void R_lista_veiculo(void)
+{
     int cont = 0;
     FILE *fp;
     CadastroVeiculo *cadaveiculo;
@@ -260,6 +264,7 @@ void R_lista_veiculo(void){
     free(cadaveiculo);
 }
 
-void veiculo_tipo(void){
+void veiculo_tipo(void)
+{
     
 }
