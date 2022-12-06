@@ -429,3 +429,4 @@ void editaCliente(Cadastro* cliente)
   free(cliente);
   fclose(fp);
 }
+
