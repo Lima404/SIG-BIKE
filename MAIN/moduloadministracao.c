@@ -44,7 +44,7 @@ void nav_relatorio_cliente(void){
                 break;
 
             case '2':
-                //R_cliente_alfa();
+                R_cliente_alfa();
                 break;
 
             case '3':
@@ -156,7 +156,7 @@ void R_lista_cliente(void)
     FILE *fp;
     Cadastro *cad;
     cad = (Cadastro *)malloc(sizeof(Cadastro));
-    fp = fopen("cliente.dat", "rt");
+    fp = fopen("cliente.dat", "rb");
 
     if (fp == NULL)
     {
@@ -188,6 +188,70 @@ void R_lista_cliente(void)
     getchar();
     fclose(fp);
     free(cad);
+}
+
+
+char R_cliente_alfa(void){
+    FILE *fp;
+	int i, tam;
+	char linha[256];
+	Cadastro* user;
+	Cadastro* lista;
+
+	printf("Integrando Arquivos e Listas Dinâmicas\n");	
+
+	fp = fopen("cliente.dat","rb");
+	if (fp == NULL){
+		printf("Erro na abertura do arquivo\n!");
+		exit(1);
+	}
+
+	// Montando a lista ordenada de palavras
+	lista = NULL;
+	while(fgets(linha,256,fp)){
+		user = (Cadastro*) malloc(sizeof(Cadastro));
+		tam = strlen(linha) + 1;
+		user->cpf = (char*) malloc(tam*sizeof(char));
+		strcpy(user->cpf, linha);
+    if (lista == NULL) {
+			lista = user;
+      user->prox = NULL;
+		} else if (strcmp(user->cpf,lista->cpf) < 0) {
+      user->prox = lista;
+      lista = user;
+    } else {
+      Cadastro* anter = lista;
+      Cadastro* atual = lista->prox;
+      while ((atual != NULL) && strcmp(atual->cpf,user->cpf) < 0) {
+        anter = atual;
+        atual = atual->prox;
+      }
+      anter->prox = user;
+      user->prox = atual;
+    }
+	}
+	fclose(fp);
+
+	// Exibindo a lista de palavras
+	printf("\nConteúdo do Arquivo em Ordem Alfabética\n");
+	user = lista;
+	i = 1;
+	while (user != NULL) {
+		printf("Cliente %d: %s", i, user->cpf);
+		user = user->prox;
+		i++;
+	}
+
+	// Limpando a memória
+	user = lista;
+	while (lista != NULL) {
+		lista = lista->prox;
+		free(user->cpf);
+		free(user);
+		user = lista;
+	}
+	
+	return 0;
 }
 
 
