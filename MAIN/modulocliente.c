@@ -447,7 +447,7 @@ int valida_cliente(char* cpf)
         fread(cad, sizeof(Cadastro), 1, fp);
         if (strcmp(cpf, cad->cpf) == 0 && (cad->status != 'x'))
         {
-            printf("\n\tCPF já cadastradado\n");
+            printf("\n\tCPF já cadastrado, tente outro\n");
             fclose(fp);
             return 0;
         }

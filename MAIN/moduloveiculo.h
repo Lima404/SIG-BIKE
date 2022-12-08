@@ -27,4 +27,4 @@ void exibeVeiculo(CadastroVeiculo* cadveiculo);
 void apagaVeiculo(CadastroVeiculo* cadveiculo);
 void editaVeiculo(CadastroVeiculo* cadveiculo);
 void listaVeiculo(void);
-
+int valida_veiculo(char* cadaveiculo);
