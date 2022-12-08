@@ -149,9 +149,14 @@ CadastroVeiculo* preencheVeiculo(void)
 
 // CÓDIGO DE RASTREIO
 
-    printf(" | Digite um código pra registrar o veículo(6 números): ");
+    do{
+
+    printf(" | Digite um código pra registrar o veículo(1 até 6 dígitos): ");
     scanf("%s", cadaveiculo->cod);
     getchar();
+
+    }while (!valida_veiculo(cadaveiculo->cod));
+    
 
 // PREÇO
 
@@ -266,7 +271,7 @@ CadastroVeiculo* buscaVeiculo()
 
     if (fp == NULL)
     {
-        printf("Ocorreu um erxro na abertura do arquivo, não é possivel continuar o programa");
+        printf("Ocorreu um erro na abertura do arquivo, não é possivel continuar o programa");
         exit(1);
     }
 
@@ -417,3 +422,29 @@ void editaVeiculo(CadastroVeiculo* cadveiculo)
   fclose(fp);
 }
 
+int valida_veiculo(char* cod)
+{
+    FILE *fp;
+    CadastroVeiculo *cadaveiculo;
+
+    cadaveiculo= (CadastroVeiculo *)malloc(sizeof(CadastroVeiculo));
+    fp = fopen("veiculo.dat", "r+b");
+
+    if(fp == NULL){
+        return 1;
+    }
+    
+    while (!feof(fp))
+    {
+        fread(cadaveiculo, sizeof(CadastroVeiculo), 1, fp);
+        if (strcmp(cod, cadaveiculo->cod) == 0 && (cadaveiculo->status != 'x'))
+        {
+            printf("\n\tCódigo de veículo já cadastrado, tente outro\n");
+            fclose(fp);
+            return 0;
+        }
+    }
+
+    fclose(fp);
+    return 1;
+}

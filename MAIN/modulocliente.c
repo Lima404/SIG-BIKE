@@ -134,7 +134,7 @@ Cadastro* preencheCliente(void)
         scanf("%s", cad->cpf);
         getchar();
         
-    } while (!validar_cpf(cad->cpf));
+    } while (!validar_cpf(cad->cpf) || !valida_cliente(cad->cpf));
 
 //telefone
 
@@ -430,3 +430,29 @@ void editaCliente(Cadastro* cliente)
   fclose(fp);
 }
 
+int valida_cliente(char* cpf)
+{
+    FILE *fp;
+    Cadastro *cad;
+
+    cad= (Cadastro *)malloc(sizeof(Cadastro));
+    fp = fopen("cliente.dat", "r+b");
+
+    if(fp == NULL){
+        return 1;
+    }
+    
+    while (!feof(fp))
+    {
+        fread(cad, sizeof(Cadastro), 1, fp);
+        if (strcmp(cpf, cad->cpf) == 0 && (cad->status != 'x'))
+        {
+            printf("\n\tCPF já cadastrado, tente outro\n");
+            fclose(fp);
+            return 0;
+        }
+    }
+
+    fclose(fp);
+    return 1;
+}
