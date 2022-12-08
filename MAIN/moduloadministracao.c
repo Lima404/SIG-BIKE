@@ -34,7 +34,8 @@ void menu_nav_adm(void)
     } while(esc != '0');
 }
 
-void nav_relatorio_cliente(void){
+void nav_relatorio_cliente(void)
+{
     char esc = ' ';
     do {
         esc = menu_relatorios_cliente();
@@ -96,8 +97,8 @@ char menu_adm(void)
     printf("-----------------------------------------------------\n");
     printf("=====================================================\n");
     printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("==================Menu Administração=================\n");
+    printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+    printf("================= Menu Administração ================\n");
     printf("===                                               ===\n");
     printf("===              1.Relatorios Cliente:            ===\n");
     printf("===              2.Relatorios Veiculo:            ===\n");
@@ -132,17 +133,17 @@ char menu_relatorios_cliente(void)
     printf("-----------------------------------------------------\n");
     printf("=====================================================\n");
     printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("===============Menu Cliente -Relatorios==============\n");
+    printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+    printf("========= Menu Cliente - Relatorios Clientes ========\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
-    printf("===     1. Lista todos os clientes:               ===\n");
+    printf("===     1. Lista cliente(recente) e quantidade:   ===\n");
     printf("===     2. Lista de clientes ordem alfabetica:    ===\n");
     printf("===     3. Lista de clientes data de nascimento:  ===\n");
     printf("===     4. Lista de clientes status:              ===\n");
     printf("===     0.Voltar                                  ===\n");
     printf("===                                               ===\n");
-    printf(" Que opção você deseja?\n");
+    printf(" Qual opção você deseja:\n");
     scanf("%c", &esc);
     getchar();
     printf("\t\t\t ... Aguarde ...\n");
@@ -177,7 +178,7 @@ void R_lista_cliente(void)
 
     if (cont > 0)
     {
-        printf("\nVocê possúi %d cliente(s) cadastrados!\n", cont);
+        printf("\nVocê possui %d cliente(s) cadastrados!\n", cont);
     }
 
     else
@@ -209,16 +210,16 @@ char menu_relatorio_veiculo(void)
     printf("-----------------------------------------------------\n");
     printf("=====================================================\n");
     printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("===============Menu Veiculo -Relatorios==============\n");
+    printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+    printf("========= Menu Veiculo -Relatorios Veículos =========\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
-    printf("===     1. Lista todos os Veiculos:               ===\n");
+    printf("===     1. Lista veículo(recente) e quantidade:   ===\n");
     printf("===     2. Lista de veiculo tipo bike:            ===\n");
     printf("===     3. Lista de veiculo tipo patins:          ===\n");
     printf("===     0. Voltar                                 ===\n");
     printf("===                                               ===\n");
-    printf(" Que opção você deseja?\n");
+    printf(" Qual opção você deseja:\n");
     scanf("%c", &esc);
     getchar();
     return esc;
@@ -251,7 +252,7 @@ void R_lista_veiculo(void)
 
     if (cont > 0)
     {
-        printf("\nVocê possúi %d cliente(s) cadastrados!\n", cont);
+        printf("\nVocê possui %d cliente(s) cadastrados!\n", cont);
     }
 
     else
