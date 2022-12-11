@@ -9,6 +9,10 @@
 #include "moduloaluguel.h"
 #include "validacoes.h"
 
+
+
+// NAVEGAÇÃO PRINCIPAL
+
 void menu_nav_adm(void)
 {   char esc = ' ';
     do {
@@ -31,50 +35,6 @@ void menu_nav_adm(void)
             break;
         }
 
-    } while(esc != '0');
-}
-
-void nav_relatorio_cliente(void){
-    char esc = ' ';
-    do {
-        esc = menu_relatorios_cliente();
-        switch (esc){
-            case '1':
-                R_lista_cliente();
-                break;
-
-            case '2':
-                R_cliente_alfa();
-                break;
-
-            case '3':
-                //R_cliente_nasc();
-                break;
-
-            case '4':
-                //R_cliente_status();
-                break;
-
-            default:
-            printf("Opcao Invalida\n");
-            break;
-        }
-    } while(esc != '0');
-}
-
-void nav_relatorio_veiculo(void){
-    char esc = ' ';
-    do {
-        esc = menu_relatorio_veiculo();
-        switch (esc){
-            case '1':
-            R_lista_veiculo();
-            break;
-
-            case '2':
-            veiculo_tipo();
-            break;
-        }
     } while(esc != '0');
 }
 
@@ -113,6 +73,72 @@ char menu_adm(void)
     sleep(1);
     return op;
 }
+
+
+
+// NAVEGAÇÃO CLIENTE
+
+
+
+void nav_relatorio_cliente(void){
+    NoCliente* lista;
+    char esc = ' ';
+    do {
+        esc = menu_relatorios_cliente();
+        switch (esc){
+            case '1':
+                R_lista_cliente();
+                break;
+
+            case '2':
+                lista = R_cliente_alfa();
+                exibe_alfa(lista);
+                break;
+
+            case '3':
+                //R_cliente_nasc();
+                break;
+
+            case '4':
+                //R_cliente_status();
+                break;
+
+            default:
+            printf("Opcao Invalida\n");
+            break;
+        }
+    } while(esc != '0');
+}
+
+
+
+// NAVEGAÇÃO VEICULO
+
+
+
+void nav_relatorio_veiculo(void){
+    char esc = ' ';
+    do {
+        esc = menu_relatorio_veiculo();
+        switch (esc){
+            case '1':
+            R_lista_veiculo();
+            break;
+
+            case '2':
+            veiculo_tipo();
+            break;
+        }
+    } while(esc != '0');
+}
+
+
+
+// NAVEGAÇÃO ALUGUEL
+
+
+
+
 
 char menu_relatorios_cliente(void)
 {
@@ -191,68 +217,81 @@ void R_lista_cliente(void)
 }
 
 
-char R_cliente_alfa(void){
-    FILE *fp;
-	int i, tam;
-	char linha[256];
-	Cadastro* user;
-	Cadastro* lista;
+NoCliente* R_cliente_alfa(void)
+{
+    FILE* fp;
+    Cadastro* cad;
+    NoCliente* novoUsuario;
+    NoCliente* lista;
 
-	printf("Integrando Arquivos e Listas Dinâmicas\n");	
-
-	fp = fopen("cliente.dat","rb");
-	if (fp == NULL){
-		printf("Erro na abertura do arquivo\n!");
-		exit(1);
-	}
-
-	// Montando a lista ordenada de palavras
-	lista = NULL;
-	while(fgets(linha,256,fp)){
-		user = (Cadastro*) malloc(sizeof(Cadastro));
-		tam = strlen(linha) + 1;
-		user->cpf = (char*) malloc(tam*sizeof(char));
-		strcpy(user->cpf, linha);
-    if (lista == NULL) {
-			lista = user;
-      user->prox = NULL;
-		} else if (strcmp(user->cpf,lista->cpf) < 0) {
-      user->prox = lista;
-      lista = user;
-    } else {
-      Cadastro* anter = lista;
-      Cadastro* atual = lista->prox;
-      while ((atual != NULL) && strcmp(atual->cpf,user->cpf) < 0) {
-        anter = atual;
-        atual = atual->prox;
-      }
-      anter->prox = user;
-      user->prox = atual;
+    lista = NULL;
+    fp = fopen("cliente.dat", "rb");
+    if (fp == NULL) 
+    {
+        printf("Ops! Ocorreu um erro ao abrir o arquivo!\n");
+        printf("(X-X)/\n");
+        return 0;
     }
-	}
-	fclose(fp);
 
-	// Exibindo a lista de palavras
-	printf("\nConteúdo do Arquivo em Ordem Alfabética\n");
-	user = lista;
-	i = 1;
-	while (user != NULL) {
-		printf("Cliente %d: %s", i, user->cpf);
-		user = user->prox;
-		i++;
-	}
+    cad = (Cadastro*) malloc(sizeof(Cadastro));
+    while(fread(cad, sizeof(Cadastro), 1, fp)) 
+    {        
+        if (cad->status == '1') 
+        {
+            novoUsuario = (Cadastro*) malloc(sizeof(Cadastro));
+            strcpy(novoUsuario->nome, cad->nome);
+            strcpy(novoUsuario->cpf, cad->cpf);
+            strcpy(novoUsuario->telefone, cad->telefone);
+            strcpy(novoUsuario->endereco, cad->endereco);
+            novoUsuario->dd = cad->dd;
+            novoUsuario->mm = cad->mm;
+            novoUsuario->aa = cad->aa;
+            novoUsuario->status = cad->status;
 
-	// Limpando a memória
-	user = lista;
-	while (lista != NULL) {
-		lista = lista->prox;
-		free(user->cpf);
-		free(user);
-		user = lista;
-	}
-	
-	return 0;
+            if (lista == NULL)
+            {
+                lista = novoUsuario;
+                novoUsuario->prox = NULL;
+            }
+            else if (strcmp(novoUsuario->nome, lista->nome) < 0)
+            {
+                novoUsuario->prox = lista;
+                lista = novoUsuario;
+            }
+            else
+            {
+                NoCliente* anter = lista;
+                NoCliente* atual = lista->prox;
+                while ((atual != NULL) && strcmp(atual->nome, novoUsuario->nome) < 0)
+                {
+                    anter = atual;
+                    atual = atual->prox;
+                }
+                anter->prox = novoUsuario;
+                novoUsuario->prox = atual;
+            }           
+        }
+    }
+    getchar();
+    fclose(fp);
+    free(cad);
+    return lista;
 }
+
+
+void exibe_alfa(NoCliente* cliente) 
+{
+  printf("CPF: %s\n", cliente->cpf);
+  printf("Nome: %s\n", cliente->nome);
+  printf("telefone: %s\n", cliente->telefone);
+  printf("endereco: %s\n", cliente->endereco);
+  printf("Nascimento(dia): %d\n", cliente->dd);
+  printf("Nascimento(mes): %d\n", cliente->mm);
+  printf("Nascimento(ano): %d\n", cliente->aa);
+  printf("Status: %c\n", cliente->status);
+  printf("\n");
+}  
+
 
 
 char menu_relatorio_veiculo(void)
