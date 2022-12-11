@@ -172,7 +172,6 @@ char menu_relatorios_cliente(void)
     scanf("%c", &esc);
     getchar();
     printf("\t\t\t ... Aguarde ...\n");
-    sleep(1);
     return esc;
 }
 
@@ -238,7 +237,7 @@ NoCliente* R_cliente_alfa(void)
     {        
         if (cad->status == '1') 
         {
-            novoUsuario = (Cadastro*) malloc(sizeof(Cadastro));
+            novoUsuario = (NoCliente*) malloc(sizeof(NoCliente));
             strcpy(novoUsuario->nome, cad->nome);
             strcpy(novoUsuario->cpf, cad->cpf);
             strcpy(novoUsuario->telefone, cad->telefone);
@@ -272,7 +271,6 @@ NoCliente* R_cliente_alfa(void)
             }           
         }
     }
-    getchar();
     fclose(fp);
     free(cad);
     return lista;
@@ -281,15 +279,22 @@ NoCliente* R_cliente_alfa(void)
 
 void exibe_alfa(NoCliente* cliente) 
 {
-  printf("CPF: %s\n", cliente->cpf);
-  printf("Nome: %s\n", cliente->nome);
-  printf("telefone: %s\n", cliente->telefone);
-  printf("endereco: %s\n", cliente->endereco);
-  printf("Nascimento(dia): %d\n", cliente->dd);
-  printf("Nascimento(mes): %d\n", cliente->mm);
-  printf("Nascimento(ano): %d\n", cliente->aa);
-  printf("Status: %c\n", cliente->status);
-  printf("\n");
+    while (cliente != NULL)
+    {
+        printf("CPF: %s\n", cliente->cpf);
+        printf("Nome: %s\n", cliente->nome);
+        printf("telefone: %s\n", cliente->telefone);
+        printf("endereco: %s\n", cliente->endereco);
+        printf("Nascimento(dia): %d\n", cliente->dd);
+        printf("Nascimento(mes): %d\n", cliente->mm);
+        printf("Nascimento(ano): %d\n", cliente->aa);
+        printf("Status: %c\n", cliente->status);
+        printf("\n");
+        getchar();
+        cliente = cliente->prox;
+    }
+    
+  
 }  
 
 
