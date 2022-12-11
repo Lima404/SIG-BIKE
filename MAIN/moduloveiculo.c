@@ -67,8 +67,8 @@ char menu_veiculo(void)
   printf("-----------------------------------------------------\n");
   printf("=====================================================\n");
   printf("=====================================================\n");
-  printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-  printf("=====================Menu Veículo====================\n");
+  printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+  printf("==================== Menu Veículo ===================\n");
   printf("===                                               ===\n");
   printf("===              1.Cadastro Veículo               ===\n");
   printf("===              2.Buscar Veículo                 ===\n");
@@ -109,8 +109,8 @@ CadastroVeiculo* preencheVeiculo(void)
   printf("-----------------------------------------------------\n");
   printf("=====================================================\n");
   printf("=====================================================\n");
-  printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-  printf("================Menu Veículo - Cadastro==============\n");
+  printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+  printf("=============== Menu Veículo - Cadastro =============\n");
   printf("===                                               ===\n");
   printf("===         Tipos de veículos:                    ===\n");
   printf("===          Bike                                 ===\n");
@@ -185,7 +185,7 @@ void gravaVeiculo(CadastroVeiculo* cadaveiculo)
     if (fp == NULL)
     {
         printf("Ops, Ocorreu um erro na abertura!/n");
-        printf("Não é possivel continuar esse programa... /n");
+        printf("Não é possível continuar esse programa... /n");
         exit(1);
     }
     fwrite(cadaveiculo, sizeof(CadastroVeiculo), 1, fp);
@@ -196,12 +196,12 @@ void gravaVeiculo(CadastroVeiculo* cadaveiculo)
 
 void exibeVeiculo(CadastroVeiculo* cadveiculo)
 {
-    printf("Tipo do veiculo: %s\n", cadveiculo->tipo);
-    printf("Marca do veiculo: %s\n", cadveiculo->marca);
-    printf("Descrição do veiculo: %s\n", cadveiculo->desc);
-    printf("Código do veiculo: %s\n", cadveiculo->cod);
-    printf("Preço do veiculo: %s\n", cadveiculo->preco);
-    printf("Status: %c\n", cadveiculo->status);
+    printf("Tipo do veículo: %s\n", cadveiculo->tipo);
+    printf("Marca do veículo: %s\n", cadveiculo->marca);
+    printf("Descrição do veículo: %s\n", cadveiculo->desc);
+    printf("Código do veículo: %s\n", cadveiculo->cod);
+    printf("Preço do veículo: %s\n", cadveiculo->preco);
+    printf("Status do veículo: %c\n", cadveiculo->status);
     printf("\n");
 }
 
@@ -228,8 +228,8 @@ void listaVeiculo()
     printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
     printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
     printf("-----------------------------------------------------\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("================Menu Veículo - Listar================\n");
+    printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+    printf("=============== Menu Veículo - Listar ===============\n");
 
   cadveiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
   while (fread(cadveiculo, sizeof(CadastroVeiculo), 1, fp))
@@ -261,9 +261,9 @@ CadastroVeiculo* buscaVeiculo()
   printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
   printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
   printf("-----------------------------------------------------\n");
-  printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-  printf("================Menu Veiculo - Buscar================\n");
-  printf("        Informe o número o código do veiculo:          ");
+  printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+  printf("=============== Menu Veiculo - Buscar ===============\n");
+  printf("        Informe o número do código do veiculo:         ");
   scanf(" %[0-9]", cod);
   getchar();
   cadaveiculo = (CadastroVeiculo*)malloc(sizeof(CadastroVeiculo));
@@ -271,7 +271,7 @@ CadastroVeiculo* buscaVeiculo()
 
     if (fp == NULL)
     {
-        printf("Ocorreu um erro na abertura do arquivo, não é possivel continuar o programa");
+        printf("Ocorreu um erro na abertura do arquivo, não é possível continuar o programa");
         exit(1);
     }
 
@@ -328,7 +328,7 @@ void apagaVeiculo(CadastroVeiculo* cadveiculo)
        printf("\nOk, os dados não foram alterados\n");
      }
   } else {
-    printf("O veiculo %s não foi encontrado...\n", cadveiculo->cod);
+    printf("O veículo %s não foi encontrado...\n", cadveiculo->cod);
   }
 
   getchar();
@@ -387,7 +387,7 @@ void editaVeiculo(CadastroVeiculo* cadveiculo)
 
     // PREÇO
 
-      printf(" | Digite o  novo preço em reais(APENAS NÚMEROS): ");
+      printf(" | Digite o novo preço em reais(APENAS NÚMEROS): ");
       scanf("%20[^\n]", cadveiculo->preco);
       getchar();
 
