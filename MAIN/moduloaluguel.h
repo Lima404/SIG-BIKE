@@ -27,3 +27,4 @@ void listaAluguel(void);
 void apagaAluguel(CadastroAluguel*);
 void editaAluguel(CadastroAluguel*);
 char* get_nome_cliente(char*);
+char* get_nome_veiculo(char*);

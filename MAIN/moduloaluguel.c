@@ -94,18 +94,19 @@ CadastroAluguel* preencheAluguel( ){
     CadastroVeiculo* veiculo;
     CadastroAluguel* cadaaluguel;
     char* nome_cliente;
+    char* nome_veiculo;
     cliente = (Cadastro*) malloc(sizeof(Cadastro));
     veiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
     cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
 
-    cliente = buscaCliente();
-    exibeCliente(cliente);
-    getchar();
-    veiculo = buscaVeiculo();
-    exibeVeiculo(veiculo);
-    getchar();
-    free(cliente);
-    free(veiculo);
+    // cliente = buscaCliente();
+    // exibeCliente(cliente);
+    // getchar();
+    // veiculo = buscaVeiculo();
+    // exibeVeiculo(veiculo);
+    // getchar();
+    // free(cliente);
+    // free(veiculo);
 
     system("clear||cls");
     printf("\n");
@@ -148,6 +149,14 @@ CadastroAluguel* preencheAluguel( ){
     scanf(" %9[^\n]", cadaaluguel->cod);
     getchar();
 
+    nome_veiculo = get_nome_veiculo(cadaaluguel->cod);
+  if (nome_veiculo != NULL){
+    printf("Identificação do veiculo %s\n", nome_veiculo);
+    free(nome_veiculo);
+  } else {
+    printf("Ops, veiculo não encontrado");
+    return NULL;
+  }
 
     printf(" | Digite a mensalidade do aluguel: ");
     scanf(" %9[^\n]", cadaaluguel->preco);
@@ -419,6 +428,41 @@ char* get_nome_cliente(char* cpf) {
 
     fclose(fp);
     free(cad);
+    return NULL;
+
+}
+
+char* get_nome_veiculo(char* cod) {
+
+  CadastroVeiculo* cadaveiculo;
+  FILE* fp;
+  char* marca;
+
+  marca = (char*) malloc(81*sizeof(char));
+
+  cadaveiculo = (Cadastro*)malloc(sizeof(Cadastro));
+  fp = fopen("veiculo.dat", "rb");
+
+    if (fp == NULL)
+    {
+        printf("Ocorreu um erro na abertura do arquivo, não é possivel continuar o programa");
+        exit(1);
+    }
+
+    while (!feof(fp))
+    { // Busca até o final do arquivo
+        fread(cadaveiculo, sizeof(Cadastro), 1, fp);
+        if (strcmp(cadaveiculo->cod, cod) == 0 && (cadaveiculo->status != 'x'))
+        { /*Verifica se o código é igual e o status*/
+            fclose(fp);
+            strcpy(marca, cadaveiculo->marca);
+            free(cadaveiculo);
+            return marca;
+        }
+    }
+
+    fclose(fp);
+    free(cadaveiculo);
     return NULL;
 
 }
