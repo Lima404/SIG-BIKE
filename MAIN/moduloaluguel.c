@@ -96,8 +96,9 @@ CadastroAluguel* preencheAluguel( )
     //CadastroVeiculo* veiculo;
     CadastroAluguel* cadaaluguel;
     char* nome_cliente;
-    //cliente = (Cadastro*) malloc(sizeof(Cadastro));
-    //veiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
+    char* nome_veiculo;
+    // cliente = (Cadastro*) malloc(sizeof(Cadastro));
+    // veiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
     cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
 
     //cliente = buscaCliente();
@@ -137,6 +138,7 @@ CadastroAluguel* preencheAluguel( )
     } while (!validar_cpf(cadaaluguel->cpf));
 
    nome_cliente = get_nome_cliente(cadaaluguel->cpf);
+
   if (nome_cliente != NULL) 
   {
      printf("Nome do cliente: %s\n", nome_cliente);
@@ -440,6 +442,45 @@ char* get_nome_cliente(char* cpf)
     return NULL;
 
 }
+
+
+char* get_nome_veiculo(char* cod) 
+{
+
+  CadastroVeiculo* cadaveiculo;
+  FILE* fp;
+  char* marca;
+
+  marca = (char*) malloc(81*sizeof(char));
+
+  cadaveiculo = (CadastroVeiculo*)malloc(sizeof(CadastroVeiculo));
+  fp = fopen("cliente.dat", "rb");
+
+    if (fp == NULL)
+    {
+        printf("Ocorreu um erro na abertura do arquivo, não é possivel continuar o programa");
+        exit(1);
+    }
+
+    while (!feof(fp))
+    { // Busca até o final do arquivo
+        fread(cadaveiculo, sizeof(CadastroVeiculo), 1, fp);
+        if (strcmp(cadaveiculo->cod, cod) == 0 && (cadaveiculo->status != 'x'))
+        { /*Verifica se o código é igual e o status*/
+            fclose(fp);
+            strcpy(marca, cadaveiculo->marca);
+            free(cadaveiculo);
+            return marca;
+        }
+    }
+
+    fclose(fp);
+    free(cadaveiculo);
+    return NULL;
+
+}
+
+
 char menu_lista_disp(void)
 {
 

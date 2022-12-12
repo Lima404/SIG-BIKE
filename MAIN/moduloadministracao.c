@@ -128,7 +128,7 @@ void nav_relatorio_veiculo(void){
                 break;
 
             case '2':
-            veiculo_tipo();
+            //veiculo_tipo();
                 break;
 
             case '3':
