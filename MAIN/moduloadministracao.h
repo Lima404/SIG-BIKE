@@ -19,7 +19,7 @@ struct aAluguel{
 
     char cpf [12];
     char cod[7];
-    int dd, mm, aa;
+    char data[10];
     char preco[10];
     char status;
     NoAluguel* prox;
@@ -51,7 +51,7 @@ void exibe_alfa(NoCliente*);
 char menu_relatorios_veiculo(void);
 void nav_relatorio_veiculo(void);
 void R_lista_veiculo(void);
-void veiculo_tipo(void);
+//void veiculo_tipo(void);
 NoVeiculo* R_veiculo_alfa(void);
 void exibe_alfa_veiculo(NoVeiculo*);
 

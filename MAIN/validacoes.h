@@ -11,3 +11,11 @@ int validar_tamanho_string(char lista[]);
 int validar_nome(char nome []);
 
 int validarEscolhas(char);
+
+int validarNumInteiro(char*);
+
+int diaDoAno(int, int, int);
+
+char* dividPal(char*, int, int);
+
+void calculadata(char*, char*);
