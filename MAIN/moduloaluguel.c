@@ -154,7 +154,10 @@ CadastroAluguel* preencheAluguel( )
     getchar();
 
     nome_veiculo = get_nome_veiculo(cadaaluguel->cod);
+    getchar();
+
   if (nome_veiculo != NULL){
+    printf("entrou");
     printf("Identificação do veiculo %s\n", nome_veiculo);
     free(nome_veiculo);
   } else {
@@ -454,7 +457,7 @@ char* get_nome_veiculo(char* cod)
   marca = (char*) malloc(81*sizeof(char));
 
   cadaveiculo = (CadastroVeiculo*)malloc(sizeof(CadastroVeiculo));
-  fp = fopen("cliente.dat", "rb");
+  fp = fopen("aluguel.dat", "rb");
 
     if (fp == NULL)
     {
