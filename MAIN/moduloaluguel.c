@@ -205,7 +205,8 @@ void exibeAluguel(CadastroAluguel* cadaaluguel)
 {
   printf("CPF: %s\n", cadaaluguel->cpf);
   printf("Cod: %s\n", cadaaluguel->cod);
-  printf("Preço: %s\n", cadaaluguel->preco);
+  printf("Preço da mensalidade: %s\n", cadaaluguel->devolucao);
+  printf("Quantidade de meses alugados: %s\n", cadaaluguel->preco);
   printf("Data do aluguel: %s\n", cadaaluguel->data);
   printf("Status: %c\n", cadaaluguel->status);
   printf("\n");
@@ -417,6 +418,7 @@ char* get_nome_cliente(char* cpf)
     return NULL;
 
 }
+
 char menu_lista_disp(void)
 {
 
