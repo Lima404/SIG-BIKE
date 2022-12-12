@@ -94,24 +94,12 @@ char menu_aluguel(void)
 CadastroAluguel* preencheAluguel( )
 {
 
-    //Cadastro* cliente;
-    //CadastroVeiculo* veiculo;
     CadastroAluguel* cadaaluguel;
     char* nome_cliente;
     char* data;
     char devolucao[20];
-    //cliente = (Cadastro*) malloc(sizeof(Cadastro));
-    //veiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
     cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
 
-    //cliente = buscaCliente();
-    //exibeCliente(cliente);
-    //getchar();
-    //veiculo = buscaVeiculo();
-    //exibeVeiculo(veiculo);
-    //getchar();
-    //free(cliente);
-    //free(veiculo);
 
     system("clear||cls");
     printf("\n");
@@ -201,12 +189,19 @@ void gravaAluguel(CadastroAluguel* cadaaluguel)
 
 // EXIBE ALUGUEL
 
-void exibeAluguel(CadastroAluguel* cadaaluguel) 
+void exibeAluguel(CadastroAluguel* cadaaluguel)
 {
+  char um[10];
+  strcpy(um,cadaaluguel->devolucao);
+  char dois[10];
+  strcpy(dois,cadaaluguel->preco);
+  int calcula_valor_total = (atoi(um) * atoi(dois));
+
   printf("CPF: %s\n", cadaaluguel->cpf);
   printf("Cod: %s\n", cadaaluguel->cod);
   printf("Preço da mensalidade: %s\n", cadaaluguel->devolucao);
   printf("Quantidade de meses alugados: %s\n", cadaaluguel->preco);
+  printf("Valor total do aluguel: %d\n", calcula_valor_total);
   printf("Data do aluguel: %s\n", cadaaluguel->data);
   printf("Status: %c\n", cadaaluguel->status);
   printf("\n");
