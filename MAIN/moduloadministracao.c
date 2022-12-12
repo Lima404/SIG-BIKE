@@ -27,7 +27,7 @@ void menu_nav_adm(void)
             break;
 
         case '3':
-            // nav_relatorio_aluguel();
+            nav_relatorio_aluguel();
             break;
 
         default:
@@ -37,6 +37,7 @@ void menu_nav_adm(void)
 
     } while(esc != '0');
 }
+
 
 char menu_adm(void)
 {
@@ -117,28 +118,55 @@ void nav_relatorio_cliente(void){
 
 
 void nav_relatorio_veiculo(void){
+    NoVeiculo* lista_veiculo;
     char esc = ' ';
     do {
-        esc = menu_relatorio_veiculo();
+        esc = menu_relatorios_veiculo();
         switch (esc){
             case '1':
             R_lista_veiculo();
-            break;
+                break;
 
             case '2':
             veiculo_tipo();
+                break;
+
+            case '3':
+            lista_veiculo = R_veiculo_alfa();
+            exibe_alfa_veiculo(lista_veiculo);
+                break;
+
+            default:
+            printf("Opcão Inválida\n");
             break;
         }
     } while(esc != '0');
 }
 
 
-
 // NAVEGAÇÃO ALUGUEL
 
+void nav_relatorio_aluguel(void){
+    NoAluguel* lista_aluguel;
+    char esc = ' ';
+    do{
+        esc = menu_relatorios_aluguel();
+        switch (esc)
+        {
+        case '1' :
+        R_lista_aluguel();
+            break;
+        case '2':
+        lista_aluguel = R_aluguel_alfa();
+        exibe_alfa_aluguel(lista_aluguel);
+            break;
 
-
-
+        default:
+        printf("Opção inválida\n");
+        break;
+        }
+    } while(esc != '0');
+}
 
 char menu_relatorios_cliente(void)
 {
@@ -158,22 +186,57 @@ char menu_relatorios_cliente(void)
     printf("-----------------------------------------------------\n");
     printf("=====================================================\n");
     printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("===============Menu Cliente -Relatorios==============\n");
+    printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+    printf("========= Menu Cliente - Relatorios Clientes ========\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
-    printf("===     1. Lista todos os clientes:               ===\n");
+    printf("===     1. Lista cliente(recente) e quantidade:   ===\n");
     printf("===     2. Lista de clientes ordem alfabetica:    ===\n");
     printf("===     3. Lista de clientes data de nascimento:  ===\n");
     printf("===     4. Lista de clientes status:              ===\n");
-    printf("===     0.Voltar                                  ===\n");
+    printf("===     0. Voltar                                 ===\n");
     printf("===                                               ===\n");
-    printf(" Que opção você deseja?\n");
+    printf(" Qual opção você deseja:\n");
     scanf("%c", &esc);
     getchar();
     printf("\t\t\t ... Aguarde ...\n");
     return esc;
 }
+
+char menu_relatorios_aluguel(void)
+{
+    char esc;
+
+    system("clear||cls");
+    printf("\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+    printf("========= Menu Aluguel - Relatorios Aluguéis ========\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===     1. Lista Aluguel(recente) e quantidade:   ===\n");
+    printf("===     2. Lista de aluguéis ordem alfabetica:    ===\n");
+    printf("===     3. Lista de aluguéis data devolução:      ===\n");
+    printf("===     0.Voltar                                  ===\n");
+    printf("===                                               ===\n");
+    printf(" Qual opção você deseja:\n");
+    scanf("%c", &esc);
+    getchar();
+    printf("\t\t\t ... Aguarde ...\n");
+    return esc;
+}
+
 
 void R_lista_cliente(void)
 {
@@ -202,7 +265,7 @@ void R_lista_cliente(void)
 
     if (cont > 0)
     {
-        printf("\nVocê possúi %d cliente(s) cadastrados!\n", cont);
+        printf("\nVocê possui %d cliente(s) cadastrados!\n", cont);
     }
 
     else
@@ -210,9 +273,47 @@ void R_lista_cliente(void)
         printf("\nVocê não possui cliente(s) cadastrados!");
     }
     getchar();
-    getchar();
     fclose(fp);
     free(cad);
+}
+
+void R_lista_aluguel(void)
+{
+    int cont = 0;
+    FILE *fp;
+    CadastroAluguel *cadaaluguel;
+    cadaaluguel = (CadastroAluguel *)malloc(sizeof(CadastroAluguel));
+    fp = fopen("aluguel.dat", "rb");
+
+    if (fp == NULL)
+    {
+        printf("\nNão foi possível abrir o arquivo.\n");
+    }
+
+    else
+    {
+        while (fread(cadaaluguel, sizeof(CadastroAluguel), 1, fp))
+        {
+            if (cadaaluguel->status != 'x')
+            {
+                exibeAluguel(cadaaluguel);
+                cont++;
+            }
+        }
+    }
+
+    if (cont > 0)
+    {
+        printf("\nVocê possui %d cliente(s) cadastrados!\n", cont);
+    }
+
+    else
+    {
+        printf("\nVocê não possui cliente(s) cadastrados!");
+    }
+    getchar();
+    fclose(fp);
+    free(cadaaluguel);
 }
 
 
@@ -276,6 +377,141 @@ NoCliente* R_cliente_alfa(void)
     return lista;
 }
 
+NoVeiculo* R_veiculo_alfa(void)
+{
+    FILE* fp;
+    CadastroVeiculo* cadaveiculo;
+    NoVeiculo* novoVeiculo;
+    NoVeiculo* lista_veiculo;
+
+    lista_veiculo = NULL;
+    fp = fopen("veiculo.dat", "rb");
+    if (fp == NULL) 
+    {
+        printf("Ops! Ocorreu um erro ao abrir o arquivo!\n");
+        printf("(X-X)/\n");
+        return 0;
+    }
+
+    cadaveiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
+    while(fread(cadaveiculo, sizeof(CadastroVeiculo), 1, fp)) 
+    {        
+        if (cadaveiculo->status == '1') 
+        {
+            novoVeiculo = (NoVeiculo*) malloc(sizeof(NoVeiculo));
+            strcpy(novoVeiculo->tipo, cadaveiculo->tipo);
+            strcpy(novoVeiculo->marca, cadaveiculo->marca);
+            strcpy(novoVeiculo->desc, cadaveiculo->desc);
+            strcpy(novoVeiculo->cod, cadaveiculo->cod);
+            strcpy(novoVeiculo->preco, cadaveiculo->preco);
+            novoVeiculo->status = cadaveiculo->status;
+
+            if (lista_veiculo == NULL)
+            {
+                lista_veiculo = novoVeiculo;
+                novoVeiculo->prox = NULL;
+            }
+            else if (strcmp(novoVeiculo->marca, lista_veiculo->marca) < 0)
+            {
+                novoVeiculo->prox = lista_veiculo;
+                lista_veiculo = novoVeiculo;
+            }
+            else
+            {
+                NoVeiculo* anter = lista_veiculo;
+                NoVeiculo* atual = lista_veiculo->prox;
+                while ((atual != NULL) && strcmp(atual->marca, novoVeiculo->marca) < 0)
+                {
+                    anter = atual;
+                    atual = atual->prox;
+                }
+                anter->prox = novoVeiculo;
+                novoVeiculo->prox = atual;
+            }           
+        }
+    }
+    fclose(fp);
+    free(cadaveiculo);
+    return lista_veiculo;
+}
+
+NoAluguel* R_aluguel_alfa(void)
+{
+    FILE* fp;
+    CadastroAluguel* cadaaluguel;
+    NoAluguel* novoAluguel;
+    NoAluguel* lista_aluguel;
+
+    lista_aluguel = NULL;
+    fp = fopen("aluguel.dat", "rb");
+    if (fp == NULL) 
+    {
+        printf("Ops! Ocorreu um erro ao abrir o arquivo!\n");
+        printf("(X-X)/\n");
+        return 0;
+    }
+
+    cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
+    while(fread(cadaaluguel, sizeof(CadastroAluguel), 1, fp)) 
+    {        
+        if (cadaaluguel->status == '1') 
+        {
+            novoAluguel = (NoAluguel*) malloc(sizeof(NoAluguel));
+            strcpy(novoAluguel->cpf, cadaaluguel->cpf);
+            strcpy(novoAluguel->cod, cadaaluguel->cod);
+            strcpy(novoAluguel->preco, cadaaluguel->preco);
+            novoAluguel->dd = cadaaluguel->dd;
+            novoAluguel->mm = cadaaluguel->mm;
+            novoAluguel->aa = cadaaluguel->aa;
+            novoAluguel->status = cadaaluguel->status;
+
+            if (lista_aluguel == NULL)
+            {
+                lista_aluguel = novoAluguel;
+                novoAluguel->prox = NULL;
+            }
+            else if (strcmp(novoAluguel->preco, lista_aluguel->preco) < 0)
+            {
+                novoAluguel->prox = lista_aluguel;
+                lista_aluguel = novoAluguel;
+            }
+            else
+            {
+                NoAluguel* anter = lista_aluguel;
+                NoAluguel* atual = lista_aluguel->prox;
+                while ((atual != NULL) && strcmp(atual->preco, novoAluguel->preco) < 0)
+                {
+                    anter = atual;
+                    atual = atual->prox;
+                }
+                anter->prox = novoAluguel;
+                novoAluguel->prox = atual;
+            }           
+        }
+    }
+    fclose(fp);
+    free(cadaaluguel);
+    return lista_aluguel;
+}
+
+
+void exibe_alfa_veiculo(NoVeiculo* cadveiculo) 
+{
+    while (cadveiculo != NULL)
+    {
+        printf("Tipo: %s\n", cadveiculo->tipo);
+        printf("Marca: %s\n", cadveiculo->marca);
+        printf("Descrição: %s\n", cadveiculo->desc);
+        printf("Código: %s\n", cadveiculo->cod);
+        printf("Preço: %s\n", cadveiculo->preco);
+        printf("Status: %c\n", cadveiculo->status);
+        printf("\n");
+        getchar();
+        cadveiculo = cadveiculo->prox;
+    }
+    
+  
+}  
 
 void exibe_alfa(NoCliente* cliente) 
 {
@@ -297,9 +533,25 @@ void exibe_alfa(NoCliente* cliente)
   
 }  
 
+void exibe_alfa_aluguel(NoAluguel* cadaaluguel) 
+{
+    while (cadaaluguel != NULL)
+    {
+        printf("CPF do cliente com este aluguel: %s\n", cadaaluguel->cpf);
+        printf("Código: %s\n", cadaaluguel->cod);
+        printf("(dia): %d\n", cadaaluguel->dd);
+        printf("(mes): %d\n", cadaaluguel->mm);
+        printf("(ano): %d\n", cadaaluguel->aa);
+        printf("Preço: %s\n", cadaaluguel->preco);
+        printf("Status: %c\n", cadaaluguel->status);
+        printf("\n");
+        getchar();
+        cadaaluguel = cadaaluguel->prox;
+    }
+    
+}  
 
-
-char menu_relatorio_veiculo(void)
+char menu_relatorios_veiculo(void)
 {
     char esc;
 
@@ -317,16 +569,16 @@ char menu_relatorio_veiculo(void)
     printf("-----------------------------------------------------\n");
     printf("=====================================================\n");
     printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("===============Menu Veiculo -Relatorios==============\n");
+    printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+    printf("========= Menu Veiculo -Relatorios Veículos =========\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
-    printf("===     1. Lista todos os Veiculos:               ===\n");
-    printf("===     2. Lista de veiculo tipo bike:            ===\n");
-    printf("===     3. Lista de veiculo tipo patins:          ===\n");
+    printf("===     1. Lista veículo(recente) e quantidade:   ===\n");
+    printf("===     2. Lista de veiculo (tipo):               ===\n");
+    printf("===     3. Lista veículos ordem alafabética:      ===\n");
     printf("===     0. Voltar                                 ===\n");
     printf("===                                               ===\n");
-    printf(" Que opção você deseja?\n");
+    printf(" Qual opção você deseja:\n");
     scanf("%c", &esc);
     getchar();
     return esc;
@@ -359,7 +611,7 @@ void R_lista_veiculo(void)
 
     if (cont > 0)
     {
-        printf("\nVocê possúi %d cliente(s) cadastrados!\n", cont);
+        printf("\nVocê possui %d cliente(s) cadastrados!\n", cont);
     }
 
     else
@@ -367,12 +619,7 @@ void R_lista_veiculo(void)
         printf("\nVocê não possui cliente(s) cadastrados!");
     }
     getchar();
-    getchar();
     fclose(fp);
     free(cadaveiculo);
 }
 
-void veiculo_tipo(void)
-{
-    
-}

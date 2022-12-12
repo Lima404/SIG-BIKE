@@ -51,7 +51,8 @@ void menu_nav_aluguel(void)
     } while(esc != '0');
 }
 
-char menu_aluguel(void){
+char menu_aluguel(void)
+{
     char op;
 
     system("clear||cls");
@@ -68,8 +69,8 @@ char menu_aluguel(void){
     printf("-----------------------------------------------------\n");
     printf("=====================================================\n");
     printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("=====================Menu Aluguel====================\n");
+    printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+    printf("==================== Menu Aluguel ===================\n");
     printf("===                                               ===\n");
     printf("===              1.Cadastro Aluguel:              ===\n");
     printf("===              2.Procurar Aluguel:              ===\n");
@@ -88,25 +89,25 @@ char menu_aluguel(void){
     return op;
 }
 
-CadastroAluguel* preencheAluguel( ){
+CadastroAluguel* preencheAluguel( )
+{
 
-    Cadastro* cliente;
-    CadastroVeiculo* veiculo;
+    //Cadastro* cliente;
+    //CadastroVeiculo* veiculo;
     CadastroAluguel* cadaaluguel;
     char* nome_cliente;
-    char* nome_veiculo;
-    cliente = (Cadastro*) malloc(sizeof(Cadastro));
-    veiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
+    //cliente = (Cadastro*) malloc(sizeof(Cadastro));
+    //veiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
     cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
 
-    // cliente = buscaCliente();
-    // exibeCliente(cliente);
-    // getchar();
-    // veiculo = buscaVeiculo();
-    // exibeVeiculo(veiculo);
-    // getchar();
-    // free(cliente);
-    // free(veiculo);
+    //cliente = buscaCliente();
+    //exibeCliente(cliente);
+    //getchar();
+    //veiculo = buscaVeiculo();
+    //exibeVeiculo(veiculo);
+    //getchar();
+    //free(cliente);
+    //free(veiculo);
 
     system("clear||cls");
     printf("\n");
@@ -123,8 +124,8 @@ CadastroAluguel* preencheAluguel( ){
     printf("-----------------------------------------------------\n");
     printf("=====================================================\n");
     printf("=====================================================\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("================Menu Aluguel - Cadastro==============\n");
+    printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+    printf("=============== Menu Aluguel - Cadastro =============\n");
     printf("===                                               ===\n");
 
     do{
@@ -136,7 +137,8 @@ CadastroAluguel* preencheAluguel( ){
     } while (!validar_cpf(cadaaluguel->cpf));
 
    nome_cliente = get_nome_cliente(cadaaluguel->cpf);
-  if (nome_cliente != NULL) {
+  if (nome_cliente != NULL) 
+  {
      printf("Nome do cliente: %s\n", nome_cliente);
      free(nome_cliente);
    } else {
@@ -189,12 +191,13 @@ CadastroAluguel* preencheAluguel( ){
 }
 
 // Gravar em arquivo
-void gravaAluguel(CadastroAluguel* cadaaluguel){
+void gravaAluguel(CadastroAluguel* cadaaluguel)
+{
     FILE* fp;
     fp = fopen("aluguel.dat", "ab");
     if (fp ==  NULL){
         printf("Ops, Ocorreu um erro na abertura!/n");
-        printf("Não é possivel continuar esse programa... /n");
+        printf("Não é possível continuar esse programa... /n");
         exit(1);
     }
     fwrite(cadaaluguel, sizeof(CadastroAluguel), 1, fp);
@@ -203,18 +206,20 @@ void gravaAluguel(CadastroAluguel* cadaaluguel){
 
 // EXIBE ALUGUEL
 
-void exibeAluguel(CadastroAluguel* cadaaluguel) {
+void exibeAluguel(CadastroAluguel* cadaaluguel) 
+{
   printf("CPF: %s\n", cadaaluguel->cpf);
-  printf("cod: %s\n", cadaaluguel->cod);
+  printf("Cod: %s\n", cadaaluguel->cod);
   printf("Preço: %s\n", cadaaluguel->preco);
-  printf("dia do aluguel: %d\n", cadaaluguel->dd);
-  printf("mês do aluguel: %d\n", cadaaluguel->mm);
-  printf("ano do aluguel: %d\n", cadaaluguel->aa);
+  printf("Dia do aluguel: %d\n", cadaaluguel->dd);
+  printf("Mês do aluguel: %d\n", cadaaluguel->mm);
+  printf("Ano do aluguel: %d\n", cadaaluguel->aa);
   printf("Status: %c\n", cadaaluguel->status);
   printf("\n");
 }  
 
-void apagaAluguel(CadastroAluguel* cadaluguel) {
+void apagaAluguel(CadastroAluguel* cadaluguel) 
+{
   FILE* fp;
   CadastroAluguel* cadaaluguel;
   int achou;
@@ -256,7 +261,8 @@ void apagaAluguel(CadastroAluguel* cadaluguel) {
 }
 
 
-void listaAluguel() {
+void listaAluguel() 
+{
   FILE* fp;
   CadastroAluguel* cadaaluguel;
   fp = fopen("aluguel.dat", "rb");
@@ -276,8 +282,8 @@ void listaAluguel() {
     printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
     printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
     printf("-----------------------------------------------------\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("================Menu Aluguel - Listar================\n");
+    printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+    printf("=============== Menu Aluguel - Listar ===============\n");
 
   cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
   while (fread(cadaaluguel, sizeof(CadastroAluguel), 1, fp))
@@ -290,7 +296,8 @@ void listaAluguel() {
   free(cadaaluguel);
 }
 
-CadastroAluguel* buscaAluguel() {
+CadastroAluguel* buscaAluguel() 
+{
 
     FILE *fp;
     CadastroAluguel* cadaaluguel;
@@ -306,8 +313,8 @@ CadastroAluguel* buscaAluguel() {
     printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
     printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
     printf("-----------------------------------------------------\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("============Menu Aluguel - Buscar Aluguel============\n");
+    printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+    printf("=========== Menu Aluguel - Buscar Aluguel ===========\n");
     printf("       Informe o número do seu cpf por gentileza:      ");
     scanf(" %[0-9]", cpf);
     getchar();
@@ -316,7 +323,7 @@ CadastroAluguel* buscaAluguel() {
 
     if (fp == NULL)
     {
-        printf("Ocorreu um erro na abertura do arquivo, não é possivel continuar o programa");
+        printf("Ocorreu um erro na abertura do arquivo, não é possível continuar o programa");
         exit(1);
     }
 
@@ -337,7 +344,8 @@ CadastroAluguel* buscaAluguel() {
     return NULL;
 }
 
-void editaAluguel(CadastroAluguel* cadaaluguel) {
+void editaAluguel(CadastroAluguel* cadaaluguel) 
+{
 
   FILE* fp;
   char resp;
@@ -397,7 +405,8 @@ void editaAluguel(CadastroAluguel* cadaaluguel) {
   fclose(fp);
 }
 
-char* get_nome_cliente(char* cpf) {
+char* get_nome_cliente(char* cpf) 
+{
 
   Cadastro* cad;
   FILE* fp;
@@ -431,42 +440,8 @@ char* get_nome_cliente(char* cpf) {
     return NULL;
 
 }
-
-char* get_nome_veiculo(char* cod) {
-
-  CadastroVeiculo* cadaveiculo;
-  FILE* fp;
-  char* marca;
-
-  marca = (char*) malloc(81*sizeof(char));
-
-  cadaveiculo = (Cadastro*)malloc(sizeof(Cadastro));
-  fp = fopen("veiculo.dat", "rb");
-
-    if (fp == NULL)
-    {
-        printf("Ocorreu um erro na abertura do arquivo, não é possivel continuar o programa");
-        exit(1);
-    }
-
-    while (!feof(fp))
-    { // Busca até o final do arquivo
-        fread(cadaveiculo, sizeof(Cadastro), 1, fp);
-        if (strcmp(cadaveiculo->cod, cod) == 0 && (cadaveiculo->status != 'x'))
-        { /*Verifica se o código é igual e o status*/
-            fclose(fp);
-            strcpy(marca, cadaveiculo->marca);
-            free(cadaveiculo);
-            return marca;
-        }
-    }
-
-    fclose(fp);
-    free(cadaveiculo);
-    return NULL;
-
-}
-char menu_lista_disp(void){
+char menu_lista_disp(void)
+{
 
     char esc;
     system("clear||cls");

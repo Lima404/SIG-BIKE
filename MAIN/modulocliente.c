@@ -69,7 +69,7 @@ char menu_cliente(void)
   printf("-----------------------------------------------------\n");
   printf("=====================================================\n");
   printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-  printf("=====================Menu Cliente====================\n");
+  printf("==================== Menu Cliente ===================\n");
   printf("===                                               ===\n");
   printf("===              1.Cadastro Cliente:              ===\n");
   printf("===              2.Procurar Cliente:              ===\n");
@@ -111,15 +111,15 @@ Cadastro* preencheCliente(void)
   printf("-----------------------------------------------------\n");
   printf("=====================================================\n");
   printf("=====================================================\n");
-  printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-  printf("================Menu Cliente - Cadastro==============\n");
+  printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+  printf("=============== Menu Cliente - Cadastro =============\n");
   printf("===                                               ===\n");
     
 //Nome
 
     do{
       
-        printf(" Digite seu nome por favor: ");
+        printf(" Digite seu nome: ");
         scanf("%80[^\n]", cad->nome);                            //executa tudo isso até que a condição da função seja satisfeita
         getchar();
         
@@ -129,7 +129,7 @@ Cadastro* preencheCliente(void)
 
     do{
     
-        printf(" Digite seu CPF(APENAS NUMEROS): ");
+        printf(" Digite seu CPF(APENAS NÚMEROS): ");
         scanf("%s", cad->cpf);
         getchar();
         
@@ -151,13 +151,13 @@ Cadastro* preencheCliente(void)
 
     do {
 
-        printf(" Digite o dia que você nasceu por favor: ");
+        printf(" Digite o seu dia de nascimento: ");
         scanf("%d", &cad->dd);
         getchar();
         printf(" Digite o seu mês de nascimento: ");
         scanf("%d", &cad->mm);
         getchar();
-        printf(" digite o seu ano de nascimento: ");
+        printf(" Digite o seu ano de nascimento: ");
         scanf("%d", &cad->aa);
         getchar();
         
@@ -185,7 +185,7 @@ void gravaCliente(Cadastro* cad)
     if (fp ==  NULL)
     {
         printf("Ops, Ocorreu um erro na abertura!/n");
-        printf("Não é possivel continuar esse programa... /n");
+        printf("Não é possível continuar esse programa... /n");
         exit(1);
     }
     fwrite(cad, sizeof(Cadastro), 1, fp);
@@ -198,8 +198,8 @@ void exibeCliente(Cadastro* cliente)
 {
   printf("CPF: %s\n", cliente->cpf);
   printf("Nome: %s\n", cliente->nome);
-  printf("telefone: %s\n", cliente->telefone);
-  printf("endereco: %s\n", cliente->endereco);
+  printf("Telefone: %s\n", cliente->telefone);
+  printf("Endereco: %s\n", cliente->endereco);
   printf("Nascimento(dia): %d\n", cliente->dd);
   printf("Nascimento(mes): %d\n", cliente->mm);
   printf("Nascimento(ano): %d\n", cliente->aa);
@@ -232,8 +232,8 @@ void listaCliente()
     printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
     printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
     printf("-----------------------------------------------------\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("================Menu Cliente - Listar================\n");
+    printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+    printf("=============== Menu Cliente - Listar ===============\n");
 
   cliente = (Cadastro*) malloc(sizeof(Cadastro));
   while (fread(cliente, sizeof(Cadastro), 1, fp))
@@ -266,8 +266,8 @@ Cadastro* buscaCliente()
     printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
     printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
     printf("-----------------------------------------------------\n");
-    printf("======SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS======\n");
-    printf("============Menu Cliente - Buscar Cliente============\n");
+    printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+    printf("=========== Menu Cliente - Buscar Cliente ===========\n");
     printf("       Informe o número do seu cpf por gentileza:      ");
     scanf(" %[0-9]", cpf);
     getchar();
@@ -276,15 +276,15 @@ Cadastro* buscaCliente()
 
     if (fp == NULL)
     {
-        printf("Ocorreu um erro na abertura do arquivo, não é possivel continuar o programa");
+        printf("Ocorreu um erro na abertura do arquivo, não é possível continuar o programa");
         exit(1);
     }
 
     while (!feof(fp))
-    { // Busca até o final do arquivo
+    {                                      // Busca até o final do arquivo
         fread(cad, sizeof(Cadastro), 1, fp);
         if (strcmp(cad->cpf, cpf) == 0 && (cad->status != 'x'))
-        { /*Verifica se o código é igual e o status*/
+        {                                  /*Verifica se o código é igual e o status*/
             fclose(fp);
             return cad;
         }
@@ -367,7 +367,7 @@ void editaCliente(Cadastro* cliente)
 
         do {
           
-        printf(" Digite seu novo nome por favor: ");
+        printf(" Digite seu novo nome: ");
         scanf("%80[^\n]", cliente->nome);                            //executa tudo isso até que a condição da função seja satisfeita
         getchar();
         
@@ -386,13 +386,13 @@ void editaCliente(Cadastro* cliente)
 
         do {
           
-        printf(" Digite o novo dia que você nasceu por favor: ");
+        printf(" Digite o seu novo dia de nascimento: ");
         scanf("%d", &cliente->dd);
         getchar();
         printf(" Digite o seu novo mês de nascimento: ");
         scanf("%d", &cliente->mm);
         getchar();
-        printf(" digite o seu novo ano de nascimento: ");
+        printf(" Digite o seu novo ano de nascimento: ");
         scanf("%d", &cliente->aa);
         getchar();
 
