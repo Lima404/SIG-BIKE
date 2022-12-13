@@ -98,6 +98,7 @@ CadastroAluguel* preencheAluguel( )
     char* nome_cliente;
     char* data;
     char devolucao[20];
+    char cpf[12];
 
     system("clear||cls");
     printf("\n");
@@ -153,7 +154,8 @@ CadastroAluguel* preencheAluguel( )
     getchar();
 
     }while(!validarNumInteiro(devolucao));
-
+    strcpy(cadaaluguel->devolucao, devolucao);
+    strcpy(cadaaluguel->cpf, cpf);
 
     data = verDiaMesAno();
     strcpy(cadaaluguel->data, data);
@@ -193,8 +195,8 @@ void exibeAluguel(CadastroAluguel* cadaaluguel)
 
   printf("CPF: %s\n", cadaaluguel->cpf);
   printf("Cod: %s\n", cadaaluguel->cod);
-  printf("Preço da mensalidade: %s\n", cadaaluguel->devolucao);
-  printf("Quantidade de meses alugados: %s\n", cadaaluguel->preco);
+  printf("Preço da mensalidade: %s\n", cadaaluguel->preco);
+  printf("Quantidade de meses alugados: %s\n", cadaaluguel->devolucao);
   printf("Data do aluguel: %s\n", cadaaluguel->data);
   printf("Status: %c\n", cadaaluguel->status);
   printf("\n");
@@ -232,7 +234,7 @@ void apagaAluguel(CadastroAluguel* cadaluguel)
       fwrite(cadaaluguel, sizeof(CadastroAluguel), 1, fp);
       printf("\nAluguel excluído com sucesso!!!\n");
       sleep(3);
-      
+
      } else {
        printf("\nOk, os dados não foram alterados\n");
      }
