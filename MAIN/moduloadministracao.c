@@ -128,7 +128,7 @@ void nav_relatorio_veiculo(void){
                 break;
 
             case '2':
-            veiculo_tipo();
+            //veiculo_tipo();
                 break;
 
             case '3':
@@ -343,10 +343,10 @@ NoCliente* R_cliente_alfa(void)
             strcpy(novoUsuario->cpf, cad->cpf);
             strcpy(novoUsuario->telefone, cad->telefone);
             strcpy(novoUsuario->endereco, cad->endereco);
-            novoUsuario->dd = cad->dd;
+            novoUsuario->status = cad->status;
+            novoUsuario->dd = cad->aa;
             novoUsuario->mm = cad->mm;
             novoUsuario->aa = cad->aa;
-            novoUsuario->status = cad->status;
 
             if (lista == NULL)
             {
@@ -460,9 +460,7 @@ NoAluguel* R_aluguel_alfa(void)
             strcpy(novoAluguel->cpf, cadaaluguel->cpf);
             strcpy(novoAluguel->cod, cadaaluguel->cod);
             strcpy(novoAluguel->preco, cadaaluguel->preco);
-            novoAluguel->dd = cadaaluguel->dd;
-            novoAluguel->mm = cadaaluguel->mm;
-            novoAluguel->aa = cadaaluguel->aa;
+            strcpy(novoAluguel->data, cadaaluguel->data);
             novoAluguel->status = cadaaluguel->status;
 
             if (lista_aluguel == NULL)
@@ -539,9 +537,7 @@ void exibe_alfa_aluguel(NoAluguel* cadaaluguel)
     {
         printf("CPF do cliente com este aluguel: %s\n", cadaaluguel->cpf);
         printf("Código: %s\n", cadaaluguel->cod);
-        printf("(dia): %d\n", cadaaluguel->dd);
-        printf("(mes): %d\n", cadaaluguel->mm);
-        printf("(ano): %d\n", cadaaluguel->aa);
+        printf("data: %s\n", cadaaluguel->data);
         printf("Preço: %s\n", cadaaluguel->preco);
         printf("Status: %c\n", cadaaluguel->status);
         printf("\n");

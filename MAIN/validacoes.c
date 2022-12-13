@@ -163,3 +163,81 @@ int validarEscolhas(char esc){
         return 1;
     } 
     }
+
+int validarNumInteiro(char *numero) {        //DAY
+    int i = 0;
+
+    while (numero[i] != '\0') {
+        if ((numero[i] >= '0') && (numero[i] <= '9')) {
+            i = i + 1;
+
+        }
+
+        else {
+            return 0;
+
+        }
+
+    }
+
+    return 1;
+
+}
+
+int diaDoAno(int dia , int mes, int ano) 
+{
+    int diaDoAno = 0;
+    int diasDoMes[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+    for (int i = 0; i < mes - 1; i++) {
+
+        if (mes == 1) {
+        return dia;
+
+        }
+    
+        else if (mes == 2) {
+        diaDoAno = dia + 31;
+
+        }
+
+        else {
+            diaDoAno = diaDoAno + diasDoMes[i];
+
+        }
+
+
+    }
+
+    diaDoAno = diaDoAno + dia;
+
+    if ((mes == 2) && validar_bissexto(ano)) {
+        diaDoAno = diaDoAno + 1;
+
+    }
+
+    return diaDoAno;
+
+}
+
+char* dividPal(char *pal, int del1, int del2) {
+    int tam = del2 - del1;
+    int aux = 0;
+
+    char* palavra = (char*) malloc((tam + 1)* sizeof(char));
+
+    palavra[0] = pal[del1];
+
+    for (int i = del1; i <= del2; i++) {
+        
+        palavra[aux] = pal[i];
+
+        aux = aux + 1;
+
+    }
+
+    palavra[tam + 1] = '\0';
+
+    return palavra;
+
+}
