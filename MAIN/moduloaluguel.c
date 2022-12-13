@@ -191,17 +191,11 @@ void gravaAluguel(CadastroAluguel* cadaaluguel)
 
 void exibeAluguel(CadastroAluguel* cadaaluguel)
 {
-  char um[10];
-  strcpy(um,cadaaluguel->devolucao);
-  char dois[10];
-  strcpy(dois,cadaaluguel->preco);
-  int calcula_valor_total = (atoi(um) * atoi(dois));
 
   printf("CPF: %s\n", cadaaluguel->cpf);
   printf("Cod: %s\n", cadaaluguel->cod);
   printf("Preço da mensalidade: %s\n", cadaaluguel->devolucao);
   printf("Quantidade de meses alugados: %s\n", cadaaluguel->preco);
-  printf("Valor total do aluguel: %d\n", calcula_valor_total);
   printf("Data do aluguel: %s\n", cadaaluguel->data);
   printf("Status: %c\n", cadaaluguel->status);
   printf("\n");
@@ -468,11 +462,11 @@ void calculadata(char* data, char* meses)
   char* mes = dividPal(data,2,3);
 
   int diaint = atoi(dia);
-  printf("%d\n",diaint);
+  printf("%d",diaint);
   int mesint = atoi(mes);
-  printf("%d\n",mesint);
+  printf("%d",mesint);
   int anoint = atoi(ano) + 2000;
-  printf("%d\n",anoint);
+  printf("%d",anoint);
   getchar(); 
 
   int calcula = diaDoAno(diaint, mesint, anoint);
