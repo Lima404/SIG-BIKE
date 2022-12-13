@@ -159,7 +159,9 @@ CadastroAluguel* preencheAluguel( )
 
     data = verDiaMesAno();
     strcpy(cadaaluguel->data, data);
+    printf(" | Data do aluguel: ");
     calculadata(data, devolucao);
+    
     free(data);
     free(cadaaluguel);
 
@@ -467,11 +469,13 @@ void calculadata(char* data, char* meses)
 
   int diaint = atoi(dia);
   printf("%d",diaint);
+  printf("/");
   int mesint = atoi(mes);
   printf("%d",mesint);
+  printf("/");
   int anoint = atoi(ano) + 2000;
   printf("%d",anoint);
-  getchar(); 
+  getchar();
 
   int calcula = diaDoAno(diaint, mesint, anoint);
   printf("%d",calcula);
