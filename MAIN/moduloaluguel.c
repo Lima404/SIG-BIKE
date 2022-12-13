@@ -93,13 +93,11 @@ char menu_aluguel(void)
 
 CadastroAluguel* preencheAluguel( )
 {
-
     CadastroAluguel* cadaaluguel;
+    cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
     char* nome_cliente;
     char* data;
     char devolucao[20];
-    cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
-
 
     system("clear||cls");
     printf("\n");
@@ -140,7 +138,7 @@ CadastroAluguel* preencheAluguel( )
 
 
     printf(" | Digite o código do veículo que você quer alugar: ");
-    scanf(" %9[^\n]", cadaaluguel->cod);
+    scanf(" %6[^\n]", cadaaluguel->cod);
     getchar();
 
 
@@ -156,11 +154,12 @@ CadastroAluguel* preencheAluguel( )
 
     }while(!validarNumInteiro(devolucao));
 
+
     data = verDiaMesAno();
     strcpy(cadaaluguel->data, data);
     calculadata(data, devolucao);
     free(data);
-
+    free(cadaaluguel);
 
     cadaaluguel->status = '1';
     return cadaaluguel;
@@ -178,7 +177,7 @@ void gravaAluguel(CadastroAluguel* cadaaluguel)
 {
     FILE* fp;
     fp = fopen("aluguel.dat", "ab");
-    if (fp ==  NULL){
+      if (fp ==  NULL){
         printf("Ops, Ocorreu um erro na abertura!/n");
         printf("Não é possível continuar esse programa... /n");
         exit(1);
@@ -199,6 +198,7 @@ void exibeAluguel(CadastroAluguel* cadaaluguel)
   printf("Data do aluguel: %s\n", cadaaluguel->data);
   printf("Status: %c\n", cadaaluguel->status);
   printf("\n");
+
 }  
 
 void apagaAluguel(CadastroAluguel* cadaluguel) 
@@ -208,10 +208,10 @@ void apagaAluguel(CadastroAluguel* cadaluguel)
   int achou;
   char resp;
   fp = fopen("aluguel.dat", "r+b");
-  if (fp == NULL) {
-    printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
-    printf("Não é possível continuar o programa...\n");
-    exit(1);
+    if (fp == NULL) {
+      printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
+      printf("Não é possível continuar o programa...\n");
+      exit(1);
   }
   cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
   achou = 0;
@@ -226,11 +226,13 @@ void apagaAluguel(CadastroAluguel* cadaluguel)
     printf("Digite 's' duas vezes para apagar o aluguel(s/n)? ");
     scanf("%c\n", &resp);
     if (resp == 's' || resp == 'S') {
+
       cadaaluguel->status = '0';
       fseek(fp, (-1)*sizeof(CadastroAluguel), SEEK_CUR);
       fwrite(cadaaluguel, sizeof(CadastroAluguel), 1, fp);
       printf("\nAluguel excluído com sucesso!!!\n");
       sleep(3);
+      
      } else {
        printf("\nOk, os dados não foram alterados\n");
      }

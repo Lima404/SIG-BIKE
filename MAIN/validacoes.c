@@ -164,7 +164,7 @@ int validarEscolhas(char esc){
     } 
     }
 
-int validarNumInteiro(char *numero) {         //DAY
+int validarNumInteiro(char *numero) {        //DAY
     int i = 0;
 
     while (numero[i] != '\0') {
