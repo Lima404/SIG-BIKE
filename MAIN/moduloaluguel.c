@@ -131,6 +131,7 @@ CadastroAluguel* preencheAluguel( )
 
     } while (!validar_cpf(cadaaluguel->cpf));
 
+
    nome_cliente = get_nome_cliente(cadaaluguel->cpf);
   if (nome_cliente != NULL) 
   {
@@ -171,7 +172,7 @@ CadastroAluguel* preencheAluguel( )
 
     }while(!validarNumInteiro(devolucao));
     strcpy(cadaaluguel->devolucao, devolucao);
-    strcpy(cadaaluguel->cpf, cpf);
+    strcpy(cpf, cadaaluguel->cpf);
 
     data = verDiaMesAno();
     strcpy(cadaaluguel->data, data);
@@ -179,16 +180,18 @@ CadastroAluguel* preencheAluguel( )
     calculadata(data, devolucao);
     
     free(data);
-    free(cadaaluguel);
+    //free(cadaaluguel);
 
     cadaaluguel->status = '1';
-    return cadaaluguel;
+    
 
     printf("=== Aluguel foi cadastrado no sistema!!           ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...");
     getchar();
+
+    return cadaaluguel;
 
 }
 
@@ -204,6 +207,7 @@ void gravaAluguel(CadastroAluguel* cadaaluguel)
     }
     fwrite(cadaaluguel, sizeof(CadastroAluguel), 1, fp);
     fclose(fp);
+    free(cadaaluguel);
 }
 
 // EXIBE ALUGUEL
@@ -293,6 +297,7 @@ void listaAluguel()
   cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
   while (fread(cadaaluguel, sizeof(CadastroAluguel), 1, fp))
   { // Busca até o final do arquivo
+      printf("CPF LIDO!%s\n ",cadaaluguel->cpf);
       exibeAluguel(cadaaluguel);
   }
   fclose(fp);
