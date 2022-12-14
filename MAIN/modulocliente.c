@@ -23,7 +23,6 @@ void menu_nav_cliente(void)
         case '2':
             user = buscaCliente();
             exibeCliente(user);
-            getchar();
             free(user);
             break;
 

@@ -3,10 +3,12 @@
 #include <unistd.h>
 #include <string.h>
 #include <ctype.h>
+#include <time.h>
 #include "moduloaluguel.h"
 #include "validacoes.h"
 #include "modulocliente.h"
 #include "moduloveiculo.h"
+
 
 void menu_nav_aluguel(void)
 {   
@@ -91,23 +93,12 @@ char menu_aluguel(void)
 
 CadastroAluguel* preencheAluguel( )
 {
-
-    //Cadastro* cliente;
-    //CadastroVeiculo* veiculo;
     CadastroAluguel* cadaaluguel;
-    char* nome_cliente;
-    //cliente = (Cadastro*) malloc(sizeof(Cadastro));
-    //veiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
     cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
-
-    //cliente = buscaCliente();
-    //exibeCliente(cliente);
-    //getchar();
-    //veiculo = buscaVeiculo();
-    //exibeVeiculo(veiculo);
-    //getchar();
-    //free(cliente);
-    //free(veiculo);
+    char* nome_cliente;
+    char* data;
+    char devolucao[20];
+    char cpf[12];
 
     system("clear||cls");
     printf("\n");
@@ -148,7 +139,7 @@ CadastroAluguel* preencheAluguel( )
 
 
     printf(" | Digite o código do veículo que você quer alugar: ");
-    scanf(" %9[^\n]", cadaaluguel->cod);
+    scanf(" %6[^\n]", cadaaluguel->cod);
     getchar();
 
 
@@ -156,21 +147,23 @@ CadastroAluguel* preencheAluguel( )
     scanf(" %9[^\n]", cadaaluguel->preco);
     getchar();
 
+    do{
 
-    do {
+    printf(" | Digite quantos meses você quer alugar: ");
+    scanf(" %9[^\n]", devolucao);
+    getchar();
 
-      printf(" Digite o dia do aluguel: ");
-      scanf("%d", &cadaaluguel->dd);
-      getchar();
-      printf(" Digite o mês do aluguel: ");
-      scanf("%d", &cadaaluguel->mm);
-      getchar();
-      printf(" Digite o ano do aluguel: ");
-      scanf("%d", &cadaaluguel->aa);
-      getchar();
+    }while(!validarNumInteiro(devolucao));
+    strcpy(cadaaluguel->devolucao, devolucao);
+    strcpy(cadaaluguel->cpf, cpf);
+
+    data = verDiaMesAno();
+    strcpy(cadaaluguel->data, data);
+    printf(" | Data do aluguel: ");
+    calculadata(data, devolucao);
     
-    } while(!validar_data(cadaaluguel->dd, cadaaluguel->mm, cadaaluguel->aa));
-
+    free(data);
+    free(cadaaluguel);
 
     cadaaluguel->status = '1';
     return cadaaluguel;
@@ -180,6 +173,7 @@ CadastroAluguel* preencheAluguel( )
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...");
     getchar();
+
 }
 
 // Gravar em arquivo
@@ -187,7 +181,7 @@ void gravaAluguel(CadastroAluguel* cadaaluguel)
 {
     FILE* fp;
     fp = fopen("aluguel.dat", "ab");
-    if (fp ==  NULL){
+      if (fp ==  NULL){
         printf("Ops, Ocorreu um erro na abertura!/n");
         printf("Não é possível continuar esse programa... /n");
         exit(1);
@@ -198,16 +192,17 @@ void gravaAluguel(CadastroAluguel* cadaaluguel)
 
 // EXIBE ALUGUEL
 
-void exibeAluguel(CadastroAluguel* cadaaluguel) 
+void exibeAluguel(CadastroAluguel* cadaaluguel)
 {
+
   printf("CPF: %s\n", cadaaluguel->cpf);
   printf("Cod: %s\n", cadaaluguel->cod);
-  printf("Preço: %s\n", cadaaluguel->preco);
-  printf("Dia do aluguel: %d\n", cadaaluguel->dd);
-  printf("Mês do aluguel: %d\n", cadaaluguel->mm);
-  printf("Ano do aluguel: %d\n", cadaaluguel->aa);
+  printf("Preço da mensalidade: %s\n", cadaaluguel->preco);
+  printf("Quantidade de meses alugados: %s\n", cadaaluguel->devolucao);
+  printf("Data do aluguel: %s\n", cadaaluguel->data);
   printf("Status: %c\n", cadaaluguel->status);
   printf("\n");
+
 }  
 
 void apagaAluguel(CadastroAluguel* cadaluguel) 
@@ -217,10 +212,10 @@ void apagaAluguel(CadastroAluguel* cadaluguel)
   int achou;
   char resp;
   fp = fopen("aluguel.dat", "r+b");
-  if (fp == NULL) {
-    printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
-    printf("Não é possível continuar o programa...\n");
-    exit(1);
+    if (fp == NULL) {
+      printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
+      printf("Não é possível continuar o programa...\n");
+      exit(1);
   }
   cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
   achou = 0;
@@ -235,11 +230,13 @@ void apagaAluguel(CadastroAluguel* cadaluguel)
     printf("Digite 's' duas vezes para apagar o aluguel(s/n)? ");
     scanf("%c\n", &resp);
     if (resp == 's' || resp == 'S') {
+
       cadaaluguel->status = '0';
       fseek(fp, (-1)*sizeof(CadastroAluguel), SEEK_CUR);
       fwrite(cadaaluguel, sizeof(CadastroAluguel), 1, fp);
       printf("\nAluguel excluído com sucesso!!!\n");
       sleep(3);
+
      } else {
        printf("\nOk, os dados não foram alterados\n");
      }
@@ -361,22 +358,6 @@ void editaAluguel(CadastroAluguel* cadaaluguel)
         getchar();
 
 
-    do {
-
-        printf(" Digite o novo dia do aluguel: ");
-        scanf("%d", &cadaaluguel->dd);
-        getchar();
-        printf(" Digite o novo mês do aluguel: ");
-        scanf("%d", &cadaaluguel->mm);
-        getchar();
-        printf(" Digite o novo ano do aluguel: ");
-        scanf("%d", &cadaaluguel->aa);
-        getchar();
-    
-    } while(!validar_data(cadaaluguel->dd, cadaaluguel->mm, cadaaluguel->aa));
-
-
-
       cadaaluguel->status = '1';
 
       fseek(fp, (-1)*sizeof(CadastroAluguel), SEEK_CUR);
@@ -432,6 +413,7 @@ char* get_nome_cliente(char* cpf)
     return NULL;
 
 }
+
 char menu_lista_disp(void)
 {
 
@@ -461,4 +443,49 @@ char menu_lista_disp(void)
     scanf("%c",&esc);
     getchar();
     return esc;
+}
+
+char* verDiaMesAno(void) {
+
+    char* data = (char*) malloc(20 * sizeof(char));
+
+    time_t tempo = time(NULL);
+
+    struct tm* t = localtime(&tempo);
+
+    strftime(data, 50, "%d%m%y", t);
+
+    // dia, mes, ano
+
+    return data;
+
+}
+
+void calculadata(char* data, char* meses)
+{
+  char* dia = dividPal(data,0,1);
+  char* ano = dividPal(data,4,5);
+  char* mes = dividPal(data,2,3);
+
+  int diaint = atoi(dia);
+  printf("%d",diaint);
+  printf("/");
+  int mesint = atoi(mes);
+  printf("%d",mesint);
+  printf("/");
+  int anoint = atoi(ano) + 2000;
+  printf("%d",anoint);
+  getchar();
+
+  int calcula = diaDoAno(diaint, mesint, anoint);
+  printf("%d",calcula);
+  getchar();
+  
+  int calculo = 0;
+
+  int mesesint = atoi(meses);
+  calculo = mesesint * 30;
+  calculo = calcula + calculo;
+  printf("%d",calculo);
+  getchar();
 }

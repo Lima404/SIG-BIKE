@@ -15,7 +15,6 @@ struct cadastro{
     char endereco [141];
     int dd, mm, aa;
     char status;
-    
 };
 
 // PONTEIROS DECLARADOS

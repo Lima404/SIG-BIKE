@@ -1,19 +1,16 @@
 void menu_nav_aluguel(void);
 char menu_aluguel(void);
-char menu_editar_aluguel(void);
-char menu_lista_disp(void);
-char menu_lista_indisp(void);
-char menu_lista_atrasados(void);
 
 typedef struct cadastroaluguel CadastroAluguel;
 struct cadastroaluguel{
 
     char cpf [12];
     char cod[7];
-    int dd, mm, aa;
+    char data[10];
     char preco[10];
     char status;
-    
+    char devolucao[10];
+
 };
 
 
@@ -27,3 +24,4 @@ void listaAluguel(void);
 void apagaAluguel(CadastroAluguel*);
 void editaAluguel(CadastroAluguel*);
 char* get_nome_cliente(char*);
+char* verDiaMesAno(void);
