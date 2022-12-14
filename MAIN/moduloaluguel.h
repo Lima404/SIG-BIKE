@@ -9,7 +9,7 @@ struct cadastroaluguel{
     char data[10];
     char preco[10];
     char status;
-    char devolucao[10];
+    int devolucao[3];
 
 };
 

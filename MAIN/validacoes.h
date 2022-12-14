@@ -18,4 +18,6 @@ int diaDoAno(int, int, int);
 
 char* dividPal(char*, int, int);
 
-void calculadata(char*, char*);
+void calculadata(char*, char*, int*);
+
+void diaParaData(int, int, int*);

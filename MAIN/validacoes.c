@@ -242,39 +242,34 @@ char* dividPal(char *pal, int del1, int del2) {
 
 }
 
-// char inversa(int dia) 
-// {
-    
-//     int diaDoAno = 0;
-//     int diasDoMes[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+void diaParaData(int dia, int ano, int *data) {
 
-//     for (int i = 0; i < mes - 1; i++) {
+    int diasDoMes[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int i = 0;
 
-//         if (mes == 1) {
-//         return dia;
+    if (dia > 365) {
+        dia = dia - 365;
+        ano = ano + 1;
+    }
 
-//         }
-    
-//         else if (mes == 2) {
-//         diaDoAno = dia + 31;
+    while (i < 12 && dia >= 0) {
+        dia = dia - diasDoMes[i];
 
-//         }
+        i = i + 1;
+    }
 
-//         else {
-//             diaDoAno = diaDoAno + diasDoMes[i];
+    if (validar_bissexto(ano)) {
+        if (i > 1) {
+            dia = dia - 1;
 
-//         }
+        }
+        else if (i == 1 && dia == 0) {
+            dia = dia - 1;
+        }
+    }
 
+    data[0] = diasDoMes[i - 1] + dia;
+    data[1] =  i;
+    data[2] = ano;
 
-//     }
-
-//     diaDoAno = diaDoAno + dia;
-
-//     if ((mes == 2) && validar_bissexto(ano)) {
-//         diaDoAno = diaDoAno + 1;
-
-//     }
-
-//     return diaDoAno;
-
-// }
+}

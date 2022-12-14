@@ -171,13 +171,14 @@ CadastroAluguel* preencheAluguel( )
     getchar();
 
     }while(!validarNumInteiro(devolucao));
-    strcpy(cadaaluguel->devolucao, devolucao);
+    ;
     strcpy(cpf, cadaaluguel->cpf);
 
     data = verDiaMesAno();
     strcpy(cadaaluguel->data, data);
     printf(" | Data do aluguel: ");
-    calculadata(data, devolucao);
+    calculadata(data, devolucao, cadaaluguel->devolucao);
+    printf("\ndata; %d/%d/%d\n", cadaaluguel->devolucao[0], cadaaluguel->devolucao[1], cadaaluguel->devolucao[2]);
     
     free(data);
     //free(cadaaluguel);
@@ -185,7 +186,7 @@ CadastroAluguel* preencheAluguel( )
     cadaaluguel->status = '1';
     
 
-    printf("=== Aluguel foi cadastrado no sistema!!           ===\n");
+    printf("\n=== Aluguel foi cadastrado no sistema!!           ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...");
@@ -218,7 +219,7 @@ void exibeAluguel(CadastroAluguel* cadaaluguel)
   printf("CPF: %s\n", cadaaluguel->cpf);
   printf("Cod: %s\n", cadaaluguel->cod);
   printf("Preço da mensalidade: %s\n", cadaaluguel->preco);
-  printf("Quantidade de meses alugados: %s\n", cadaaluguel->devolucao);
+  printf("Data de devolucao; %d/%d/%d\n", cadaaluguel->devolucao[0], cadaaluguel->devolucao[1], cadaaluguel->devolucao[2]);
   printf("Data do aluguel: %s\n", cadaaluguel->data);
   printf("Status: %c\n", cadaaluguel->status);
   printf("\n");
@@ -526,8 +527,9 @@ char* verDiaMesAno(void) {
 
 }
 
-void calculadata(char* data, char* meses)
+void calculadata(char* data, char* meses, int* structdata) //DAYANNE NOS AJUDOU
 {
+  int data_aux[3] = { };
   char* dia = dividPal(data,0,1);
   char* ano = dividPal(data,4,5);
   char* mes = dividPal(data,2,3);
@@ -551,6 +553,9 @@ void calculadata(char* data, char* meses)
   int mesesint = atoi(meses);
   calculo = mesesint * 30;
   calculo = calcula + calculo;
-  printf("%d",calculo);
-  getchar();
+  diaParaData(calculo, anoint, data_aux);
+
+  structdata[0] = data_aux[0];
+  structdata[1] = data_aux[1];
+  structdata[2] = data_aux[2];
 }
