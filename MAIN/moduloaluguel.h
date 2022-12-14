@@ -9,7 +9,7 @@ struct cadastroaluguel{
     char data[10];
     char preco[10];
     char status;
-    char devolucao[10];
+    int devolucao[3];
 
 };
 
@@ -24,4 +24,5 @@ void listaAluguel(void);
 void apagaAluguel(CadastroAluguel*);
 void editaAluguel(CadastroAluguel*);
 char* get_nome_cliente(char*);
+char* get_nome_veiculo(char*);
 char* verDiaMesAno(void);
