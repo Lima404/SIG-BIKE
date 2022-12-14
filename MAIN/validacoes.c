@@ -241,3 +241,40 @@ char* dividPal(char *pal, int del1, int del2) {
     return palavra;
 
 }
+
+char inversa(int dia) 
+{
+    
+    int diaDoAno = 0;
+    int diasDoMes[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+    for (int i = 0; i < mes - 1; i++) {
+
+        if (mes == 1) {
+        return dia;
+
+        }
+    
+        else if (mes == 2) {
+        diaDoAno = dia + 31;
+
+        }
+
+        else {
+            diaDoAno = diaDoAno + diasDoMes[i];
+
+        }
+
+
+    }
+
+    diaDoAno = diaDoAno + dia;
+
+    if ((mes == 2) && validar_bissexto(ano)) {
+        diaDoAno = diaDoAno + 1;
+
+    }
+
+    return diaDoAno;
+
+}
