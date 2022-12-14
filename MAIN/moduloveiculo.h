@@ -5,7 +5,7 @@ char menu_editar_veiculo(void);
 void menu_veiculo_manutencao(void);
 char menu_lista_agendamento(void);
 void menu_cadastro_veiculo(void);
-
+//char tela_escolha_veiculo(void);
 
 typedef struct cadastroveiculo CadastroVeiculo;
 struct cadastroveiculo{
