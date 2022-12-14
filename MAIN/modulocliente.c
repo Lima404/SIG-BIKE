@@ -23,6 +23,7 @@ void menu_nav_cliente(void)
         case '2':
             user = buscaCliente();
             exibeCliente(user);
+            getchar();
             free(user);
             break;
 
@@ -281,7 +282,7 @@ Cadastro* buscaCliente()
     }
 
     while (!feof(fp))
-    {                                      // Busca até o final do arquivo
+    {                                 // Busca até o final do arquivo
         fread(cad, sizeof(Cadastro), 1, fp);
         if (strcmp(cad->cpf, cpf) == 0 && (cad->status != 'x'))
         {                                  /*Verifica se o código é igual e o status*/

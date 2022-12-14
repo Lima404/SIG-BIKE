@@ -246,7 +246,6 @@ char menu_relatorios_aluguel(void)
     printf("===                                               ===\n");
     printf("===     1. Lista Aluguel(recente) e quantidade:   ===\n");
     printf("===     2. Lista de aluguéis ordem alfabética:    ===\n");
-    printf("===     3. Lista de aluguéis data devolução:      ===\n");
     printf("===     0. Voltar                                 ===\n");
     printf("===                                               ===\n");
     printf(" Qual opção você deseja:\n");

@@ -22,6 +22,7 @@ void menu_nav_veiculo(void)
         case '2':
             cadveiculo = buscaVeiculo();
             exibeVeiculo(cadveiculo);
+            getchar();
             free(cadveiculo);
             break; 
 
