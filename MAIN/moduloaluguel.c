@@ -96,6 +96,7 @@ CadastroAluguel* preencheAluguel( )
     CadastroAluguel* cadaaluguel;
     cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
     char* nome_cliente;
+    char* nome_veiculo;
     char* data;
     char devolucao[20];
     char cpf[12];
@@ -119,6 +120,9 @@ CadastroAluguel* preencheAluguel( )
     printf("=============== Menu Aluguel - Cadastro =============\n");
     printf("===                                               ===\n");
 
+// busca nome cliente
+
+
     do{
 
       printf("Digite seu CPF: ");
@@ -138,9 +142,21 @@ CadastroAluguel* preencheAluguel( )
    }
 
 
+// busca marca veiculo
+
     printf(" | Digite o código do veículo que você quer alugar: ");
     scanf(" %6[^\n]", cadaaluguel->cod);
     getchar();
+
+    nome_veiculo = get_nome_veiculo(cadaaluguel->cod);
+  if (nome_veiculo != NULL) 
+  {
+     printf("Nome do veiculo: %s\n", nome_veiculo);
+     free(nome_veiculo);
+   } else {
+     printf("Ops, usuário não encontrado");
+     return NULL;
+   }
 
 
     printf(" | Digite a mensalidade do aluguel: ");
@@ -378,6 +394,9 @@ void editaAluguel(CadastroAluguel* cadaaluguel)
   fclose(fp);
 }
 
+// char busca nome cliente
+
+
 char* get_nome_cliente(char* cpf) 
 {
 
@@ -413,6 +432,47 @@ char* get_nome_cliente(char* cpf)
     return NULL;
 
 }
+
+
+// char busca marca veiculo
+
+
+char* get_nome_veiculo(char* cod) 
+{
+
+  CadastroVeiculo* cadaveiculo;
+  FILE* fp;
+  char* marca;
+
+  marca = (char*) malloc(81*sizeof(char));
+
+  cadaveiculo = (CadastroVeiculo*)malloc(sizeof(CadastroVeiculo));
+  fp = fopen("veiculo.dat", "rb");
+
+    if (fp == NULL)
+    {
+        printf("Ocorreu um erro na abertura do arquivo, não é possivel continuar o programa");
+        exit(1);
+    }
+
+    while (!feof(fp))
+    { // Busca até o final do arquivo
+        fread(cadaveiculo, sizeof(CadastroVeiculo), 1, fp);
+        if (strcmp(cadaveiculo->cod, cod) == 0 && (cadaveiculo->status != 'x'))
+        { /*Verifica se o código é igual e o status*/
+            fclose(fp);
+            strcpy(marca, cadaveiculo->marca);
+            free(cadaveiculo);
+            return marca;
+        }
+    }
+
+    fclose(fp);
+    free(cadaveiculo);
+    return NULL;
+
+}
+
 
 char menu_lista_disp(void)
 {
