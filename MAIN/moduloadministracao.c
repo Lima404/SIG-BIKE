@@ -10,7 +10,6 @@
 #include "validacoes.h"
 
 
-
 // NAVEGAÇÃO PRINCIPAL
 
 void menu_nav_adm(void)

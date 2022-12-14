@@ -9,6 +9,8 @@
 #include "modulocliente.h"
 #include "moduloveiculo.h"
 
+void exibedatadevolucao(void);
+
 
 void menu_nav_aluguel(void)
 {   
@@ -45,6 +47,10 @@ void menu_nav_aluguel(void)
             editaAluguel(cadaluguel);
             free(cadaluguel);
             break;
+        
+        case '6':
+            listadata();
+            break;
 
         default:
             printf ("Opção Inválida\n");
@@ -79,6 +85,7 @@ char menu_aluguel(void)
     printf("===              3.Listar Aluguel:                ===\n");
     printf("===              4.Apagar Aluguel:                ===\n");
     printf("===              5.Alterar Aluguel:               ===\n");
+    printf("===              6.Exibir datas de devolução:     ===\n");
     printf("===              0.Voltar                         ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
@@ -219,7 +226,7 @@ void exibeAluguel(CadastroAluguel* cadaaluguel)
   printf("CPF: %s\n", cadaaluguel->cpf);
   printf("Cod: %s\n", cadaaluguel->cod);
   printf("Preço da mensalidade: %s\n", cadaaluguel->preco);
-  printf("Data de devolucao; %d/%d/%d\n", cadaaluguel->devolucao[0], cadaaluguel->devolucao[1], cadaaluguel->devolucao[2]);
+  printf("Data de devolucao: %d/%d/%d\n", cadaaluguel->devolucao[0], cadaaluguel->devolucao[1], cadaaluguel->devolucao[2]);
   printf("Data do aluguel: %s\n", cadaaluguel->data);
   printf("Status: %c\n", cadaaluguel->status);
   printf("\n");
@@ -555,4 +562,48 @@ void calculadata(char* data, char* meses, int* structdata) //DAYANNE NOS AJUDOU
   structdata[0] = data_aux[0];
   structdata[1] = data_aux[1];
   structdata[2] = data_aux[2];
+}
+
+void exibedata(CadastroAluguel* cadaaluguel)
+{
+  printf("Cod: %s\n", cadaaluguel->cod);
+  printf("Data de devolucao: %d/%d/%d\n", cadaaluguel->devolucao[0], cadaaluguel->devolucao[1], cadaaluguel->devolucao[2]);
+  printf("\n");
+
+}
+
+
+void listadata() 
+{
+  FILE* fp;
+  CadastroAluguel* cadaaluguel;
+  fp = fopen("aluguel.dat", "rb");
+  if (fp == NULL) {
+    printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
+    printf("Não é possível continuar o programa...\n");
+    exit(1);
+  }
+    system("clear||cls");
+    printf("\n\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+    printf("============= Menu Aluguel - Listar Data ============\n");
+
+  cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
+  while (fread(cadaaluguel, sizeof(CadastroAluguel), 1, fp))
+  { 
+      exibedata(cadaaluguel);
+  }
+  fclose(fp);
+  getchar();
+  getchar();
+  free(cadaaluguel);
 }
