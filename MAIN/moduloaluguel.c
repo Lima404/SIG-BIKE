@@ -171,14 +171,14 @@ CadastroAluguel* preencheAluguel( )
     getchar();
 
     }while(!validarNumInteiro(devolucao));
-    ;
+
     strcpy(cpf, cadaaluguel->cpf);
 
     data = verDiaMesAno();
     strcpy(cadaaluguel->data, data);
     printf(" | Data do aluguel: ");
     calculadata(data, devolucao, cadaaluguel->devolucao);
-    printf("\ndata; %d/%d/%d\n", cadaaluguel->devolucao[0], cadaaluguel->devolucao[1], cadaaluguel->devolucao[2]);
+    printf("\n | Data de retorno: %d/%d/%d\n", cadaaluguel->devolucao[0], cadaaluguel->devolucao[1], cadaaluguel->devolucao[2]);
     
     free(data);
     //free(cadaaluguel);
@@ -298,7 +298,6 @@ void listaAluguel()
   cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
   while (fread(cadaaluguel, sizeof(CadastroAluguel), 1, fp))
   { // Busca até o final do arquivo
-      printf("CPF LIDO!%s\n ",cadaaluguel->cpf);
       exibeAluguel(cadaaluguel);
   }
   fclose(fp);
@@ -545,8 +544,6 @@ void calculadata(char* data, char* meses, int* structdata) //DAYANNE NOS AJUDOU
   getchar();
 
   int calcula = diaDoAno(diaint, mesint, anoint);
-  printf("%d",calcula);
-  getchar();
   
   int calculo = 0;
 
