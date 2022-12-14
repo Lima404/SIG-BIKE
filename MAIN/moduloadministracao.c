@@ -80,7 +80,6 @@ char menu_adm(void)
 // NAVEGAÇÃO CLIENTE
 
 
-
 void nav_relatorio_cliente(void){
     NoCliente* lista;
     char esc = ' ';
@@ -96,74 +95,9 @@ void nav_relatorio_cliente(void){
                 exibe_alfa(lista);
                 break;
 
-            case '3':
-                //R_cliente_nasc();
-                break;
-
-            case '4':
-                //R_cliente_status();
-                break;
-
             default:
             printf("Opcao Invalida\n");
             break;
-        }
-    } while(esc != '0');
-}
-
-
-
-// NAVEGAÇÃO VEICULO
-
-
-
-void nav_relatorio_veiculo(void){
-    NoVeiculo* lista_veiculo;
-    char esc = ' ';
-    do {
-        esc = menu_relatorios_veiculo();
-        switch (esc){
-            case '1':
-            R_lista_veiculo();
-                break;
-
-            case '2':
-            //veiculo_tipo();
-                break;
-
-            case '3':
-            lista_veiculo = R_veiculo_alfa();
-            exibe_alfa_veiculo(lista_veiculo);
-                break;
-
-            default:
-            printf("Opcão Inválida\n");
-            break;
-        }
-    } while(esc != '0');
-}
-
-
-// NAVEGAÇÃO ALUGUEL
-
-void nav_relatorio_aluguel(void){
-    NoAluguel* lista_aluguel;
-    char esc = ' ';
-    do{
-        esc = menu_relatorios_aluguel();
-        switch (esc)
-        {
-        case '1' :
-        R_lista_aluguel();
-            break;
-        case '2':
-        lista_aluguel = R_aluguel_alfa();
-        exibe_alfa_aluguel(lista_aluguel);
-            break;
-
-        default:
-        printf("Opção inválida\n");
-        break;
         }
     } while(esc != '0');
 }
@@ -192,8 +126,6 @@ char menu_relatorios_cliente(void)
     printf("===                                               ===\n");
     printf("===     1. Lista cliente(recente) e quantidade:   ===\n");
     printf("===     2. Lista de clientes ordem alfabetica:    ===\n");
-    printf("===     3. Lista de clientes data de nascimento:  ===\n");
-    printf("===     4. Lista de clientes status:              ===\n");
     printf("===     0. Voltar                                 ===\n");
     printf("===                                               ===\n");
     printf(" Qual opção você deseja:\n");
@@ -202,6 +134,93 @@ char menu_relatorios_cliente(void)
     printf("\t\t\t ... Aguarde ...\n");
     return esc;
 }
+
+// NAVEGAÇÃO VEICULO
+
+
+void nav_relatorio_veiculo(void){
+    NoVeiculo* lista_veiculo;
+    char esc = ' ';
+    do {
+        esc = menu_relatorios_veiculo();
+        switch (esc){
+            case '1':
+            R_lista_veiculo();
+                break;
+
+            case '2':
+            //veiculo_tipo();
+                break;
+
+            case '3':
+            lista_veiculo = R_veiculo_alfa();
+            exibe_alfa_veiculo(lista_veiculo);
+                break;
+
+            default:
+            printf("Opcão Inválida\n");
+            break;
+        }
+    } while(esc != '0');
+}
+
+char menu_relatorios_veiculo(void)
+{
+    char esc;
+
+    system("clear||cls");
+    printf("\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("-----------------------------------------------------\n");
+    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+    printf("-----------------------------------------------------\n");
+    printf("=====================================================\n");
+    printf("=====================================================\n");
+    printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+    printf("========= Menu Veiculo -Relatorios Veículos =========\n");
+    printf("===                                               ===\n");
+    printf("===                                               ===\n");
+    printf("===     1. Lista veículo(recente) e quantidade:   ===\n");
+    printf("===     2. Lista de veiculo (tipo):               ===\n");
+    printf("===     3. Lista veículos ordem alafabética:      ===\n");
+    printf("===     0. Voltar                                 ===\n");
+    printf("===                                               ===\n");
+    printf(" Qual opção você deseja:\n");
+    scanf("%c", &esc);
+    getchar();
+    return esc;
+}
+
+// NAVEGAÇÃO ALUGUEL
+
+void nav_relatorio_aluguel(void){
+    NoAluguel* lista_aluguel;
+    char esc = ' ';
+    do{
+        esc = menu_relatorios_aluguel();
+        switch (esc)
+        {
+        case '1' :
+        R_lista_aluguel();
+            break;
+        case '2':
+        lista_aluguel = R_aluguel_alfa();
+        exibe_alfa_aluguel(lista_aluguel);
+            break;
+
+        default:
+        printf("Opção inválida\n");
+        break;
+        }
+    } while(esc != '0');
+}
+
 
 char menu_relatorios_aluguel(void)
 {
@@ -226,9 +245,9 @@ char menu_relatorios_aluguel(void)
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf("===     1. Lista Aluguel(recente) e quantidade:   ===\n");
-    printf("===     2. Lista de aluguéis ordem alfabetica:    ===\n");
+    printf("===     2. Lista de aluguéis ordem alfabética:    ===\n");
     printf("===     3. Lista de aluguéis data devolução:      ===\n");
-    printf("===     0.Voltar                                  ===\n");
+    printf("===     0. Voltar                                 ===\n");
     printf("===                                               ===\n");
     printf(" Qual opção você deseja:\n");
     scanf("%c", &esc);
@@ -547,38 +566,7 @@ void exibe_alfa_aluguel(NoAluguel* cadaaluguel)
     
 }  
 
-char menu_relatorios_veiculo(void)
-{
-    char esc;
 
-    system("clear||cls");
-    printf("\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("-----------------------------------------------------\n");
-    printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
-    printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
-    printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
-    printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
-    printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
-    printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
-    printf("-----------------------------------------------------\n");
-    printf("=====================================================\n");
-    printf("=====================================================\n");
-    printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
-    printf("========= Menu Veiculo -Relatorios Veículos =========\n");
-    printf("===                                               ===\n");
-    printf("===                                               ===\n");
-    printf("===     1. Lista veículo(recente) e quantidade:   ===\n");
-    printf("===     2. Lista de veiculo (tipo):               ===\n");
-    printf("===     3. Lista veículos ordem alafabética:      ===\n");
-    printf("===     0. Voltar                                 ===\n");
-    printf("===                                               ===\n");
-    printf(" Qual opção você deseja:\n");
-    scanf("%c", &esc);
-    getchar();
-    return esc;
-}
 
 void R_lista_veiculo(void)
 {

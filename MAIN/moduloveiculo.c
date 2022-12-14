@@ -48,6 +48,7 @@ void menu_nav_veiculo(void)
     } while(esc != '0');
 }
 
+
 char menu_veiculo(void)
 {
 
@@ -88,11 +89,50 @@ char menu_veiculo(void)
 
 }
 
+/*char tela_escolha_veiculo(void)
+{
+
+  char esc;
+
+  system("clear||cls");
+  printf("\n");
+  printf("=====================================================\n");
+  printf("=====================================================\n");
+  printf("-----------------------------------------------------\n");
+  printf("░██████╗██╗░██████╗░░░░░░░██████╗░██╗██╗░░██╗███████╗\n");
+  printf("██╔════╝██║██╔════╝░░░░░░░██╔══██╗██║██║░██╔╝██╔════╝\n");
+  printf("╚█████╗░██║██║░░██╗░█████╗██████╦╝██║█████═╝░█████╗░░\n");
+  printf("░╚═══██╗██║██║░░╚██╗╚════╝██╔══██╗██║██╔═██╗░██╔══╝░░\n");
+  printf("██████╔╝██║╚██████╔╝░░░░░░██████╦╝██║██║░╚██╗███████╗\n");
+  printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
+  printf("-----------------------------------------------------\n");
+  printf("-----------------------------------------------------\n");
+  printf("=====================================================\n");
+  printf("=====================================================\n");
+  printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
+  printf("=============== Menu Veículo - Cadastro =============\n");
+  printf("===                                               ===\n");
+  printf("===         Tipos de veículos:                    ===\n");
+  printf("===         1 - Bike                              ===\n");
+  printf("===         2 - Patins Elétricos                  ===\n");
+  printf("===                                               ===\n");
+  printf("=====================================================\n");
+  printf("=====================================================\n");
+  printf("Escolha o tipo do seu veículo: ")
+  scanf("%c", &esc);
+  getchar();
+  printf("\t\t\t ... Aguarde ... \n");
+  sleep(1);
+  return esc;
+
+}*/
+
 CadastroVeiculo* preencheVeiculo(void)
 {
     
   CadastroVeiculo* cadaveiculo;
   cadaveiculo = (CadastroVeiculo*) malloc(sizeof(CadastroVeiculo));
+  
   
   system("clear||cls");
   printf("\n");
@@ -113,14 +153,12 @@ CadastroVeiculo* preencheVeiculo(void)
   printf("=============== Menu Veículo - Cadastro =============\n");
   printf("===                                               ===\n");
   printf("===         Tipos de veículos:                    ===\n");
-  printf("===          Bike                                 ===\n");
-  printf("===          Patins Elétricos                     ===\n");
+  printf("===         1 - Bike                              ===\n");
+  printf("===         2 - Patins Elétricos                  ===\n");
   printf("===                                               ===\n");
   printf("=====================================================\n");
   printf("=====================================================\n");
-  
 
-    // tipo
     do{
 
     printf(" | Digite o tipo do veículo(PATINS ou BIKE): ");
