@@ -129,6 +129,8 @@ CadastroAluguel* preencheAluguel( )
     printf("=============== Menu Aluguel - Cadastro =============\n");
     printf("===                                               ===\n");
 
+// CADASTRO DE CLIENTE
+
     do{
 
       printf("Digite seu CPF: ");
@@ -148,27 +150,30 @@ CadastroAluguel* preencheAluguel( )
      return NULL;
    }
 
+// CADASTRO DE VEICULO
 
     printf(" | Digite o código do veículo que você quer alugar: ");
     scanf(" %9[^\n]", cadaaluguel->cod);
     getchar();
 
     nome_veiculo = get_nome_veiculo(cadaaluguel->cod);
-    getchar();
-
   if (nome_veiculo != NULL){
     printf("entrou");
-    printf("Identificação do veiculo %s\n", nome_veiculo);
+    printf("Identificação do veiculo: %s\n", nome_veiculo);
     free(nome_veiculo);
   } else {
     printf("Ops, veiculo não encontrado");
     return NULL;
   }
 
+// CADASTRO DE PREÇO 
+
     printf(" | Digite a mensalidade do aluguel: ");
     scanf(" %9[^\n]", cadaaluguel->preco);
     getchar();
 
+
+// CADASTRO DE PREÇO
 
     do {
 
@@ -457,14 +462,13 @@ char* get_nome_veiculo(char* cod)
   marca = (char*) malloc(81*sizeof(char));
 
   cadaveiculo = (CadastroVeiculo*)malloc(sizeof(CadastroVeiculo));
-  fp = fopen("aluguel.dat", "rb");
+  fp = fopen("veiculo.dat", "rb");
 
     if (fp == NULL)
     {
         printf("Ocorreu um erro na abertura do arquivo, não é possivel continuar o programa");
         exit(1);
     }
-
     while (!feof(fp))
     { // Busca até o final do arquivo
         fread(cadaveiculo, sizeof(CadastroVeiculo), 1, fp);
