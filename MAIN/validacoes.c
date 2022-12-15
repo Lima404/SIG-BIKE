@@ -184,7 +184,7 @@ int validarNumInteiro(char *numero) {        //DAY
 
 }
 
-int diaDoAno(int dia , int mes, int ano) 
+int diaDoAno(int dia , int mes, int ano)        //DAY
 {
     int diaDoAno = 0;
     int diasDoMes[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
@@ -220,7 +220,7 @@ int diaDoAno(int dia , int mes, int ano)
 
 }
 
-char* dividPal(char *pal, int del1, int del2) {
+char* dividPal(char *pal, int del1, int del2) {             //DAY
     int tam = del2 - del1;
     int aux = 0;
 
@@ -242,7 +242,7 @@ char* dividPal(char *pal, int del1, int del2) {
 
 }
 
-void diaParaData(int dia, int ano, int *data) {
+void diaParaData(int dia, int ano, int *data) {         //DAY
 
     int diasDoMes[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     int i = 0;

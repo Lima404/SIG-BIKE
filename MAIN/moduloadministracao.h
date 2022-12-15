@@ -26,7 +26,6 @@ struct aAluguel{
     
 };
 
-
 typedef struct aVeiculo NoVeiculo;
 struct aVeiculo{
 
