@@ -193,7 +193,7 @@ CadastroAluguel* preencheAluguel( )
     cadaaluguel->status = '1';
     
 
-    printf("\n=== Aluguel foi cadastrado no sistema!!           ===\n");
+    printf("\n===     Aluguel foi cadastrado no sistema!!     ===\n");
     printf("===                                               ===\n");
     printf("===                                               ===\n");
     printf(" Press ENTER to exit...");
@@ -347,7 +347,6 @@ CadastroAluguel* buscaAluguel()
     while (!feof(fp))
     { // Busca até o final do arquivo
         fread(cadaaluguel, sizeof(CadastroAluguel), 1, fp);
-        printf(">>> valor lido: %s\n", cadaaluguel->cpf);
         if (strcmp(cadaaluguel->cpf, cpf) == 0 && (cadaaluguel->status != 'x'))
         { /*Verifica se o código é igual e o status*/
             fclose(fp);
