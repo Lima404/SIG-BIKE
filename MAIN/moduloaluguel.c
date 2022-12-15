@@ -215,7 +215,6 @@ void gravaAluguel(CadastroAluguel* cadaaluguel)
     }
     fwrite(cadaaluguel, sizeof(CadastroAluguel), 1, fp);
     fclose(fp);
-    free(cadaaluguel);
 }
 
 // EXIBE ALUGUEL
