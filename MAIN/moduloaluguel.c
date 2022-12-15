@@ -486,7 +486,7 @@ char* get_nome_veiculo(char* cod)
 }
 
 
-char menu_lista_disp(void)
+/*char menu_lista_disp(void)
 {
 
     char esc;
@@ -515,7 +515,7 @@ char menu_lista_disp(void)
     scanf("%c",&esc);
     getchar();
     return esc;
-}
+}*/
 
 char* verDiaMesAno(void) {
 
@@ -567,7 +567,7 @@ void calculadata(char* data, char* meses, int* structdata) //DAYANNE NOS AJUDOU
 void exibedata(CadastroAluguel* cadaaluguel)
 {
   printf("Cod: %s\n", cadaaluguel->cod);
-  printf("Data de devolucao: %d/%d/%d\n", cadaaluguel->devolucao[0], cadaaluguel->devolucao[1], cadaaluguel->devolucao[2]);
+  printf("Data de devolução: %d/%d/%d\n", cadaaluguel->devolucao[0], cadaaluguel->devolucao[1], cadaaluguel->devolucao[2]);
   printf("\n");
 
 }
@@ -595,7 +595,7 @@ void listadata()
     printf("╚═════╝░╚═╝░╚═════╝░░░░░░░╚═════╝░╚═╝╚═╝░░╚═╝╚══════╝\n");
     printf("-----------------------------------------------------\n");
     printf("===== SISTEMAS DE BICICLETAS E PATINS ELÉTRICOS =====\n");
-    printf("============= Menu Aluguel - Listar Data ============\n");
+    printf("============ Menu Aluguel - Listar Datas ============\n");
 
   cadaaluguel = (CadastroAluguel*) malloc(sizeof(CadastroAluguel));
   while (fread(cadaaluguel, sizeof(CadastroAluguel), 1, fp))
